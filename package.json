@@ -1,5 +1,5 @@
 {
-  "name": "i-os-club-2022",
+  "name": "iOSClub-2022",
   "version": "1.0.0",
   "private": true,
   "description": "iOS Club 2022",
@@ -17,7 +17,8 @@
   "dependencies": {
     "gatsby": "^4.7.2",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-responsive": "^9.0.0-beta.6"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
