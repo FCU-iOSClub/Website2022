@@ -41,7 +41,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="flex my-8 text-lg text-solid">
+    <nav className="flex py-4 text-lg px-3 md:px-8 text-solid sticky top-0 bg-white shadow-md">
       <a href="/">iOS Club</a>
       <ul className="flex flex-grow justify-center space-x-10">
         {menuItems.map((item, index) => (
