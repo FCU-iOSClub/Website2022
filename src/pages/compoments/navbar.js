@@ -25,7 +25,7 @@ const Navbar = () => {
   // dropdown menu
   if (isMobile) {
     return (
-      <nav className="text-lg my-5">
+      <nav className="text-lg my-5 break-words">
         <div className="text-3xl text-center">iOS Club</div>
         <ul className="flex flex-col text-center divide-y-2 border-2">
           {menuItems.map((item, index) => (
