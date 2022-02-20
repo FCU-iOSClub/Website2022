@@ -50,8 +50,9 @@ const Navbar = () => {
       <div>Join Us</div>
     </nav>
   );
-  // dropdown menu
-  return isMobile ? mobileChild : desktopChild;
+  return <div>
+    {isMobile ? mobileChild : desktopChild}
+  </div>
 };
 
 export default Navbar;
