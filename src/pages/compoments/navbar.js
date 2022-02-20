@@ -22,33 +22,22 @@ const menuItems = [
 
 const Navbar = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
-  // dropdown menu
-  return (
-    <div>
-      {isMobile ? <p>moblie</p> : <p>desktop</p>}
 
-    </div>
-  )
-
-
-  if (isMobile) {
-    return (
-      <nav className="text-lg my-5 break-words">
-        <div className="text-3xl text-center">iOS Club</div>
-        <ul className="pt-10 flex flex-col text-center divide-y-2">
-          {menuItems.map((item, index) => (
-            <li key={index} className="py-2 bg-gray-100 shadow-inner">
-              <a href={item.url} className="text-solid">
-                {item.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    );
-  }
-
-  return (
+  const mobileChild = (
+    <nav className="text-lg my-5 break-words">
+      <div className="text-3xl text-center">iOS Club</div>
+      <ul className="pt-10 flex flex-col text-center divide-y-2">
+        {menuItems.map((item, index) => (
+          <li key={index} className="py-2 bg-gray-100 shadow-inner">
+            <a href={item.url} className="text-solid">
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+  const desktopChild = (
     <nav className="flex py-4 text-lg px-3 md:px-8 text-solid sticky top-0 bg-white shadow-md">
       <a href="/">iOS Club</a>
       <ul className="flex flex-grow justify-center space-x-10">
@@ -61,6 +50,8 @@ const Navbar = () => {
       <div>Join Us</div>
     </nav>
   );
+  // dropdown menu
+  return isMobile ? mobileChild : desktopChild;
 };
 
 export default Navbar;
