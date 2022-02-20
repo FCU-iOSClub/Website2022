@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useMediaQuery } from "react-responsive";
+import MediaQuery from "react-responsive";
 
 const menuItems = [
   {
@@ -21,8 +21,6 @@ const menuItems = [
 ];
 
 const Navbar = () => {
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
-
   const mobileChild = (
     <nav className="text-lg my-5 break-words">
       <div className="text-3xl text-center">iOS Club</div>
@@ -50,9 +48,12 @@ const Navbar = () => {
       <div>Join Us</div>
     </nav>
   );
-  return <div>
-    {isMobile ? mobileChild : desktopChild}
-  </div>
+  return (
+    <div>
+      <MediaQuery maxWidth={768}>{mobileChild}</MediaQuery>
+      <MediaQuery minWidth={769}>{desktopChild}</MediaQuery>
+    </div>
+  );
 };
 
 export default Navbar;
