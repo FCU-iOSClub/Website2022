@@ -12,6 +12,7 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
+    "prettier": "prettier --write .",
     "clean": "gatsby clean"
   },
   "dependencies": {
