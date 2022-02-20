@@ -23,6 +23,14 @@ const menuItems = [
 const Navbar = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   // dropdown menu
+  return (
+    <div>
+      {isMobile ? <p>moblie</p> : <p>desktop</p>}
+
+    </div>
+  )
+
+
   if (isMobile) {
     return (
       <nav className="text-lg my-5 break-words">
