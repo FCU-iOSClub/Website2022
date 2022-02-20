@@ -6,10 +6,11 @@ const IndexPage = () => {
     <div>
       {Navbar()}
       <div className="container mx-auto break-all">
-        <div className="h-32"></div> {/* 空白區 */}
+        {/* 空白區 */}
+        <div className="h-0 md:h-32"></div>
         {/* We are iOS Club */}
-        <div className="py-5 sm:flex sm:p-10 sm:space-x-10 justify-center">
-          <div className=" sm:w-4/12 w-full self-center">
+        <div className="py-5 md:flex md:p-10 md:space-x-10 justify-center">
+          <div className=" md:w-4/12 w-full self-center">
             <div className="text-center text-5xl font-bold">
               <h1 className="py-3">We are</h1>
               <h1 className="py-3">iOS Club.</h1>
@@ -19,19 +20,19 @@ const IndexPage = () => {
             </p>
           </div>
           <img
-            className="w-full sm:w-6/12 p-10 sm:p-0"
+            className="w-full md:w-6/12 p-10 md:p-0"
             src={require("../images/svg/logo.svg").default}
             alt="logo"
           ></img>
         </div>
         {/* About iOS Club. */}
-        <div className="py-5 sm:flex sm:p-10 sm:space-x-10 justify-center">
+        <div className="py-5 md:flex md:p-10 md:space-x-10 justify-center">
           <img
-            className="w-full sm:w-6/12 p-10 sm:p-0"
+            className="w-full md:w-6/12 p-10 md:p-0"
             src={require("../images/svg/about_ios.svg").default}
             alt="logo"
           ></img>
-          <div className=" sm:w-4/12 w-full self-center">
+          <div className=" md:w-4/12 w-full self-center">
             <div className="text-center text-5xl font-bold">
               <h1 className="py-3">About</h1>
               <h1 className="py-3">iOS Club.</h1>
@@ -45,8 +46,8 @@ const IndexPage = () => {
           </div>
         </div>
         {/* iOS Club 會做什麼 */}
-        <div className="py-5 sm:flex sm:p-10 sm:space-x-10 justify-center">
-          <div className=" sm:w-4/12 w-full self-center">
+        <div className="py-5 md:flex md:p-10 md:space-x-10 justify-center">
+          <div className=" md:w-4/12 w-full self-center">
             <div className="text-center text-5xl font-bold">
               <h1 className="py-3">iOS Club 會做什麼</h1>
             </div>
@@ -59,7 +60,7 @@ const IndexPage = () => {
             </p>
           </div>
           <img
-            className="w-full sm:w-6/12 p-10 sm:p-0"
+            className="w-full md:w-6/12 p-10 md:p-0"
             src={require("../images/svg/iosclub_doing.svg").default}
             alt="logo"
           ></img>
@@ -68,22 +69,22 @@ const IndexPage = () => {
         <h2 className="text-center text-3xl py-3 font-bold">
           iOS Club 做過什麼
         </h2>
-        <div className="py-5 px-5 sm:grid sm:grid-cols-3 sm:gap-3 justify-center text-center">
-          <div className="w-full rounded-md shadow-lg">
+        <div className="py-5 px-5 md:grid md:grid-cols-3 md:gap-3 justify-center text-center">
+          <div className="w-full rounded-md shadow-lg border border-neutral-50">
             <h2 className="my-8">社團課程</h2>
             <p className="my-8">每週二、四的晚上 18:30～20:30</p>
             <p className="my-8">
               <a href="">Learn More</a>
             </p>
           </div>
-          <div className="w-full rounded-md shadow-lg">
+          <div className="w-full rounded-md shadow-lg border border-neutral-50">
             <h2 className="my-8">社團課程</h2>
             <p className="my-8">每週二、四的晚上 18:30～20:30</p>
             <p className="my-8">
               <a href="">Learn More</a>
             </p>
           </div>
-          <div className="w-full rounded-md shadow-lg">
+          <div className="w-full rounded-md shadow-lg border border-neutral-50">
             <h2 className="my-8">社團課程</h2>
             <p className="my-8">每週二、四的晚上 18:30～20:30</p>
             <p className="my-8">

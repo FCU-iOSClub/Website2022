@@ -21,15 +21,15 @@ const menuItems = [
 ];
 
 const Navbar = () => {
-  const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   // dropdown menu
   if (isMobile) {
     return (
       <nav className="text-lg my-5 break-words">
         <div className="text-3xl text-center">iOS Club</div>
-        <ul className="flex flex-col text-center divide-y-2 border-2">
+        <ul className="pt-10 flex flex-col text-center divide-y-2">
           {menuItems.map((item, index) => (
-            <li key={index} className="bg-gray-100 ">
+            <li key={index} className="py-2 bg-gray-100 shadow-inner">
               <a href={item.url} className="text-solid">
                 {item.name}
               </a>
