@@ -13,6 +13,7 @@
 會在 `localhost:8000` 上啟動網頁
 
 ```bash
+npm i
 npm run develop
 ```
 
