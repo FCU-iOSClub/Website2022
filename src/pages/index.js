@@ -1,4 +1,5 @@
 import * as React from "react";
+import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 
 const IndexPage = () => {
@@ -93,6 +94,8 @@ const IndexPage = () => {
           </div>
         </div>
       </div>
+      {/* footer */}
+      {Footer()}
     </div>
   );
 };
