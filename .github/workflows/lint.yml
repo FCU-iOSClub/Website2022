@@ -21,4 +21,5 @@ jobs:
           VALIDATE_ALL_CODEBASE: true
           DEFAULT_BRANCH: master
           FILTER_REGEX_INCLUDE: .*src/.*
+          JAVASCRIPT_ES_CONFIG_FILE: ".eslintrc.js"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
