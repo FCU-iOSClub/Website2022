@@ -1,5 +1,5 @@
 import * as React from "react";
-import Navbar from "./compoments/navbar";
+import Navbar from "../components/navbar";
 
 const IndexPage = () => {
   return (
