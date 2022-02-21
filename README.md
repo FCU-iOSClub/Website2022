@@ -1,54 +1,33 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# iOS Club Website 2022
 
-## 🚀 Quick start
+2022 Website
 
-1.  **Create a Gatsby site.**
+## Quick start
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+* 本專案用 Gatsby + React 製作。需要Node 14 以上。
+* CSS Framwork 使用 TailwindCSS。
+* `master` 分之上的最新 commit 會自動被部署到 Cloudflare Pages 上。
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+### 開發模式
 
-2.  **Start developing.**
+會在 `localhost:8000` 上啟動網頁
 
-    Navigate into your new site’s directory and start it up.
+```bash
+npm run develop
+```
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+### 產生靜態網頁
 
-3.  **Open the code and start customizing!**
+在 `public` 資料夾中產生網頁
 
-    Your site is now running at http://localhost:8000!
+```bash
+npm run build
+```
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+## Prettier
 
-4.  **Learn more**
+Commit 前養成好習慣，自動排版一下。
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+```bash
+npm run prettier
+```
