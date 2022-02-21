@@ -4,6 +4,7 @@
 
 ## Quick start
 
+- 產生靜態網頁
 - 本專案用 Gatsby + React 製作。需要 Node 14 以上。
 - CSS Framwork 使用 TailwindCSS。
 - `master` 分之上的最新 commit 會自動被部署到 Cloudflare Pages 上。
