@@ -8,12 +8,17 @@
 * CSS Framwork 使用 TailwindCSS。
 * `master` 分之上的最新 commit 會自動被部署到 Cloudflare Pages 上。
 
+先安裝依賴
+
+```bash
+npm i
+```
+
 ### 開發模式
 
 會在 `localhost:8000` 上啟動網頁
 
 ```bash
-npm i
 npm run develop
 ```
 
