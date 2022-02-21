@@ -16,9 +16,9 @@ jobs:
         with:
           fetch-depth: 0
       - name: Lint Code Base
-        uses: github/super-linter@v4
+        uses: github/super-linter/slim@v4
         env:
-          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_ALL_CODEBASE: true
           DEFAULT_BRANCH: master
           FILTER_REGEX_INCLUDE: .*src/.*
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
