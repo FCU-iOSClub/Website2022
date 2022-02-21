@@ -1,10 +1,15 @@
 import * as React from "react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
+import { Helmet } from "react-helmet";
 
 const IndexPage = () => {
   return (
     <div>
+      {/* Header */}
+      <Helmet>
+        <title>iOS Club</title>
+      </Helmet>
       {Navbar()}
       <div className="container mx-auto break-all">
         {/* 空白區 */}
