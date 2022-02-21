@@ -31,7 +31,7 @@ const communityList = [
 
 const Footer = () => {
   return (
-    <div className="bg-blue-200 w-full py-24 px-12 text-center">
+    <div className="bg-blue-200 w-full py-24 px-12">
       <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-24">
         <div>
           <p className="font-bold">iOS Club</p>
@@ -71,7 +71,7 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className="pt-12 text-gray-600">
+      <div className="pt-12 text-gray-600 text-center">
         iOS Club 2016 - 2021 © All right reserved
       </div>
     </div>
