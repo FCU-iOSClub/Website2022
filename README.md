@@ -1,5 +1,7 @@
 # iOS Club Website 2022
 
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/Fcu-iOSClub/WebSite2022/Build%20Test/master?label=build&style=flat-square)
+
 2022 Website
 
 ## Quick start
