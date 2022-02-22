@@ -36,7 +36,7 @@ npm run build
 
 ## Prettier
 
-Commit 前養成好習慣，自動排版一下。
+Commit 前養成好習慣，自動排版一下
 
 ```bash
 npm run prettier
