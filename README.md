@@ -7,9 +7,9 @@
 ## Note
 
 - 本站是靜態網頁
-- 專案使用 Gatsby + React 製作。目前需要 Node 14 以上。
-- CSS Framwork 使用 TailwindCSS。
-- `master` 分之上的最新 commit 會自動被部署到 Cloudflare Pages 上。
+- 專案使用 [Gatsby](https://www.gatsbyjs.com) + [React](https://zh-hant.reactjs.org) 製作。目前需要 Node 14 以上。
+- CSS Framwork 使用 [TailwindCSS](https://tailwindcss.com)。
+- `master` 分之上的最新 commit 會自動被部署到 [Cloudflare Pages](https://pages.cloudflare.com) 上。
 - 如果不確定新東西會不會 work，記得用 PR 的方式，讓 GitHub Actions 和 Cloudflare Pages 都 Build 試試看，再決定要不要合併分支。盡量避免直接推 master。
 
 ## Quick start
