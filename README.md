@@ -3,14 +3,15 @@
 ![iOS Club](https://img.shields.io/badge/FCU-iOS%20Club-green?logo=apple&style=flat-square)
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/Fcu-iOSClub/WebSite2022/Build%20Test/master?label=build&style=flat-square&color=green)
 
-2022 Website
+## Note
 
-## Quick start
-
-- 產生靜態網頁
-- 本專案用 Gatsby + React 製作。需要 Node 14 以上。
+- 本站是靜態網頁
+- 專案使用 Gatsby + React 製作。目前需要 Node 14 以上。
 - CSS Framwork 使用 TailwindCSS。
 - `master` 分之上的最新 commit 會自動被部署到 Cloudflare Pages 上。
+- 如果不確定新東西會不會 work，記得用 PR 的方式，讓 GitHub Actions 和 Cloudflare Pages 都 Build 試試看，再決定要不要合併分支。盡量避免直接推 master。
+
+## Quick start
 
 先安裝依賴
 
