@@ -84,14 +84,14 @@ const IndexPage = () => {
             </p>
           </div>
           <div className="my-3 md:my-3 w-full rounded-md shadow-lg border border-neutral-50">
-            <h2 className="my-8">社團課程</h2>
+            <h2 className="my-8">社團活動</h2>
             <p className="my-8">每週二、四的晚上 18:30～20:30</p>
             <p className="my-8">
               <a href="">Learn More</a>
             </p>
           </div>
           <div className="w-full rounded-md shadow-lg border border-neutral-50">
-            <h2 className="my-8">社團課程</h2>
+            <h2 className="my-8">歷屆競賽得獎</h2>
             <p className="my-8">每週二、四的晚上 18:30～20:30</p>
             <p className="my-8">
               <a href="">Learn More</a>
