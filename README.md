@@ -2,6 +2,7 @@
 
 ![iOS Club](https://img.shields.io/badge/FCU-iOS%20Club-green?logo=apple&style=flat-square)
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/Fcu-iOSClub/WebSite2022/Build%20Test/master?label=build&style=flat-square&color=green)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/fcu-iosclub/Website2022/Prettier%20Check/master?color=green&label=prettier&style=flat-square)
 
 ## Note
 
