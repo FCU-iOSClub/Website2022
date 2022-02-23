@@ -22,7 +22,7 @@ const IndexPage = () => {
               <h1 className="py-3">iOS Club.</h1>
             </div>
             <p className="py-3 text-center text-gray-700">
-              一個教你從零開始打造專屬 Apps 的社團
+              一個教你從零開始打造專屬 apps 的社團
             </p>
           </div>
           <img
