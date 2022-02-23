@@ -1,7 +1,7 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 
-const communityList = [
+const communityList =              [
   {
     name: "E-mail",
     icon: "fluent:mail-48-filled",
