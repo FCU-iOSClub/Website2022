@@ -43,3 +43,17 @@ Commit 前養成好習慣，自動排版一下
 ```bash
 npm run prettier
 ```
+
+## Icon
+
+Icon 使用 [Iconify](https://iconify.design)。
+
+使用方式：
+
+```js
+import { icon } from "@iconify/react";
+
+<Icon icon="simple-icons:ios" />;
+```
+
+可以到 [Browse Icons](https://icon-sets.iconify.design/) 搜尋要使用的 Icon。
