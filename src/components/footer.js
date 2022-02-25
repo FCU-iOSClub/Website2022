@@ -5,27 +5,27 @@ const communityList = [
   {
     name: "E-mail",
     icon: "fluent:mail-48-filled",
-    href: "",
+    href: "mailto:iosclub@mail.fcu.edu",
   },
   {
     name: "Facebook",
     icon: "akar-icons:facebook-fill",
-    href: "",
+    href: "https://www.facebook.com/FCU.iOSClub",
   },
   {
     name: "Instagram",
     icon: "akar-icons:instagram-fill",
-    href: "",
+    href: "https://www.instagram.com/fcu.iosclub/",
   },
   {
     name: "Line 社群",
     icon: "bi:line",
-    href: "",
+    href: "https://line.me/ti/g2/Hcrx-jxTUDGItqDEo0R63w?utm_campaign=default&utm_medium=link_copy&utm_source=invitation",
   },
   {
     name: "Discord",
     icon: "akar-icons:discord-fill",
-    href: "",
+    href: "https://discord.com/invite/z2VPCNFupv",
   },
 ];
 
