@@ -51,7 +51,7 @@ Icon 使用 [Iconify](https://iconify.design)。
 使用方式：
 
 ```js
-import { icon } from "@iconify/react";
+import { Icon } from "@iconify/react";
 
 <Icon icon="simple-icons:ios" />;
 ```
