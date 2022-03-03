@@ -74,7 +74,7 @@ const IndexPage = () => {
               <a href="">Learn More</a>
             </p>
           </div>
-          <div className="my-3 md:my-3 w-full rounded-md shadow-lg border border-neutral-50">
+          <div className="w-full rounded-md shadow-lg border border-neutral-50">
             <h2 className="my-8">社團活動</h2>
             <p className="my-8">每週二、四的晚上 18:30～20:30</p>
             <p className="my-8">
