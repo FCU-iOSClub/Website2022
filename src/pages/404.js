@@ -1,53 +1,23 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import { ReactComponent as LogoSvg } from "../images/svg/logo.svg";
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-};
-
-const paragraphStyles = {
-  marginBottom: 48,
-};
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-};
-
-// markup
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <div
+      className="h-screen w-screen content-center items-center justify-center m-0"
+      style={{ background: "#4d689b" }}
+    >
+      <div className="h-full w-full flex flex-col justify-center items-center p-20">
+        <div class="w-full flex flex-col md:flex-row items-center justify-center space-x-4 space-y-3">
+          <LogoSvg className="h-48 w-48 md:w-32 md:h-32 text-white fill-current" />
+          <h2 className="text-white text-xl md:text-3xl">網頁努力建置中...</h2>
+        </div>
+
+        <div className="mt-10">
+          <h2 className="text-lg text-white">400 Not Found</h2>
+        </div>
+      </div>
+    </div>
   );
 };
 

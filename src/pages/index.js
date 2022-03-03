@@ -2,6 +2,9 @@ import * as React from "react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import { Helmet } from "react-helmet";
+import { ReactComponent as LogoSvg } from "../images/svg/logo.svg";
+import { ReactComponent as AboutIosSvg } from "../images/svg/about_ios.svg";
+import { ReactComponent as IosClubDoingSvg } from "../images/svg/iosclub_doing.svg";
 
 const IndexPage = () => {
   return (
@@ -25,19 +28,11 @@ const IndexPage = () => {
               一個教你從零開始打造專屬 apps 的社團
             </p>
           </div>
-          <img
-            className="w-full md:w-6/12 p-10 md:p-0"
-            src={require("../images/svg/logo.svg").default}
-            alt="logo"
-          ></img>
+          <LogoSvg className="w-full md:w-6/12 p-10 md:p-0" fill="#696AAD" />
         </div>
         {/* About iOS Club. */}
         <div className="py-5 md:flex md:p-10 md:space-x-10 justify-center">
-          <img
-            className="w-full md:w-6/12 p-10 md:p-0"
-            src={require("../images/svg/about_ios.svg").default}
-            alt="logo"
-          ></img>
+          <AboutIosSvg className="w-full md:w-6/12 p-10 md:p-0" />
           <div className=" md:w-4/12 w-full self-center">
             <div className="text-center text-5xl font-bold">
               <h1 className="py-3">About</h1>
@@ -65,11 +60,7 @@ const IndexPage = () => {
               身為志工性社團的我們，還會和相關機構及國小一同舉辦志工營隊，將在社團內所學回饋社會。
             </p>
           </div>
-          <img
-            className="w-full md:w-6/12 p-10 md:p-0"
-            src={require("../images/svg/iosclub_doing.svg").default}
-            alt="logo"
-          ></img>
+          <IosClubDoingSvg className="w-full md:w-6/12 p-10 md:p-0" />
         </div>
         {/* iOS Club 做過什麼 */}
         <h2 className="text-center text-3xl py-3 font-bold">
