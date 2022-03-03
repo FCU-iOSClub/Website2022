@@ -18,7 +18,7 @@ const NotFoundPage = () => {
         </div>
 
         <div className="mt-10">
-          <h2 className="text-lg text-white">400 Not Found</h2>
+          <h2 className="text-lg text-white">404 Not Found</h2>
         </div>
       </div>
     </div>
