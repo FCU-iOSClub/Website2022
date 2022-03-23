@@ -1,7 +1,6 @@
 name: Build Test
 
-on:
-  push
+on: push
 
 jobs:
   build:

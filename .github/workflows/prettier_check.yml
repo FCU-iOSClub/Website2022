@@ -1,7 +1,6 @@
 name: Prettier Check
 
-on:
-  push
+on: push
 
 jobs:
   build:
