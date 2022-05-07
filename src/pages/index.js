@@ -5,14 +5,13 @@ import { Helmet } from "react-helmet";
 import { ReactComponent as LogoSvg } from "../images/svg/logo.svg";
 import { ReactComponent as AboutIosSvg } from "../images/svg/about_ios.svg";
 import { ReactComponent as IosClubDoingSvg } from "../images/svg/iosclub_doing.svg";
+import AppHeader from "../components/header";
 
 const IndexPage = () => {
   return (
     <div>
       {/* Header */}
-      <Helmet>
-        <title>iOS Club</title>
-      </Helmet>
+      <AppHeader />
       {Navbar()}
       <div className="container mx-auto break-all">
         {/* 空白區 */}
