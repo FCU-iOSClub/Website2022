@@ -1,6 +1,5 @@
 import * as React from "react";
 import { ReactComponent as LogoSvg } from "../images/svg/logo.svg";
-import { Helmet } from "react-helmet";
 import AppHeader from "../components/header";
 
 const NotFoundPage = () => {

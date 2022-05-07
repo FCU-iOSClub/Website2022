@@ -1,7 +1,6 @@
 import * as React from "react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
-import { Helmet } from "react-helmet";
 import { ReactComponent as LogoSvg } from "../images/svg/logo.svg";
 import { ReactComponent as AboutIosSvg } from "../images/svg/about_ios.svg";
 import { ReactComponent as IosClubDoingSvg } from "../images/svg/iosclub_doing.svg";
