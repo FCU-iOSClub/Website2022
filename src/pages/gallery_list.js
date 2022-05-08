@@ -15,26 +15,35 @@ const GalleryList = ({ data }) => {
             iOS Club 活動相簿
           </h1>
           <div className="flex gap-y-10 flex-col items-center">
-            {data.allGalleryJson.edges.map((item, index) => (
-              <div className="box-border grid grid-cols-2 h-72 w-full md:w-3/5 rounded-md shadow-lg border border-gray-400">
-                <div className="p-2 w-full h-full flex flex-col justify-items-center">
-                  <h2 className="mt-4 text-xl font-bold text-center">{item.node.name}</h2>
-                  <div className="font-bold text-gray-700">時間：{item.node.date}</div>
-                  <div className="font-bold text-gray-700">地點：{item.node.location}</div>
-                  <a href={ "/gallery/" + item.node.name}>
-                    <div className="w-32 text-center p-1 bg-red-500">查看更多</div>
-                  </a>
-                </div>
-                <div className="h-full w-full flex flex-row justify-center items-center">
-                  <img className="h-5/6 w-10/12 p-2 object-scale-down" src={item.node.mainPhoto} />
-                </div>
-              </div>
-            ))}
+            {data.allGalleryJson.edges.map((item, index) =>
+              galleryItem(item.node)
+            )}
           </div>
         </div>
       </div>
       <div className="h-12"></div>
-      <Footer/>
+      <Footer />
+    </div>
+  );
+};
+
+const galleryItem = (node) => {
+  return (
+    <div className="box-border grid grid-cols-2 h-72 w-full md:w-3/5 rounded-md shadow-lg border border-gray-400">
+      <div className="p-2 w-full h-full flex flex-col justify-items-center">
+        <h2 className="mt-4 text-xl font-bold text-center">{node.name}</h2>
+        <div className="font-bold text-gray-700">時間：{node.date}</div>
+        <div className="font-bold text-gray-700">地點：{node.location}</div>
+        <a href={"/gallery/" + node.name}>
+          <div className="w-32 text-center p-1 bg-red-500">查看更多</div>
+        </a>
+      </div>
+      <div className="h-full w-full flex flex-row justify-center items-center">
+        <img
+          className="h-5/6 w-10/12 p-2 object-scale-down"
+          src={node.mainPhoto}
+        />
+      </div>
     </div>
   );
 };
