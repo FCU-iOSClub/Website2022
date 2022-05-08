@@ -21,12 +21,15 @@ exports.createPages = async ({ graphql, actions }) => {
 
 const galleryQuerry = `
 query {
-  allGalleryJson {
+  allGalleryJson (
+    sort: { fields: [date], order: DESC }
+  ) {
     edges {
       node {
         id
         name
         photos
+        date
       }
     }
   }
