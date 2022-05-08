@@ -29,16 +29,20 @@ const GalleryList = ({ data }) => {
 
 const galleryItem = (node) => {
   return (
-    <div className="box-border grid grid-cols-2 h-72 w-full md:w-3/5 rounded-md shadow-lg border border-gray-400">
-      <div className="p-2 w-full h-full flex flex-col justify-items-center">
+    <div className="box-border grid md:grid-cols-2 h-fit md:h-72  w-full md:w-3/5 rounded-md shadow-lg border border-gray-400">
+      <div className="p-2 w-full h-full flex flex-col justify-items-center gap-4 md:gap-0">
         <h2 className="mt-4 text-xl font-bold text-center">{node.name}</h2>
         <div className="font-bold text-gray-700">時間：{node.date}</div>
         <div className="font-bold text-gray-700">地點：{node.location}</div>
         <a href={"/gallery/" + node.name}>
           <div className="w-32 text-center p-1 bg-red-500">查看更多</div>
         </a>
+        <img
+          className="h-5/6 w-10/12 p-2 object-cover md:hidden self-center"
+          src={node.mainPhoto}
+        />
       </div>
-      <div className="h-full w-full flex flex-row justify-center items-center">
+      <div className="h-full w-full hidden md:flex flex-row justify-center items-center">
         <img
           className="h-5/6 w-10/12 p-2 object-scale-down"
           src={node.mainPhoto}
