@@ -22,24 +22,17 @@ const menuItems = [
 
 const Navbar = () => {
   const mobileChild = (
-    <div></div>
-    // toodo
-    // <nav className="text-lg my-5 break-words">
-    //   <div className="text-3xl text-center">iOS Club</div>
-    //   <ul className="pt-10 flex flex-col text-center divide-y-2">
-    //     {menuItems.map((item, index) => (
-    //       <li key={index} className="py-2 bg-gray-100 shadow-inner">
-    //         <a href={item.url} className="text-solid">
-    //           {item.name}
-    //         </a>
-    //       </li>
-    //     ))}
-    //   </ul>
-    // </nav>
+    <nav className="py-3 bg-gray-100 w-full text-3xl font-bold shadow-md">
+      <a href="/" className="w-full pl-8">
+        iOS Club
+      </a>
+    </nav>
   );
   const desktopChild = (
     <nav className="flex py-4 text-lg px-3 md:px-8 text-solid sticky top-0 bg-white shadow-md">
-      <a href="/">iOS Club</a>
+      <a href="/" className="font-bold">
+        iOS Club
+      </a>
       <ul className="flex flex-grow justify-center space-x-10">
         {menuItems.map((item, index) => (
           <li key={index}>
@@ -52,8 +45,8 @@ const Navbar = () => {
   );
   return (
     <div>
-      <MediaQuery maxWidth={768}>{mobileChild}</MediaQuery>
-      <MediaQuery minWidth={769}>{desktopChild}</MediaQuery>
+      <MediaQuery maxWidth={767}>{mobileChild}</MediaQuery>
+      <MediaQuery minWidth={768}>{desktopChild}</MediaQuery>
     </div>
   );
 };
