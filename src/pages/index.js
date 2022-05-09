@@ -8,11 +8,11 @@ import AppHeader from "../components/header";
 
 const IndexPage = () => {
   return (
-    <div>
+    <div className=" bg-blue-300">
       {/* Header */}
       <AppHeader />
       {Navbar()}
-      <div className="container mx-auto break-all">
+      <div className="container mx-auto break-all bg-white shadow-lg">
         {/* 空白區 */}
         <div className="h-0 md:h-32"></div>
         {/* We are iOS Club */}
@@ -68,23 +68,17 @@ const IndexPage = () => {
           <div className="w-full rounded-md shadow-lg border border-neutral-50">
             <h2 className="my-8">社團課程</h2>
             <p className="my-8">每週二、四的晚上 18:30～20:30</p>
-            <p className="my-8">
-              <a href="">Learn More</a>
-            </p>
+            {learnMoreButton()}
           </div>
           <div className="w-full rounded-md shadow-lg border border-neutral-50">
             <h2 className="my-8">社團活動</h2>
             <p className="my-8">每週二、四的晚上 18:30～20:30</p>
-            <p className="my-8">
-              <a href="">Learn More</a>
-            </p>
+            {learnMoreButton()}
           </div>
           <div className="w-full rounded-md shadow-lg border border-neutral-50">
             <h2 className="my-8">歷屆競賽得獎</h2>
             <p className="my-8">每週二、四的晚上 18:30～20:30</p>
-            <p className="my-8">
-              <a href="">Learn More</a>
-            </p>
+            {learnMoreButton()}
           </div>
         </div>
       </div>
@@ -93,5 +87,11 @@ const IndexPage = () => {
     </div>
   );
 };
+
+const learnMoreButton = (href) => {
+  return <p className="my-8">
+    <a className="bg-red-300 w-fit py-3 px-6 rounded-full" href={href}>Learn More</a>
+  </p>
+}
 
 export default IndexPage;
