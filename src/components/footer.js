@@ -32,7 +32,7 @@ const communityList = [
 const Footer = () => {
   return (
     <div className="bg-blue-200 w-full py-24 px-12">
-      <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-24">
+      <div className="grid grid-cols-1 flex-col md:grid-cols-4 justify-center gap-8 md:gap-24 md:px-16">
         <div>
           <p className="font-bold">iOS Club</p>
           <p className="text-gray-600 my-6">Feng Chia University</p>
