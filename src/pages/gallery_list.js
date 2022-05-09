@@ -6,10 +6,10 @@ import Footer from "../components/footer";
 
 const GalleryList = ({ data }) => {
   return (
-    <div>
+    <div className="bg-blue-300">
       <AppHeader title="iOS Club 活動相簿" />
       {Navbar()}
-      <div className="container mx-auto break-all">
+      <div className="container p-3 md:p-0 mx-auto break-all bg-white">
         <div className="flex flex-col justify-center">
           <h1 className="text-5xl text-center my-24 font-bold">
             iOS Club 活動相簿
@@ -20,8 +20,8 @@ const GalleryList = ({ data }) => {
             )}
           </div>
         </div>
+        <div className="h-12"></div>
       </div>
-      <div className="h-12"></div>
       <Footer />
     </div>
   );
