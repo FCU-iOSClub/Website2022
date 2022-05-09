@@ -28,6 +28,7 @@ const IndexPage = () => {
           </div>
           <LogoSvg className="w-full md:w-6/12 p-10 md:p-0" fill="#696AAD" />
         </div>
+        <div className="h-32" />
         {/* About iOS Club. */}
         <div className="py-5 md:flex md:p-10 md:space-x-10 justify-center">
           <AboutIosSvg className="w-full md:w-6/12 p-10 md:p-0" />
@@ -44,6 +45,7 @@ const IndexPage = () => {
             </p>
           </div>
         </div>
+        <div className="h-32" />
         {/* iOS Club 會做什麼 */}
         <div className="py-5 md:flex md:p-10 md:space-x-10 justify-center">
           <div className=" md:w-4/12 w-full self-center">
@@ -60,6 +62,7 @@ const IndexPage = () => {
           </div>
           <IosClubDoingSvg className="w-full md:w-6/12 p-10 md:p-0" />
         </div>
+        <div className="h-32" />
         {/* iOS Club 做過什麼 */}
         <h2 className="text-center text-3xl py-3 font-bold">
           iOS Club 做過什麼
@@ -79,6 +82,7 @@ const IndexPage = () => {
             {learnMoreButton()}
           </div>
         </div>
+        <div className="h-12" />
       </div>
       {/* footer */}
       {Footer()}
