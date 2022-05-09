@@ -88,7 +88,7 @@ const IndexPage = () => {
   );
 };
 
-const learnMoreButton = (href) => {
+const learnMoreButton = (href = "/") => {
   return (
     <p className="my-8">
       <a className="bg-red-300 w-fit py-3 px-6 rounded-full" href={href}>
