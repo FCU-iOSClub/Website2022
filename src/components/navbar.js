@@ -3,19 +3,19 @@ import MediaQuery from "react-responsive";
 
 const menuItems = [
   {
-    name: "Home",
+    name: "首頁",
     url: "/",
   },
   {
-    name: "About Us",
+    name: "社團課程",
     url: "/",
   },
   {
-    name: "Activities",
-    url: "/",
+    name: "社團活動",
+    url: "/club_activities",
   },
   {
-    name: "Contact us",
+    name: "相簿",
     url: "/",
   },
 ];
@@ -33,7 +33,7 @@ const Navbar = () => {
       <a href="/" className="font-bold">
         iOS Club
       </a>
-      <ul className="flex flex-grow justify-center space-x-10">
+      <ul className="md:px-24 lg:px-60 xl:px-80 flex flex-grow justify-between space-x-10">
         {menuItems.map((item, index) => (
           <li key={index}>
             <a href={item.url}>{item.name}</a>
