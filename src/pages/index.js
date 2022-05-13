@@ -23,7 +23,7 @@ const IndexPage = () => {
               <h1 className="py-3 text-center md:text-left">iOS Club.</h1>
             </div>
             <p className="py-3 text-gray-700 text-center md:text-left">
-              一個教你從零開始打造專屬 apps 的社團
+              一個教你從零開始打造專屬 APPS 的社團
             </p>
           </div>
           <LogoSvg className="w-full md:w-6/12 p-10 md:p-0" fill="#696AAD" />
@@ -50,7 +50,12 @@ const IndexPage = () => {
         <div className="py-5 md:flex md:p-10 md:space-x-10 justify-center">
           <div className=" md:w-4/12 w-full self-center">
             <div className="text-center text-5xl font-bold">
-              <h1 className="py-3">iOS Club 會做什麼</h1>
+              <h2 className="py-3">
+                iOS Club
+              </h2>
+              <h2 className="py-3">
+                會做什麼
+              </h2>
             </div>
             <p className="py-3 text-gray-700 text-justify">
               在比賽方面， 社團鼓勵所有社員參加對外性比賽。 近年來也都在WWDC
