@@ -9,11 +9,12 @@ const NotFoundPage = () => {
     let id = setInterval(() => {
       setCountDown(countDown - 1);
     }, 1000);
+    return () => clearInterval(id);
   });
 
   // 倒數結束回首頁
   React.useEffect(() => {
-    if (countDown === 0) {
+    if (countDown === -10) {
       window.location.href = "/";
     }
   });
