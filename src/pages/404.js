@@ -14,7 +14,7 @@ const NotFoundPage = () => {
 
   // 倒數結束回首頁
   React.useEffect(() => {
-    if (countDown === -10) {
+    if (countDown === 0) {
       window.location.href = "/";
     }
   });
