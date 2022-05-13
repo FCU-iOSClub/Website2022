@@ -39,25 +39,25 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-1">
           <p className="font-bold">Our Activities</p>
-          <a href="" className="text-gray-600">
+          <a href="/404" className="text-gray-600">
             行事曆
           </a>
-          <a href="" className="text-gray-600">
+          <a href="/404" className="text-gray-600">
             活動相簿
           </a>
-          <a href="" className="text-gray-600">
+          <a href="/404" className="text-gray-600">
             報名活動
           </a>
         </div>
         <div className="flex flex-col gap-1">
           <p className="font-bold">Our Club</p>
-          <a href="" className="text-gray-600">
+          <a href="/404" className="text-gray-600">
             歷屆社團幹部
           </a>
-          <a href="" className="text-gray-600">
+          <a href="/404" className="text-gray-600">
             合作夥伴
           </a>
-          <a href="" className="text-gray-600">
+          <a href="/404" className="text-gray-600">
             相關單位
           </a>
         </div>
