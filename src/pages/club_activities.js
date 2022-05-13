@@ -3,6 +3,11 @@ import Footer from "../components/footer";
 import AppHeader from "../components/header";
 import Navbar from "../components/navbar";
 import { Icon } from "@iconify/react";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
 
 const ClubActivities = () => {
   return (
@@ -42,9 +47,86 @@ const ClubActivities = () => {
           <Icon icon="akar-icons:triangle-fill" color="#8098b5" rotate={2} />
         </div>
       </div>
+      {/* 時間軸區塊 */}
+      <div className="">
+        <VerticalTimeline lineColor="#C4D5E2">
+          {iOSClubActivities.map((item, index) => {
+            return (
+              <VerticalTimelineElement
+                className="vertical-timeline-element--work"
+                date={item.date}
+                dateClassName="text-gray-700"
+                contentStyle={{ background: "#F5E3E3" }}
+                contentArrowStyle={{ borderRight: "7px solid #F5E3E3" }}
+                iconStyle={{ background: "#8098B5" }}
+                icon={<Icon icon="akar-icons:calendar" color="#fff" />}
+              >
+                <h3 className="text-center">{item.title}</h3>
+              </VerticalTimelineElement>
+            );
+          })}
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            dateClassName="text-gray-700"
+            iconStyle={{ background: "#8098B5" }}
+            icon={<Icon icon="akar-icons:more-vertical-fill" color="#fff" />}
+          />
+        </VerticalTimeline>
+      </div>
       {Footer()}
     </div>
   );
 };
+
+const iOSClubActivities = [
+  {
+    title: "新生茶會",
+    date: "2021-09-27",
+  },
+  {
+    title: "社團博覽會",
+    date: "2021-10-07",
+  },
+  {
+    title: "講座",
+    date: "2021-11-25",
+  },
+  {
+    title: "110-1 社員大會",
+    date: "2021-11-30",
+  },
+  {
+    title: "聖誕期末聚、發送歐趴糖",
+    date: "2021-12-23",
+  },
+  {
+    title: "資訊創新營 志工營隊",
+    date: "2022-01-26",
+  },
+  {
+    title: "社團幹部訓練",
+    date: "2022-02-10 ~ 2022-02-12",
+  },
+  {
+    title: "110-2 社員大會",
+    date: "2022-02-22",
+  },
+  {
+    title: "GIS FCU 企業參訪",
+    date: "2022-03-25",
+  },
+  {
+    title: "成果發表會",
+    date: "2022-04-16",
+  },
+  {
+    title: "社長選舉大會",
+    date: "2022-04-26",
+  },
+  {
+    title: "Workshop",
+    date: "2022-05-14",
+  },
+];
 
 export default ClubActivities;
