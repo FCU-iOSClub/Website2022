@@ -15,7 +15,7 @@ const menuItems = [
     url: "/club_activities",
   },
   {
-    name: "相簿",
+    name: "社團相簿",
     url: "/",
   },
 ];
