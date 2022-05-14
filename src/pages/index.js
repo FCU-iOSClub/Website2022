@@ -5,6 +5,9 @@ import { ReactComponent as LogoSvg } from "../images/svg/logo.svg";
 import { ReactComponent as AboutIosSvg } from "../images/svg/about_ios.svg";
 import { ReactComponent as IosClubDoingSvg } from "../images/svg/iosclub_doing.svg";
 import AppHeader from "../components/header";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
+import MediaQuery from "react-responsive";
 
 const IndexPage = () => {
   return (
@@ -83,6 +86,32 @@ const IndexPage = () => {
           </div>
         </div>
         <div className="h-12" />
+        {/* Gallery */}
+        <h2 className="text-center text-3xl py-3 font-bold">社團相簿</h2>
+        <Splide
+          options={{
+            type: "loop",
+            focus: "center",
+            gap: "1rem",
+            perPage: 1,
+            padding: "20%",
+          }}
+        >
+          {imageList.map((image, index) => (
+            <SplideSlide key={index}>
+              <img src={image} className="w-full h-full object-cover" />
+            </SplideSlide>
+          ))}
+        </Splide>
+        <div className="pt-8 flex justify-center">
+          <a
+            className="bg-red-300 text-center w-fit py-3 px-6 rounded-full break-words"
+            href="/gallery_list"
+          >
+            點我看更多
+          </a>
+        </div>
+        <div className="h-12" />
       </div>
       {/* footer */}
       {Footer()}
@@ -102,5 +131,12 @@ const learnMoreButton = (href = "/") => {
     </p>
   );
 };
+
+const imageList = [
+  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/110-2%E8%AC%9B%E5%BA%A7/IMG_6941.jpg?raw=true",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ebc9b623-ab73-4b0f-ad46-77959aeb2900/public",
+  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/110-2%E8%AC%9B%E5%BA%A7/IMG_9090.jpg?raw=true",
+  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/110-2%E8%AC%9B%E5%BA%A7/IMG_9195.jpg?raw=true",
+];
 
 export default IndexPage;
