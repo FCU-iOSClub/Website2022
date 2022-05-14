@@ -104,7 +104,19 @@ const IndexPage = () => {
               </SplideSlide>
             ))}
           </Splide>
-          <div className="w-fit relative bottom-16 left-1/2 -translate-x-1/2">
+          <MediaQuery minWidth={768}>
+            <div className="w-fit relative bottom-16 left-1/2 -translate-x-1/2">
+              <a
+                className="bg-red-300 text-center py-3 px-6 rounded-full break-words"
+                href="/gallery_list"
+              >
+                <nobr>點我看更多</nobr>
+              </a>
+            </div>
+          </MediaQuery>
+        </div>
+        <MediaQuery maxWidth={767}>
+          <div className="flex w-full py-8 justify-center">
             <a
               className="bg-red-300 text-center py-3 px-6 rounded-full break-words"
               href="/gallery_list"
@@ -112,7 +124,7 @@ const IndexPage = () => {
               <nobr>點我看更多</nobr>
             </a>
           </div>
-        </div>
+        </MediaQuery>
       </div>
       {/* footer */}
       {Footer()}
