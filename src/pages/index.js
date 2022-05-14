@@ -87,7 +87,7 @@ const IndexPage = () => {
           </div>
         </div>
         {/* Gallery */}
-        <h2 className="text-center text-3xl py-12 font-bold">社團相簿</h2>
+        <h2 className="text-center text-3xl pt-24 pb-12 font-bold">社團相簿</h2>
         <div>
           <Splide
             options={{
