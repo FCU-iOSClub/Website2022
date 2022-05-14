@@ -103,6 +103,15 @@ const IndexPage = () => {
                 speed: 1.8,
                 pauseOnHover: false,
               },
+              breakpoints: {
+                768: {
+                  padding: "15%",
+                  autoScroll: {
+                    speed: 1,
+                    pauseOnHover: false,
+                  },
+                },
+              },
             }}
             extensions={{ AutoScroll }}
           >
