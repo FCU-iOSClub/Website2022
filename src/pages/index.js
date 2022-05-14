@@ -145,6 +145,7 @@ const learnMoreButton = (href = "/") => {
   );
 };
 
+// 要顯示在首頁的圖片們
 const imageList = [
   "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/110-2%E8%AC%9B%E5%BA%A7/IMG_6941.jpg?raw=true",
   "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ebc9b623-ab73-4b0f-ad46-77959aeb2900/public",
