@@ -39,7 +39,7 @@ const galleryItem = (node) => {
         </a>
         <div className="h-1 hidden md:block" /> {/*space*/}
         <img
-          className="h-5/6 w-10/12 p-2 object-cover md:hidden self-center"
+          className="w-full pb-5 object-cover md:hidden self-center"
           src={node.mainPhoto}
         />
       </div>
