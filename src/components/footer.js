@@ -71,8 +71,10 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className="pt-12 text-gray-600 text-center">
-        iOS Club 2016 - 2021 © All right reserved
+      <div className="pt-12 text-gray-600 text-center flex flex-col md:flex-row justify-center">
+        <p>iOS Club 2016 - 2022</p>
+        <p className="px-2 py-3">©</p>
+        <p>All right reserved</p>
       </div>
     </div>
   );
