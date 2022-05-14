@@ -14,10 +14,10 @@ const IndexPage = () => {
       {Navbar()}
       <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-0">
         {/* 空白區 */}
-        <div className="h-0 md:h-32"></div>
+        <div className="h-8 md:h-24"></div>
         {/* We are iOS Club */}
-        <div className="py-5 md:flex md:p-10 md:space-x-10 justify-center">
-          <div className=" md:w-4/12 w-full self-center">
+        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
+          <div className="w-full self-center">
             <div className="text-center text-5xl font-bold">
               <h1 className="py-3 text-center md:text-left">We are</h1>
               <h1 className="py-3 text-center md:text-left">iOS Club.</h1>
@@ -26,18 +26,18 @@ const IndexPage = () => {
               一個教你從零開始打造專屬 APPS 的社團
             </p>
           </div>
-          <LogoSvg className="w-full md:w-6/12 p-10 md:p-0" fill="#696AAD" />
+          <LogoSvg className="w-full p-10" fill="#696AAD" />
         </div>
-        <div className="h-32" />
+        <div className="h-8" />
         {/* About iOS Club. */}
-        <div className="py-5 md:flex md:p-10 md:space-x-10 justify-center">
-          <AboutIosSvg className="w-full md:w-6/12 p-10 md:p-0" />
-          <div className=" md:w-4/12 w-full self-center">
+        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
+          <AboutIosSvg className="w-full p-10 md:p-0 bg-cover" />
+          <div className="w-full self-center">
             <div className="text-center text-5xl font-bold">
               <h1 className="py-3">About</h1>
               <h1 className="py-3">iOS Club.</h1>
             </div>
-            <p className="py-3 text-gray-700 text-justify">
+            <p className="py-3 md:px-12 text-gray-700 text-justify">
               是全台唯二 Apple
               官方認證的社團，也是一個結合學術的志工性社團。每年寒、暑假社員們會有國際交流的機會，到海外參加
               iOS Club 官方舉辦的冬、夏令營，
@@ -47,8 +47,8 @@ const IndexPage = () => {
         </div>
         <div className="h-32" />
         {/* iOS Club 會做什麼 */}
-        <div className="py-5 md:flex md:p-10 md:space-x-10 justify-center">
-          <div className=" md:w-4/12 w-full self-center">
+        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
+          <div className="w-full self-center">
             <div className="text-center text-5xl font-bold">
               <h2 className="py-3">iOS Club</h2>
               <h2 className="py-3">會做什麼</h2>
@@ -61,7 +61,7 @@ const IndexPage = () => {
               身為志工性社團的我們，還會和相關機構及國小一同舉辦志工營隊，將在社團內所學回饋社會。
             </p>
           </div>
-          <IosClubDoingSvg className="w-full md:w-6/12 p-10 md:p-0" />
+          <IosClubDoingSvg className="w-full" />
         </div>
         <div className="h-32" />
         {/* iOS Club 做過什麼 */}
