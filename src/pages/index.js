@@ -109,7 +109,7 @@ const IndexPage = () => {
               className="bg-red-300 text-center py-3 px-6 rounded-full break-words"
               href="/gallery_list"
             >
-              點我看更多
+              <nobr>點我看更多</nobr>
             </a>
           </div>
         </div>
@@ -127,7 +127,7 @@ const learnMoreButton = (href = "/") => {
         className="bg-red-300 w-fit py-3 px-6 rounded-full break-words"
         href={href}
       >
-        Learn More
+        <nobr>Learn More</nobr>
       </a>
     </p>
   );
