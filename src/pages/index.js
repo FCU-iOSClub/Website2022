@@ -8,6 +8,7 @@ import AppHeader from "../components/header";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import MediaQuery from "react-responsive";
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 
 const IndexPage = () => {
   return (
@@ -85,9 +86,8 @@ const IndexPage = () => {
             {learnMoreButton()}
           </div>
         </div>
-        <div className="h-12" />
         {/* Gallery */}
-        <h2 className="text-center text-3xl py-3 font-bold">社團相簿</h2>
+        <h2 className="text-center text-3xl pt-24 pb-12 font-bold">社團相簿</h2>
         <div>
           <Splide
             options={{
@@ -96,7 +96,24 @@ const IndexPage = () => {
               gap: "1rem",
               perPage: 1,
               padding: "20%",
+              arrows: false,
+              drag: false,
+              pagination: false,
+              autoScroll: {
+                speed: 1.8,
+                pauseOnHover: false,
+              },
+              breakpoints: {
+                768: {
+                  padding: "15%",
+                  autoScroll: {
+                    speed: 1,
+                    pauseOnHover: false,
+                  },
+                },
+              },
             }}
+            extensions={{ AutoScroll }}
           >
             {imageList.map((image, index) => (
               <SplideSlide key={index}>
@@ -107,7 +124,7 @@ const IndexPage = () => {
           <MediaQuery minWidth={768}>
             <div className="w-fit relative bottom-16 left-1/2 -translate-x-1/2">
               <a
-                className="bg-red-300 text-center py-3 px-6 rounded-full break-words"
+                className="bg-red-300 text-center py-3 px-6 rounded-full break-words transform hover:bg-red-400 duration-200"
                 href="/gallery_list"
               >
                 <nobr>點我看更多</nobr>

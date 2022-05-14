@@ -18,6 +18,7 @@
   "dependencies": {
     "@splidejs/react-splide": "^0.7.5",
     "@splidejs/splide": "^4.0.2",
+    "@splidejs/splide-extension-auto-scroll": "^0.4.2",
     "@svgr/webpack": "^6.2.1",
     "gatsby": "^4.7.2",
     "gatsby-plugin-react-helmet": "^5.7.0",
