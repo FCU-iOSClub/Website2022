@@ -12,7 +12,7 @@ const GalleryList = ({ data }) => {
       <div className="container p-3 md:p-0 mx-auto break-all bg-white">
         <div className="flex flex-col justify-center">
           <h1 className="text-5xl text-center my-24 font-bold">
-            iOS Club 活動相簿
+            活動相簿
           </h1>
           <div className="flex gap-y-10 flex-col items-center">
             {data.allGalleryJson.edges.map((item, index) =>
