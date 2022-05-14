@@ -115,7 +115,7 @@ const IndexPage = () => {
           <MediaQuery minWidth={768}>
             <div className="w-fit relative bottom-16 left-1/2 -translate-x-1/2">
               <a
-                className="bg-red-300 text-center py-3 px-6 rounded-full break-words"
+                className="bg-red-300 text-center py-3 px-6 rounded-full break-words transform hover:bg-red-400 duration-200"
                 href="/gallery_list"
               >
                 <nobr>點我看更多</nobr>
