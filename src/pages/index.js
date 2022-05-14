@@ -88,30 +88,31 @@ const IndexPage = () => {
         <div className="h-12" />
         {/* Gallery */}
         <h2 className="text-center text-3xl py-3 font-bold">社團相簿</h2>
-        <Splide
-          options={{
-            type: "loop",
-            focus: "center",
-            gap: "1rem",
-            perPage: 1,
-            padding: "20%",
-          }}
-        >
-          {imageList.map((image, index) => (
-            <SplideSlide key={index}>
-              <img src={image} className="w-full h-full object-cover" />
-            </SplideSlide>
-          ))}
-        </Splide>
-        <div className="pt-8 flex justify-center">
-          <a
-            className="bg-red-300 text-center w-fit py-3 px-6 rounded-full break-words"
-            href="/gallery_list"
+        <div>
+          <Splide
+            options={{
+              type: "loop",
+              focus: "center",
+              gap: "1rem",
+              perPage: 1,
+              padding: "20%",
+            }}
           >
-            點我看更多
-          </a>
+            {imageList.map((image, index) => (
+              <SplideSlide key={index}>
+                <img src={image} className="w-full h-full object-cover" />
+              </SplideSlide>
+            ))}
+          </Splide>
+          <div className="w-fit relative bottom-16 left-1/2 -translate-x-1/2">
+            <a
+              className="bg-red-300 text-center py-3 px-6 rounded-full break-words"
+              href="/gallery_list"
+            >
+              點我看更多
+            </a>
+          </div>
         </div>
-        <div className="h-12" />
       </div>
       {/* footer */}
       {Footer()}
