@@ -12,7 +12,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(galleryQuerry);
   result.data.allGalleryJson.edges.forEach((edge) => {
     createPage({
-      path: `/gallery/${edge.node.name}`,
+      path: `/gallery/${edge.node.date} ${edge.node.name}`,
       component: path.resolve("src/templates/gallery.js"),
       context: edge.node,
     });

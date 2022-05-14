@@ -11,9 +11,7 @@ const GalleryList = ({ data }) => {
       {Navbar()}
       <div className="container p-3 md:p-0 mx-auto break-all bg-white">
         <div className="flex flex-col justify-center">
-          <h1 className="text-5xl text-center my-24 font-bold">
-            活動相簿
-          </h1>
+          <h1 className="text-5xl text-center my-24 font-bold">活動相簿</h1>
           <div className="flex gap-y-10 flex-col items-center">
             {data.allGalleryJson.edges.map((item, index) =>
               galleryItem(item.node)
@@ -34,7 +32,7 @@ const galleryItem = (node) => {
         <h2 className="mt-4 text-xl font-bold text-center">{node.name}</h2>
         <div className="font-bold text-gray-700">時間：{node.date}</div>
         <div className="font-bold text-gray-700">地點：{node.location}</div>
-        <a href={"/gallery/" + node.name} className="w-32">
+        <a href={"/gallery/" + node.date + " " + node.name} className="w-32">
           <div className="text-center p-1 bg-red-500">查看更多</div>
         </a>
         <div className="h-1 hidden md:block" /> {/*space*/}
