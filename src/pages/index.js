@@ -14,7 +14,7 @@ const IndexPage = () => {
       {Navbar()}
       <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-0">
         {/* 空白區 */}
-        <div className="h-8 md:h-24"></div>
+        <div className="h-20 md:h-32"></div>
         {/* We are iOS Club */}
         <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
           <div className="w-full self-center">
