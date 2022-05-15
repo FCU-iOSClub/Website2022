@@ -8,7 +8,7 @@ const menuItems = [
   },
   {
     name: "社團課程",
-    url: "/404",
+    url: "/course",
   },
   {
     name: "社團活動",
