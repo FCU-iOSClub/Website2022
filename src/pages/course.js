@@ -1,9 +1,6 @@
 import * as React from "react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
-import { ReactComponent as SwiftSvg } from "../images/svg/swift.svg";
-import { ReactComponent as LogoSvg } from "../images/svg/logo.svg";
-import { ReactComponent as FigmaSvg } from "../images/svg/figma.svg";
 import AppHeader from "../components/header";
 
 const CoursePage = () => {
@@ -26,8 +23,8 @@ const CoursePage = () => {
             <p className="py-3 text-gray-700 md:text-left text-justify">
               iOS Club 社課主要內容為利用 Xcode 開發 iOS App
               ，讓大家能透過實作了解並熟悉 Swift 語言的應用 、 SwiftUI
-              的佈局，最終達到具備獨立開發的能力。透過循序漸進的教學模式，讓大家都能從0開始輕鬆駕馭
-              App 開發，每堂社課都是收穫滿滿。
+              的佈局，最終達到具備獨立開發的能力。透過循序漸進的教學模式，讓大家都能從
+              0 開始輕鬆駕馭 App 開發，每堂社課都是收穫滿滿。
             </p>
           </div>
           <img
