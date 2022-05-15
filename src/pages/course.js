@@ -82,27 +82,18 @@ const CoursePage = () => {
           </div>
           {/* 圖卡 */}
           <div className="grid w-full gap-3 md:gap-10 grid-cols-1 md:grid-cols-3 px-3 md:px-32">
-            <div className="p-8 mx-16 md:mx-3 md:w-full border-gray-300 border shadow-lg rounded-lg">
-              <h3 className="text-3xl font-bold text-center">Swift UI</h3>
-              <img
-                className="w-full p-12"
-                src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/8aac93a7-b803-4e20-90dc-fb9a6077c100/public"
-              />
-            </div>
-            <div className="p-8 mx-16 md:mx-3 md:w-full border-gray-300 border shadow-lg rounded-lg">
-              <h3 className="text-3xl font-bold text-center">Playground</h3>
-              <img
-                className="w-full p-12"
-                src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/2a9e9a09-2e25-4946-5b94-599e8a56f000/public"
-              />
-            </div>
-            <div className="p-8 mx-16 md:mx-3 md:w-full border-gray-300 border shadow-lg rounded-lg">
-              <h3 className="text-3xl font-bold text-center">mBot</h3>
-              <img
-                className="w-full p-12"
-                src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/6d5f310f-9af8-4be6-d1a7-7fdff13ea700/public"
-              />
-            </div>
+            {courseCard(
+              "Swift UI",
+              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/8aac93a7-b803-4e20-90dc-fb9a6077c100/public"
+            )}
+            {courseCard(
+              "Playground",
+              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/2a9e9a09-2e25-4946-5b94-599e8a56f000/public"
+            )}
+            {courseCard(
+              "mBot",
+              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/6d5f310f-9af8-4be6-d1a7-7fdff13ea700/public"
+            )}
           </div>
         </div>
         <div className="h-20 md:h-40" /> {/* 空白區 */}
@@ -117,27 +108,18 @@ const CoursePage = () => {
           </div>
           {/* 圖卡 */}
           <div className="grid w-full gap-3 md:gap-10 grid-cols-1 md:grid-cols-3 px-3 md:px-32">
-            <div className="p-8 mx-16 md:mx-3 md:w-full border-gray-300 border shadow-lg rounded-lg">
-              <h3 className="text-3xl font-bold text-center">Keynote</h3>
-              <img
-                className="w-full p-12"
-                src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/5a8691b7-082d-46f5-68f6-5b15955f2900/public"
-              />
-            </div>
-            <div className="p-8 mx-16 md:mx-3 md:w-full border-gray-300 border shadow-lg rounded-lg">
-              <h3 className="text-3xl font-bold text-center">Figma</h3>
-              <img
-                className="w-full p-12"
-                src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/a8142fb7-3fc1-4250-2b58-ed03c0a13400/public"
-              />
-            </div>
-            <div className="p-8 mx-16 md:mx-3 md:w-full border-gray-300 border shadow-lg rounded-lg">
-              <h3 className="text-3xl font-bold text-center">流程圖</h3>
-              <img
-                className="w-full p-12"
-                src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/601c3805-3ce6-4c94-c1ce-8935b141f400/public"
-              />
-            </div>
+            {courseCard(
+              "Keynote",
+              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/8aac93a7-b803-4e20-90dc-fb9a6077c100/public"
+            )}
+            {courseCard(
+              "流程圖",
+              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/a8142fb7-3fc1-4250-2b58-ed03c0a13400/public"
+            )}
+            {courseCard(
+              "Swift UI",
+              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/601c3805-3ce6-4c94-c1ce-8935b141f400/public"
+            )}
           </div>
           <div className="h-20 md:h-32" /> {/* 空白區 */}
         </div>
@@ -158,6 +140,15 @@ const learnMoreButton = (href = "/") => {
         Learn More
       </a>
     </p>
+  );
+};
+
+const courseCard = (title, img) => {
+  return (
+    <div className="p-8 mx-5 md:mx-3 md:w-full border-gray-300 border shadow-lg rounded-lg">
+      <h3 className="text-3xl pb-8 md:p-0 font-bold text-center">{title}</h3>
+      <img className="w-full p-2 md:p-12" src={img} />
+    </div>
   );
 };
 
