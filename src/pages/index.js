@@ -14,7 +14,7 @@ const IndexPage = () => {
       {Navbar()}
       <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-0">
         {/* 空白區 */}
-        <div className="h-8 md:h-24"></div>
+        <div className="h-20 md:h-32"></div>
         {/* We are iOS Club */}
         <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
           <div className="w-full self-center">
@@ -31,7 +31,7 @@ const IndexPage = () => {
         <div className="h-8" />
         {/* About iOS Club. */}
         <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
-          <AboutIosSvg className="w-full p-10 md:p-0 bg-cover" />
+          <AboutIosSvg className="w-full p-10 md:p-0 bg-cover hidden md:block" />
           <div className="w-full self-center">
             <div className="text-center text-5xl font-bold">
               <h1 className="py-3">About</h1>
@@ -44,6 +44,7 @@ const IndexPage = () => {
               和不同國家的學生進行合作活動與技術交流。
             </p>
           </div>
+          <AboutIosSvg className="w-full p-10 md:p-0 bg-cover md:hidden" />
         </div>
         <div className="h-32" />
         {/* iOS Club 會做什麼 */}
@@ -76,10 +77,14 @@ const IndexPage = () => {
           </div>
           <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
             <h2 className="my-8 text-xl font-bold">社團活動</h2>
+            <p className="px-2 my-8">
+              想知道 iOS Club 每年都有哪些精采活動嗎？
+            </p>
             {learnMoreButton("/club_activities")}
           </div>
           <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
-            <h2 className="my-8 text-xl font-bold">歷屆競賽得獎</h2>
+            <h2 className="my-8 px-2 text-xl font-bold">比賽 &amp; 志工</h2>
+            <p className="my-8">每年參加競賽 &amp; 各種國中小志工</p>
             {learnMoreButton("/404")}
           </div>
         </div>
