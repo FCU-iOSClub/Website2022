@@ -57,7 +57,7 @@ const Footer = () => {
           <a href="/contest" className="text-gray-100">
             競賽得獎
           </a>
-          <a href="/404" className="text-gray-100">
+          <a href="/companion" className="text-gray-100">
             相關單位
           </a>
         </div>
