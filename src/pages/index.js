@@ -5,6 +5,10 @@ import { ReactComponent as LogoSvg } from "../images/svg/logo.svg";
 import { ReactComponent as AboutIosSvg } from "../images/svg/about_ios.svg";
 import { ReactComponent as IosClubDoingSvg } from "../images/svg/iosclub_doing.svg";
 import AppHeader from "../components/header";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
+import MediaQuery from "react-responsive";
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 
 const IndexPage = () => {
   return (
@@ -89,6 +93,62 @@ const IndexPage = () => {
           </div>
         </div>
         <div className="h-12" />
+        {/* Gallery */}
+        <h2 className="text-center text-3xl pt-24 pb-12 font-bold">社團相簿</h2>
+        <div>
+          <Splide
+            options={{
+              type: "loop",
+              focus: "center",
+              gap: "1rem",
+              perPage: 1,
+              padding: "20%",
+              arrows: false,
+              drag: false,
+              pagination: false,
+              autoScroll: {
+                speed: 1.8,
+                pauseOnHover: false,
+              },
+              breakpoints: {
+                768: {
+                  padding: "15%",
+                  autoScroll: {
+                    speed: 1,
+                    pauseOnHover: false,
+                  },
+                },
+              },
+            }}
+            extensions={{ AutoScroll }}
+          >
+            {imageList.map((image, index) => (
+              <SplideSlide key={index}>
+                <img src={image} className="w-full h-full object-cover" />
+              </SplideSlide>
+            ))}
+          </Splide>
+          <MediaQuery minWidth={768}>
+            <div className="w-fit relative bottom-16 left-1/2 -translate-x-1/2">
+              <a
+                className="bg-red-300 text-center py-3 px-6 rounded-full break-words transform hover:bg-red-400 duration-200"
+                href="/gallery_list"
+              >
+                <nobr>點我看更多</nobr>
+              </a>
+            </div>
+          </MediaQuery>
+        </div>
+        <MediaQuery maxWidth={767}>
+          <div className="flex w-full py-8 justify-center">
+            <a
+              className="bg-red-300 text-center py-3 px-6 rounded-full break-words"
+              href="/gallery_list"
+            >
+              <nobr>點我看更多</nobr>
+            </a>
+          </div>
+        </MediaQuery>
       </div>
       {/* footer */}
       {Footer()}
@@ -103,10 +163,18 @@ const learnMoreButton = (href = "/") => {
         className="bg-red-300 w-fit py-3 px-6 rounded-full break-words"
         href={href}
       >
-        Learn More
+        <nobr>Learn More</nobr>
       </a>
     </p>
   );
 };
+
+// 要顯示在首頁的圖片們
+const imageList = [
+  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/110-2%E8%AC%9B%E5%BA%A7/IMG_6941.jpg?raw=true",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ebc9b623-ab73-4b0f-ad46-77959aeb2900/public",
+  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/110-2%E8%AC%9B%E5%BA%A7/IMG_9090.jpg?raw=true",
+  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/110-2%E8%AC%9B%E5%BA%A7/IMG_9195.jpg?raw=true",
+];
 
 export default IndexPage;

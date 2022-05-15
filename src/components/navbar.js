@@ -16,7 +16,7 @@ const menuItems = [
   },
   {
     name: "社團相簿",
-    url: "/404",
+    url: "/gallery_list",
   },
 ];
 

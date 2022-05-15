@@ -44,6 +44,27 @@ Commit 前養成好習慣，自動排版一下
 npm run prettier
 ```
 
+## 活動相簿
+
+在 `/src/data/gallery` 下的 Json 檔案會被產生到相簿中。
+
+範例 Json `2022-09-25 GIS FCU 企業參訪.json`：
+
+```json
+{
+  "name": "GIS FCU 企業參訪", // 活動名稱
+  "date": "2022-03-25", // 活動日期
+  // 主要相片
+  "mainPhoto": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ebc9b623-ab73-4b0f-ad46-77959aeb2900/public",
+  "location": "FCU", // 活動地點
+  "photos": [
+    // 所有相片
+    "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ebc9b623-ab73-4b0f-ad46-77959aeb2900/public",
+    "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ebc9b623-ab73-4b0f-ad46-77959aeb2900/public"
+  ]
+}
+```
+
 ## Icon
 
 Icon 使用 [Iconify](https://iconify.design)。

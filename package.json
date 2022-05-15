@@ -16,10 +16,15 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@splidejs/react-splide": "^0.7.5",
+    "@splidejs/splide": "^4.0.2",
+    "@splidejs/splide-extension-auto-scroll": "^0.4.2",
     "@svgr/webpack": "^6.2.1",
     "gatsby": "^4.7.2",
     "gatsby-plugin-react-helmet": "^5.7.0",
     "gatsby-plugin-svgr": "^3.0.0-beta.0",
+    "gatsby-source-filesystem": "^4.13.0",
+    "gatsby-transformer-json": "^4.13.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",

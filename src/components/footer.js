@@ -42,7 +42,7 @@ const Footer = () => {
           <a href="/404" className="text-gray-600">
             行事曆
           </a>
-          <a href="/404" className="text-gray-600">
+          <a href="/gallery_list" className="text-gray-600">
             活動相簿
           </a>
           <a href="/404" className="text-gray-600">
