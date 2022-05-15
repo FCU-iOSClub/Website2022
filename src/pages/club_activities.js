@@ -14,7 +14,7 @@ const ClubActivities = () => {
     <div>
       <AppHeader title="iOS Club - 社團活動" />
       <Navbar />
-      <div className="h-3 md:h-32" />
+      <div className="h-32" /> {/* 空白區 */}
       <div className="px-3 md:px-32">
         <h1 className="hidden">iOS Club 社團活動</h1>
         <div className="grid grid-cols-1 md:grid-cols-2">
