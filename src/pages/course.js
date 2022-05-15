@@ -14,35 +14,41 @@ const CoursePage = () => {
       {Navbar()}
       <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-0">
         {/* 空白區 */}
-        <div className="h-8 md:h-24"></div>
-
-        <div className="py-2 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
+        <div className="h-16 md:h-32"></div>
+        {/* 設課大標 */}
+        <div className="py-2 md:px-32 grid grid-rows-1 md:grid-cols-2 gap-2 md:gap-16 md:p-10 justify-center items-center">
           <div className="w-full self-center">
-            <div className="text-center text-5xl font-[1000]">
+            <div className="text-center text-5xl font-bold">
               <h1 className="text-center md:text-left">iOS Club</h1>
               <h1 className="py-3 text-center md:text-left">社團課程</h1>
-              <div class="h-2 w-9/10 my-4 bg-blue-300"></div>
+              <div className="h-2 my-4 bg-blue-300" /> {/* 橫槓 */}
             </div>
-            <p className="py-3 text-gray-700 text-center md:text-left">
+            <p className="py-3 text-gray-700 md:text-left text-justify">
               iOS Club 社課主要內容為利用 Xcode 開發 iOS App
               ，讓大家能透過實作了解並熟悉 Swift 語言的應用 、 SwiftUI
               的佈局，最終達到具備獨立開發的能力。透過循序漸進的教學模式，讓大家都能從0開始輕鬆駕馭
               App 開發，每堂社課都是收穫滿滿。
             </p>
           </div>
-          <LogoSvg className="w-full p-3" fill="#696AAD" />
+          <img
+            className="place-self-center object-cover w-full"
+            src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/e9ab7dbf-31a8-4c1a-7fed-d805d7a26500/public"
+          />
         </div>
         <div className="h-8" />
-        {/* About iOS Club. */}
-        <div className="py-2 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
-          <LogoSvg className="w-full p-3" fill="#696AAD" />
+        {/* 設課團隊 */}
+        <div className="py-2 md:px-32 grid grid-rows-1 md:grid-cols-2 gap-2 md:gap-16 md:p-10 justify-center items-center">
+          <img
+            className="place-self-center object-cover w-full hidden md:block"
+            src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/702555d9-8ee5-44c9-ee1c-068c1fbce500/public"
+          />
           <div className="w-full self-center text-justify">
-            <div className="text-center text-5xl font-[1000]">
+            <div className="text-center text-5xl font-bold">
               <h1 className="text-center md:text-left">iOS Club</h1>
               <h1 className="py-3 text-center md:text-left">社課團隊</h1>
-              <div class="h-2 w-9/10  my-4 bg-blue-300"></div>
+              <div className="h-2 my-4 bg-blue-300" /> {/* 橫槓 */}
             </div>
-            <div className="py-4 text-gray-700 text-center md:text-left">
+            <div className="py-4 text-gray-700 text-justify md:text-left">
               <p>
                 iOS Club 主要的課程為 Swift UI 的 App 設計，除此之外也有
                 Playground 和 mBot
@@ -58,64 +64,83 @@ const CoursePage = () => {
                 社課期間其餘幹部皆擔任助教身分，協助社員解決課程中遇到的任何問題，讓參加社課的社員們都能順利的學習與成長。
               </p>
             </div>
+            <img
+              className="place-self-center object-cover w-full md:hidden block"
+              src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/702555d9-8ee5-44c9-ee1c-068c1fbce500/public"
+            />
           </div>
         </div>
         <div className="h-20" />
         {/*技術課*/}
-        <h2 className="text-center text-3xl py-3 font-bold">技術課</h2>
-        <div class="h-2 w-1/4 my-4 bg-blue-300 content-center"></div>
-        <div className="py-5 px-20 md:grid md:grid-cols-3 md:gap-3 justify-center text-center">
-          <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50">
-            <h2 className="my-8 text-xl font-bold">Swift UI</h2>
-            <SwiftSvg icon="swift" className="w-full" />
+        <div>
+          {/* 標題 */}
+          <div className="w-full flex flex-col items-center">
+            <h2 className="text-center text-5xl py-3 font-bold">技術課</h2>
+            <div className="h-2 w-full md:w-2/12 my-4 bg-blue-300" />{" "}
+            {/* 橫槓 */}
+            <div className="h-8" /> {/* 空白區 */}
           </div>
-          <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
-            <h2 className="my-8 text-xl font-bold">Playground</h2>
-          </div>
-          <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
-            <h2 className="my-8 text-xl font-bold">mBot</h2>
-          </div>
-        </div>
-        <div className="h-32" />
-
-        {/*設計課*/}
-
-        <h2 className="text-center text-3xl py-1 font-bold">設計課</h2>
-        <div class="h-2 w-1/6 my-4 bg-blue-300"></div>
-        <div className="py-5 px-20 md:grid md:grid-cols-3 md:gap-3 justify-center text-center">
-          <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50">
-            <h2 className="my-8 text-xl font-bold">Keynote</h2>
-          </div>
-          <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
-            <h2 className="my-8 text-xl font-bold">Figma</h2>
-            <FigmaSvg className="w-full" />
-          </div>
-          <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
-            <h2 className="my-8 text-xl font-bold">流程圖</h2>
-          </div>
-        </div>
-        <div className="h-32" />
-
-        {/* iOS Club 做過什麼 */}
-        <h2 className="text-center text-3xl py-3 font-bold">
-          iOS Club 做過什麼
-        </h2>
-        <div className="py-5 px-5 md:grid md:grid-cols-3 md:gap-3 justify-center text-center">
-          <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50">
-            <h2 className="my-8 text-xl font-bold">社團課程</h2>
-            <p className="my-8">每週二、四的晚上 18:30～20:30</p>
-            {learnMoreButton("/course")}
-          </div>
-          <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
-            <h2 className="my-8 text-xl font-bold">社團活動</h2>
-            {learnMoreButton("/club_activities")}
-          </div>
-          <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
-            <h2 className="my-8 text-xl font-bold">歷屆競賽得獎</h2>
-            {learnMoreButton("/404")}
+          {/* 圖卡 */}
+          <div className="grid w-full gap-3 md:gap-10 grid-cols-1 md:grid-cols-3 px-3 md:px-32">
+            <div className="p-8 mx-16 md:mx-3 md:w-full border-gray-300 border shadow-lg rounded-lg">
+              <h3 className="text-3xl font-bold text-center">Swift UI</h3>
+              <img
+                className="w-full p-12"
+                src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/8aac93a7-b803-4e20-90dc-fb9a6077c100/public"
+              />
+            </div>
+            <div className="p-8 mx-16 md:mx-3 md:w-full border-gray-300 border shadow-lg rounded-lg">
+              <h3 className="text-3xl font-bold text-center">Playground</h3>
+              <img
+                className="w-full p-12"
+                src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/2a9e9a09-2e25-4946-5b94-599e8a56f000/public"
+              />
+            </div>
+            <div className="p-8 mx-16 md:mx-3 md:w-full border-gray-300 border shadow-lg rounded-lg">
+              <h3 className="text-3xl font-bold text-center">mBot</h3>
+              <img
+                className="w-full p-12"
+                src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/6d5f310f-9af8-4be6-d1a7-7fdff13ea700/public"
+              />
+            </div>
           </div>
         </div>
-        <div className="h-12" />
+        <div className="h-20 md:h-40" /> {/* 空白區 */}
+        {/* 設計課 */}
+        <div>
+          {/* 標題 */}
+          <div className="w-full flex flex-col items-center">
+            <h2 className="text-center text-5xl py-3 font-bold">設計課</h2>
+            <div className="h-2 w-full md:w-2/12 my-4 bg-blue-300" />{" "}
+            {/* 橫槓 */}
+            <div className="h-8" /> {/* 空白區 */}
+          </div>
+          {/* 圖卡 */}
+          <div className="grid w-full gap-3 md:gap-10 grid-cols-1 md:grid-cols-3 px-3 md:px-32">
+            <div className="p-8 mx-16 md:mx-3 md:w-full border-gray-300 border shadow-lg rounded-lg">
+              <h3 className="text-3xl font-bold text-center">Keynote</h3>
+              <img
+                className="w-full p-12"
+                src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/5a8691b7-082d-46f5-68f6-5b15955f2900/public"
+              />
+            </div>
+            <div className="p-8 mx-16 md:mx-3 md:w-full border-gray-300 border shadow-lg rounded-lg">
+              <h3 className="text-3xl font-bold text-center">Figma</h3>
+              <img
+                className="w-full p-12"
+                src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/a8142fb7-3fc1-4250-2b58-ed03c0a13400/public"
+              />
+            </div>
+            <div className="p-8 mx-16 md:mx-3 md:w-full border-gray-300 border shadow-lg rounded-lg">
+              <h3 className="text-3xl font-bold text-center">流程圖</h3>
+              <img
+                className="w-full p-12"
+                src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/601c3805-3ce6-4c94-c1ce-8935b141f400/public"
+              />
+            </div>
+          </div>
+          <div className="h-20 md:h-32" /> {/* 空白區 */}
+        </div>
       </div>
       {/* footer */}
       {Footer()}

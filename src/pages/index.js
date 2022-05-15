@@ -72,7 +72,7 @@ const IndexPage = () => {
           <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50">
             <h2 className="my-8 text-xl font-bold">社團課程</h2>
             <p className="my-8">每週二、四的晚上 18:30～20:30</p>
-            {learnMoreButton("/404")}
+            {learnMoreButton("/course")}
           </div>
           <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
             <h2 className="my-8 text-xl font-bold">社團活動</h2>
