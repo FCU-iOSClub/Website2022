@@ -36,7 +36,9 @@ const Navbar = () => {
       <ul className="md:px-24 lg:px-60 xl:px-80 flex flex-grow justify-between space-x-10">
         {menuItems.map((item, index) => (
           <li key={index}>
-            <a href={item.url}>{item.name}</a>
+            <a href={item.url} className="hover:underline underline-offset-8">
+              {item.name}
+            </a>
           </li>
         ))}
       </ul>
