@@ -3,7 +3,9 @@ import { ReactComponent as LogoSvg } from "../images/svg/logo.svg";
 import AppHeader from "../components/header";
 
 const NotFoundPage = () => {
+  // 初始化倒數
   const [countDown, setCountDown] = React.useState(5);
+
   // 開始倒數
   React.useEffect(() => {
     let id = setInterval(() => {
@@ -14,7 +16,7 @@ const NotFoundPage = () => {
 
   // 倒數結束回首頁
   React.useEffect(() => {
-    if (countDown === 0) {
+    if (countDown <= 0) {
       window.location.href = "/";
     }
   });
@@ -30,8 +32,13 @@ const NotFoundPage = () => {
           <LogoSvg className="h-48 w-48 md:w-32 md:h-32 text-white fill-current" />
           <h2 className="text-white text-xl md:text-3xl">網頁努力建置中...</h2>
         </div>
-        <p className="text-white">在 {countDown} 秒後幫您回首頁</p>
-
+        <p className="py-3 text-white">在 {countDown} 秒後幫您回首頁</p>
+        <a
+          href="/"
+          className="pt-3 underline underline-offset-2 text-white font-blod"
+        >
+          ..或點我回首頁
+        </a>
         <div className="mt-10">
           <h2 className="text-lg text-white">404 Not Found</h2>
         </div>
