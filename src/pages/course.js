@@ -14,7 +14,7 @@ const CoursePage = () => {
       {Navbar()}
       <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-0">
         {/* 空白區 */}
-        <div className="h-16 md:h-32"></div>
+        <div className="h-32" />
         {/* 設課大標 */}
         <div className="py-2 md:px-32 grid grid-rows-1 md:grid-cols-2 gap-2 md:gap-16 md:p-10 justify-center items-center">
           <div className="w-full self-center">
