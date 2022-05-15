@@ -22,6 +22,7 @@ const CoursePage = () => {
                         <div className="text-center text-5xl font-[1000]">
                             <h1 className="text-center md:text-left">iOS Club</h1>
                             <h1 className="py-3 text-center md:text-left">社團課程</h1>
+                            <div class="h-2 w-9/10 my-4 bg-blue-300"></div>
                         </div>
                         <p className="py-3 text-gray-700 text-center md:text-left">
                             iOS Club 社課主要內容為利用 Xcode 開發 iOS App ，讓大家能透過實作了解並熟悉 Swift 語言的應用 、 SwiftUI 的佈局，最終達到具備獨立開發的能力。透過循序漸進的教學模式，讓大家都能從0開始輕鬆駕馭 App 開發，每堂社課都是收穫滿滿。
@@ -37,6 +38,7 @@ const CoursePage = () => {
                         <div className="text-center text-5xl font-[1000]">
                             <h1 className="text-center md:text-left">iOS Club</h1>
                             <h1 className="py-3 text-center md:text-left">社課團隊</h1>
+                            <div class="h-2 w-9/10  my-4 bg-blue-300"></div>
                         </div>
                         <div className="py-4 text-gray-700 text-center md:text-left">
                             <p>
@@ -58,6 +60,7 @@ const CoursePage = () => {
                 <h2 className="text-center text-3xl py-3 font-bold">
                     技術課
                 </h2>
+                <div class="h-2 w-1/4 my-4 bg-blue-300 content-center"></div>
                 <div className="py-5 px-20 md:grid md:grid-cols-3 md:gap-3 justify-center text-center">
                     <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50">
                         <h2 className="my-8 text-xl font-bold">Swift UI</h2>
@@ -73,9 +76,11 @@ const CoursePage = () => {
                 <div className="h-32" />
 
                 {/*設計課*/}
-                <h2 className="text-center text-3xl py-3 font-bold">
+                
+                <h2 className="text-center text-3xl py-1 font-bold">
                     設計課
                 </h2>
+                <div class="h-2 w-1/6 my-4 bg-blue-300"></div>
                 <div className="py-5 px-20 md:grid md:grid-cols-3 md:gap-3 justify-center text-center">
                     <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50">
                         <h2 className="my-8 text-xl font-bold">Keynote</h2>
