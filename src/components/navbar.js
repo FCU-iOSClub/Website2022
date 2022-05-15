@@ -22,14 +22,14 @@ const menuItems = [
 
 const Navbar = () => {
   const mobileChild = (
-    <nav className="fixed py-3 bg-gray-100 w-full text-3xl font-bold shadow-md">
+    <nav className="fixed py-3 bg-gray-100 w-full text-3xl font-bold shadow-md z-50">
       <a href="/" className="w-full pl-8">
         iOS Club
       </a>
     </nav>
   );
   const desktopChild = (
-    <nav className="fixed flex py-4 text-lg px-3 md:px-8 text-solid w-screen top-0 bg-white shadow-md">
+    <nav className="fixed flex py-4 text-lg px-3 md:px-8 text-solid w-screen top-0 bg-white shadow-md z-50">
       <a href="/" className="font-bold">
         iOS Club
       </a>
