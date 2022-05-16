@@ -6,7 +6,7 @@ import Navbar from "../components/navbar";
 const Gallery = (props) => {
   const context = props.pageContext;
   return (
-    <div className="bg-blue-300">
+    <div className="bg-iosbgblue">
       <AppHeader title={context.name} />
       {Navbar()}
       <div className="container mx-auto break-all bg-white">

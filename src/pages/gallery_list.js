@@ -6,7 +6,7 @@ import Footer from "../components/footer";
 
 const GalleryList = ({ data }) => {
   return (
-    <div className="bg-blue-300">
+    <div className="bg-iosbgblue">
       <AppHeader title="iOS Club 活動相簿" />
       {Navbar()}
       <div className="container p-3 md:p-0 mx-auto break-all bg-white">
