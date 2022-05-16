@@ -17,7 +17,7 @@ const Gallery = (props) => {
         <p className="py-2 text-center w-full text-red-400 font-bold">
           {context.date}
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-4 p-4 gap-4 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-4 p-4 gap-4 items-start">
           {context.photos.map((item, index) => (
             <a href={item}>
               <img src={item} />
