@@ -5,7 +5,7 @@ import AppHeader from "../components/header";
 
 const CoursePage = () => {
   return (
-    <div className=" bg-blue-300">
+    <div className=" bg-iosbgblue">
       {/* Header */}
       <AppHeader />
       {Navbar()}

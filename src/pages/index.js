@@ -12,7 +12,7 @@ import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 
 const IndexPage = () => {
   return (
-    <div className=" bg-blue-300">
+    <div className="bg-iosbgblue">
       {/* Header */}
       <AppHeader />
       {Navbar()}
