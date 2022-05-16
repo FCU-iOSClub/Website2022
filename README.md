@@ -53,7 +53,7 @@ npm run prettier
 ```json
 {
   "name": "GIS FCU 企業參訪", // 活動名稱
-  "date": "2022-03-25", // 活動日期
+  "date": "2022-03-25", // 活動日期 月、日務必補零到兩位數
   // 主要相片
   "mainPhoto": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ebc9b623-ab73-4b0f-ad46-77959aeb2900/public",
   "location": "FCU", // 活動地點
@@ -64,6 +64,8 @@ npm run prettier
   ]
 }
 ```
+
+目前大部分的照片都放在 GitHub 的 FCU-iOSClub/Website2022ImageBed 上。
 
 ## Icon
 
