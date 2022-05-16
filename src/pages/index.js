@@ -17,8 +17,7 @@ const IndexPage = () => {
       <AppHeader />
       {Navbar()}
       <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-0">
-        {/* 空白區 */}
-        <div className="h-20 md:h-32"></div>
+        <div className="h-20 md:h-32" /> {/* 空白 */}
         {/* We are iOS Club */}
         <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
           <div className="w-full self-center">
@@ -68,31 +67,7 @@ const IndexPage = () => {
           </div>
           <IosClubDoingSvg className="w-full" />
         </div>
-        <div className="h-32" />
-        {/* iOS Club 做過什麼 */}
-        <h2 className="text-center text-3xl py-3 font-bold">
-          iOS Club 做過什麼
-        </h2>
-        <div className="py-5 px-5 md:grid md:grid-cols-3 md:gap-3 justify-center text-center">
-          <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50">
-            <h2 className="my-8 text-xl font-bold">社團課程</h2>
-            <p className="my-8">每週二、四的晚上 18:30～20:30</p>
-            {learnMoreButton("/course")}
-          </div>
-          <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
-            <h2 className="my-8 text-xl font-bold">社團活動</h2>
-            <p className="px-2 my-8">
-              想知道 iOS Club 每年都有哪些精采活動嗎？
-            </p>
-            {learnMoreButton("/club_activities")}
-          </div>
-          <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
-            <h2 className="my-8 px-2 text-xl font-bold">比賽 &amp; 志工</h2>
-            <p className="my-8">每年參加競賽 &amp; 各種國中小志工</p>
-            {learnMoreButton("/404")}
-          </div>
-        </div>
-        <div className="h-12" />
+        <div className="h-16" /> {/* 空白 */}
         {/* Gallery */}
         <h2 className="text-center text-3xl pt-24 pb-12 font-bold">社團相簿</h2>
         <div>
@@ -149,6 +124,31 @@ const IndexPage = () => {
             </a>
           </div>
         </MediaQuery>
+        {/* iOS Club 做過什麼 */}
+        <div className="h-20 md:h-32" /> {/* 空白 */}
+        <h2 className="text-center text-3xl py-3 font-bold">
+          iOS Club 做過什麼
+        </h2>
+        <div className="py-5 px-5 md:grid md:grid-cols-3 md:gap-3 justify-center text-center">
+          <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50">
+            <h2 className="my-8 text-xl font-bold">社團課程</h2>
+            <p className="my-8">每週二、四的晚上 18:30～20:30</p>
+            {learnMoreButton("/course")}
+          </div>
+          <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
+            <h2 className="my-8 text-xl font-bold">社團活動</h2>
+            <p className="px-2 my-8">
+              想知道 iOS Club 每年都有哪些精采活動嗎？
+            </p>
+            {learnMoreButton("/club_activities")}
+          </div>
+          <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
+            <h2 className="my-8 px-2 text-xl font-bold">比賽 &amp; 志工</h2>
+            <p className="my-8">每年參加競賽 &amp; 各種國中小志工</p>
+            {learnMoreButton("/404")}
+          </div>
+        </div>
+        <div className="h-12 md:h-32" /> {/* 空白 */}
       </div>
       {/* footer */}
       {Footer()}
