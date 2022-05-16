@@ -1,5 +1,4 @@
 import * as React from "react";
-import MediaQuery from "react-responsive";
 
 const menuItems = [
   {
@@ -47,8 +46,8 @@ const Navbar = () => {
   );
   return (
     <div>
-      <MediaQuery maxWidth={767}>{mobileChild}</MediaQuery>
-      <MediaQuery minWidth={768}>{desktopChild}</MediaQuery>
+      <div className="block md:hidden">{mobileChild}</div>
+      <div className="hidden md:block">{desktopChild}</div>
     </div>
   );
 };

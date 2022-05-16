@@ -7,7 +7,6 @@ import { ReactComponent as IosClubDoingSvg } from "../images/svg/iosclub_doing.s
 import AppHeader from "../components/header";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-import MediaQuery from "react-responsive";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 
 const IndexPage = () => {
@@ -103,27 +102,23 @@ const IndexPage = () => {
               </SplideSlide>
             ))}
           </Splide>
-          <MediaQuery minWidth={768}>
-            <div className="w-fit relative bottom-16 left-1/2 -translate-x-1/2">
-              <a
-                className="bg-red-300 text-center py-3 px-6 rounded-full break-words transform hover:bg-red-400 duration-200"
-                href="/gallery_list"
-              >
-                <nobr>點我看更多</nobr>
-              </a>
-            </div>
-          </MediaQuery>
-        </div>
-        <MediaQuery maxWidth={767}>
-          <div className="flex w-full py-8 justify-center">
+          <div className="hidden md:block w-fit relative bottom-16 left-1/2 -translate-x-1/2">
             <a
-              className="bg-red-300 text-center py-3 px-6 rounded-full break-words"
+              className="bg-red-300 text-center py-3 px-6 rounded-full break-words transform hover:bg-red-400 duration-200"
               href="/gallery_list"
             >
               <nobr>點我看更多</nobr>
             </a>
           </div>
-        </MediaQuery>
+        </div>
+        <div className="md:hidden flex w-full py-8 justify-center">
+          <a
+            className="bg-red-300 text-center py-3 px-6 rounded-full break-words"
+            href="/gallery_list"
+          >
+            <nobr>點我看更多</nobr>
+          </a>
+        </div>
         {/* iOS Club 做過什麼 */}
         <div className="h-20 md:h-32" /> {/* 空白 */}
         <h2 className="text-center text-3xl py-3 font-bold">
