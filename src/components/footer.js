@@ -39,14 +39,14 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-1">
           <p className="font-bold text-gray-900">Our Activities</p>
-          <a href="/404" className="text-gray-100">
-            行事曆
+          <a href="/course" className="text-gray-100">
+            社團課程
           </a>
           <a href="/gallery_list" className="text-gray-100">
             活動相簿
           </a>
-          <a href="/404" className="text-gray-100">
-            報名活動
+          <a href="/club_activities" className="text-gray-100">
+            社團活動
           </a>
         </div>
         <div className="flex flex-col gap-1">
@@ -55,7 +55,7 @@ const Footer = () => {
             歷屆社團幹部
           </a>
           <a href="/404" className="text-gray-100">
-            合作夥伴
+            競賽得獎
           </a>
           <a href="/404" className="text-gray-100">
             相關單位
