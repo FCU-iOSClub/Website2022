@@ -24,6 +24,7 @@ const Gallery = (props) => {
             </a>
           ))}
         </div>
+        <div className="h-8" />
       </div>
       {Footer()}
     </div>
