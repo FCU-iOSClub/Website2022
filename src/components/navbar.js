@@ -33,7 +33,7 @@ const Navbar = () => {
       <div className="flex gap-2">
         {menuItems.map((item, index) => (
           <div
-            className="p-2 bg-iosbgblue rounded-xl"
+            className="p-2 bg-iosbgblue rounded-xl hover:bg-blue-200"
             onClick={() => (location.href = item.url)}
           >
             <Icon icon={item.icon} color="#4f7096" />
