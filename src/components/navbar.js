@@ -10,7 +10,7 @@ const menuItems = [
   {
     name: "社團課程",
     url: "/course",
-    icon: "uil:book",
+    icon: "akar-icons:book",
   },
   {
     name: "社團活動",
