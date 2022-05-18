@@ -1,30 +1,45 @@
 import * as React from "react";
+import { Icon } from "@iconify/react";
 
 const menuItems = [
   {
     name: "首頁",
     url: "/",
+    icon: "uil:home",
   },
   {
     name: "社團課程",
     url: "/course",
+    icon: "uil:book",
   },
   {
     name: "社團活動",
     url: "/club_activities",
+    icon: "uil:calender",
   },
   {
     name: "社團相簿",
     url: "/gallery_list",
+    icon: "uil:image",
   },
 ];
 
 const Navbar = () => {
   const mobileChild = (
-    <nav className="fixed py-3 bg-gray-100 w-full text-3xl font-bold shadow-md z-50">
-      <a href="/" className="w-full pl-8">
+    <nav className="flex justify-between fixed px-6 py-3 bg-gray-100 w-full font-bold shadow-md z-50">
+      <a href="/" className="w-fit text-2xl">
         iOS Club
       </a>
+      <div className="flex gap-2">
+        {menuItems.map((item, index) => (
+          <div
+            className="p-2 bg-iosbgblue rounded-xl"
+            onClick={() => (location.href = item.url)}
+          >
+            <Icon icon={item.icon} color="#4f7096" />
+          </div>
+        ))}
+      </div>
     </nav>
   );
   const desktopChild = (
