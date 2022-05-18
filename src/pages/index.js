@@ -166,10 +166,10 @@ const learnMoreButton = (href = "/") => {
 
 // 要顯示在首頁的圖片們
 const imageList = [
-  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/110-2%E8%AC%9B%E5%BA%A7/IMG_6941.jpg?raw=true",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/5c0662af-53da-4e2d-888d-426f37cb7100/public",
   "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ebc9b623-ab73-4b0f-ad46-77959aeb2900/public",
-  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/110-2%E8%AC%9B%E5%BA%A7/IMG_9090.jpg?raw=true",
-  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/110-2%E8%AC%9B%E5%BA%A7/IMG_9195.jpg?raw=true",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ad2731e3-ec12-4447-1381-dc97a9deef00/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/20fd9274-c5e1-46fc-53a0-daccc17abe00/public",
 ];
 
 export default IndexPage;
