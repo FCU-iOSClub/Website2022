@@ -1,29 +1,6 @@
 import * as React from "react";
 import { Icon } from "@iconify/react";
 
-const menuItems = [
-  {
-    name: "首頁",
-    url: "/",
-    icon: "uil:home",
-  },
-  {
-    name: "社團課程",
-    url: "/course",
-    icon: "akar-icons:book",
-  },
-  {
-    name: "社團活動",
-    url: "/club_activities",
-    icon: "uil:calender",
-  },
-  {
-    name: "社團相簿",
-    url: "/gallery_list",
-    icon: "uil:image",
-  },
-];
-
 const Navbar = () => {
   const mobileChild = (
     <nav className="flex justify-between fixed px-6 py-3 bg-gray-100 w-full font-bold shadow-md z-50">
@@ -68,3 +45,26 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+const menuItems = [
+  {
+    name: "首頁",
+    url: "/",
+    icon: "uil:home",
+  },
+  {
+    name: "社團課程",
+    url: "/course",
+    icon: "akar-icons:book",
+  },
+  {
+    name: "社團活動",
+    url: "/club_activities",
+    icon: "uil:calender",
+  },
+  {
+    name: "社團相簿",
+    url: "/gallery_list",
+    icon: "uil:image",
+  },
+];
