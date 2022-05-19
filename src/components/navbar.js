@@ -3,17 +3,17 @@ import { Icon } from "@iconify/react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  withWidth();
+  //withWidth();
 
   const mobileChild = (
-    <nav className="fixed w-full h-fit bg-gray-100  font-bold shadow-md z-50">
+    <nav className="fixed w-full h-fit bg-gray-100 font-bold shadow z-50 md:flex md:items-center md:justify-between">
       <div className="flex justify-between px-6 py-3 w-full">
         <a href="/" className="w-fit text-2xl">
           iOS Club
         </a>
         <div className="place-self-center">
           <button
-            className="flex items-center focus:outline-none"
+            className="block hamburger md:hidden focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
           >
             <Icon
@@ -24,18 +24,20 @@ const Navbar = () => {
         </div>
       </div>
       {isOpen && (
-        <ul className="md:px-24 lg:px-60 xl:px-80 flex flex-col justify-between gap-3 pl-5 py-3">
+        <ul className="md:flex md:items-center z-[-1] ont-bold md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7">
           {menuItems.map((item, index) => (
-            <li key={index}>
+            <li key={index} class='mx-4 my-6 md:my-0'>
               <a
                 href={item.url}
-                className="hover:underline underline-offset-8 w-full"
+                className="text-x1 hover:text-cyan-700 duartion-500"
               >
                 {item.name}
               </a>
             </li>
+
           ))}
         </ul>
+
       )}
     </nav>
   );
@@ -47,13 +49,13 @@ const Navbar = () => {
       <ul className="md:px-24 lg:px-60 xl:px-80 flex flex-grow justify-between space-x-10">
         {menuItems.map((item, index) => (
           <li key={index}>
-            <a href={item.url} className="hover:underline underline-offset-8">
+            <a href={item.url} className="text-x1 hover:text-cyan-700 duartion-500">
               {item.name}
             </a>
           </li>
         ))}
       </ul>
-      <div>Join Us</div>
+      <button class='bg-blue-300 text-white duration-500 px-6 py-2 mx-4 hover:bg-blue-500 rounded'>Join Us</button>
     </nav>
   );
   return (
