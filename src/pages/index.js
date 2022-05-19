@@ -138,8 +138,8 @@ const IndexPage = () => {
             {learnMoreButton("/club_activities")}
           </div>
           <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
-            <h2 className="my-8 px-2 text-xl font-bold">比賽 &amp; 志工</h2>
-            <p className="my-8">每年參加競賽 &amp; 各種國中小志工</p>
+            <h2 className="my-8 px-2 text-xl font-bold">比賽</h2>
+            <p className="my-8">每年參加競賽</p>
             {learnMoreButton("/contest")}
           </div>
         </div>
