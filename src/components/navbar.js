@@ -26,7 +26,7 @@ const Navbar = () => {
       {isOpen && (
         <ul className="md:flex md:items-center z-[-1] ont-bold md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 shadow">
           {menuItems.map((item, index) => (
-            <li key={index} class='md:ml-8 text-x1 mx-4 my-6 md:my-0'>
+            <li key={index} class="md:ml-8 text-x1 mx-4 my-6 md:my-0">
               <a
                 href={item.url}
                 className="text-x1 text-gray-800 hover:text-cyan-600 duartion-500"
@@ -34,15 +34,12 @@ const Navbar = () => {
                 {item.name}
               </a>
             </li>
-
           ))}
         </ul>
       )}
-
     </nav>
   );
   const desktopChild = (
-
     <nav className="fixed flex items-center justify-between font-bold py-4 text-lg px-3 md:px-8 text-solid w-screen top-0 bg-white shadow-md z-50">
       <a href="/" className="font-bold">
         iOS Club
@@ -50,14 +47,19 @@ const Navbar = () => {
 
       <ul className="md:flex md:items-center">
         {menuItems.map((item, index) => (
-          <li key={index} className='md:ml-8 text-x1'>
-            <a href={item.url} className="text-x1 text-gray-800 hover:text-cyan-600 duartion-500">
+          <li key={index} className="md:ml-8 text-x1">
+            <a
+              href={item.url}
+              className="text-x1 text-gray-800 hover:text-cyan-600 duartion-500"
+            >
               {item.name}
             </a>
           </li>
         ))}
       </ul>
-      <button class='bg-blue-300 text-white px-6 py-2 md:ml-8 hover:bg-blue-500 rounded-full duration-700'>Join Us</button>
+      <button class="bg-blue-300 text-white px-6 py-2 md:ml-8 hover:bg-blue-500 rounded-full duration-700">
+        Join Us
+      </button>
     </nav>
   );
   return (
