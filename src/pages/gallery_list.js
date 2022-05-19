@@ -42,12 +42,14 @@ const galleryItem = (node) => {
         <img
           className="w-full pb-5 object-cover md:hidden self-center"
           src={node.mainPhoto}
+          loading="lazy"
         />
       </div>
       <div className="h-full w-full hidden md:flex flex-row justify-center items-center">
         <img
           className="h-5/6 w-10/12 p-2 object-scale-down"
           src={node.mainPhoto}
+          loading="lazy"
         />
       </div>
     </div>
