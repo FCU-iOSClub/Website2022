@@ -20,9 +20,9 @@ const CoursePage = () => {
               <h1 className="py-3 text-center md:text-left">社團課程</h1>
               <div className="h-2 my-4 bg-blue-300" /> {/* 橫槓 */}
             </div>
-            <p className="py-3 text-gray-700 md:text-left text-justify">
-              iOS Club 社課主要內容為利用 Xcode 開發 iOS App
-              ，讓大家能透過實作了解並熟悉 Swift 語言的應用 、 SwiftUI
+            <p className="py-3 text-gray-800 md:text-left text-base text-justify text-base">
+              iOS Club 社課主要內容為利用 <a class="underline decoration-sky-500 underline-offset-1">Xcode</a> 開發 <a class="underline decoration-indigo-500 underline-offset-1">iOS App</a>
+              ，讓大家能透過實作了解並熟悉 <a class="underline decoration-sky-500 underline-offset-1">Swift</a> 語言的應用 、 <a class="underline decoration-sky-500 underline-offset-1">Swift UI </a>
               的佈局，最終達到具備獨立開發的能力。透過循序漸進的教學模式，讓大家都能從
               0 開始輕鬆駕馭 App 開發，每堂社課都是收穫滿滿。
             </p>
@@ -45,16 +45,16 @@ const CoursePage = () => {
               <h1 className="py-3 text-center md:text-left">社課團隊</h1>
               <div className="h-2 my-4 bg-blue-300" /> {/* 橫槓 */}
             </div>
-            <div className="py-4 text-gray-700 text-justify md:text-left">
+            <div className="py-4 text-gray-700 text-justify text-base md:text-left text-base">
               <p>
-                iOS Club 主要的課程為 Swift UI 的 App 設計，除此之外也有
-                Playground 和 mBot
-                的教學課程，此部分是由教學長負責課程規劃與教學。
+                iOS Club 主要的課程為 <a class="underline decoration-sky-500 underline-offset-1">Swift UI </a>的 App 設計，除此之外也有<a class="underline decoration-sky-500">Playground </a>
+                和 <a class="underline decoration-sky-500 underline-offset-1">mBot </a>
+                的教學課程，此部分是由<a class="underline decoration-pink-500 underline-offset-1">教學長 </a>負責課程規劃與教學。
               </p>
               <div className="h-3" />
               <p>
-                而在技術課程外，我們也有由美宣負責教學的設計課，內容有 Keynote
-                、 Figma 、流程圖...等。
+                而在技術課程外，我們也有由<a class="underline decoration-pink-500 underline-offset-1">美宣長</a>美宣長負責教學的設計課，內容有 <a class="underline decoration-sky-500 underline-offset-1">Keynote </a>
+                、 <a class="underline decoration-indigo-500 underline-offset-1">Figma</a> 、流程圖...等。
               </p>
               <div className="h-3" />
               <p>
