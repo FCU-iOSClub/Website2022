@@ -73,7 +73,7 @@ const ClubActivities = () => {
           />
         </VerticalTimeline>
       </div>
-      {Footer()}
+      <Footer />
     </div>
   );
 };

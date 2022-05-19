@@ -8,7 +8,7 @@ const ContestPage = () => {
     <div className=" bg-iosbgblue">
       {/* Header */}
       <AppHeader title="iOS Club - 社團競賽" />
-      {Navbar()}
+      <Navbar />
       <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-20 lg:px-48">
         <div className="h-32" /> {/* 空白 */}
         <h1 className="text-5xl text-center font-bold">iOS Club 競賽</h1>
@@ -64,7 +64,7 @@ const ContestPage = () => {
         <div className="h-16" /> {/* 空白 */}
       </div>
       {/* footer */}
-      {Footer()}
+      <Footer />
     </div>
   );
 };

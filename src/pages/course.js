@@ -8,7 +8,7 @@ const CoursePage = () => {
     <div className=" bg-iosbgblue">
       {/* Header */}
       <AppHeader />
-      {Navbar()}
+      <Navbar />
       <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-0">
         {/* 空白區 */}
         <div className="h-32" />
@@ -159,7 +159,7 @@ const CoursePage = () => {
         </div>
       </div>
       {/* footer */}
-      {Footer()}
+      <Footer />
     </div>
   );
 };

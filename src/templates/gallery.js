@@ -8,7 +8,7 @@ const Gallery = (props) => {
   return (
     <div className="bg-iosbgblue">
       <AppHeader title={context.name} />
-      {Navbar()}
+      <Navbar />
       <div className="container mx-auto break-all bg-white">
         <div className="h-16" /> {/* 空白區 */}
         <h1 className="pt-12 px-1 text-3xl w-full text-center font-bold">
@@ -26,7 +26,7 @@ const Gallery = (props) => {
         </div>
         <div className="h-8" />
       </div>
-      {Footer()}
+      <Footer />
     </div>
   );
 };

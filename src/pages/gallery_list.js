@@ -8,7 +8,7 @@ const GalleryList = ({ data }) => {
   return (
     <div className="bg-iosbgblue">
       <AppHeader title="iOS Club 活動相簿" />
-      {Navbar()}
+      <Navbar />
       <div className="container p-3 md:p-0 mx-auto break-all bg-white">
         <div className="h-8" /> {/* 空白區 */}
         <div className="flex flex-col justify-center">

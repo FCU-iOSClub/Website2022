@@ -14,7 +14,7 @@ const IndexPage = () => {
     <div className="bg-iosbgblue">
       {/* Header */}
       <AppHeader />
-      {Navbar()}
+      <Navbar />
       <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-0">
         <div className="h-20 md:h-32" /> {/* 空白 */}
         {/* We are iOS Club */}
@@ -146,7 +146,7 @@ const IndexPage = () => {
         <div className="h-12 md:h-32" /> {/* 空白 */}
       </div>
       {/* footer */}
-      {Footer()}
+      <Footer />
     </div>
   );
 };
