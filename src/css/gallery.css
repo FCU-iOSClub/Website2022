@@ -1,4 +1,4 @@
-.media-grid > div {
+.lightgallery-grid > div {
   display: flex;
   flex-flow: wrap;
   justify-content: left;
