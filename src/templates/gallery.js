@@ -25,7 +25,7 @@ const Gallery = (props) => {
         <p className="py-2 text-center w-full text-red-400 font-bold">
           {context.date}
         </p>
-        <div className="media-grid">
+        <div className="lightgallery-grid">
           <LightGallery
             closeOnTap={true}
             plugins={[lgThumbnail, lgZoom]}
