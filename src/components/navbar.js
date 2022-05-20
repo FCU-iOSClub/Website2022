@@ -1,8 +1,9 @@
 import * as React from "react";
+import { useState } from "react";
 import { Icon } from "@iconify/react";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const mobileChild = (
     <nav className="fixed w-full h-fit bg-gray-100 font-bold shadow z-50 md:flex md:items-center md:justify-between">
