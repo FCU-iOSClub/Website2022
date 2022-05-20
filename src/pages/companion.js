@@ -13,8 +13,7 @@ const CompanionPage = () => {
         <div className="h-32" /> {/* 空白區塊 */}
         {/* title */}
         <div className="inline-block text-4xl font-bold text-center w-full">
-          <h1>iOS Club</h1>
-          <h1>社團相關單位</h1>
+          <h1 className="leading-loose">iOS Club<br/>社團相關單位</h1>
         </div>
         <div className="h-16" /> {/* 空白區塊 */}
         {/* 上課地點 */}
@@ -50,7 +49,6 @@ const CompanionPage = () => {
           <p className="text-gray-600 py-2">
             研究專長：大數據分析、演算法、雲端運算、生物資訊
           </p>
-          <p className="text-gray-600 py-2">分機：#3755 #6602</p>
         </div>
         {/* 學校相關單位 */}
         <div className="px-2 md:px-32">
