@@ -13,7 +13,11 @@ const CompanionPage = () => {
         <div className="h-32" /> {/* 空白區塊 */}
         {/* title */}
         <div className="inline-block text-4xl font-bold text-center w-full">
-          <h1 className="leading-loose">iOS Club<br/>社團相關單位</h1>
+          <h1 className="leading-loose">
+            iOS Club
+            <br />
+            社團相關單位
+          </h1>
         </div>
         <div className="h-16" /> {/* 空白區塊 */}
         {/* 上課地點 */}
