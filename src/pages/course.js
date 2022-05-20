@@ -38,7 +38,26 @@ const CoursePage = () => {
                 Swift UI
               </a>
               &nbsp;的佈局，最終達到具備獨立開發的能力。透過循序漸進的教學模式，讓大家都能從
-              0 開始輕鬆駕馭 App 開發，每堂社課都是收穫滿滿。
+              <p className="py-3 text-gray-800 md:text-left text-base text-justify text-base">
+                iOS Club 社課主要內容為利用{" "}
+                <a class="underline decoration-sky-500 underline-offset-1">
+                  Xcode
+                </a>{" "}
+                開發{" "}
+                <a class="underline decoration-indigo-500 underline-offset-1">
+                  iOS App
+                </a>
+                ，讓大家能透過實作了解並熟悉{" "}
+                <a class="underline decoration-sky-500 underline-offset-1">
+                  Swift
+                </a>{" "}
+                語言的應用 、{" "}
+                <a class="underline decoration-sky-500 underline-offset-1">
+                  Swift UI{" "}
+                </a>
+                的佈局，最終達到具備獨立開發的能力。透過循序漸進的教學模式，讓大家都能從
+                0 開始輕鬆駕馭 App 開發，每堂社課都是收穫滿滿。
+              </p>
             </p>
           </div>
           <img
