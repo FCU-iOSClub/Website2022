@@ -3,7 +3,6 @@ import { Icon } from "@iconify/react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  //withWidth();
 
   const mobileChild = (
     <nav className="fixed w-full h-fit bg-gray-100 font-bold shadow z-50 md:flex md:items-center md:justify-between">
@@ -24,18 +23,23 @@ const Navbar = () => {
         </div>
       </div>
       {isOpen && (
-        <ul className="md:flex md:items-center z-[-1] ont-bold md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 shadow">
-          {menuItems.map((item, index) => (
-            <li key={index} class="md:ml-8 text-x1 mx-4 my-6 md:my-0">
-              <a
-                href={item.url}
-                className="text-x1 text-gray-800 hover:text-cyan-600 duartion-500"
-              >
-                {item.name}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="bg-white flex flex-col ont-bold md:z-aut w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 shadow">
+          <ul className="">
+            {menuItems.map((item, index) => (
+              <li key={index} class="md:ml-8 text-x1 mx-4 my-6 md:my-0">
+                <a
+                  href={item.url}
+                  className="text-x1 text-gray-800 hover:text-cyan-600 duartion-500"
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <button class="w-fit bg-blue-300 text-white px-10 py-2 md:ml-8 hover:bg-blue-500 rounded-full duration-700">
+            Join Us
+          </button>
+        </div>
       )}
     </nav>
   );
