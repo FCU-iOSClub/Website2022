@@ -25,6 +25,7 @@
     "gatsby-plugin-svgr": "^3.0.0-beta.0",
     "gatsby-source-filesystem": "^4.13.0",
     "gatsby-transformer-json": "^4.13.0",
+    "lightgallery": "^2.4.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
