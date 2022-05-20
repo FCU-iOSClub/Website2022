@@ -49,7 +49,7 @@ const IndexPage = () => {
               <h1 className="py-3">iOS Club.</h1>
             </div>
             <p className="py-3 md:px-12 text-gray-700 text-justify">
-              是全台唯二 Apple
+              是全台第一個獲得 Apple
               官方認證的社團，也是一個結合學術的志工性社團。每年寒、暑假社員們會有國際交流的機會，到海外參加
               iOS Club 官方舉辦的冬、夏令營，
               和不同國家的學生進行合作活動與技術交流。
