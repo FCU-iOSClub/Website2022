@@ -34,7 +34,7 @@ const IndexPage = () => {
               <h1 className="py-3 text-center md:text-left">iOS Club.</h1>
             </div>
             <p className="py-3 text-gray-700 text-center md:text-left">
-              一個教你從零開始打造專屬 APPS 的社團
+              一個教你從零開始打造專屬 APP 的社團
             </p>
           </div>
           <LogoSvg className="w-full p-10" fill="#696AAD" />
