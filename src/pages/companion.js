@@ -25,7 +25,7 @@ const CompanionPage = () => {
           <h2 className="font-bold text-xl">上課地點</h2>
           <div className="h-2 w-10/12 md:w-1/3 my-5 bg-gray-300" /> {/* 橫槓 */}
           <p className="text-gray-600">
-            逢甲大學 Apple 區域教育培訓中心 (RTC, Regional TrainingCenter)
+            逢甲大學 Apple 區域教育培訓中心 (RTC, Regional Training Center)
           </p>
           <div className="py-8 grid gap-4 grid-cols-1 md:grid-cols-2">
             <img
