@@ -179,9 +179,10 @@ const learnMoreButton = (href = "/") => {
 
 const courseCard = (title, img) => {
   return (
-    <div className="p-8 mx-5 md:mx-3 md:w-full border-gray-300 border shadow-lg rounded-lg">
+    <div className="py-8 px-1 mx-5 md:mx-3 md:w-full border-gray-300 border shadow-lg rounded-lg flex flex-col items-center">
       <h3 className="text-3xl pb-8 md:p-0 font-bold text-center">{title}</h3>
-      <img className="w-full p-2 md:p-12" src={img} />
+      <div className="h-5" />
+      <img className="w-8/12" src={img} />
     </div>
   );
 };
