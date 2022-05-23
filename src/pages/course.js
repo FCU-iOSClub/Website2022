@@ -83,7 +83,7 @@ const CoursePage = () => {
                 <a class="underline decoration-pink-500 underline-offset-1">
                   美宣長
                 </a>
-                美宣長負責教學的設計課，內容有&nbsp;
+                負責教學的設計課，內容有&nbsp;
                 <a class="underline decoration-sky-500 underline-offset-1">
                   Keynote
                 </a>
