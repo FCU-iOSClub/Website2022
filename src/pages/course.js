@@ -78,11 +78,7 @@ const CoursePage = () => {
               <h1 className="py-3 text-center md:text-left">社課團隊</h1>
               <div className="h-2 my-4 bg-blue-300" /> {/* 橫槓 */}
             </div>
-<<<<<<< HEAD
             <div className="py-4 text-gray-700 text-justify md:text-left text-base">
-=======
-            <div className="py-4 text-gray-700 text-justify text-base md:text-left">
->>>>>>> e9cbafe (刪除重複設定：text-base)
               <p>
                 iOS Club 主要的課程為&nbsp;
                 <a class="underline decoration-sky-500 underline-offset-1">
