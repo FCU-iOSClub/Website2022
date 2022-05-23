@@ -71,7 +71,7 @@ const ContestPage = () => {
 
 const wwdcData = [
   ["2021 WWDC 得獎", "薛竣祐 學長", "作品《Hello World》"],
-  ["2021 WWDC 得獎", "薛竣祐 學長", "作品《Camel Playground》"],
+  ["2020 WWDC 得獎", "薛竣祐 學長", "作品《Camel Playground》"],
   ["2020 WWDC 得獎", "劉祐炘 學長", "作品《Gi的故事》"],
 ];
 
