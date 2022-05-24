@@ -166,7 +166,7 @@ const learnMoreButton = (href = "/") => {
   return (
     <p className="my-8">
       <a
-        className="bg-btnbg w-fit py-3 px-6 rounded-full break-words text-white"
+        className="w-fit py-3 px-6 rounded-full break-words bg-transparent border border-gray-700 hover:bg-btnbg text-gray-800 hover:text-white"
         href={href}
       >
         <nobr>Learn More</nobr>
