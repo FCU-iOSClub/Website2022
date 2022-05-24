@@ -15,7 +15,7 @@ const IndexPage = () => {
       {/* Header */}
       <AppHeader />
       <Navbar />
-      <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-0">
+      <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-0 font-serif">
         <div className="h-20 md:h-32" /> {/* 空白 */}
         {/* We are iOS Club */}
         <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
@@ -104,7 +104,7 @@ const IndexPage = () => {
           </Splide>
           <div className="hidden md:block w-fit relative bottom-16 left-1/2 -translate-x-1/2">
             <a
-              className="bg-red-300 text-center py-3 px-6 rounded-full break-words transform hover:bg-red-400 duration-200"
+              className="bg-btnbg1 text-center py-3 px-6 rounded-full break-words transform hover:bg-red-400 duration-200"
               href="/gallery_list"
             >
               <nobr>點我看更多</nobr>
@@ -155,7 +155,7 @@ const learnMoreButton = (href = "/") => {
   return (
     <p className="my-8">
       <a
-        className="bg-red-300 w-fit py-3 px-6 rounded-full break-words"
+        className="bg-btnbg w-fit py-3 px-6 rounded-full break-words text-white"
         href={href}
       >
         <nobr>Learn More</nobr>

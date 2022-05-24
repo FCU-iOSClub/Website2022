@@ -6,10 +6,10 @@ import Footer from "../components/footer";
 
 const GalleryList = ({ data }) => {
   return (
-    <div className="bg-iosbgblue">
+    <div className="bg-iosbgblue ">
       <AppHeader title="iOS Club 活動相簿" />
       <Navbar />
-      <div className="container p-3 md:p-0 mx-auto break-all bg-white">
+      <div className="container p-3 md:p-0 mx-auto break-all bg-white  font-serif">
         <div className="h-8" /> {/* 空白區 */}
         <div className="flex flex-col justify-center">
           <h1 className="text-5xl text-center my-24 font-bold">活動相簿</h1>
@@ -28,13 +28,13 @@ const GalleryList = ({ data }) => {
 
 const galleryItem = (node) => {
   return (
-    <div className="box-border grid md:grid-cols-2 h-fit md:h-72 w-full md:w-3/5 rounded-md shadow-lg border border-gray-400">
+    <div className="box-border grid md:grid-cols-2 h-fit md:h-72 w-full md:w-3/5 rounded-md shadow-lg border border-gray-400 font-serif">
       <div className="py-2 px-8 w-full h-full flex flex-col justify-items-center gap-4 md:gap-0 md:justify-evenly">
         <h2 className="mt-4 text-xl font-bold text-center">{node.name}</h2>
         <div className="font-bold text-gray-700">時間：{node.date}</div>
         <div className="font-bold text-gray-700">地點：{node.location}</div>
         <a href={"/gallery/" + node.date + " " + node.name} className="w-32">
-          <div className="bg-red-300 text-gray-800 md:border rounded-full text-center p-1 border-2 border-blue-700 hover:border-transparen">
+          <div className="bg-btnbg text-white md:border rounded-full text-center p-1 border-2 shadow">
             查看更多
           </div>
         </a>
