@@ -21,7 +21,7 @@ const IndexPage = () => {
           <h2 className="text-9xl">狂賀</h2>
           <h2 className="text-9xl">魯黑黑 WWDC 得獎</h2>
           <img
-            className="w-full p-32"
+            className="w-full p-3 md:p-32"
             src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/8914b3e0-c88a-4401-a485-12bb48117a00/public"
           />
         </div>
