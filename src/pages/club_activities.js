@@ -23,12 +23,39 @@ const ClubActivities = () => {
             <p className="pt-3 font-bold text-black text-5xl">iOS Club</p>
             <p className="pt-3 font-bold text-black text-5xl">社團活動</p>
             <p className="py-4 text-gray-700 text-justify">
-              平時社團活動也不僅僅有社課，我們還會舉辦講座、夜烤、 WorkShop
-              、社遊、期末聚…等超多活動給社員參加！當然，我們不只和葳格高中建立了長期的任教合作，身為志工性社團，我們還會和相關機構及國小一同舉辦各式各樣的志工營隊，落實將在社內所學回饋社會。
+              平時社團活動也不僅僅有社課，我們還會舉辦
+              <a class="underline decoration-indigo-500 underline-offset-1">
+                講座
+              </a>
+              、
+              <a class="underline decoration-pink-500 underline-offset-1">
+                夜烤
+              </a>
+              、
+              <a class="underline decoration-sky-500  underline-offset-1">
+                WorkShop
+              </a>
+              、
+              <a class="underline decoration-indigo-500 underline-offset-1">
+                社遊
+              </a>
+              、
+              <a class="underline decoration-pink-500 underline-offset-1">
+                期末聚
+              </a>
+              …等超多活動給社員參加！當然，我們不只和
+              <a class="underline decoration-red-500 underline-offset-1">
+                葳格高中
+              </a>
+              建立了長期的任教合作，身為志工性社團，我們還會和相關機構及國小一同舉辦各式各樣的
+              <a class="underline decoration-indigo-500 underline-offset-1">
+                志工營隊
+              </a>
+              ，落實將在社內所學回饋社會。
             </p>
             <p className="py-1 text-gray-700 text-justify">
               iOS Club
-              社團致力於軟體開發，以及推廣程式教育，但我們同時也期望能夠給社員舒適的相處環境與豐富的交流活動，歡迎所有志在開發與充滿教育熱誠的人一起加入。
+              致力於軟體開發，以及推廣程式教育，但我們同時也期望能夠給社員舒適的相處環境與豐富的交流活動，歡迎所有志在開發與充滿教育熱誠的人一起加入。
             </p>
           </div>
           <img
