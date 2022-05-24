@@ -34,7 +34,7 @@ const galleryItem = (node) => {
         <div className="font-bold text-gray-700">時間：{node.date}</div>
         <div className="font-bold text-gray-700">地點：{node.location}</div>
         <a href={"/gallery/" + node.date + " " + node.name} className="w-32">
-          <div className="bg-btnbg text-white md:border rounded-full text-center p-1 border-2 shadow">
+          <div className="w-fit py-3 px-6 rounded-full break-words bg-transparent border border-gray-700 hover:bg-btnbg text-gray-800 hover:text-white">
             查看更多
           </div>
         </a>
