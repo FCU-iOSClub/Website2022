@@ -102,6 +102,7 @@ const IndexPage = () => {
               </SplideSlide>
             ))}
           </Splide>
+          {/* desktopBTN */}
           <div className="hidden md:block w-fit relative bottom-16 left-1/2 -translate-x-1/2">
             <a
               className="bg-btnbg1 text-center py-3 px-6 rounded-full break-words transform hover:bg-red-400 duration-200"
@@ -111,9 +112,10 @@ const IndexPage = () => {
             </a>
           </div>
         </div>
+        {/* mobileBTN */}
         <div className="md:hidden flex w-full py-8 justify-center">
           <a
-            className="bg-red-300 text-center py-3 px-6 rounded-full break-words"
+            className="bg-btnbg1 text-center py-3 px-6 rounded-full break-words"
             href="/gallery_list"
           >
             <nobr>點我看更多</nobr>
