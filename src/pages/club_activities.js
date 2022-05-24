@@ -64,6 +64,7 @@ const ClubActivities = () => {
           />
         </div>
       </div>
+      <div className="h-16" /> {/* 空白區 */}
       {/* 閱讀更多區塊 */}
       <div className="bg-iosbgblue flex flex-col items-center">
         <p className="font-serif pt-10 text-center w-full bg-iosbgblue text-xl font-bold">
