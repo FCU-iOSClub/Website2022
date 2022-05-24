@@ -9,13 +9,13 @@ const CoursePage = () => {
       {/* Header */}
       <AppHeader />
       <Navbar />
-      <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-0">
+      <div className="container  font-serif mx-auto break-all bg-white shadow-lg px-3 md:px-0">
         {/* 空白區 */}
         <div className="h-32" />
         {/* 設課大標 */}
-        <div className="py-2 md:px-32 grid grid-rows-1 md:grid-cols-2 gap-2 md:gap-16 md:p-10 justify-center items-center">
+        <div className="py-2 md:px-32 grid grid-rows-1 md:grid-cols-2 gap-2 md:gap-16 md:p-10 justify-center items-center ">
           <div className="w-full self-center">
-            <div className="text-center text-5xl font-bold">
+            <div className="text-center text-5xl font-bold ">
               <h1 className="text-center md:text-left">iOS Club</h1>
               <h1 className="py-3 text-center md:text-left">社團課程</h1>
               <div className="h-2 my-4 bg-blue-300" /> {/* 橫槓 */}

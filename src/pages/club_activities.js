@@ -17,7 +17,7 @@ const ClubActivities = () => {
       <div className="h-32" /> {/* 空白區 */}
       <div className="px-3 md:px-32">
         <h1 className="hidden">iOS Club 社團活動</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 font-serif">
           <div className="">
             <p className="font-bold text-blue-200 text-3xl">關於..</p>
             <p className="pt-3 font-bold text-black text-5xl">iOS Club</p>
@@ -65,8 +65,8 @@ const ClubActivities = () => {
         </div>
       </div>
       {/* 閱讀更多區塊 */}
-      <div className="bg-blue-50 flex flex-col items-center">
-        <p className="pt-10 text-center w-full text-blue-300 text-xl font-bold">
+      <div className="bg-iosbgblue flex flex-col items-center">
+        <p className="font-serif pt-10 text-center w-full bg-iosbgblue text-xl font-bold">
           往下看更多
         </p>
         <div className="h-9" />
@@ -82,13 +82,15 @@ const ClubActivities = () => {
               <VerticalTimelineElement
                 className="vertical-timeline-element--work"
                 date={item.date}
-                dateClassName="text-gray-700"
-                contentStyle={{ background: "#F5E3E3" }}
-                contentArrowStyle={{ borderRight: "7px solid #F5E3E3" }}
-                iconStyle={{ background: "#8098B5" }}
+                dateClassName="text-gray-700 font-serif "
+                contentStyle={{ background: "#ffc3a4" }}
+                contentArrowStyle={{ borderRight: "8px solid #ffc3a4" }}
+                iconStyle={{ background: "#7894b3" }}
                 icon={<Icon icon="akar-icons:calendar" color="#fff" />}
               >
-                <h3 className="text-center">{item.title}</h3>
+                <h3 className="text-center font-serif text-base">
+                  {item.title}
+                </h3>
               </VerticalTimelineElement>
             );
           })}
