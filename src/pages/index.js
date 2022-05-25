@@ -8,6 +8,7 @@ import AppHeader from "../components/header";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+import { Icon } from "@iconify/react";
 
 const IndexPage = () => {
   return (
@@ -156,7 +157,77 @@ const IndexPage = () => {
             {learnMoreButton("/contest")}
           </div>
         </div>
-        <div className="h-12 md:h-32" /> {/* 空白 */}
+        {/* 聯絡我們 */}
+        <div class="antialiased">
+          <div class="flex w-full min-h-screen justify-center items-center">
+            <div class="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 bg-btnbg w-full max-w-4xl p-8 rounded-xl shadow-lg text-white">
+              <div class="flex flex-col space-y-8 justify-between">
+                <div>
+                  <h1 class="font-bold text-4xl tracking-wide">Contact US</h1>
+                  <p class="pt-2 text-cyan-100">
+                    如想更加暸解我們或是想要與我們合作，歡迎洽詢！
+                  </p>
+                </div>
+                <div class="flex flex-col space-y-4">
+                  <div class="inline-flex space-x-2 items-center">
+                    <Icon
+                      icon="carbon:email"
+                      width="20"
+                      height="20"
+                      color="#ffffff"
+                    />
+                    <span>iosclubtw@gmail.com</span>
+                  </div>
+                  <div class="inline-flex space-x-2 items-center">
+                    <Icon
+                      icon="akar-icons:location"
+                      width="20"
+                      height="20"
+                      color="#ffffff"
+                    />
+                    <span>407 台中市西屯區文華路100號 電通館 B04</span>
+                  </div>
+                </div>
+                {/* Social icon */}
+                <div class="flex space-x-4 text-lg">
+                  <a herf="#">
+                    <Icon
+                      icon="akar-icons:facebook-fill"
+                      width="32"
+                      height="32"
+                      color="#ffffff"
+                    />
+                  </a>
+                  <a herf="#">
+                    <Icon
+                      icon="akar-icons:instagram-fill"
+                      width="32"
+                      height="32"
+                      color="#ffffff"
+                    />
+                  </a>
+                  <a herf="#">
+                    <Icon
+                      icon="akar-icons:discord-fill"
+                      width="32"
+                      height="32"
+                      color="#ffffff"
+                    />
+                  </a>
+                  <a herf="#">
+                    <Icon
+                      icon="cib:line"
+                      width="32"
+                      height="32"
+                      color="#ffffff"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div></div>
+            </div>
+          </div>
+        </div>
       </div>
       {/* footer */}
       <Footer />

@@ -5,7 +5,7 @@ module.exports = {
       colors: {
         transparent: "transparent",
         current: "currentColor",
-        iosbgblue: "#C2DED3",
+        iosbgblue: "#b3c4d6",
         ioscardblue: "#8098B5",
         iostextblue: "#4771A3",
         footerbg: "#4F7096",
