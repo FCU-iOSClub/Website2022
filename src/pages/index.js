@@ -17,17 +17,6 @@ const IndexPage = () => {
       <AppHeader />
       <Navbar />
       <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-0 font-serif">
-        {/* <div className="h-20 md:h-32" /> 空白 */}
-        {/* <div className="text-4xl md:text-6xl lg:text-8xl text-center text-red-600 font-bold">
-          <div className="py-8 bg-yellow-300">
-            <h2>狂賀</h2>
-            <h2>魯黑黑 WWDC 得獎</h2>
-          </div>
-          <img
-            className="w-full p-3 md:p-32"
-            src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/8914b3e0-c88a-4401-a485-12bb48117a00/public"
-          />
-        </div> */}
         <div className="h-20 md:h-32" /> {/* 空白 */}
         {/* We are iOS Club */}
         <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
@@ -39,6 +28,27 @@ const IndexPage = () => {
             <p className="py-3 text-gray-700 text-center md:text-left">
               一個教你從零開始打造專屬 APP 的社團
             </p>
+            {/* JoinUsBtn */}
+            <div className="h-2 md:h-2" /> {/* 空白 */}
+            {/* desktopBTN */}
+            <div className="md:grid md:grid-cols-4 md:gap-3 hidden w-full relative bottom-120 left-1/2 -translate-x-1/2">
+              <button class="overflow-hidden group h-12 px-6 border border-btnbg rounded">
+                <div class="transition duration-200 group-hover:-translate-y-12">
+                  <div className="h-12 flex items-center justify-center text-btnbg break-words ">
+                    Join Us
+                  </div>
+                  <div className="h-12 flex items-center justify-center text-btnbg break-words ">
+                    Welcome
+                  </div>
+                </div>
+              </button>
+              <button class="overflow-hidden group h-12 px-6 border bg-btnbg border-btnbg rounded transform hover:bg-ioscardblue hover:border-ioscardblue duration-200">
+                <div className="h-12 flex items-center justify-center text-white">
+                  歷代社團幹部
+                </div>
+              </button>
+            </div>
+            {/* mobileBTN */}
           </div>
           <LogoSvg className="w-full p-10" fill="#696AAD" />
         </div>
@@ -127,7 +137,7 @@ const IndexPage = () => {
         {/* mobileBTN */}
         <div className="md:hidden flex w-full py-8 justify-center">
           <a
-            className="bg-btnbg1 text-center py-3 px-6 rounded-full break-words"
+            className="bg-btnbg1 text-center py-3 px-6 rounded-full break-words transform hover:bg-red-400 duration-200"
             href="/gallery_list"
           >
             <nobr>點我看更多</nobr>
@@ -153,7 +163,7 @@ const IndexPage = () => {
           </div>
           <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
             <h2 className="my-8 px-2 text-xl font-bold">社團競賽</h2>
-            <p className="my-8">社團每年參加的比賽</p>
+            <p classwName="my-8">社團每年參加的比賽</p>
             {learnMoreButton("/contest")}
           </div>
         </div>
