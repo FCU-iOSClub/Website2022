@@ -186,7 +186,7 @@ const IndexPage = () => {
                       height="20"
                       color="#ffffff"
                     />
-                    <span>iosclubtw@gmail.com</span>
+                    <a href="mailto:iosclubtw@gmail.com">iosclubtw@gmail.com</a>
                   </div>
                   <div class="inline-flex space-x-2 items-center">
                     <Icon
@@ -200,38 +200,16 @@ const IndexPage = () => {
                 </div>
                 {/* Social icon */}
                 <div class="flex space-x-4 text-lg">
-                  <a herf="#">
-                    <Icon
-                      icon="akar-icons:facebook-fill"
-                      width="32"
-                      height="32"
-                      color="#ffffff"
-                    />
-                  </a>
-                  <a herf="#">
-                    <Icon
-                      icon="akar-icons:instagram-fill"
-                      width="32"
-                      height="32"
-                      color="#ffffff"
-                    />
-                  </a>
-                  <a herf="#">
-                    <Icon
-                      icon="akar-icons:discord-fill"
-                      width="32"
-                      height="32"
-                      color="#ffffff"
-                    />
-                  </a>
-                  <a herf="#">
-                    <Icon
-                      icon="cib:line"
-                      width="32"
-                      height="32"
-                      color="#ffffff"
-                    />
-                  </a>
+                  {socialItems.map((icon, index) => (
+                    <a href={icon.href}>
+                      <Icon
+                        icon={icon.icon}
+                        width="32"
+                        height="32"
+                        color="#ffffff"
+                      />
+                    </a>
+                  ))}
                 </div>
               </div>
               <div></div>
@@ -264,6 +242,29 @@ const imageList = [
   "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ebc9b623-ab73-4b0f-ad46-77959aeb2900/public",
   "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ad2731e3-ec12-4447-1381-dc97a9deef00/public",
   "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/20fd9274-c5e1-46fc-53a0-daccc17abe00/public",
+];
+
+const socialItems = [
+  {
+    name: "Facebook",
+    icon: "akar-icons:facebook-fill",
+    href: "https://www.facebook.com/FCU.iOSClub",
+  },
+  {
+    name: "Instagram",
+    icon: "akar-icons:instagram-fill",
+    href: "https://www.instagram.com/fcu.iosclub/",
+  },
+  {
+    name: "Line 社群",
+    icon: "bi:line",
+    href: "https://line.me/ti/g2/Hcrx-jxTUDGItqDEo0R63w?utm_campaign=default&utm_medium=link_copy&utm_source=invitation",
+  },
+  {
+    name: "Discord",
+    icon: "akar-icons:discord-fill",
+    href: "https://discord.com/invite/z2VPCNFupv",
+  },
 ];
 
 export default IndexPage;
