@@ -31,7 +31,7 @@ const IndexPage = () => {
             {/* JoinUsBtn */}
             <div className="h-2 md:h-2" /> {/* 空白 */}
             {/* desktopBTN */}
-            <div className="md:grid md:grid-cols-4 md:gap-3 hidden w-full relative bottom-120 left-1/2 -translate-x-1/2">
+            <div className="px-5 md:p-0 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3 md:gap-3 w-full relative bottom-120 left-1/2 -translate-x-1/2">
               <button class="overflow-hidden group h-12 px-6 border border-btnbg rounded">
                 <div class="transition duration-200 group-hover:-translate-y-12">
                   <div className="h-12 flex items-center justify-center text-btnbg break-words ">
