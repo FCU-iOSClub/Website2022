@@ -15,21 +15,10 @@ const IndexPage = () => {
       {/* Header */}
       <AppHeader />
       <Navbar />
-      <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-0 font-serif">
-        <div className="h-20 md:h-32" /> {/* 空白 */}
-        <div className="text-4xl md:text-6xl lg:text-8xl text-center text-red-600 font-bold">
-          <div className="py-8 bg-yellow-300">
-            <h2>狂賀</h2>
-            <h2>魯黑黑 WWDC 得獎</h2>
-          </div>
-          <img
-            className="w-full p-3 md:p-32"
-            src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/8914b3e0-c88a-4401-a485-12bb48117a00/public"
-          />
-        </div>
+      <div className="container mx-auto break-all bg-white shadow-lg font-serif">
         <div className="h-20 md:h-32" /> {/* 空白 */}
         {/* We are iOS Club */}
-        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
+        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center px-3 md:px-0">
           <div className="w-full self-center">
             <div className="text-center text-5xl font-bold">
               <h1 className="py-3 text-center md:text-left">We are</h1>
@@ -42,8 +31,16 @@ const IndexPage = () => {
           <LogoSvg className="w-full p-10" fill="#696AAD" />
         </div>
         <div className="h-8" />
+        {/* 魯 WWDC */}
+        <div className="">
+          <img
+            className="w-full"
+            src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/e1240dba-40bc-4f93-14ac-ecbeaf09db00/large"
+          />
+        </div>
+        <div className="h-8" />
         {/* About iOS Club. */}
-        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
+        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center px-3 md:px-0">
           <AboutIosSvg className="w-full p-10 md:p-0 bg-cover hidden md:block" />
           <div className="w-full self-center">
             <div className="text-center text-5xl font-bold">
@@ -61,7 +58,7 @@ const IndexPage = () => {
         </div>
         <div className="h-32" />
         {/* iOS Club 會做什麼 */}
-        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
+        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center px-3 md:px-0">
           <div className="w-full self-center">
             <div className="text-center text-5xl font-bold">
               <h2 className="py-3">iOS Club</h2>
