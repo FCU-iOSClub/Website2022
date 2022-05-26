@@ -195,7 +195,12 @@ const IndexPage = () => {
                       height="20"
                       color="#ffffff"
                     />
-                    <span>407 台中市西屯區文華路100號 電通館 B04</span>
+                    <a
+                      href="https://goo.gl/maps/4PwBD6dZjiMvRTKr7"
+                      target="_blank"
+                    >
+                      407 台中市西屯區文華路100號 電通館 B04
+                    </a>
                   </div>
                 </div>
                 {/* Social icon */}
