@@ -51,7 +51,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-1">
           <p className="font-bold text-gray-900">Our Club</p>
-          <a href="/404" className="text-gray-100">
+          <a href="/members" className="text-gray-100">
             歷屆社團幹部
           </a>
           <a href="/contest" className="text-gray-100">
