@@ -9,11 +9,9 @@
   ],
   "scripts": {
     "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "dev": "gatsby develop -H 0.0.0.0",
     "build": "gatsby build",
-    "serve": "gatsby serve",
-    "prettier": "prettier --write .",
-    "clean": "gatsby clean"
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@splidejs/react-splide": "^0.7.5",
