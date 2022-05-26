@@ -18,7 +18,7 @@ const IndexPage = () => {
       <div className="container mx-auto break-all bg-white shadow-lg font-serif">
         <div className="h-20 md:h-32" /> {/* 空白 */}
         {/* We are iOS Club */}
-        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center px-3 md:px-0">
+        <div className="py-5 px-3 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
           <div className="w-full self-center">
             <div className="text-center text-5xl font-bold">
               <h1 className="py-3 text-center md:text-left">We are</h1>
@@ -34,13 +34,17 @@ const IndexPage = () => {
         {/* 魯 WWDC */}
         <div className="">
           <img
-            className="w-full"
+            className="w-full hidden md:block"
             src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/e1240dba-40bc-4f93-14ac-ecbeaf09db00/large"
+          />
+          <img
+            className="w-full md:hidden block"
+            src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/9e293718-3bd4-4d0c-24b5-a246f3bde400/large"
           />
         </div>
         <div className="h-8" />
         {/* About iOS Club. */}
-        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center px-3 md:px-0">
+        <div className="py-5 px-3 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
           <AboutIosSvg className="w-full p-10 md:p-0 bg-cover hidden md:block" />
           <div className="w-full self-center">
             <div className="text-center text-5xl font-bold">
@@ -58,7 +62,7 @@ const IndexPage = () => {
         </div>
         <div className="h-32" />
         {/* iOS Club 會做什麼 */}
-        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center px-3 md:px-0">
+        <div className="py-5 px-3 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
           <div className="w-full self-center">
             <div className="text-center text-5xl font-bold">
               <h2 className="py-3">iOS Club</h2>
