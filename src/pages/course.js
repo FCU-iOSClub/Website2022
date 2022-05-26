@@ -38,7 +38,7 @@ const CoursePage = () => {
                 Swift UI
               </a>
               &nbsp;的佈局，最終達到具備獨立開發的能力。透過循序漸進的教學模式，讓大家都能從
-              <p className="py-3 text-gray-800 md:text-left text-base text-justify text-base">
+              <p className="py-3 text-gray-800 md:text-left text-justify text-base">
                 iOS Club 社課主要內容為利用{" "}
                 <a class="underline decoration-sky-500 underline-offset-1">
                   Xcode
