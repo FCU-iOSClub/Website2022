@@ -84,8 +84,8 @@ const ClubActivities = () => {
                 className="vertical-timeline-element--work"
                 date={item.date}
                 dateClassName="text-gray-700 font-serif "
-                contentStyle={{ background: "#ffc3a4" }}
-                contentArrowStyle={{ borderRight: "8px solid #ffc3a4" }}
+                contentStyle={{ background: "#F5E3E3" }}
+                contentArrowStyle={{ borderRight: "8px solid #F5E3E3" }}
                 iconStyle={{ background: "#7894b3" }}
                 icon={<Icon icon="akar-icons:calendar" color="#fff" />}
               >
