@@ -17,17 +17,6 @@ const IndexPage = () => {
       <Navbar />
       <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-0 font-serif">
         <div className="h-20 md:h-32" /> {/* 空白 */}
-        <div className="text-4xl md:text-6xl lg:text-8xl text-center text-red-600 font-bold">
-          <div className="py-8 bg-yellow-300">
-            <h2>狂賀</h2>
-            <h2>魯黑黑 WWDC 得獎</h2>
-          </div>
-          <img
-            className="w-full p-3 md:p-32"
-            src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/8914b3e0-c88a-4401-a485-12bb48117a00/public"
-          />
-        </div>
-        <div className="h-20 md:h-32" /> {/* 空白 */}
         {/* We are iOS Club */}
         <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
           <div className="w-full self-center">
