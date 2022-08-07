@@ -47,7 +47,12 @@ const IndexPage = () => {
                 </div>
               </button>
               {/* 歷代社團幹部 按鈕 */}
-              <button class="overflow-hidden group h-12 px-6 border bg-btnbg border-btnbg rounded transform hover:bg-ioscardblue hover:border-ioscardblue duration-200">
+              <button
+                class="overflow-hidden group h-12 px-6 border bg-btnbg border-btnbg rounded transform hover:bg-ioscardblue hover:border-ioscardblue duration-200"
+                onClick={() => {
+                  window.location.href = "/members";
+                }}
+              >
                 <div className="h-12 flex items-center justify-center text-white">
                   歷代社團幹部
                 </div>
