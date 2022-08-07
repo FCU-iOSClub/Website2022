@@ -215,7 +215,7 @@ const IndexPage = () => {
                 {/* Social icon */}
                 <div class="flex space-x-4 text-lg">
                   {socialItems.map((icon, index) => (
-                    <a href={icon.href}>
+                    <a href={icon.href} target="_blank">
                       <Icon
                         icon={icon.icon}
                         width="32"
