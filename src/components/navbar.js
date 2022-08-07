@@ -37,9 +37,7 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <button class="w-fit bg-blue-300 text-white px-10 py-2 md:ml-8 hover:bg-blue-500 rounded-full duration-700">
-            Join Us
-          </button>
+          <JoinUsButton />
         </div>
       )}
     </nav>
@@ -62,9 +60,7 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-      <button class="bg-blue-300 text-white px-6 py-2 md:ml-8 hover:bg-blue-500 rounded-full duration-700">
-        Join Us
-      </button>
+      <JoinUsButton />
     </nav>
   );
   return (
@@ -76,6 +72,17 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+const JoinUsButton = () => (
+  <button
+    class="w-fit bg-blue-300 text-white px-10 py-2 md:ml-8 hover:bg-blue-500 rounded-full duration-700"
+    onClick={() => {
+      window.open("https://forms.gle/2o8TB3mrvHUMTxRE7", "_blank");
+    }}
+  >
+    Join Us
+  </button>
+);
 
 const menuItems = [
   {

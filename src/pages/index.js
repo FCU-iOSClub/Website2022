@@ -28,11 +28,15 @@ const IndexPage = () => {
             <p className="py-3 text-gray-700 text-center md:text-left">
               一個教你從零開始打造專屬 APP 的社團
             </p>
-            {/* JoinUsBtn */}
             <div className="h-2 md:h-2" /> {/* 空白 */}
-            {/* desktopBTN */}
             <div className="px-5 md:p-0 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3 md:gap-3 w-full relative bottom-120 left-1/2 -translate-x-1/2">
-              <button class="overflow-hidden group h-12 px-6 border border-btnbg rounded">
+              {/* Join Us 按鈕 */}
+              <button
+                class="overflow-hidden group h-12 px-6 border border-btnbg rounded"
+                onClick={() => {
+                  window.open("https://forms.gle/2o8TB3mrvHUMTxRE7", "_blank");
+                }}
+              >
                 <div class="transition duration-200 group-hover:-translate-y-12">
                   <div className="h-12 flex items-center justify-center text-btnbg break-words ">
                     Join Us
@@ -42,13 +46,13 @@ const IndexPage = () => {
                   </div>
                 </div>
               </button>
+              {/* 歷代社團幹部 按鈕 */}
               <button class="overflow-hidden group h-12 px-6 border bg-btnbg border-btnbg rounded transform hover:bg-ioscardblue hover:border-ioscardblue duration-200">
                 <div className="h-12 flex items-center justify-center text-white">
                   歷代社團幹部
                 </div>
               </button>
             </div>
-            {/* mobileBTN */}
           </div>
           <LogoSvg className="w-full p-10" fill="#696AAD" />
         </div>
@@ -169,7 +173,7 @@ const IndexPage = () => {
         </div>
         {/* 聯絡我們 */}
         <div class="antialiased">
-          <div class="flex w-full min-h-screen justify-center items-center">
+          <div class="flex w-full py-12 md:py-32 justify-center items-center">
             <div class="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 bg-btnbg w-full max-w-4xl p-8 rounded-xl shadow-lg text-white">
               <div class="flex flex-col space-y-8 justify-between">
                 <div>
