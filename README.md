@@ -7,6 +7,7 @@
 ## Note
 
 - 本站是靜態網頁
+- 管理使用 **yarn**，而非 npm
 - 專案使用 [Gatsby](https://www.gatsbyjs.com) + [React](https://zh-hant.reactjs.org) 製作。目前需要 Node 14 以上。
 - CSS Framwork 使用 [TailwindCSS](https://tailwindcss.com)。
 - `master` 分之上的最新 commit 會自動被部署到 [Cloudflare Pages](https://pages.cloudflare.com) 上。
@@ -17,7 +18,7 @@
 先安裝依賴
 
 ```bash
-npm i
+yarn
 ```
 
 ### 開發模式
@@ -25,7 +26,7 @@ npm i
 會在 `localhost:8000` 上啟動網頁
 
 ```bash
-npm run develop
+yarn develop
 ```
 
 ### 產生靜態網頁
@@ -33,7 +34,7 @@ npm run develop
 在 `public` 資料夾中產生網頁
 
 ```bash
-npm run build
+yarn build
 ```
 
 ## Prettier
@@ -41,7 +42,7 @@ npm run build
 Commit 前養成好習慣，自動排版一下
 
 ```bash
-npm run prettier
+yarn prettier
 ```
 
 ## 活動相簿
