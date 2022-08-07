@@ -3,8 +3,26 @@ import { graphql } from "gatsby";
 import AppHeader from "../components/header";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
+import { useState } from "react";
+import Pagination from "rc-pagination";
+import "../css/pagination.css";
 
 const GalleryList = ({ data }) => {
+  useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemCount = data.allGalleryJson.edges.length;
+  const perPage = 8;
+  const onPageChange = (page) => {
+    const c = document.documentElement.scrollTop || document.body.scrollTop;
+    if (c > 300)
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    setCurrentPage(page);
+  };
+
   return (
     <div className="bg-iosbgblue ">
       <AppHeader title="iOS Club 活動相簿" />
@@ -12,12 +30,30 @@ const GalleryList = ({ data }) => {
       <div className="container p-3 md:p-0 mx-auto break-all bg-white  font-serif">
         <div className="h-8" /> {/* 空白區 */}
         <div className="flex flex-col justify-center">
-          <h1 className="text-5xl text-center my-24 font-bold">活動相簿</h1>
+          <h1 className="text-5xl text-center mt-24 font-bold">活動相簿</h1>
+          <div className="h-8" /> {/* 空白區 */}
+          <Pagination
+            current={currentPage}
+            onChange={onPageChange}
+            total={itemCount}
+            pageSize={perPage}
+          />
+          <div className="h-8" /> {/* 空白區 */}
           <div className="flex gap-y-10 flex-col items-center">
             {data.allGalleryJson.edges.map((item, index) =>
-              galleryItem(item.node)
+              index >= (currentPage - 1) * perPage &&
+              index < currentPage * perPage
+                ? galleryItem(item.node)
+                : null
             )}
           </div>
+          <div className="h-8" /> {/* 空白區 */}
+          <Pagination
+            current={currentPage}
+            onChange={onPageChange}
+            total={itemCount}
+            pageSize={perPage}
+          />
         </div>
         <div className="h-12"></div>
       </div>
