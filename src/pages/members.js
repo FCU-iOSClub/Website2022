@@ -10,6 +10,19 @@ const MembersPage = () => {
       {/* Header */}
       <AppHeader />
       <Navbar />
+      <div className="h-96" /> {/* 空白區 */}
+      <div className="py-32 text-center text-8xl font-serif">施工中</div>
+      <div className="h-96" /> {/* 空白區 */}
+      <Footer />
+    </div>
+  );
+
+  // todo
+  return (
+    <div className="bg-iosbgblue">
+      {/* Header */}
+      <AppHeader />
+      <Navbar />
       {/* body */}
       <div class="container font-serif mx-auto break-all bg-white shadow-lg px-3 md:px-0 h-screen w-full flex justify-center items-center ">
         <div className="w-full self-center">
