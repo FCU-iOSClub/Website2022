@@ -15,7 +15,5 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "14"
-      - name: Setup Project
-        run: npm ci
       - name: Prettier Check
         run: npx prettier --check .
