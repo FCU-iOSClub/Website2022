@@ -48,9 +48,9 @@ const Navbar = () => {
         iOS Club
       </a>
 
-      <ul className="md:flex md:items-center">
+      <ul className="md:flex flex-1 md:items-center px-10 lg:px-32 text-center">
         {menuItems.map((item, index) => (
-          <li key={index} className="md:ml-8 text-x1">
+          <li key={index} className="md:ml-8 text-x1 flex-1">
             <a
               href={item.url}
               className="text-x1 text-gray-800 hover:text-cyan-600 duartion-500"
