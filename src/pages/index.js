@@ -8,6 +8,7 @@ import AppHeader from "../components/header";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+import { Icon } from "@iconify/react";
 
 const IndexPage = () => {
   return (
@@ -27,6 +28,36 @@ const IndexPage = () => {
             <p className="py-3 text-gray-700 text-center md:text-left">
               一個教你從零開始打造專屬 APP 的社團
             </p>
+            <div className="h-2 md:h-2" /> {/* 空白 */}
+            <div className="px-5 md:p-0 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3 md:gap-3 w-full relative bottom-120 left-1/2 -translate-x-1/2">
+              {/* Join Us 按鈕 */}
+              <button
+                class="overflow-hidden group h-12 px-6 border border-btnbg rounded"
+                onClick={() => {
+                  window.open("https://forms.gle/2o8TB3mrvHUMTxRE7", "_blank");
+                }}
+              >
+                <div class="transition duration-200 group-hover:-translate-y-12">
+                  <div className="h-12 flex items-center justify-center text-btnbg break-words ">
+                    Join Us
+                  </div>
+                  <div className="h-12 flex items-center justify-center text-btnbg break-words ">
+                    Welcome
+                  </div>
+                </div>
+              </button>
+              {/* 歷代社團幹部 按鈕 todo hidden*/}
+              <button
+                class="hidden overflow-hidden group h-12 px-6 border bg-btnbg border-btnbg rounded transform hover:bg-ioscardblue hover:border-ioscardblue duration-200"
+                onClick={() => {
+                  window.location.href = "/members";
+                }}
+              >
+                <div className="h-12 flex items-center justify-center text-white">
+                  歷代社團幹部
+                </div>
+              </button>
+            </div>
           </div>
           <LogoSvg className="w-full p-10" fill="#696AAD" />
         </div>
@@ -115,7 +146,7 @@ const IndexPage = () => {
         {/* mobileBTN */}
         <div className="md:hidden flex w-full py-8 justify-center">
           <a
-            className="bg-btnbg1 text-center py-3 px-6 rounded-full break-words"
+            className="bg-btnbg1 text-center py-3 px-6 rounded-full break-words transform hover:bg-red-400 duration-200"
             href="/gallery_list"
           >
             <nobr>點我看更多</nobr>
@@ -141,11 +172,63 @@ const IndexPage = () => {
           </div>
           <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
             <h2 className="my-8 px-2 text-xl font-bold">社團競賽</h2>
-            <p className="my-8">社團每年參加的比賽</p>
+            <p classwName="my-8">社團每年參加的比賽</p>
             {learnMoreButton("/contest")}
           </div>
         </div>
-        <div className="h-12 md:h-32" /> {/* 空白 */}
+        {/* 聯絡我們 */}
+        <div class="antialiased">
+          <div class="flex w-full py-12 md:py-32 justify-center items-center">
+            <div class="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 bg-btnbg w-full max-w-4xl p-8 rounded-xl shadow-lg text-white">
+              <div class="flex flex-col space-y-8 justify-between">
+                <div>
+                  <h1 class="font-bold text-4xl tracking-wide">Contact US</h1>
+                  <p class="pt-2 text-cyan-100">
+                    如想更加暸解我們或是想要與我們合作，歡迎洽詢！
+                  </p>
+                </div>
+                <div class="flex flex-col space-y-4">
+                  <div class="inline-flex space-x-2 items-center">
+                    <Icon
+                      icon="carbon:email"
+                      width="20"
+                      height="20"
+                      color="#ffffff"
+                    />
+                    <a href="mailto:iosclubtw@gmail.com">iosclubtw@gmail.com</a>
+                  </div>
+                  <div class="inline-flex space-x-2 items-center">
+                    <Icon
+                      icon="akar-icons:location"
+                      width="20"
+                      height="20"
+                      color="#ffffff"
+                    />
+                    <a
+                      href="https://goo.gl/maps/4PwBD6dZjiMvRTKr7"
+                      target="_blank"
+                    >
+                      407 台中市西屯區文華路100號 電通館 B04
+                    </a>
+                  </div>
+                </div>
+                {/* Social icon */}
+                <div class="flex space-x-4 text-lg">
+                  {socialItems.map((icon, index) => (
+                    <a href={icon.href} target="_blank">
+                      <Icon
+                        icon={icon.icon}
+                        width="32"
+                        height="32"
+                        color="#ffffff"
+                      />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       {/* footer */}
       <Footer />
@@ -172,6 +255,29 @@ const imageList = [
   "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ebc9b623-ab73-4b0f-ad46-77959aeb2900/public",
   "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ad2731e3-ec12-4447-1381-dc97a9deef00/public",
   "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/20fd9274-c5e1-46fc-53a0-daccc17abe00/public",
+];
+
+const socialItems = [
+  {
+    name: "Facebook",
+    icon: "akar-icons:facebook-fill",
+    href: "https://www.facebook.com/FCU.iOSClub",
+  },
+  {
+    name: "Instagram",
+    icon: "akar-icons:instagram-fill",
+    href: "https://www.instagram.com/fcu.iosclub/",
+  },
+  {
+    name: "Line 社群",
+    icon: "bi:line",
+    href: "https://line.me/ti/g2/Hcrx-jxTUDGItqDEo0R63w?utm_campaign=default&utm_medium=link_copy&utm_source=invitation",
+  },
+  {
+    name: "Discord",
+    icon: "akar-icons:discord-fill",
+    href: "https://discord.com/invite/z2VPCNFupv",
+  },
 ];
 
 export default IndexPage;

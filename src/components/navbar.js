@@ -1,39 +1,66 @@
 import * as React from "react";
+import { useState } from "react";
 import { Icon } from "@iconify/react";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const mobileChild = (
-    <nav className="flex justify-between fixed px-6 py-3 bg-gray-100 w-full font-bold shadow-md z-50">
-      <a href="/" className="w-fit text-2xl">
-        iOS Club
-      </a>
-      <div className="flex gap-2">
-        {menuItems.map((item, index) => (
-          <div
-            className="p-2 bg-iosbgblue rounded-xl hover:bg-blue-200"
-            onClick={() => (location.href = item.url)}
+    <nav className="fixed w-full h-fit bg-gray-100 font-bold shadow z-50 md:flex md:items-center md:justify-between">
+      <div className="flex justify-between px-6 py-3 w-full">
+        <a href="/" className="w-fit text-2xl">
+          iOS Club
+        </a>
+        <div className="place-self-center">
+          <button
+            className="block hamburger md:hidden focus:outline-none"
+            onClick={() => setIsOpen(!isOpen)}
           >
-            <Icon icon={item.icon} color="#4f7096" />
-          </div>
-        ))}
+            <Icon
+              icon={isOpen ? "akar-icons:cross" : "bx:menu"}
+              className="w-6 h-6"
+            />
+          </button>
+        </div>
       </div>
+      {isOpen && (
+        <div className="bg-white flex flex-col ont-bold md:z-aut w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 shadow">
+          <ul className="">
+            {menuItems.map((item, index) => (
+              <li key={index} class="md:ml-8 text-x1 mx-4 my-6 md:my-0">
+                <a
+                  href={item.url}
+                  className="text-x1 text-gray-800 hover:text-cyan-600 duartion-500"
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <JoinUsButton />
+        </div>
+      )}
     </nav>
   );
   const desktopChild = (
-    <nav className="fixed flex py-4 text-lg px-3 md:px-8 text-solid w-screen top-0 bg-white shadow-md z-50">
+    <nav className="fixed flex items-center justify-between font-bold py-4 text-lg px-3 md:px-8 text-solid w-screen top-0 bg-white shadow-md z-50">
       <a href="/" className="font-bold">
         iOS Club
       </a>
-      <ul className="md:px-24 lg:px-60 xl:px-80 flex flex-grow justify-between space-x-10">
+
+      <ul className="md:flex md:items-center">
         {menuItems.map((item, index) => (
-          <li key={index}>
-            <a href={item.url} className="hover:underline underline-offset-8">
+          <li key={index} className="md:ml-8 text-x1">
+            <a
+              href={item.url}
+              className="text-x1 text-gray-800 hover:text-cyan-600 duartion-500"
+            >
               {item.name}
             </a>
           </li>
         ))}
       </ul>
-      <div>Join Us</div>
+      <JoinUsButton />
     </nav>
   );
   return (
@@ -45,6 +72,17 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+const JoinUsButton = () => (
+  <button
+    class="w-fit bg-blue-300 text-white px-10 py-2 md:ml-8 hover:bg-blue-500 rounded-full duration-700"
+    onClick={() => {
+      window.open("https://forms.gle/2o8TB3mrvHUMTxRE7", "_blank");
+    }}
+  >
+    Join Us
+  </button>
+);
 
 const menuItems = [
   {
