@@ -23,7 +23,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve("src/templates/member_page.js"),
       context: {
         node: edge.node,
-      }
+      },
     });
   });
 };
