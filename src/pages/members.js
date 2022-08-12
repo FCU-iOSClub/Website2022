@@ -18,7 +18,7 @@ const MembersPage = (props) => {
         <MemberImage src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/29cfacb6-0dec-4375-5a2c-c8ac3080bb00/public" />
         {/* 閱讀更多區塊 */}
         <div
-          className="flex flex-col items-center my-24"
+          className="flex flex-col items-center my-10 md:my-24"
           style={{ backgroundColor: "#F5E3E3" }}
         >
           <p
@@ -32,6 +32,7 @@ const MembersPage = (props) => {
             <Icon icon="akar-icons:triangle-fill" color="#A87B7B" rotate={2} />
           </div>
         </div>
+        <div className="h-4 " /> {/* 空白 */}
         {/* 歷屆 list */}
         <div>
           {members.map((item, _) => {
