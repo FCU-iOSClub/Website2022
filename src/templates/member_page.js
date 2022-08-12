@@ -26,7 +26,7 @@ const Gallery = (props) => {
             <div />
           )}
           {nextUrl ? (
-            <a href={prevUrl} className="flex items-center">
+            <a href={nextUrl} className="flex items-center">
               下一屆幹部介紹
               <Icon icon="ant-design:caret-right-outlined" color="#ecadad" />
             </a>
