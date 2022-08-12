@@ -1,73 +1,90 @@
 import * as React from "react";
+import { graphql } from "gatsby";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import AppHeader from "../components/header";
-import "@splidejs/react-splide/css";
+import { Icon } from "@iconify/react";
 
-const MembersPage = () => {
+const MembersPage = (props) => {
+  const members = props.data.allMemberJson.edges;
   return (
     <div className="bg-iosbgblue">
       {/* Header */}
-      <AppHeader />
+      <AppHeader title="iOS Club 歷屆幹部" />
       <Navbar />
-      <div className="h-96" /> {/* 空白區 */}
-      <div className="py-32 text-center text-8xl font-serif">施工中</div>
-      <div className="h-96" /> {/* 空白區 */}
-      <Footer />
-    </div>
-  );
-
-  // todo
-  return (
-    <div className="bg-iosbgblue">
-      {/* Header */}
-      <AppHeader />
-      <Navbar />
-      {/* body */}
-      <div class="container font-serif mx-auto break-all bg-white shadow-lg px-3 md:px-0 h-screen w-full flex justify-center items-center ">
-        <div className="w-full self-center">
-          <div className="text-center text-5xl font-bold ">
-            <h1 className="text-center md:text-left">iOS Club</h1>
-            <h1 className="py-3 text-center md:text-left">歷代社團幹部</h1>
-            {/* 橫槓 */}
-            <div className="h-2 my-4 bg-slate-700 rounded" />
-          </div>
-          <div class="p-2 max-w-7xl mx-auto w-full grid grid-cols-9">
-            {/* Stack 1 */}
-            <div class="col-span-4 w-full h-full">
-              <div class="w-full h-full bg-ioscardblue rounded-md p-2 md-pl-4">
-                <h1 class="text-white text-xl font-medium py-3">Title</h1>
-                <p class="text-gray-100 sm:text-sm text-xs">blablablabla</p>
-              </div>
-            </div>
-            <div class="relative col-span-1 w-full h-full flex justify-center items-center">
-              <div class="h-full w-1 bg-ioscardblue"></div>
-              <div class="absolute w-6 h-6 rounded-full bg-ioscardblue z-10 text-white text-center">
-                1
-              </div>
-            </div>
-            <div class="col-span-4 w-full h-full"></div>
-            {/* Stack 2 */}
-            <div class="col-span-4 w-full h-full"></div>
-            <div class="relative col-span-1 w-full h-full flex justify-center items-center">
-              <div class="h-full w-1 bg-ioscardblue"></div>
-              <div class="absolute w-6 h-6 rounded-full bg-ioscardblue z-10 text-white text-center">
-                2
-              </div>
-            </div>
-            <div class="col-span-4 w-full h-full">
-              <div class="w-full h-full bg-ioscardblue rounded-md p-2 md-pl-4">
-                <h1 class="text-white text-xl font-medium py-3">Title</h1>
-                <p class="text-gray-100 sm:text-sm text-xs">blablablabla</p>
-              </div>
-            </div>
+      <div className="xl:mx-24 bg-white font-serif">
+        <div className="h-32" /> {/* 空白 */}
+        <h1 className="text-5xl text-center font-bold">iOS Club 歷屆幹部</h1>
+        <MemberImage src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/29cfacb6-0dec-4375-5a2c-c8ac3080bb00/public" />
+        {/* 閱讀更多區塊 */}
+        <div
+          className="flex flex-col items-center my-24"
+          style={{ backgroundColor: "#F5E3E3" }}
+        >
+          <p
+            className="font-serif pt-10 text-center w-full text-xl font-bold"
+            style={{ color: "#A87B7B" }}
+          >
+            往下看更多
+          </p>
+          <div className="h-9" />
+          <div className="pb-8 animate-bounce">
+            <Icon icon="akar-icons:triangle-fill" color="#A87B7B" rotate={2} />
           </div>
         </div>
+        {/* 歷屆 list */}
+        <div>
+          {members.map((item, _) => {
+            const { node } = item;
+            return (
+              <div className="flex flex-col">
+                <a href={"/members/" + node.url}>
+                  <h2 className="text-4xl text-center font-bold">
+                    {node.name}
+                  </h2>
+                </a>
+                <a href={"/members/" + node.url}>
+                  <MemberImage src={node.image} />
+                </a>
+                <div className="h-16" /> {/* 空白 */}
+              </div>
+            );
+          })}
+        </div>
       </div>
-      {/* footer */}
       <Footer />
     </div>
   );
 };
+
+const MemberImage = (props) => {
+  const { src } = props;
+  return (
+    <div className="justify-center py-12 w-full">
+      <img
+        src={src}
+        className="rounded-lg shadow-lg object-cover w-full md:w-2/3 lg:w-1/2 m-auto"
+      />
+    </div>
+  );
+};
+
+export const qldata = graphql`
+  query MyQuery {
+    allMemberJson(sort: { order: DESC, fields: endDate }) {
+      edges {
+        node {
+          id
+          name
+          url
+          description
+          image
+          startDate
+          endDate
+        }
+      }
+    }
+  }
+`;
 
 export default MembersPage;

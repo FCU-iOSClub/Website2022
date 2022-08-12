@@ -17,6 +17,15 @@ exports.createPages = async ({ graphql, actions }) => {
       context: edge.node,
     });
   });
+  result.data.allMemberJson.edges.forEach((edge) => {
+    createPage({
+      path: `/members/${edge.node.url}`,
+      component: path.resolve("src/templates/member_page.js"),
+      context: {
+        node: edge.node,
+      }
+    });
+  });
 };
 
 const galleryQuerry = `
@@ -30,6 +39,25 @@ query {
         name
         photos
         date
+      }
+    }
+  }
+  allMemberJson(sort: { order: ASC, fields: endDate }) {
+    edges {
+      node {
+        id
+        name
+        url
+        description
+        image
+        startDate
+        endDate
+        members {
+          description
+          image
+          name
+          position
+        }
       }
     }
   }
