@@ -49,10 +49,12 @@ const Gallery = (props) => {
 
 const MemberCard = (props) => {
   const { member } = props;
+  const tempImg =
+    "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/827f1788-4157-497b-0ecb-6168f73db400/public";
   return (
     <div className="border-2  border-iosbgblue rounded-lg p-6">
       <img
-        src={member.image}
+        src={member.image.length === 0 ? tempImg : member.image}
         className="w-full object-cover mx-auto rounded-full"
       />
       <h3 className="text-2xl font-bold py-4">
