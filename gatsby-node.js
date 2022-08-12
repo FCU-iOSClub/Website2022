@@ -17,15 +17,22 @@ exports.createPages = async ({ graphql, actions }) => {
       context: edge.node,
     });
   });
-  result.data.allMemberJson.edges.forEach((edge) => {
+  const memberEdges = result.data.allMemberJson.edges;
+  for (let i = 0; i < memberEdges.length; i++) {
+    const edge = memberEdges[i];
+    const prevUrl = i === 0 ? null : memberEdges[i - 1].node.url;
+    const nextUrl =
+      i === memberEdges.length - 1 ? null : memberEdges[i + 1].node.url;
     createPage({
       path: `/members/${edge.node.url}`,
       component: path.resolve("src/templates/member_page.js"),
       context: {
         node: edge.node,
+        prevUrl: prevUrl,
+        nextUrl: nextUrl,
       },
     });
-  });
+  }
 };
 
 const galleryQuerry = `

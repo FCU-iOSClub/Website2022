@@ -12,7 +12,7 @@ const MembersPage = (props) => {
       {/* Header */}
       <AppHeader title="iOS Club 歷屆幹部" />
       <Navbar />
-      <div className="xl:mx-24 bg-white font-serif">
+      <div className="xl:mx-24 bg-white font-serif px-2 md:px-0">
         <div className="h-32" /> {/* 空白 */}
         <h1 className="text-5xl text-center font-bold">iOS Club 歷屆幹部</h1>
         <MemberImage src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/29cfacb6-0dec-4375-5a2c-c8ac3080bb00/public" />

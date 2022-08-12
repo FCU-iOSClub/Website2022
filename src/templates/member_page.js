@@ -2,17 +2,38 @@ import * as React from "react";
 import Footer from "../components/footer";
 import AppHeader from "../components/header";
 import Navbar from "../components/navbar";
+import { Icon } from "@iconify/react";
 
 const Gallery = (props) => {
-  const { node } = props.pageContext;
+  const { node, prevUrl, nextUrl } = props.pageContext;
 
   return (
     <div className="bg-iosbgblue">
       <AppHeader title={"歷屆幹部 - " + node.name} />
       <Navbar />
-      <div className="container mx-auto break-all bg-white font-serif">
+      <div className="px-2 md:px-0 container mx-auto break-all bg-white font-serif">
         <div className="h-32" /> {/* 空白區 */}
         <h1 className="text-4xl text-center font-bold">{node.name}</h1>
+        <div className="h-8" /> {/* 空白區 */}
+        {/* 上、下一屆 */}
+        <div className="flex flex-wrap justify-between text-iospink md:px-16 text-xl font-medium gap-y-4">
+          {prevUrl ? (
+            <a href={prevUrl} className="flex items-center">
+              <Icon icon="ant-design:caret-left-outlined" color="#ecadad" />
+              上一屆幹部介紹
+            </a>
+          ) : (
+            <div />
+          )}
+          {nextUrl ? (
+            <a href={prevUrl} className="flex items-center">
+              下一屆幹部介紹
+              <Icon icon="ant-design:caret-right-outlined" color="#ecadad" />
+            </a>
+          ) : (
+            <div />
+          )}
+        </div>
         <div className="h-16" /> {/* 空白區 */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-full gap-16 md:px-16">
           {node.members.map((member) => {
