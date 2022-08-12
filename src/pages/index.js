@@ -1,7 +1,6 @@
 import * as React from "react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
-import { ReactComponent as LogoSvg } from "../images/svg/logo.svg";
 import { ReactComponent as AboutIosSvg } from "../images/svg/about_ios.svg";
 import { ReactComponent as IosClubDoingSvg } from "../images/svg/iosclub_doing.svg";
 import AppHeader from "../components/header";
@@ -59,7 +58,10 @@ const IndexPage = () => {
               </button>
             </div>
           </div>
-          <LogoSvg className="w-full p-10" fill="#696AAD" />
+          <img
+            className="w-full"
+            src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/827f1788-4157-497b-0ecb-6168f73db400/public"
+          />
         </div>
         <div className="h-8" />
         {/* About iOS Club. */}
