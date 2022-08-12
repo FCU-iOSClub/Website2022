@@ -51,7 +51,10 @@ const MemberCard = (props) => {
   const { member } = props;
   return (
     <div className="border-2  border-iosbgblue rounded-lg p-6">
-      <img src={member.image} className="w-full object-cover mx-auto" />
+      <img
+        src={member.image}
+        className="w-full object-cover mx-auto rounded-full"
+      />
       <h3 className="text-2xl font-bold py-4">
         {member.position + " " + member.name}
       </h3>
