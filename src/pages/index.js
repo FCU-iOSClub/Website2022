@@ -46,9 +46,9 @@ const IndexPage = () => {
                   </div>
                 </div>
               </button>
-              {/* 歷代社團幹部 按鈕 todo hidden*/}
+              {/* 歷代社團幹部 按鈕 */}
               <button
-                class="hidden overflow-hidden group h-12 px-6 border bg-btnbg border-btnbg rounded transform hover:bg-ioscardblue hover:border-ioscardblue duration-200"
+                class="overflow-hidden group h-12 px-6 border bg-btnbg border-btnbg rounded transform hover:bg-ioscardblue hover:border-ioscardblue duration-200"
                 onClick={() => {
                   window.location.href = "/members";
                 }}
