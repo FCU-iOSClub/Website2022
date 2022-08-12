@@ -20,6 +20,7 @@ module.exports = {
         footerbg: "#4F7096",
         btnbg: "#445484",
         btnbg1: "#FFF5D1",
+        iospink: "#ECADAD",
       },
     },
   },
