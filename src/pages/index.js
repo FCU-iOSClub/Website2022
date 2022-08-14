@@ -1,24 +1,26 @@
 import * as React from "react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
-import { ReactComponent as AboutIosSvg } from "../images/svg/about_ios.svg";
-import { ReactComponent as IosClubDoingSvg } from "../images/svg/iosclub_doing.svg";
+import {ReactComponent as AboutIosSvg} from "../images/svg/about_ios.svg";
+import {ReactComponent as IosClubDoingSvg} from "../images/svg/iosclub_doing.svg";
 import AppHeader from "../components/header";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
+import {Splide, SplideSlide} from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
-import { Icon } from "@iconify/react";
+import {AutoScroll} from "@splidejs/splide-extension-auto-scroll";
+import {Icon} from "@iconify/react";
 
 const IndexPage = () => {
   return (
     <div className="bg-iosbgblue">
       {/* Header */}
-      <AppHeader />
-      <Navbar />
+      <AppHeader/>
+      <Navbar/>
       <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-0 font-serif">
-        <div className="h-20 md:h-32" /> {/* 空白 */}
+        <div className="h-20 md:h-32"/>
+        {/* 空白 */}
         {/* We are iOS Club */}
-        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
+        <div
+          className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
           <div className="w-full self-center">
             <div className="text-center text-5xl font-bold">
               <h1 className="py-3 text-center md:text-left">We are</h1>
@@ -27,16 +29,18 @@ const IndexPage = () => {
             <p className="py-3 text-gray-700 text-center md:text-left">
               一個教你從零開始打造專屬 APP 的社團
             </p>
-            <div className="h-2 md:h-2" /> {/* 空白 */}
-            <div className="px-5 md:p-0 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3 md:gap-3 w-full relative bottom-120 left-1/2 -translate-x-1/2">
+            <div className="h-2 md:h-2"/>
+            {/* 空白 */}
+            <div
+              className="px-5 md:p-0 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3 md:gap-3 w-full relative bottom-120 left-1/2 -translate-x-1/2">
               {/* Join Us 按鈕 */}
               <button
-                class="overflow-hidden group h-12 px-6 border border-btnbg rounded"
+                className="overflow-hidden group h-12 px-6 border border-btnbg rounded"
                 onClick={() => {
                   window.open("https://forms.gle/2o8TB3mrvHUMTxRE7", "_blank");
                 }}
               >
-                <div class="transition duration-200 group-hover:-translate-y-12">
+                <div className="transition duration-200 group-hover:-translate-y-12">
                   <div className="h-12 flex items-center justify-center text-btnbg break-words ">
                     Join Us
                   </div>
@@ -47,7 +51,7 @@ const IndexPage = () => {
               </button>
               {/* 歷代社團幹部 按鈕 */}
               <button
-                class="overflow-hidden group h-12 px-6 border bg-btnbg border-btnbg rounded transform hover:bg-ioscardblue hover:border-ioscardblue duration-200"
+                className="overflow-hidden group h-12 px-6 border bg-btnbg border-btnbg rounded transform hover:bg-ioscardblue hover:border-ioscardblue duration-200"
                 onClick={() => {
                   window.location.href = "/members";
                 }}
@@ -63,10 +67,11 @@ const IndexPage = () => {
             src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/827f1788-4157-497b-0ecb-6168f73db400/public"
           />
         </div>
-        <div className="h-8" />
+        <div className="h-8"/>
         {/* About iOS Club. */}
-        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
-          <AboutIosSvg className="w-full p-10 md:p-0 bg-cover hidden md:block" />
+        <div
+          className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
+          <AboutIosSvg className="w-full p-10 md:p-0 bg-cover hidden md:block"/>
           <div className="w-full self-center">
             <div className="text-center text-5xl font-bold">
               <h1 className="py-3">About</h1>
@@ -79,11 +84,12 @@ const IndexPage = () => {
               和不同國家的學生進行合作活動與技術交流。
             </p>
           </div>
-          <AboutIosSvg className="w-full p-10 md:p-0 bg-cover md:hidden" />
+          <AboutIosSvg className="w-full p-10 md:p-0 bg-cover md:hidden"/>
         </div>
-        <div className="h-32" />
+        <div className="h-32"/>
         {/* iOS Club 會做什麼 */}
-        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
+        <div
+          className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
           <div className="w-full self-center">
             <div className="text-center text-5xl font-bold">
               <h2 className="py-3">iOS Club</h2>
@@ -97,9 +103,10 @@ const IndexPage = () => {
               身為志工性社團的我們，還會和相關機構及國小一同舉辦志工營隊，將在社團內所學回饋社會。
             </p>
           </div>
-          <IosClubDoingSvg className="w-full" />
+          <IosClubDoingSvg className="w-full"/>
         </div>
-        <div className="h-16" /> {/* 空白 */}
+        <div className="h-16"/>
+        {/* 空白 */}
         {/* Gallery */}
         <h2 className="text-center text-3xl pt-24 pb-12 font-bold">社團相簿</h2>
         <div>
@@ -127,11 +134,11 @@ const IndexPage = () => {
                 },
               },
             }}
-            extensions={{ AutoScroll }}
+            extensions={{AutoScroll}}
           >
             {imageList.map((image, index) => (
               <SplideSlide key={index}>
-                <img src={image} className="w-full h-full object-cover" />
+                <img src={image} className="w-full h-full object-cover"/>
               </SplideSlide>
             ))}
           </Splide>
@@ -155,7 +162,8 @@ const IndexPage = () => {
           </a>
         </div>
         {/* iOS Club 做過什麼 */}
-        <div className="h-20 md:h-32" /> {/* 空白 */}
+        <div className="h-20 md:h-32"/>
+        {/* 空白 */}
         <h2 className="text-center text-3xl py-3 font-bold">
           iOS Club 做過什麼
         </h2>
@@ -174,23 +182,24 @@ const IndexPage = () => {
           </div>
           <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
             <h2 className="my-8 px-2 text-xl font-bold">社團競賽</h2>
-            <p classwName="my-8">社團每年參加的比賽</p>
+            <p className="my-8">社團每年參加的比賽</p>
             {learnMoreButton("/contest")}
           </div>
         </div>
         {/* 聯絡我們 */}
-        <div class="antialiased">
-          <div class="flex w-full py-12 md:py-32 justify-center items-center">
-            <div class="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 bg-btnbg w-full max-w-4xl p-8 rounded-xl shadow-lg text-white">
-              <div class="flex flex-col space-y-8 justify-between">
+        <div className="antialiased">
+          <div className="flex w-full py-12 md:py-32 justify-center items-center">
+            <div
+              className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 bg-btnbg w-full max-w-4xl p-8 rounded-xl shadow-lg text-white">
+              <div className="flex flex-col space-y-8 justify-between">
                 <div>
-                  <h1 class="font-bold text-4xl tracking-wide">Contact US</h1>
-                  <p class="pt-2 text-cyan-100">
+                  <h1 className="font-bold text-4xl tracking-wide">Contact US</h1>
+                  <p className="pt-2 text-cyan-100">
                     如想更加暸解我們或是想要與我們合作，歡迎洽詢！
                   </p>
                 </div>
-                <div class="flex flex-col space-y-4">
-                  <div class="inline-flex space-x-2 items-center">
+                <div className="flex flex-col space-y-4">
+                  <div className="inline-flex space-x-2 items-center">
                     <Icon
                       icon="carbon:email"
                       width="20"
@@ -199,7 +208,7 @@ const IndexPage = () => {
                     />
                     <a href="mailto:iosclubtw@gmail.com">iosclubtw@gmail.com</a>
                   </div>
-                  <div class="inline-flex space-x-2 items-center">
+                  <div className="inline-flex space-x-2 items-center">
                     <Icon
                       icon="akar-icons:location"
                       width="20"
@@ -215,7 +224,7 @@ const IndexPage = () => {
                   </div>
                 </div>
                 {/* Social icon */}
-                <div class="flex space-x-4 text-lg">
+                <div className="flex space-x-4 text-lg">
                   {socialItems.map((icon, index) => (
                     <a href={icon.href} target="_blank">
                       <Icon
@@ -233,7 +242,7 @@ const IndexPage = () => {
         </div>
       </div>
       {/* footer */}
-      <Footer />
+      <Footer/>
     </div>
   );
 };
