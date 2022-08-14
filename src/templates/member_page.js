@@ -40,7 +40,37 @@ const Gallery = (props) => {
             return <MemberCard member={member} />;
           })}
         </div>
-        <div className="h-8" />
+        <div className="h-8" /> {/* 空白區 */}
+        <div className="flex flex-wrap justify-between text-iospink md:px-16 text-xl font-medium gap-y-4">
+          {prevUrl ? (
+            <a href={prevUrl} className="flex items-center">
+              <Icon icon="ant-design:caret-left-outlined" color="#ecadad" />
+              上一屆幹部介紹
+            </a>
+          ) : (
+            <div />
+          )}
+          {nextUrl ? (
+            <a href={nextUrl} className="flex items-center">
+              下一屆幹部介紹
+              <Icon icon="ant-design:caret-right-outlined" color="#ecadad" />
+            </a>
+          ) : (
+            <div />
+          )}
+        </div>
+        <div className="h-8" /> {/* 空白區 */}
+        <div className="flex justify-items-center">
+          <p className="my-8 m-auto">
+            <a
+              className="w-fit py-3 px-6 rounded-full break-words bg-transparent border border-gray-700 hover:bg-btnbg text-gray-800 hover:text-white"
+              href="/members"
+            >
+              <nobr>返回歷屆幹部</nobr>
+            </a>
+          </p>
+        </div>
+        <div className="h-8" /> {/* 空白區 */}
       </div>
       <Footer />
     </div>
