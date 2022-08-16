@@ -5,7 +5,7 @@ import AppHeader from "../components/header";
 
 const CompanionPage = () => {
   return (
-    <div className=" bg-blue-300">
+    <div className="bg-iosbgblue">
       {/* Header */}
       <AppHeader title="iOS Club 相關單位" />
       {Navbar()}
