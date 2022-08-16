@@ -7,9 +7,69 @@
   "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/29cfacb6-0dec-4375-5a2c-c8ac3080bb00/public",
   "members": [
     {
-      "name": "鍾旻倢",
+      "name": "温子瑩",
       "description": "",
       "position": "社長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/a2082b20-854a-4392-ac84-7c3269af7100/public"
+    },
+    {
+      "name": "鄭慕岑",
+      "description": "",
+      "position": "副社長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/13570b07-c5c6-4b33-9441-e609faa8fa00/public"
+    },
+    {
+      "name": "鄭景耀",
+      "description": "",
+      "position": "網管",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/c8a037a5-d48f-4218-4e0c-a56ee3b77b00/public"
+    },
+    {
+      "name": "李柏霖",
+      "description": "",
+      "position": "技術",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/6385b4cb-ed3a-4423-3612-21731751d200/public"
+    },
+    {
+      "name": "余睿霖",
+      "description": "",
+      "position": "技術",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/e3dea630-0831-4b6c-ce0d-91784d682200/public"
+    },
+    {
+      "name": "林育展",
+      "description": "",
+      "position": "執行秘書",
+      "image": ""
+    },
+    {
+      "name": "林昱銓",
+      "description": "",
+      "position": "公關",
+      "image": ""
+    },
+    {
+      "name": "林祺鈞",
+      "description": "",
+      "position": "總務",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/aad0b92d-4f97-4ed4-478b-562cff619600/public"
+    },
+    {
+      "name": "潘柏嘉",
+      "description": "",
+      "position": "教學",
+      "image": ""
+    },
+    {
+      "name": "王竣翔",
+      "description": "",
+      "position": "教學",
+      "image": ""
+    },
+    {
+      "name": "吳珮瑜",
+      "description": "",
+      "position": "美宣",
       "image": ""
     }
   ]
