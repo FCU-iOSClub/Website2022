@@ -1,26 +1,25 @@
 import * as React from "react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
-import {ReactComponent as AboutIosSvg} from "../images/svg/about_ios.svg";
-import {ReactComponent as IosClubDoingSvg} from "../images/svg/iosclub_doing.svg";
+import { ReactComponent as AboutIosSvg } from "../images/svg/about_ios.svg";
+import { ReactComponent as IosClubDoingSvg } from "../images/svg/iosclub_doing.svg";
 import AppHeader from "../components/header";
-import {Splide, SplideSlide} from "@splidejs/react-splide";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-import {AutoScroll} from "@splidejs/splide-extension-auto-scroll";
-import {Icon} from "@iconify/react";
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+import { Icon } from "@iconify/react";
 
 const IndexPage = () => {
   return (
     <div className="bg-iosbgblue">
       {/* Header */}
-      <AppHeader/>
-      <Navbar/>
+      <AppHeader />
+      <Navbar />
       <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-0 font-serif">
-        <div className="h-20 md:h-32"/>
+        <div className="h-20 md:h-32" />
         {/* 空白 */}
         {/* We are iOS Club */}
-        <div
-          className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
+        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
           <div className="w-full self-center">
             <div className="text-center text-5xl font-bold">
               <h1 className="py-3 text-center md:text-left">We are</h1>
@@ -29,10 +28,9 @@ const IndexPage = () => {
             <p className="py-3 text-gray-700 text-center md:text-left">
               一個教你從零開始打造專屬 APP 的社團
             </p>
-            <div className="h-2 md:h-2"/>
+            <div className="h-2 md:h-2" />
             {/* 空白 */}
-            <div
-              className="px-5 md:p-0 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3 md:gap-3 w-full relative bottom-120 left-1/2 -translate-x-1/2">
+            <div className="px-5 md:p-0 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3 md:gap-3 w-full relative bottom-120 left-1/2 -translate-x-1/2">
               {/* Join Us 按鈕 */}
               <button
                 className="overflow-hidden group h-12 px-6 border border-btnbg rounded"
@@ -67,11 +65,10 @@ const IndexPage = () => {
             src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/827f1788-4157-497b-0ecb-6168f73db400/public"
           />
         </div>
-        <div className="h-8"/>
+        <div className="h-8" />
         {/* About iOS Club. */}
-        <div
-          className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
-          <AboutIosSvg className="w-full p-10 md:p-0 bg-cover hidden md:block"/>
+        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
+          <AboutIosSvg className="w-full p-10 md:p-0 bg-cover hidden md:block" />
           <div className="w-full self-center">
             <div className="text-center text-5xl font-bold">
               <h1 className="py-3">About</h1>
@@ -84,12 +81,11 @@ const IndexPage = () => {
               和不同國家的學生進行合作活動與技術交流。
             </p>
           </div>
-          <AboutIosSvg className="w-full p-10 md:p-0 bg-cover md:hidden"/>
+          <AboutIosSvg className="w-full p-10 md:p-0 bg-cover md:hidden" />
         </div>
-        <div className="h-32"/>
+        <div className="h-32" />
         {/* iOS Club 會做什麼 */}
-        <div
-          className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
+        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
           <div className="w-full self-center">
             <div className="text-center text-5xl font-bold">
               <h2 className="py-3">iOS Club</h2>
@@ -103,9 +99,9 @@ const IndexPage = () => {
               身為志工性社團的我們，還會和相關機構及國小一同舉辦志工營隊，將在社團內所學回饋社會。
             </p>
           </div>
-          <IosClubDoingSvg className="w-full"/>
+          <IosClubDoingSvg className="w-full" />
         </div>
-        <div className="h-16"/>
+        <div className="h-16" />
         {/* 空白 */}
         {/* Gallery */}
         <h2 className="text-center text-3xl pt-24 pb-12 font-bold">社團相簿</h2>
@@ -138,11 +134,11 @@ const IndexPage = () => {
                 },
               },
             }}
-            extensions={{AutoScroll}}
+            extensions={{ AutoScroll }}
           >
             {imageList.map((image, index) => (
               <SplideSlide key={index}>
-                <img src={image} className="w-full h-full object-cover"/>
+                <img src={image} className="w-full h-full object-cover" />
               </SplideSlide>
             ))}
           </Splide>
@@ -166,7 +162,7 @@ const IndexPage = () => {
           </a>
         </div>
         {/* iOS Club 做過什麼 */}
-        <div className="h-20 md:h-32"/>
+        <div className="h-20 md:h-32" />
         {/* 空白 */}
         <h2 className="text-center text-3xl py-3 font-bold">
           iOS Club 做過什麼
@@ -193,11 +189,12 @@ const IndexPage = () => {
         {/* 聯絡我們 */}
         <div className="antialiased">
           <div className="flex w-full py-12 md:py-32 justify-center items-center">
-            <div
-              className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 bg-btnbg w-full max-w-4xl p-8 rounded-xl shadow-lg text-white">
+            <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 bg-btnbg w-full max-w-4xl p-8 rounded-xl shadow-lg text-white">
               <div className="flex flex-col space-y-8 justify-between">
                 <div>
-                  <h1 className="font-bold text-4xl tracking-wide">Contact US</h1>
+                  <h1 className="font-bold text-4xl tracking-wide">
+                    Contact US
+                  </h1>
                   <p className="pt-2 text-cyan-100">
                     如想更加暸解我們或是想要與我們合作，歡迎洽詢！
                   </p>
@@ -246,7 +243,7 @@ const IndexPage = () => {
         </div>
       </div>
       {/* footer */}
-      <Footer/>
+      <Footer />
     </div>
   );
 };
