@@ -1,0 +1,64 @@
+{
+  "name": "第一屆",
+  "url": "1",
+  "startDate": "2017-08-01",
+  "endDate": "2018-07-31",
+  "description": "",
+  "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/827f1788-4157-497b-0ecb-6168f73db400/public",
+  "members": [
+    {
+      "name": "阮揚洲",
+      "description": "",
+      "position": "社長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/a756d60a-997a-4a9d-52da-9cfa09e4d700/public"
+    },
+    {
+      "name": "陳薇涵",
+      "description": "",
+      "position": "副社長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/a0170bb6-b28b-4a3b-36fe-b1b310f13b00/public"
+    },
+    {
+      "name": "邱于軒",
+      "description": "",
+      "position": "執秘",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/a121a30b-a5a6-486b-fce0-2dc75d51fa00/public"
+    },
+    {
+      "name": "蔡昌銘",
+      "description": "",
+      "position": "活動長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/9fde784b-af68-4624-b9fc-11b30858a100/public"
+    },
+    {
+      "name": "謝忠穎",
+      "description": "",
+      "position": "UI/UX長",
+      "image": ""
+    },
+    {
+      "name": "陳昱任",
+      "description": "",
+      "position": "技術長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/c4b2b4e8-77c8-46d0-c90e-6ac75a181a00/public"
+    },
+    {
+      "name": "賴亨學",
+      "description": "",
+      "position": "技術長",
+      "image": ""
+    },
+    {
+      "name": "劉永貴",
+      "description": "",
+      "position": "網管",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/082f9de8-cf2f-4f6e-6c49-6e05265e8700/public"
+    },
+    {
+      "name": "張淨雯",
+      "description": "",
+      "position": "宣傳長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/18410039-ff64-4844-9689-43438332b800/public"
+    }
+  ]
+}
