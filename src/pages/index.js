@@ -100,11 +100,13 @@ const IndexPage = () => {
         <div className="h-16" /> {/* 空白 */}
         {/* Gallery */}
         <h2 className="text-center text-3xl pt-24 pb-12 font-bold">社團相簿</h2>
-        <div>
+        <div className="">
           <Splide
             options={{
               type: "loop",
               focus: "center",
+              height: "50vh",
+              autoWidth: true,
               gap: "1rem",
               perPage: 1,
               padding: "20%",
@@ -112,12 +114,14 @@ const IndexPage = () => {
               drag: false,
               pagination: false,
               autoScroll: {
-                speed: 1.8,
+                speed: 1,
                 pauseOnHover: false,
               },
               breakpoints: {
                 768: {
                   padding: "15%",
+                  height: "30vh",
+                  autoWidth: true,
                   autoScroll: {
                     speed: 1,
                     pauseOnHover: false,
