@@ -45,7 +45,15 @@ const MembersPage = (props) => {
                   </h2>
                 </a>
                 <a href={"/members/" + node.url}>
-                  <MemberImage src={node.image} />
+                  <div className="block relative">
+                    <MemberImage src={node.image} />
+                    <div
+                      className="bg-iospink truncate text-center py-3 px-6 rounded-md break-words w-fit absolute right-0 md:right-48 xl:left-2/3 bottom-10"
+                      href="/gallery_list"
+                    >
+                      {node.startDate + " - " + node.endDate}
+                    </div>
+                  </div>
                 </a>
                 <div className="h-16" /> {/* 空白 */}
               </div>
