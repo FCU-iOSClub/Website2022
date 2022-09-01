@@ -68,6 +68,10 @@ yarn prettier
 
 目前大部分的照片都放在 GitHub 的 FCU-iOSClub/Website2022ImageBed 上。
 
+## 歷屆幹部
+
+在 `src/data/member` 中新增檔案
+
 ## Icon
 
 Icon 使用 [Iconify](https://iconify.design)。
