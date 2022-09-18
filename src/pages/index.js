@@ -1,4 +1,6 @@
 import * as React from "react";
+import { useState } from "react";
+import { graphql } from "gatsby";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import { ReactComponent as AboutIosSvg } from "../images/svg/about_ios.svg";
@@ -8,16 +10,73 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import { Icon } from "@iconify/react";
+import loudspeakerIcon from "@iconify/icons-fluent-emoji-high-contrast/loudspeaker";
+import chevronUp from "@iconify/icons-akar-icons/chevron-up";
+import chevronDown from "@iconify/icons-akar-icons/chevron-down";
 
-const IndexPage = () => {
+const IndexPage = (props) => {
+  const [isAnnouncementOpen, setIsAnnouncementOpen] = useState(false);
+  const anns = props.data.allAnnouncementJson.edges;
+
+  const annsHtml = [];
+  annsHtml.push(
+    <div
+      className="bg-white p-3 rounded-md"
+      dangerouslySetInnerHTML={{
+        __html: anns[0].node.content.replaceAll("\n", "<br>"),
+      }}
+    />
+  );
+  anns.slice(1, 4).forEach((v) => {
+    annsHtml.push(
+      <div className="flex items-center gap-2">
+        <Icon
+          icon={loudspeakerIcon}
+          color="#1f2937"
+          width="30"
+          height="30"
+          className="flex-shrink-0"
+        />
+        <div className="">{v.node.title}</div>
+      </div>
+    );
+    annsHtml.push(
+      <div
+        className="bg-white p-3 rounded-md"
+        dangerouslySetInnerHTML={{
+          __html: v.node.content.replaceAll("\n", "<br>"),
+        }}
+      />
+    );
+  });
+
   return (
     <div className="bg-iosbgblue">
       {/* Header */}
       <AppHeader />
       <Navbar />
       <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-0 font-serif">
-        <div className="h-20 md:h-32" />
-        {/* 空白 */}
+        <div className="h-20 md:h-32" /> {/* 空白 */}
+        {/* 最新消息 */}
+        <div className="bg-gray-300 mx-5 py-4 px-4 rounded-md flex flex-col gap-4">
+          <div className="flex items-center gap-2">
+            <Icon
+              icon={loudspeakerIcon}
+              color="#1f2937"
+              width="30"
+              height="30"
+              className="flex-shrink-0"
+            />
+            <div className="flex-grow">{anns[0].node.title}</div>
+            <Icon
+              icon={isAnnouncementOpen ? chevronDown : chevronUp}
+              color="#1f2937"
+              onClick={() => setIsAnnouncementOpen(!isAnnouncementOpen)}
+              className="cursor-pointer"
+            />
+          </div>
+          {isAnnouncementOpen && annsHtml}
+        </div>
         {/* We are iOS Club */}
         <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
           <div className="w-full self-center">
@@ -291,5 +350,23 @@ const socialItems = [
     href: "https://discord.com/invite/z2VPCNFupv",
   },
 ];
+
+export const qldata = graphql`
+  query IndexQuery {
+    allAnnouncementJson(sort: { fields: [date], order: DESC }) {
+      edges {
+        node {
+          id
+          title
+          date
+          content
+          urlText
+          url
+          image
+        }
+      }
+    }
+  }
+`;
 
 export default IndexPage;
