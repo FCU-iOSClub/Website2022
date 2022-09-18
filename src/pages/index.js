@@ -15,41 +15,6 @@ import chevronUp from "@iconify/icons-akar-icons/chevron-up";
 import chevronDown from "@iconify/icons-akar-icons/chevron-down";
 
 const IndexPage = (props) => {
-  const [isAnnouncementOpen, setIsAnnouncementOpen] = useState(false);
-  const anns = props.data.allAnnouncementJson.edges;
-
-  const annsHtml = [];
-  annsHtml.push(
-    <div
-      className="bg-white p-3 rounded-md"
-      dangerouslySetInnerHTML={{
-        __html: anns[0].node.content.replaceAll("\n", "<br>"),
-      }}
-    />
-  );
-  anns.slice(1, 4).forEach((v) => {
-    annsHtml.push(
-      <div className="flex items-center gap-2">
-        <Icon
-          icon={loudspeakerIcon}
-          color="#1f2937"
-          width="30"
-          height="30"
-          className="flex-shrink-0"
-        />
-        <div className="">{v.node.title}</div>
-      </div>
-    );
-    annsHtml.push(
-      <div
-        className="bg-white p-3 rounded-md"
-        dangerouslySetInnerHTML={{
-          __html: v.node.content.replaceAll("\n", "<br>"),
-        }}
-      />
-    );
-  });
-
   return (
     <div className="bg-iosbgblue">
       {/* Header */}
@@ -58,25 +23,7 @@ const IndexPage = (props) => {
       <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-0 font-serif">
         <div className="h-20 md:h-32" /> {/* 空白 */}
         {/* 最新消息 */}
-        <div className="bg-gray-300 mx-5 py-4 px-4 rounded-md flex flex-col gap-4">
-          <div className="flex items-center gap-2">
-            <Icon
-              icon={loudspeakerIcon}
-              color="#1f2937"
-              width="30"
-              height="30"
-              className="flex-shrink-0"
-            />
-            <div className="flex-grow">{anns[0].node.title}</div>
-            <Icon
-              icon={isAnnouncementOpen ? chevronDown : chevronUp}
-              color="#1f2937"
-              onClick={() => setIsAnnouncementOpen(!isAnnouncementOpen)}
-              className="cursor-pointer"
-            />
-          </div>
-          {isAnnouncementOpen && annsHtml}
-        </div>
+        <AnnouncementLiet data={props.data} />
         {/* We are iOS Club */}
         <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
           <div className="w-full self-center">
@@ -303,6 +250,66 @@ const IndexPage = (props) => {
       </div>
       {/* footer */}
       <Footer />
+    </div>
+  );
+};
+
+// 最新消息
+const AnnouncementLiet = (props) => {
+  const [isAnnouncementOpen, setIsAnnouncementOpen] = useState(false);
+  const anns = props.data.allAnnouncementJson.edges;
+
+  const annsHtml = [];
+  annsHtml.push(
+    <div
+      className="bg-white p-3 rounded-md"
+      dangerouslySetInnerHTML={{
+        __html: anns[0].node.content.replaceAll("\n", "<br>"),
+      }}
+    />
+  );
+  anns.slice(1, 4).forEach((v) => {
+    annsHtml.push(
+      <div className="flex items-center gap-2">
+        <Icon
+          icon={loudspeakerIcon}
+          color="#1f2937"
+          width="30"
+          height="30"
+          className="flex-shrink-0"
+        />
+        <div className="">{v.node.title}</div>
+      </div>
+    );
+    annsHtml.push(
+      <div
+        className="bg-white p-3 rounded-md"
+        dangerouslySetInnerHTML={{
+          __html: v.node.content.replaceAll("\n", "<br>"),
+        }}
+      />
+    );
+  });
+
+  return (
+    <div className="bg-gray-300 mx-5 py-4 px-4 rounded-md flex flex-col gap-4">
+      <div className="flex items-center gap-2">
+        <Icon
+          icon={loudspeakerIcon}
+          color="#1f2937"
+          width="30"
+          height="30"
+          className="flex-shrink-0"
+        />
+        <div className="flex-grow">{anns[0].node.title}</div>
+        <Icon
+          icon={isAnnouncementOpen ? chevronDown : chevronUp}
+          color="#1f2937"
+          onClick={() => setIsAnnouncementOpen(!isAnnouncementOpen)}
+          className="cursor-pointer flex-shrink-0"
+        />
+      </div>
+      {isAnnouncementOpen && annsHtml}
     </div>
   );
 };
