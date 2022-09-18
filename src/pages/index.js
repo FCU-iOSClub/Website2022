@@ -20,7 +20,7 @@ const IndexPage = (props) => {
       {/* Header */}
       <AppHeader />
       <Navbar />
-      <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-0 font-serif">
+      <div className="container mx-auto break-normal bg-white shadow-lg px-3 md:px-0 font-serif">
         <div className="h-20 md:h-32" /> {/* 空白 */}
         {/* 最新消息 */}
         <AnnouncementLiet data={props.data} />
@@ -254,20 +254,41 @@ const IndexPage = (props) => {
   );
 };
 
-// 最新消息
+// 最新消息 react hook
 const AnnouncementLiet = (props) => {
   const [isAnnouncementOpen, setIsAnnouncementOpen] = useState(false);
   const anns = props.data.allAnnouncementJson.edges;
 
+  // 白底內容的 react hook
+  const AnnContent = (props) => {
+    const node = props.node;
+    return (
+      <div className="bg-white p-3 rounded-md flex flex-col md:flex-row">
+        <div className="flex-grow flex flex-col gap-3">
+          <p
+            dangerouslySetInnerHTML={{
+              __html: node.content.replaceAll("\n", "<br>"),
+            }}
+          />
+          {node.url && node.url.length > 0 && (
+            <a
+              className="text-blue-500 underline underline-offset-2 font-bold"
+              href={node.url}
+              target="__blank"
+            >
+              {node.urlText}
+            </a>
+          )}
+        </div>
+        {node.image && node.image.length > 0 && (
+          <img className="w-full md:w-48 object-scale-down" src={node.image} />
+        )}
+      </div>
+    );
+  };
+
   const annsHtml = [];
-  annsHtml.push(
-    <div
-      className="bg-white p-3 rounded-md"
-      dangerouslySetInnerHTML={{
-        __html: anns[0].node.content.replaceAll("\n", "<br>"),
-      }}
-    />
-  );
+  annsHtml.push(<AnnContent node={anns[0].node} />);
   anns.slice(1, 4).forEach((v) => {
     annsHtml.push(
       <div className="flex items-center gap-2">
@@ -281,18 +302,11 @@ const AnnouncementLiet = (props) => {
         <div className="">{v.node.title}</div>
       </div>
     );
-    annsHtml.push(
-      <div
-        className="bg-white p-3 rounded-md"
-        dangerouslySetInnerHTML={{
-          __html: v.node.content.replaceAll("\n", "<br>"),
-        }}
-      />
-    );
+    annsHtml.push(<AnnContent node={v.node} />);
   });
 
   return (
-    <div className="bg-gray-300 md:mx-5 py-4 px-4 rounded-md flex flex-col gap-4">
+    <div className="bg-gray-300 md:mx-5 py-4 px-4 rounded-md flex flex-col gap-4 text-justify break-normal">
       <div className="flex items-center gap-2">
         <Icon
           icon={loudspeakerIcon}
