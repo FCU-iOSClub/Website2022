@@ -306,15 +306,23 @@ const AnnouncementLiet = (props) => {
   });
 
   return (
-    <div className="bg-gray-300 md:mx-5 py-4 px-4 rounded-md flex flex-col gap-4 text-justify break-normal">
+    <div className="bg-gray-300 md:mx-5 py-4 px-3 rounded-md flex flex-col gap-4 text-justify break-normal">
       <div className="flex items-center gap-2">
-        <Icon
-          icon={loudspeakerIcon}
-          color="#1f2937"
-          width="30"
-          height="30"
-          className="flex-shrink-0"
-        />
+        <div>
+          <Icon
+            icon={loudspeakerIcon}
+            color="#1f2937"
+            width="30"
+            height="30"
+            className="flex-shrink-0"
+          />
+          {!isAnnouncementOpen && (
+            <span class="h-3 w-3 relative -top-8 left-7">
+              <span class="animate-ping absolute h-3 w-3 rounded-full bg-blue-400 opacity-75"></span>
+              <span class="absolute rounded-full h-3 w-3 bg-blue-500"></span>
+            </span>
+          )}
+        </div>
         <div className="flex-grow">{anns[0].node.title}</div>
         <Icon
           icon={isAnnouncementOpen ? chevronDown : chevronUp}
