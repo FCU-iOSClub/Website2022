@@ -292,7 +292,7 @@ const AnnouncementLiet = (props) => {
   });
 
   return (
-    <div className="bg-gray-300 mx-5 py-4 px-4 rounded-md flex flex-col gap-4">
+    <div className="bg-gray-300 md:mx-5 py-4 px-4 rounded-md flex flex-col gap-4">
       <div className="flex items-center gap-2">
         <Icon
           icon={loudspeakerIcon}
