@@ -1485,10 +1485,31 @@
   resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
   integrity sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==
 
-"@iconify/react@^3.1.3":
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/@iconify/react/-/react-3.2.2.tgz#ab5241dc01562076bae3b0c22238aff7e5f029cc"
-  integrity sha512-z3+Jno3VcJzgNHsN5mEvYMsgCkOZkydqdIwOxjXh45+i2Vs9RGH68Y52vt39izwFSfuYUXhaW+1u7m7+IhCn/g==
+"@iconify/icons-akar-icons@^1.2.9":
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-akar-icons/-/icons-akar-icons-1.2.9.tgz#8add6a0534bd00a038d32fd19769860d2847abb3"
+  integrity sha512-57QfZjfdWoxW6SJ1wYzd6Id8TbBkS9zuHX9ii0Zhsv6IOJ9vbDgfbZz8gaNz7nabV5St5o7oLFLA9Izxb5dpyw==
+  dependencies:
+    "@iconify/types" "*"
+
+"@iconify/icons-fluent-emoji-high-contrast@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-fluent-emoji-high-contrast/-/icons-fluent-emoji-high-contrast-1.2.1.tgz#73db6a3e8e265bd27360b2cfc5d16669aa860b58"
+  integrity sha512-Y0S+O4ZqPo97fuOy+18mF2UgI5Zk+cRetdjMr6FFiV5UpuVplVIenm6umgAXWD1QhiyxSF5oVbgzaY1xOYK9Iw==
+  dependencies:
+    "@iconify/types" "*"
+
+"@iconify/react@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@iconify/react/-/react-4.0.0.tgz#0e2238fec072bfca0f2b9b6ff9e60c721c4abf32"
+  integrity sha512-YE+z5PCegYyuJtLR6KBbJNlssmuVgRyFyRxcgxSPVkN3Gsm7npSzrUh+gWlBxrNb5g4Q6Nnb1gczPBNcwtUpng==
+  dependencies:
+    "@iconify/types" "^2.0.0"
+
+"@iconify/types@*", "@iconify/types@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@iconify/types/-/types-2.0.0.tgz#ab0e9ea681d6c8a1214f30cd741fe3a20cc57f57"
+  integrity sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==
 
 "@jimp/bmp@^0.16.1":
   version "0.16.1"
