@@ -45,6 +45,23 @@ Commit 前養成好習慣，自動排版一下
 yarn prettier
 ```
 
+## 首頁公告
+
+在 `/src/data/annoucement` 下的 Json 檔會自動生成公告。`url`, `urlText`, `image` 可選填，其餘必填。
+
+空白範例：
+
+```json
+{
+  "title": "",
+  "date": "",
+  "content": "",
+  "urlText": "",
+  "url": "",
+  "image": ""
+}
+```
+
 ## 活動相簿
 
 在 `/src/data/gallery` 下的 Json 檔案會被產生到相簿中。
