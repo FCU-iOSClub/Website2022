@@ -9,7 +9,7 @@ const ContestPage = () => {
       {/* Header */}
       <AppHeader title="iOS Club - 社團競賽" />
       <Navbar />
-      <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-20 lg:px-48">
+      <div className="container mx-auto break-normal bg-white shadow-lg px-3 md:px-20 lg:px-48">
         <div className="h-32" /> {/* 空白 */}
         <h1 className="text-5xl text-center font-bold">iOS Club 競賽</h1>
         <div className="h-16" /> {/* 空白 */}
