@@ -4,6 +4,9 @@ import Navbar from "../components/navbar";
 import AppHeader from "../components/header";
 
 const CoursePage = () => {
+  const hideURL =
+    "https://drive.google.com/drive/folders/1LxJuUS0eX4HDd3JUgujoN7At6cfHqcJM?usp=sharing";
+
   return (
     <div className=" bg-iosbgblue">
       {/* Header */}
@@ -29,7 +32,15 @@ const CoursePage = () => {
               的佈局，最終達到具備獨立開發的能力，透過鼓勵社員參加個是校外競賽，以此展現社員的學習成果。
             </p>
             <p className="py-3 text-gray-800 md:text-left text-justify break-normal">
-              社課透過循序漸進的教學模式，讓大家都能從 0
+              社課透過循序漸進的教學模式，讓大家都能從
+              <span
+                onClick={() => {
+                  window.open(hideURL, "_blank");
+                }}
+              >
+                {" "}
+                0{" "}
+              </span>
               開始，由初階慢慢學到有深度的技巧，就能輕鬆駕馭 App
               開發，每堂社課都有豐富的教學內容，絕對讓你收穫滿滿。
             </p>
