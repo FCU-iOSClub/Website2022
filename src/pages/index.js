@@ -61,7 +61,7 @@ const IndexPage = (props) => {
                 }}
               >
                 <div className="h-12 flex items-center justify-center text-white">
-                  歷代社團幹部
+                  歷屆社團幹部
                 </div>
               </button>
             </div>
