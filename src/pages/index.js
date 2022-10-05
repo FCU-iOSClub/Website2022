@@ -343,10 +343,34 @@ const learnMoreButton = (href = "/") => {
 
 // 要顯示在首頁的圖片們
 const imageList = [
-  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/5c0662af-53da-4e2d-888d-426f37cb7100/public",
-  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ebc9b623-ab73-4b0f-ad46-77959aeb2900/public",
-  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ad2731e3-ec12-4447-1381-dc97a9deef00/public",
-  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/20fd9274-c5e1-46fc-53a0-daccc17abe00/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/7852fe27-c909-433c-7155-5171b8be9100/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/41887a46-170a-4737-fa30-ae5a8a5e8500/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/fcfe347b-9491-4ce8-c5e6-481fb8aabc00/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/b564ddf1-6936-457a-7e20-05d23d576e00/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/e7fc7296-ddc2-4bc9-4ebe-44980e43af00/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/3e9f42b4-9e7b-425a-4f56-b42715394200/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/1b5fa7bb-3d3d-4695-51de-cec42b173d00/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/6daaffb4-7cba-41b0-8204-e1dceb8e6200/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/3165b4fe-7544-4d77-80ab-38115b506c00/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/9bdbc740-1532-49a0-d328-590838346400/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/89a026a0-201d-4db4-db27-2133780ad100/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/90adf378-5e9e-4626-db73-81d415aef800/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/21301bcc-f9af-41ac-7f27-58d3dbf62500/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/6f010050-4731-4a60-ab64-5eae14a7a800/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/37e615c9-ab33-433b-89b8-45d151483d00/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/0ecddffb-1825-4c5a-6862-89d9a1d22c00/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/1829df54-b32b-4cd3-3e4d-e11831c6da00/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/d3b90e2a-bdac-4b4a-986d-66c197f2d800/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/cb95743b-aacf-4b97-24c9-d469c80d6900/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/195ac5f7-e7c0-4049-edff-d522175a1100/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/780e77fb-6729-4dbf-406c-785177bb0600/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/30896528-bb53-4c31-51d3-cb829973a500/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/8de693ea-4549-463d-19be-2221bc9dd700/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/5fe0e138-e221-4a63-6673-b041b75aee00/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/601de8cc-ff48-4879-8a0b-a46f29df1600/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/c7afd23b-2da0-40b2-c55e-6dd246220300/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/970f320c-fa92-4136-0986-42f8bf782c00/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/f1694871-f18e-4c89-f4c7-d64e06235500/public",
 ];
 
 const socialItems = [
