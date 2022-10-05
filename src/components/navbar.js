@@ -105,4 +105,9 @@ const menuItems = [
     url: "/gallery_list",
     icon: "uil:image",
   },
+  {
+    name: "教學資源",
+    url: "/swift_res",
+    icon: "uil:image",
+  },
 ];
