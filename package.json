@@ -16,6 +16,8 @@
   "dependencies": {
     "@iconify/icons-akar-icons": "^1.2.9",
     "@iconify/icons-fluent-emoji-high-contrast": "^1.2.1",
+    "@iconify/icons-ic": "^1.2.10",
+    "@iconify/icons-simple-icons": "^1.2.29",
     "@splidejs/react-splide": "^0.7.5",
     "@splidejs/splide": "^4.0.2",
     "@splidejs/splide-extension-auto-scroll": "^0.4.2",

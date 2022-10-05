@@ -1499,6 +1499,20 @@
   dependencies:
     "@iconify/types" "*"
 
+"@iconify/icons-ic@^1.2.10":
+  version "1.2.10"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-ic/-/icons-ic-1.2.10.tgz#36234fb090a0c8c217cd5143f3075b6a7c9935c5"
+  integrity sha512-tCVpNkcJokPgZnseVqBlbEjirhfbGcGPboQ1vBb+6NeFiRrwRbSBV+nEarKKHmOGqPtovCPU0D3IEv445KJKgA==
+  dependencies:
+    "@iconify/types" "*"
+
+"@iconify/icons-simple-icons@^1.2.29":
+  version "1.2.29"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-simple-icons/-/icons-simple-icons-1.2.29.tgz#337d498df995f4d844c2b6577f7ad1b6e95f4057"
+  integrity sha512-OlnO2Ri93nF722x3zi8C6aiEUF5bW42PkbsY7m8fT/IbzvaNtXynnUmw61MqQJ/aqstzxQLC3uMXO+UrMRwe2Q==
+  dependencies:
+    "@iconify/types" "*"
+
 "@iconify/react@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@iconify/react/-/react-4.0.0.tgz#0e2238fec072bfca0f2b9b6ff9e60c721c4abf32"
