@@ -9,6 +9,8 @@ import "lightgallery/css/lg-zoom.css";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 import "../css/gallery.css";
+import { Icon } from "@iconify/react";
+import zoomIn from "@iconify/icons-akar-icons/zoom-in";
 
 const Gallery = (props) => {
   const context = props.pageContext;
@@ -36,7 +38,19 @@ const Gallery = (props) => {
           >
             {context.photos.map((item, index) => (
               <a data-src={item} className="w-fit">
-                <img src={item} className="w-full md:w-64 lg:w-80 p-3 md:p-1" />
+                <div className="relative">
+                  <img
+                    src={item}
+                    className="w-full md:w-64 lg:w-80 p-3 md:p-1"
+                  />
+                  <Icon
+                    className="absolute bottom-1 right-1 bg-gray-600 bg-opacity-70 p-1"
+                    icon={zoomIn}
+                    width="40"
+                    height="40"
+                    color="white"
+                  />
+                </div>
               </a>
             ))}
           </LightGallery>
