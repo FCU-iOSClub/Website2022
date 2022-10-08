@@ -10,7 +10,7 @@ const CoursePage = () => {
   return (
     <div className=" bg-iosbgblue">
       {/* Header */}
-      <AppHeader />
+      <AppHeader title="iOS Club - 社團課程" />
       <Navbar />
       <div className="container  font-serif mx-auto break-all bg-white shadow-lg px-3 md:px-0">
         {/* 空白區 */}
