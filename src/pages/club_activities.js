@@ -110,15 +110,15 @@ const ClubActivities = () => {
 
 const iOSClubActivities = [
   {
-    title: "葳格營隊 (北屯)",
+    title: "葳格 Swift Mini-Camp (北屯)",
     date: "2022-08-06",
   },
   {
-    title: "幹遊",
+    title: "社團旅遊",
     date: "2022-08-20",
   },
   {
-    title: "幹訓",
+    title: "幹部訓練",
     date: "2022-09-01",
   },
   {
@@ -126,23 +126,32 @@ const iOSClubActivities = [
     date: "2022-09-20",
   },
   {
-    title: "迎新",
+    title: "社團迎新",
     date: "2022-10-12",
   },
   {
-    title: "葳格營隊 (西屯)",
+    title: "葳格 Swift Mini-Camp (西屯)",
     date: "2022-10-15",
   },
   {
-    title: "聯合夜烤",
+    title: "iOS Club X 黑客社 聯合夜烤",
     date: "2022-10-19",
   },
   {
-    title: "社員大會",
+    title: "111-1 社員大會",
     date: "2022-11-15",
   },
   {
-    title: "期末聚",
+    title: "講座",
+    date: "2022-12-15",
+  },
+  {
+    title: "永安國小 mbot 機器人一日體驗營",
+    date: "2022-12-24",
+  },
+
+  {
+    title: "聖誕期末聚",
     date: "2022-12-17",
   },
 ];
