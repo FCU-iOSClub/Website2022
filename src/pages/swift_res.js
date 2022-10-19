@@ -14,21 +14,16 @@ const SwiftPage = () => {
       <div className="container font-serif mx-auto break-all bg-white shadow-lg px-3 md:px-0 text-justify">
         {/* 空白區 */}
         <div className="h-32" />
-
         {/* 第一個section */}
-        <div className="mx-12 flex flex-col lg:flex-row py-8 px-4 md:px-16 border border-gray-400 rounded-3xl shadow-2xl gap-7 items-center">
+        <div className="mx-2 md:mx-12 flex flex-col lg:flex-row py-8 px-4 md:px-16 border border-gray-400 rounded-3xl shadow-2xl gap-7 items-center">
           <div className="flex flex-col gap-4 xl:w-5/6">
             <h2 className="text-3xl font-bold break-normal">
-              Develop in Swift
-              <br />
-              App Design Workbook
+              Swift App 開發手冊
             </h2>
             <p className="py-10 break-normal">
-              The App Design Workbook uses a design thinking framework to teach
-              app design--a fundamental skill of iOS app development. You'll
-              explore the relationship between app design and coding in Swift
-              through each stage of the app design cycle to bring their app idea
-              to life.
+              App 開發手冊使用設計思維框架來教授 iOS App
+              開發的基本能力。您將在設計 App 中的每一個階段，探索 App
+              設計以及編寫程式碼之間的關係，讓您的 App 變得更栩栩如生。
             </p>
             <div className="flex items-center gap-2">
               <a className="text-blue-800 text-xl">Download now</a>
@@ -52,35 +47,28 @@ const SwiftPage = () => {
             <div></div>
           </div>
         </div>
-
         {/* 空白區 */}
         <div className="h-16" />
-
-        {/* 第二個section */}
-        <div className="mx-12 flex flex-col lg:flex-row py-8 px-4 md:px-16 border border-gray-400 rounded-3xl shadow-2xl gap-7 items-center">
-          <div className="flex flex-col gap-4 ">
+        {/* Swift 書 */}
+        <div className="mx-2 md:mx-12 flex flex-col lg:flex-row py-8 px-4 md:px-16 border border-gray-400 rounded-3xl shadow-2xl gap-7 items-center">
+          <div className="flex flex-col gap-4">
             <h2 className="text-3xl font-bold break-normal text-center">
-              Develop in Swift curriculum
+              在 Swift 課程中學開發
             </h2>
-            <p className="py-10 break-normal">
-              Get started or take your skills to the next level. The Develop in
-              Swift books are flexible enough to help you whether you’re new to
-              coding or want to advance your skills. These books provide
-              practical experience in creating apps on Mac using Xcode, the
-              integrated development environment used to build apps for Apple
-              platforms.
+            <p className="py-10 break-normal mx-0 lg:mx-24">
+              開始新的課程或是將您的技能提升到一個新水平。
+              不論您是程式編碼新手， 或是想要提升您的技能， Swift
+              課本都能夠幫助你。 這本課本提供實際在 Mac 電腦使用 Xcode 創建
+              App的操作分享 （Xcode是一款用於為蘋果平台創建app的開發環境）。
             </p>
-
-            <div className=" flex flex-col md:flex-row gap-24">
+            <div className="flex flex-col md:flex-row gap-8">
               {swiftBooks.map((item, index) => (
                 <div className=" flex-1 flex-col">
                   <img className="object-contain " src={item.image} />
-                  <p className="break-normal text-2xl font-black text-left py-8">
+                  <p className="break-normal text-2xl font-black text-left py-4">
                     {item.title}
                   </p>
-
-                  <p className="break-left py-4">{item.desc}</p>
-
+                  <p className="break-left pb-4 break-normal">{item.desc}</p>
                   <a href={item.url} className="text-blue-600 ">
                     View in Apple Books &gt;
                   </a>
@@ -89,7 +77,22 @@ const SwiftPage = () => {
             </div>
           </div>
         </div>
-
+        {/* 空白區 */}
+        <div className="h-16" />
+        {/* 獲得 Swift 認證 */}
+        <div className="mx-2 md:mx-12 flex flex-col lg:flex-row py-8 px-4 md:px-16 border border-gray-400 rounded-3xl shadow-2xl gap-7 items-center">
+          <div className="flex flex-col gap-4">
+            <h2 className="text-3xl font-bold break-normal text-center">
+              獲得 Swift 認證
+            </h2>
+            <p className="py-10 break-normal mx-0 lg:mx-24">
+              透過你對 Swift 和 Xcode 的了解與知識，
+              來贏得認證以及數位徽章。
+              通過 Certiport 的考試可以獲得使用 Swift 開發 App 的認證，
+              這也表明您已經準備好成為 App 開發者的下一步了。
+            </p>
+          </div>
+        </div>
         {/* 空白區 */}
         <div className="h-16" />
       </div>
@@ -99,51 +102,28 @@ const SwiftPage = () => {
   );
 };
 
-const learnMoreButton = (href = "/") => {
-  return (
-    <p className="my-8">
-      <a
-        className="bg-red-300 w-fit py-3 px-6 rounded-full break-words"
-        href={href}
-      >
-        Learn More
-      </a>
-    </p>
-  );
-};
-
-const courseCard = (title, img) => {
-  return (
-    <div className="py-8 px-1 mx-5 md:mx-3 md:w-full border-gray-300 border shadow-lg rounded-lg flex flex-col items-center">
-      <h3 className="text-3xl pb-8 md:p-0 font-bold text-center">{title}</h3>
-      <div className="h-5" />
-      <img className="w-8/12" src={img} />
-    </div>
-  );
-};
-
-export default SwiftPage;
-
 const swiftBooks = [
   {
-    title: "Develop in Swift Explorations",
-    desc: "Learn key computing concepts, building a solid foundation in programming with Swift. And, learn about the impact of computing and apps on society, economies, and cultures while exploring iOS app development.",
+    title: "Swift 開發 -- 探索篇",
+    desc: "學習關鍵的開發概念，為 Swfit 開發打下基礎。並且在探索 iOS App 開發的同時，瞭解應用程式對社會、經濟、文化的的影響。",
     url: "https://apple.co/teachingcode",
     image:
       "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/swift-data-collections_2x.jpg?raw=true",
   },
   {
-    title: "Develop in Swift Fundamentals",
-    desc: "Build fundamental iOS app development skills with Swift. And, master the core concepts and practices that Swift programmers use daily and build a basic fluency in Xcode’s source and UI editors.",
+    title: "Swift 開發 -- 基礎篇",
+    desc: "用 Swift 建立基本的 iOS App 開發技能，掌握日常開發 Swift 的核心概念和實踐，並瞭解在 Xcode 的功能和編輯器在開發中的定位。",
     url: "https://apple.co/teachingcode",
     image:
       "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/swift-explorations_2x.jpg?raw=true",
   },
   {
-    title: "Develop in Swift Data Collections",
-    desc: "Extend your knowledge and skill in iOS app development creating more complex and capable apps. And, work with data from a server and explore new iOS APIs that allow for much richer app experiences — including displaying large collections of data in multiple formats.",
+    title: "Swift 開發 -- 資料收集篇",
+    desc: "拓展你對 iOS App 開發的知識和技能，創建更複雜、更多功能的 App。並且，在伺服器端處理數據，和探索更多的 iOS API，讓 App 有更多的功能 -- 也包含顯示大量不同格式的資料。",
     url: "https://apple.co/teachingcode",
     image:
       "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/swift-fundamentals_2x.jpg?raw=true",
   },
 ];
+
+export default SwiftPage;
