@@ -86,8 +86,7 @@ const SwiftPage = () => {
               獲得 Swift 認證
             </h2>
             <p className="py-10 break-normal mx-0 lg:mx-24">
-              透過你對 Swift 和 Xcode 的了解與知識，
-              來贏得認證以及數位徽章。
+              透過你對 Swift 和 Xcode 的了解與知識， 來贏得認證以及數位徽章。
               通過 Certiport 的考試可以獲得使用 Swift 開發 App 的認證，
               這也表明您已經準備好成為 App 開發者的下一步了。
             </p>
