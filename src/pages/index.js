@@ -263,7 +263,7 @@ const AnnouncementLiet = (props) => {
   const AnnContent = (props) => {
     const node = props.node;
     return (
-      <div className="bg-white p-3 rounded-md flex flex-col md:flex-row">
+      <div className="bg-white p-3 rounded-md flex flex-col gap-3 md:flex-row">
         <div className="flex-grow flex flex-col gap-3">
           <p
             dangerouslySetInnerHTML={{
