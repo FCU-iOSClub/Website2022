@@ -26,13 +26,30 @@ const SwiftPage = () => {
               設計以及編寫程式碼之間的關係，讓您的 App 變得更栩栩如生。
             </p>
             <div className="flex items-center gap-2">
-              <a className="text-blue-800 text-xl" href="https://www.apple.com/tw/education/docs/swift-club-xcode.pdf">Download now</a>
-              <Icon
-                icon={baselineDownloadForOffline}
-                color="#1e40af"
-                width="30"
-                height="30"
-              />
+              <button
+                className="overflow-hidden group h-12 px-6 border border-btnbg rounded"
+                onClick={() => {
+                  window.open(
+                    "https://www.apple.com/tw/education/docs/swift-club-xcode.pdf",
+                    "_blank"
+                  );
+                }}
+              >
+                <div className="transition duration-200 group-hover:-translate-y-12">
+                  <div className="h-12 flex items-center justify-center text-btnbg break-words ">
+                    <a className="text-blue-800 text-xl">立刻下載</a>
+                    <Icon
+                      icon={baselineDownloadForOffline}
+                      color="#1e40af"
+                      width="30"
+                      height="30"
+                    />
+                  </div>
+                  <div className="h-12 flex items-center justify-center text-btnbg break-words ">
+                    <a className="text-blue-800 text-xl">前往</a>
+                  </div>
+                </div>
+              </button>
             </div>
           </div>
           <div className="flex p-2 border border-gray-400 rounded-3xl shadow-2xl">
