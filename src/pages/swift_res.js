@@ -92,6 +92,70 @@ const SwiftPage = () => {
             </p>
           </div>
         </div>
+
+        {/* 空白區 */}
+        <div className="h-16" />
+        {/* Apple Professional Training Courses */}
+        <div className="mx-2 md:mx-12 flex flex-col lg:flex-row py-8 px-4 md:px-16 border border-gray-400 rounded-3xl shadow-2xl gap-7 items-center">
+          <div className="flex flex-col gap-4 xl:w-5/6">
+            <h2 className="text-3xl font-bold break-normal">
+              Apple 專業訓練課程
+            </h2>
+            <p className="py-10 break-normal">
+              瞭解使應用程式與蘋果平臺無縫配合的工具、語言和設計原則。
+              下載考試準備指南，為考試做準備。
+              透過考試後，在任何專業網站上顯示經過驗證的數字徽章。
+            </p>
+            <div className="flex items-center gap-2">
+              <a
+                href="https://training.apple.com/"
+                className="text-blue-800 text-xl"
+              >
+                檢視課程 {">"}{" "}
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <img
+              className="object-contain"
+              src="https://i.imgur.com/ySr8KGR.jpg"
+            />
+          </div>
+        </div>
+        {/* 空白區 */}
+        <div className="h-16" />
+        {/* 獲得 Swift 認證 */}
+        <div className="mx-2 md:mx-12 flex flex-col lg:flex-row py-8 px-4 md:px-16 border border-gray-400 rounded-3xl shadow-2xl gap-7 items-center">
+          <div className="flex flex-col gap-4">
+            <h2 className="text-3xl font-bold break-normal text-center">
+              獲得 Swift 認證
+            </h2>
+            <p className="py-10 break-normal mx-0 lg:mx-24">
+              透過你對 Swift 和 Xcode 的了解與知識， 來贏得認證以及數位徽章。
+              通過 Certiport 的考試可以獲得使用 Swift 開發 App 的認證，
+              這也表明您已經準備好成為 App 開發者的下一步了。
+            </p>
+
+            <a
+              href="https://certiport.pearsonvue.com/Certifications/Apple/App-Dev-With-Swift/Overview.aspx"
+              className="text-blue-800 text-xl text-center"
+            >
+              在Certiport了解更多 {">"}
+            </a>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 px-3 md:px-32 lg:px-56">
+              <img
+                className="w-full h-full object-contain"
+                src="https://raw.githubusercontent.com/FCU-iOSClub/Website2022ImageBed/main/Swift%20Associate%20Badge.png"
+              />
+              <img
+                className="w-full object-contain"
+                src="https://raw.githubusercontent.com/FCU-iOSClub/Website2022ImageBed/main/Certified%20User%20Badge.png"
+              />
+            </div>
+          </div>
+        </div>
+
         {/* 空白區 */}
         <div className="h-16" />
       </div>
