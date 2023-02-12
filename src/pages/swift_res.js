@@ -119,9 +119,9 @@ const SwiftPage = () => {
               Apple 專業訓練課程
             </h2>
             <p className="py-10 break-normal">
-              瞭解使應用程式與蘋果平臺無縫配合的工具、語言和設計原則。
+              讓你瞭解與 Apple 平台順暢運作的工具、語言和設計原則。
               下載考試準備指南，為考試做準備。
-              透過考試後，在任何專業網站上顯示經過驗證的數字徽章。
+              通過考試後，在任何專業網站上顯示經過驗證的數位徽章。
             </p>
             <div className="flex items-center gap-2">
               <a
