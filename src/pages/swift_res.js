@@ -145,15 +145,15 @@ const SwiftPage = () => {
             </a>
 
             <div className="grid grid-cols-1 md:grid-cols-2 px-3 md:px-64 lg:px-80">
-                <img
-                  className="w-full h-full object-contain"
-                  src="https://raw.githubusercontent.com/FCU-iOSClub/Website2022ImageBed/main/Swift%20Associate%20Badge.png"
-                />
-                <img
-                  className="w-full object-contain"
-                  src="https://raw.githubusercontent.com/FCU-iOSClub/Website2022ImageBed/main/Certified%20User%20Badge.png"
-                />
-              </div>
+              <img
+                className="w-full h-full object-contain"
+                src="https://raw.githubusercontent.com/FCU-iOSClub/Website2022ImageBed/main/Swift%20Associate%20Badge.png"
+              />
+              <img
+                className="w-full object-contain"
+                src="https://raw.githubusercontent.com/FCU-iOSClub/Website2022ImageBed/main/Certified%20User%20Badge.png"
+              />
+            </div>
           </div>
         </div>
 
