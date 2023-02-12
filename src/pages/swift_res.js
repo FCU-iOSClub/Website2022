@@ -96,22 +96,6 @@ const SwiftPage = () => {
         </div>
         {/* 空白區 */}
         <div className="h-16" />
-        {/* 獲得 Swift 認證 */}
-        <div className="mx-2 md:mx-12 flex flex-col lg:flex-row py-8 px-4 md:px-16 border border-gray-400 rounded-3xl shadow-2xl gap-7 items-center">
-          <div className="flex flex-col gap-4">
-            <h2 className="text-3xl font-bold break-normal text-center">
-              獲得 Swift 認證
-            </h2>
-            <p className="py-10 break-normal mx-0 lg:mx-24">
-              透過你對 Swift 和 Xcode 的了解與知識， 來贏得認證以及數位徽章。
-              通過 Certiport 的考試可以獲得使用 Swift 開發 App 的認證，
-              這也表明您已經準備好成為 App 開發者的下一步了。
-            </p>
-          </div>
-        </div>
-
-        {/* 空白區 */}
-        <div className="h-16" />
         {/* Apple Professional Training Courses */}
         <div className="mx-2 md:mx-12 flex flex-col lg:flex-row py-8 px-4 md:px-16 border border-gray-400 rounded-3xl shadow-2xl gap-7 items-center">
           <div className="flex flex-col gap-4 xl:w-5/6">
@@ -160,16 +144,16 @@ const SwiftPage = () => {
               在Certiport了解更多 {">"}
             </a>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 px-3 md:px-32 lg:px-56">
-              <img
-                className="w-full h-full object-contain"
-                src="https://raw.githubusercontent.com/FCU-iOSClub/Website2022ImageBed/main/Swift%20Associate%20Badge.png"
-              />
-              <img
-                className="w-full object-contain"
-                src="https://raw.githubusercontent.com/FCU-iOSClub/Website2022ImageBed/main/Certified%20User%20Badge.png"
-              />
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 px-3 md:px-64 lg:px-80">
+                <img
+                  className="w-full h-full object-contain"
+                  src="https://raw.githubusercontent.com/FCU-iOSClub/Website2022ImageBed/main/Swift%20Associate%20Badge.png"
+                />
+                <img
+                  className="w-full object-contain"
+                  src="https://raw.githubusercontent.com/FCU-iOSClub/Website2022ImageBed/main/Certified%20User%20Badge.png"
+                />
+              </div>
           </div>
         </div>
 
