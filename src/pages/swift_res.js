@@ -26,7 +26,7 @@ const SwiftPage = () => {
               設計以及編寫程式碼之間的關係，讓您的 App 變得更栩栩如生。
             </p>
             <div className="flex items-center gap-2">
-              <a className="text-blue-800 text-xl">Download now</a>
+              <a className="text-blue-800 text-xl" href="https://www.apple.com/tw/education/docs/swift-club-xcode.pdf">Download now</a>
               <Icon
                 icon={baselineDownloadForOffline}
                 color="#1e40af"
