@@ -144,7 +144,7 @@ const SwiftPage = () => {
               在Certiport了解更多 {">"}
             </a>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 px-3 md:px-64 lg:px-80">
+            <div className="grid grid-cols-1 md:grid-cols-2 px-3 sm:px-10 md:px-32 lg:px-48 xl:px-64">
               <img
                 className="w-full h-full object-contain"
                 src="https://raw.githubusercontent.com/FCU-iOSClub/Website2022ImageBed/main/Swift%20Associate%20Badge.png"
