@@ -25,7 +25,7 @@ const IndexPage = (props) => {
         {/* 最新消息 */}
         <AnnouncementLiet data={props.data} />
         {/* We are iOS Club */}
-        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
+        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center gap-3 md:gap-0">
           <div className="w-full self-center">
             <div className="text-center text-5xl font-bold">
               <h1 className="py-3 text-center md:text-left">We are</h1>
@@ -66,10 +66,33 @@ const IndexPage = (props) => {
               </button>
             </div>
           </div>
-          <img
-            className="w-full"
-            src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/827f1788-4157-497b-0ecb-6168f73db400/public"
-          />
+          <div className="h-full w-full p-10 bg-gray-100 shadow-md">
+            <h2 className="text-center text-3xl">最新消息</h2>
+            <div className="px-4 sm:px-7 md:px-16 pb-5 pt-1">
+              <div className="h-1 bg-gray-400" />
+            </div>
+            <Splide
+              options={{
+                type: "loop",
+                focus: "center",
+                autoWidth: false,
+                perPage: 1,
+                arrows: false,
+                drag: true,
+                pagination: true,
+                autoScroll: false,
+              }}
+              extensions={{ AutoScroll }}
+            >
+              {imageList.map((image, index) => (
+                <SplideSlide key={index}>
+                  <div className="shadow-md w-full h-full">
+                    <img src={image} className="w-full h-full object-cover" />
+                  </div>
+                </SplideSlide>
+              ))}
+            </Splide>
+          </div>
         </div>
         <div className="h-8" />
         {/* About iOS Club. */}
