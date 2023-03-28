@@ -72,7 +72,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="pt-12 text-gray-100 text-center flex flex-col md:flex-row justify-center items-center">
-        <p>iOS Club 2016 - 2022</p>
+        <p>iOS Club 2016 - 2023</p>
         <p className="px-2 py-3">©</p>
         <p>All right reserved</p>
       </div>
