@@ -110,72 +110,76 @@ const ClubActivities = () => {
 
 const iOSClubActivities = [
   {
-    title: "葳格 Swift Mini-Camp (北屯)",
-    date: "2022-08-06",
+    title: "Workshop",
+    date: "2023-5-16 ~ 2023-5-23",
   },
   {
-    title: "社團旅遊",
-    date: "2022-08-20",
-  },
-  {
-    title: "幹部訓練",
-    date: "2022-09-01",
-  },
-  {
-    title: "新生茶會",
-    date: "2022-09-20",
-  },
-  {
-    title: "社團迎新",
-    date: "2022-10-12",
-  },
-  {
-    title: "葳格 Swift Mini-Camp (西屯)",
-    date: "2022-10-15",
-  },
-  {
-    title: "iOS Club X 黑客社 聯合夜烤",
-    date: "2022-10-19",
-  },
-  {
-    title: "111-1 社員大會",
-    date: "2022-11-15",
-  },
-  {
-    title: "講座",
-    date: "2022-12-15",
-  },
-  {
-    title: "永安國小 mbot 機器人一日體驗營",
-    date: "2022-12-24",
-  },
-  {
-    title: "聖誕期末聚",
-    date: "2022-12-17",
-  },
-  {
-    title: "幹部訓練",
-    date: "2023-2-11 ~ 2023-2-12",
-  },
-  {
-    title: "社員大會",
-    date: "2023-3-1",
-  },
-  {
-    title: "永安國小 mbot 機器人一日進階體驗營",
-    date: "2023-4-22",
+    title: "幹部交接典禮",
+    date: "2023-5-9",
   },
   {
     title: "社長選舉大會",
     date: "2023-4-25",
   },
   {
-    title: "交接典禮",
-    date: "2023-5-9",
+    title: "永安國小 mbot 機器人一日進階體驗營",
+    date: "2023-4-22",
   },
   {
-    title: "Workshop",
-    date: "2024-5-27",
+    title: "葳格國小參訪",
+    date: "2023-4-20",
+  },
+  {
+    title: "111-2社員大會",
+    date: "2023-3-1",
+  },
+  {
+    title: "寒假幹部訓練",
+    date: "2023-2-11 ~ 2023-2-12",
+  },
+  {
+    title: "聖誕期末聚",
+    date: "2022-12-17",
+  },
+  {
+    title: "永安國小 mbot 機器人一日體驗營",
+    date: "2022-12-24",
+  },
+  {
+    title: "商業 App x 系統開發•經驗分享講座",
+    date: "2022-12-15",
+  },
+  {
+    title: "111-1 社員大會",
+    date: "2022-11-15",
+  },
+  {
+    title: "iOS Club X 黑客社 聯合夜烤",
+    date: "2022-10-19",
+  },
+  {
+    title: "葳格 Swift Mini-Camp (西屯)",
+    date: "2022-10-15",
+  },
+  {
+    title: "iOS Club 社團迎新",
+    date: "2022-10-12",
+  },
+  {
+    title: "iOS Club 迎新茶會暨 Apple WWDC 獎學金參賽說明會",
+    date: "2022-09-20",
+  },
+  {
+    title: "暑期幹部訓練",
+    date: "2022-09-01",
+  },
+  {
+    title: "社團旅遊(墾丁)",
+    date: "2022-08-20",
+  },
+  {
+    title: "葳格 Swift Mini-Camp (北屯)",
+    date: "2022-08-06",
   },
 ];
 
