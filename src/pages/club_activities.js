@@ -110,7 +110,7 @@ const ClubActivities = () => {
 
 const iOSClubActivities = [
   {
-    title: "Workshop",
+    title: "移動應用創新賽 Workshop",
     date: "2023-5-16 ~ 2023-5-23",
   },
   {
@@ -118,7 +118,7 @@ const iOSClubActivities = [
     date: "2023-5-9",
   },
   {
-    title: "社長選舉大會",
+    title: "第7屆社長選舉大會",
     date: "2023-4-25",
   },
   {
@@ -138,7 +138,7 @@ const iOSClubActivities = [
     date: "2023-2-11 ~ 2023-2-12",
   },
   {
-    title: "聖誕期末聚",
+    title: "iOS Club 聖誕期末聚",
     date: "2022-12-17",
   },
   {
