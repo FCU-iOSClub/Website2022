@@ -57,11 +57,11 @@ const IndexPage = (props) => {
               <button
                 className="overflow-hidden group h-12 px-6 border bg-btnbg border-btnbg rounded transform hover:bg-ioscardblue hover:border-ioscardblue duration-200"
                 onClick={() => {
-                  window.location.href = "https://sign.iosclub.tw";
+                  window.location.href = "/members";
                 }}
               >
                 <div className="h-12 flex items-center justify-center text-white">
-                  打卡系統
+                  歷屆幹部
                 </div>
               </button>
             </div>
