@@ -15,7 +15,7 @@ const MembersPage = (props) => {
       <div className="xl:mx-24 bg-white font-serif px-2 md:px-0">
         <div className="h-32" /> {/* 空白 */}
         <h1 className="text-5xl text-center font-bold">iOS Club 歷屆幹部</h1>
-        <MemberImage src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/29cfacb6-0dec-4375-5a2c-c8ac3080bb00/public" />
+        <MemberImage src="https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/7%E5%B1%86%E5%B9%B9%E9%83%A8%E7%85%A7%E7%89%87/alllllll.jpg?raw=true" />
         {/* 閱讀更多區塊 */}
         <div
           className="flex flex-col items-center my-10 md:my-24"
