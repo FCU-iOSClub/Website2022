@@ -46,7 +46,7 @@ const contestData = [
   {
     title: "2022 社團成員競賽得獎名單",
     contents: [
-      ["WWDC 全球學生挑戰賽", "獲獎", "魯敬元", "《MusicLearning》"]
+      ["WWDC 全球學生挑戰賽", "獲獎", "魯敬元", "《MusicLearning》"],
       [
         "App 移動應用創新賽",
         "台灣區佳作",
