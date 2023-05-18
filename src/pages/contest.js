@@ -45,7 +45,21 @@ const ContestPage = () => {
 const contestData = [
   {
     title: "2022 社團成員競賽得獎名單",
-    contents: [["WWDC 全球學生挑戰賽", "獲獎", "魯敬元", "《MusicLearning》"]],
+    contents: [
+      ["WWDC 全球學生挑戰賽", "獲獎", "魯敬元", "《MusicLearning》"]
+      [
+        "App 移動應用創新賽",
+        "台灣區佳作",
+        "余睿霖、李柏霖、潘柏嘉",
+        "《無痕地球》",
+      ],
+      [
+        "App 移動應用創新賽",
+        "台灣區佳作",
+        "黃子騰、廖虹琦、林祺鈞",
+        "《美賣》",
+      ],
+    ],
   },
   {
     title: "2021 社團成員競賽得獎名單",
