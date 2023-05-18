@@ -343,20 +343,20 @@ const learnMoreButton = (href = "/") => {
 
 // 要顯示在首頁的圖片們
 const imageList = [
-  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/%E9%A6%96%E9%A0%81%E7%9A%84%E5%A4%A7%E5%90%88%E7%85%A7%E5%80%91/S__70377552.jpg?raw=true",
-  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/%E9%A6%96%E9%A0%81%E7%9A%84%E5%A4%A7%E5%90%88%E7%85%A7%E5%80%91/S__70377550.jpg?raw=true",
-  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/%E9%A6%96%E9%A0%81%E7%9A%84%E5%A4%A7%E5%90%88%E7%85%A7%E5%80%91/IMG_9035.jpeg?raw=true",
-  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/%E9%A6%96%E9%A0%81%E7%9A%84%E5%A4%A7%E5%90%88%E7%85%A7%E5%80%91/112_05_09%20%E5%B9%B9%E9%83%A8%E4%BA%A4%E6%8E%A5.jpg?raw=true",
-  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/%E9%A6%96%E9%A0%81%E7%9A%84%E5%A4%A7%E5%90%88%E7%85%A7%E5%80%91/112_04_25%20%E7%A4%BE%E9%95%B7%E9%81%B8%E8%88%89%E6%9A%A8%E7%A4%BE%E5%93%A1%E5%A4%A7%E6%9C%83.jpg?raw=true",
-  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/%E9%A6%96%E9%A0%81%E7%9A%84%E5%A4%A7%E5%90%88%E7%85%A7%E5%80%91/112_04_22%20%E6%B0%B8%E5%AE%89%E9%80%B2%E9%9A%8E%E7%87%9F%E9%9A%8A.jpg?raw=true",
-  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/%E9%A6%96%E9%A0%81%E7%9A%84%E5%A4%A7%E5%90%88%E7%85%A7%E5%80%91/110-2%E7%A8%AE%E5%AD%90%E6%95%99%E5%B8%AB%E5%9F%B9%E8%A8%93.png?raw=true",
-  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/%E9%A6%96%E9%A0%81%E7%9A%84%E5%A4%A7%E5%90%88%E7%85%A7%E5%80%91/110-2%E6%96%B0%E7%94%9F%E9%9D%A2%E8%A9%A6%E5%AE%A3%E5%82%B3.jpg?raw=true",
-  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/%E9%A6%96%E9%A0%81%E7%9A%84%E5%A4%A7%E5%90%88%E7%85%A7%E5%80%91/109-1%E8%96%87%E9%96%A3%E5%8F%83%E8%A8%AA.jpg?raw=true",
-  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/%E9%A6%96%E9%A0%81%E7%9A%84%E5%A4%A7%E5%90%88%E7%85%A7%E5%80%91/110-2%E4%BC%81%E6%A5%AD%E5%8F%83%E8%A8%AAGIS.JPG?raw=true",
-  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/%E9%A6%96%E9%A0%81%E7%9A%84%E5%A4%A7%E5%90%88%E7%85%A7%E5%80%91/110-1%E6%9C%9F%E6%9C%AB%E8%81%9A.jpg?raw=true",
-  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/%E9%A6%96%E9%A0%81%E7%9A%84%E5%A4%A7%E5%90%88%E7%85%A7%E5%80%91/109-1%E5%B9%B9%E9%81%8A.png?raw=true",
-  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/%E9%A6%96%E9%A0%81%E7%9A%84%E5%A4%A7%E5%90%88%E7%85%A7%E5%80%91/109-1%E5%9C%8B%E5%AE%89%E5%9C%8B%E5%B0%8F%E7%87%9F%E9%9A%8A%20.png?raw=true",
-  "https://github.com/FCU-iOSClub/Website2022ImageBed/blob/main/%E9%A6%96%E9%A0%81%E7%9A%84%E5%A4%A7%E5%90%88%E7%85%A7%E5%80%91/109-2%E5%B9%B9%E9%83%A8%E4%BA%A4%E6%8E%A5.jpg?raw=true",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/88255dd1-0655-4384-4e5e-005b4e1fb200/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/92687780-790a-45f7-376f-d27f64637b00/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/8c35bcec-d4dc-4a1b-e8e1-4b5e7dd7fb00/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/a61f91ac-335e-46fd-4979-f5c03647f400/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/bf866e78-b554-488a-3291-4ec147e07600/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/92032ce8-af24-4614-7f4d-d9fd4bf13a00/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/7c048532-963c-48a8-3a35-6ca46c25a900/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/18b40513-dd21-4517-abb2-9f5711bf2500/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/a956ab89-a424-4154-3a85-e51b4701a000/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/f06a3c68-7b07-4d45-3bdb-db248af31800/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ebc9b623-ab73-4b0f-ad46-77959aeb2900/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/7e4bf129-8eef-4b1e-03e7-694353e20400/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/00cae306-6d96-4b4e-faec-fe71793bf500/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/9e6a97b7-9744-4013-0c48-a9886bfcf100/public",
 ];
 
 const socialItems = [
