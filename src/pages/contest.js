@@ -44,6 +44,23 @@ const ContestPage = () => {
 
 const contestData = [
   {
+    title: "2023 社團成員競賽得獎名單",
+    contents: [
+      [
+        "App 移動應用創新賽",
+        "台灣二等獎",
+        "潘柏嘉 、王世堯、廖清筆",
+        "《健康寶寶》",
+      ],
+      [
+        "App 移動應用創新賽",
+        "台灣區三等獎",
+        "林楷祐 、張仁維",
+        "《Healtheat》",
+      ],
+    ],
+  },
+  {
     title: "2022 社團成員競賽得獎名單",
     contents: [
       ["WWDC 全球學生挑戰賽", "獲獎", "魯敬元", "《MusicLearning》"],
