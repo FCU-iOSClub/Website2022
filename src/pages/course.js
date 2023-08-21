@@ -122,15 +122,15 @@ const CoursePage = () => {
           <div className="grid w-full gap-3 md:gap-10 grid-cols-1 md:grid-cols-3 px-3 md:px-32">
             {courseCard(
               "Swift UI",
-              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/8aac93a7-b803-4e20-90dc-fb9a6077c100/public"
+              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/8aac93a7-b803-4e20-90dc-fb9a6077c100/public",
             )}
             {courseCard(
               "Playground",
-              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/2a9e9a09-2e25-4946-5b94-599e8a56f000/public"
+              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/2a9e9a09-2e25-4946-5b94-599e8a56f000/public",
             )}
             {courseCard(
               "mBot",
-              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/6d5f310f-9af8-4be6-d1a7-7fdff13ea700/public"
+              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/6d5f310f-9af8-4be6-d1a7-7fdff13ea700/public",
             )}
           </div>
         </div>
@@ -148,15 +148,15 @@ const CoursePage = () => {
           <div className="grid w-full gap-3 md:gap-10 grid-cols-1 md:grid-cols-3 px-3 md:px-32">
             {courseCard(
               "Keynote",
-              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/5a8691b7-082d-46f5-68f6-5b15955f2900/public"
+              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/5a8691b7-082d-46f5-68f6-5b15955f2900/public",
             )}
             {courseCard(
               "Figma",
-              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/a8142fb7-3fc1-4250-2b58-ed03c0a13400/public"
+              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/a8142fb7-3fc1-4250-2b58-ed03c0a13400/public",
             )}
             {courseCard(
               "流程圖",
-              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/601c3805-3ce6-4c94-c1ce-8935b141f400/public"
+              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/601c3805-3ce6-4c94-c1ce-8935b141f400/public",
             )}
           </div>
           <div className="h-20 md:h-32" /> {/* 空白區 */}
