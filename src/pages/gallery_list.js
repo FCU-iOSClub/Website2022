@@ -44,7 +44,7 @@ const GalleryList = ({ data }) => {
               index >= (currentPage - 1) * perPage &&
               index < currentPage * perPage
                 ? galleryItem(item.node)
-                : null
+                : null,
             )}
           </div>
           <div className="h-8" /> {/* 空白區 */}

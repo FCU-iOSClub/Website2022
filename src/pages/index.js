@@ -300,7 +300,7 @@ const AnnouncementLiet = (props) => {
           className="flex-shrink-0"
         />
         <div className="">{v.node.title}</div>
-      </div>
+      </div>,
     );
     annsHtml.push(<AnnContent node={v.node} />);
   });
