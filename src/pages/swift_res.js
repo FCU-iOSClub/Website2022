@@ -31,7 +31,7 @@ const SwiftPage = () => {
                 onClick={() => {
                   window.open(
                     "https://www.apple.com/tw/education/docs/swift-club-xcode.pdf",
-                    "_blank"
+                    "_blank",
                   );
                 }}
               >
