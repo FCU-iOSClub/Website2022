@@ -41,7 +41,7 @@ const IndexPage = (props) => {
               <button
                 className="overflow-hidden group h-12 px-6 border border-btnbg rounded"
                 onClick={() => {
-                  window.open("https://forms.gle/2o8TB3mrvHUMTxRE7", "_blank");
+                  window.open("https://forms.gle/FKXx5mExXmKHMYmC6", "_blank");
                 }}
               >
                 <div className="transition duration-200 group-hover:-translate-y-12">
