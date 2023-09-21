@@ -110,6 +110,30 @@ const ClubActivities = () => {
 
 const iOSClubActivities = [
   {
+    title: "112-1 社員大會",
+    date: "2023-11-14",
+  },
+  {
+    title: "講座（主題待定）",
+    date: "2023-11-29",
+  },
+  {
+    title: "iOS Club x 夢種子聯合夜烤",
+    date: "2023-10-12",
+  },
+  {
+    title: "新生迎新活動",
+    date: "2023-10-04",
+  },
+  {
+    title: "iOS Club 第7屆新生茶會",
+    date: "2023-09-21",
+  },
+  {
+    title: "社團博覽會",
+    date: "2023-09-13",
+  },
+  {
     title: "暑期幹部訓練",
     date: "2023-09-08 ~ 2023-09-10",
   },
