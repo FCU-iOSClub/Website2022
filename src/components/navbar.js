@@ -77,7 +77,7 @@ const JoinUsButton = () => (
   <button
     class="w-fit text-white px-10 py-2 md:ml-8 bg-blue-500 hover:bg-blue-300 rounded-full duration-700"
     onClick={() => {
-      window.open("https://forms.gle/2o8TB3mrvHUMTxRE7", "_blank");
+      window.open("https://forms.gle/6J8LjvbvTCrTmpU4A", "_blank");
     }}
   >
     Join Us
