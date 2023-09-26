@@ -176,7 +176,7 @@ const IndexPage = (props) => {
         <div className="py-5 px-5 md:grid md:grid-cols-3 md:gap-3 justify-center text-center">
           <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50">
             <h2 className="my-8 text-xl font-bold">社團課程</h2>
-            <p className="my-8">每週二、四的晚上 18:30～20:30</p>
+            <p className="my-8">每週二、三的晚上 18:30～20:30</p>
             {learnMoreButton("/course")}
           </div>
           <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
