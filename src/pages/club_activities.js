@@ -122,10 +122,6 @@ const iOSClubActivities = [
     date: "2023-10-12",
   },
   {
-    title: "新生迎新活動",
-    date: "2023-10-04",
-  },
-  {
     title: "iOS Club 第7屆新生茶會",
     date: "2023-09-21",
   },
