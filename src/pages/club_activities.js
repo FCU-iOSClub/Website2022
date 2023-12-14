@@ -110,6 +110,10 @@ const ClubActivities = () => {
 
 const iOSClubActivities = [
   {
+    title: "寒假幹部訓練",
+    date: "2023-02-18",
+  },
+  {
     title: "葳格中學 用程式玩轉校園 機器人體驗營",
     date: "2024-01-14",
   },
