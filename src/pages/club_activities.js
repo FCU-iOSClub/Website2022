@@ -110,16 +110,24 @@ const ClubActivities = () => {
 
 const iOSClubActivities = [
   {
+    title: "葳格中學 用程式玩轉校園 機器人體驗營",
+    date: "2024-01-14",
+  },
+  {
+    title: "社團期末聚",
+    date: "2023-12-26",
+  },
+  {
     title: "112-1 社員大會",
     date: "2023-11-14",
   },
   {
-    title: "講座（主題待定）",
-    date: "2023-11-29",
-  },
-  {
     title: "iOS Club x 夢種子聯合夜烤",
     date: "2023-10-12",
+  },
+  {
+    title: "試上課",
+    date: "2023-09-26",
   },
   {
     title: "iOS Club 第7屆新生茶會",
