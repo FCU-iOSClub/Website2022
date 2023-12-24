@@ -103,6 +103,7 @@ export const query = graphql`
           date
           mainPhoto
           location
+          gdrive_url
         }
       }
     }
