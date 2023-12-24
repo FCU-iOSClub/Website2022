@@ -83,6 +83,7 @@ yarn prettier
   "gdrive_url": "" // 可選
 }
 // 若活動相簿有對應的 Google Drive 資料夾，可加入 gdrive_url 欄位
+
 // 當 gdrive_url 存在時，活動相簿頁面的 "See More" 按鈕將連結到此 URL
 ```
 
