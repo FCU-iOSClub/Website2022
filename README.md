@@ -79,13 +79,11 @@ yarn prettier
     // 所有相片
     "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ebc9b623-ab73-4b0f-ad46-77959aeb2900/public",
     "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ebc9b623-ab73-4b0f-ad46-77959aeb2900/public"
-  ]
+  ],
+  "gdrive_url": ""// 可選
 }
 // 若活動相簿有對應的 Google Drive 資料夾，可加入 gdrive_url 欄位
 // 當 gdrive_url 存在時，活動相簿頁面的 "See More" 按鈕將連結到此 URL
-// 並在新分頁中開啟
-// "gdrive_url" 欄位範例：
-// "gdrive_url": "https://drive.google.com/drive/folders/your-folder-id"
 
 ```
 
