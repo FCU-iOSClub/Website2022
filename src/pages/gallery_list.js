@@ -69,7 +69,7 @@ const galleryItem = (node) => {
         <h2 className="mt-4 text-xl font-bold text-center">{node.name}</h2>
         <div className="font-bold text-gray-700">時間：{node.date}</div>
         <div className="font-bold text-gray-700">地點：{node.location}</div>
-        <a href={"/gallery/" + node.date + " " + node.name} className="w-32">
+        <a href={node.gdrive_url ? node.gdrive_url : ("/gallery/" + node.date + " " + node.name)} className="w-32">
           <div className="w-fit py-1 px-5 rounded-full break-words bg-transparent border border-gray-700 hover:bg-btnbg text-gray-800 hover:text-white">
             See More
           </div>
