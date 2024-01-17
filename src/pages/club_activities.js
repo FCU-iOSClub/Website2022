@@ -111,7 +111,7 @@ const ClubActivities = () => {
 const iOSClubActivities = [
   {
     title: "寒假幹部訓練",
-    date: "2023-02-18",
+    date: "2024-02-18",
   },
   {
     title: "逢甲大學 iOS Club x 葳格中學 用程式玩轉校園-機器人體驗營",
