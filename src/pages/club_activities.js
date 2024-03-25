@@ -24,31 +24,31 @@ const ClubActivities = () => {
             <p className="pt-3 font-bold text-black text-5xl">社團活動</p>
             <p className="py-4 text-gray-700 text-justify">
               平時社團活動也不僅僅有社課，我們還會舉辦
-              <a class="underline decoration-indigo-500 underline-offset-1">
+              <a className="underline decoration-indigo-500 underline-offset-1">
                 講座
               </a>
               、
-              <a class="underline decoration-pink-500 underline-offset-1">
+              <a className="underline decoration-pink-500 underline-offset-1">
                 夜烤
               </a>
               、
-              <a class="underline decoration-sky-500  underline-offset-1">
+              <a className="underline decoration-sky-500  underline-offset-1">
                 WorkShop
               </a>
               、
-              <a class="underline decoration-indigo-500 underline-offset-1">
+              <a className="underline decoration-indigo-500 underline-offset-1">
                 社遊
               </a>
               、
-              <a class="underline decoration-pink-500 underline-offset-1">
+              <a className="underline decoration-pink-500 underline-offset-1">
                 期末聚
               </a>
               …等超多活動給社員參加！當然，我們不只和
-              <a class="underline decoration-red-500 underline-offset-1">
+              <a className="underline decoration-red-500 underline-offset-1">
                 葳格高中
               </a>
               建立了長期的任教合作，身為志工性社團，我們還會和相關機構及國小一同舉辦各式各樣的
-              <a class="underline decoration-indigo-500 underline-offset-1">
+              <a className="underline decoration-indigo-500 underline-offset-1">
                 志工營隊
               </a>
               ，落實將在社內所學回饋社會。
@@ -81,6 +81,7 @@ const ClubActivities = () => {
           {iOSClubActivities.map((item, index) => {
             return (
               <VerticalTimelineElement
+                key={index}
                 className="vertical-timeline-element--work"
                 date={item.date}
                 dateClassName="text-gray-700 font-serif "
@@ -111,7 +112,7 @@ const ClubActivities = () => {
 const iOSClubActivities = [
   {
     title: "寒假幹部訓練",
-    date: "2023-02-18",
+    date: "2024-02-18",
   },
   {
     title: "逢甲大學 iOS Club x 葳格中學 用程式玩轉校園-機器人體驗營",
