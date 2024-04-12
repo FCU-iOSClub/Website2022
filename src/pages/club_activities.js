@@ -111,6 +111,14 @@ const ClubActivities = () => {
 
 const iOSClubActivities = [
   {
+    title: "幹部交接典禮",
+    date: "2024-05-03",
+  },
+  {
+    title: "社員大會暨社長選舉",
+    date: "2024-04-24",
+  },
+  {
     title: "寒假幹部訓練",
     date: "2024-02-18",
   },
