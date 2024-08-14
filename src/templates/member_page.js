@@ -93,8 +93,10 @@ const MemberCard = (props) => {
         {member.position + " " + member.name}
       </h3>
       <hr className="border-1 border-iosbgblue" />
-      <p className="text-sm font-thin py-4 member-description" dangerouslySetInnerHTML={{ __html: member.description }}>
-      </p>
+      <p
+        className="text-sm font-thin py-4 member-description"
+        dangerouslySetInnerHTML={{ __html: member.description }}
+      ></p>
     </div>
   );
 };
