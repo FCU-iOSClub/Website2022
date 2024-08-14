@@ -64,7 +64,11 @@ query {
           image
           name
           position
-          youtube
+          links {
+            icon_type
+            text
+            url
+          }
         }
       }
     }

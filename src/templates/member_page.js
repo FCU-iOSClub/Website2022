@@ -6,7 +6,7 @@ import AppHeader from "../components/header";
 import Navbar from "../components/navbar";
 import { Icon } from "@iconify/react";
 
-const Gallery = (props) => {
+const MemberPage = (props) => {
   const { node, prevUrl, nextUrl } = props.pageContext;
 
   return (
@@ -93,12 +93,40 @@ const MemberCard = (props) => {
         {member.position + " " + member.name}
       </h3>
       <hr className="border-1 border-iosbgblue" />
-      <p
-        className="text-sm font-thin py-4 member-description"
-        dangerouslySetInnerHTML={{ __html: member.description }}
-      ></p>
+
+      {/* description 介紹*/}
+      <p className="my-4">{member.description}</p>
+
+      {/* links 個人連結 */}
+      {member.links && (
+        <div className="flex flex-col gap-y-4 w-full">
+          {member.links.map((link) => {
+            return (
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
+              >
+                <div className="flex gap-3 items-center w-fit py-1 px-5 rounded-full break-words bg-transparent border border-gray-700 hover:bg-btnbg text-gray-800 hover:text-white break-normal">
+                  {createMemberLinkIcon(link.icon_type)}
+                  {link.text}
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };
 
-export default Gallery;
+const createMemberLinkIcon = (iconType) => {
+  switch (iconType) {
+    case "youtube":
+      return <Icon icon="logos:youtube-icon" />;
+  }
+  return undefined;
+};
+
+export default MemberPage;

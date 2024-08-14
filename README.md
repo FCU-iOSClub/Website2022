@@ -90,6 +90,26 @@ yarn prettier
 
 在 `src/data/member` 中新增檔案
 
+### 個人連結
+
+可以在 `links` 中加入個人連結，這個一個陣列可以放多個。
+
+目前 type 只有 `youtube` 可以用，需要加其他的可以呼叫 Tony，或自己加。
+
+下面是小筆筆的範例：
+
+```json
+{
+  "links": [
+    {
+      "icon_type": "youtube",
+      "text": "我的 Youtube",
+      "url": "https://www.youtube.com/@xiao.bi_bi"
+    }
+  ]
+}
+```
+
 ## Icon
 
 Icon 使用 [Iconify](https://iconify.design)。

@@ -14,10 +14,16 @@
     },
     {
       "name": "廖清筆",
-      "description": "YouTube Channel: <a href='https://www.youtube.com/@xiao.bi_bi'>小比 筆 @xiao.bi_bi</a>",
+      "description": "",
       "position": "副社長",
       "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/e54e52ff-12e2-40ae-c213-fe0054030f00/public",
-      "youtube": "https://www.youtube.com/@xiao.bi_bi"
+      "links": [
+        {
+          "icon_type": "youtube",
+          "text": "小筆筆的 Youtube Channel",
+          "url": "https://www.youtube.com/@xiao.bi_bi"
+        }
+      ]
     },
     {
       "name": "潘柏嘉",
