@@ -1,0 +1,126 @@
+{
+  "name": "第八屆",
+  "url": "8",
+  "startDate": "2024-08-01",
+  "endDate": "now",
+  "description": "",
+  "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/a3a2f012-8da0-4151-f2ce-3fe0ebdfab00/large",
+  "members": [
+    {
+      "name": "柯艾妤",
+      "description": "",
+      "position": "社長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/f2abe07d-7411-4ac5-09d7-68133b30e000/public"
+    },
+    {
+      "name": "廖清筆",
+      "description": "",
+      "position": "副社長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/e54e52ff-12e2-40ae-c213-fe0054030f00/public",
+      "links": [
+        {
+          "icon_type": "youtube",
+          "text": "小比筆的 Youtube Channel",
+          "url": "https://www.youtube.com/@xiao.bi_bi"
+        }
+      ]
+    },
+    {
+      "name": "潘柏嘉",
+      "description": "",
+      "position": "網管",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/36c69f27-37e6-4e39-5371-a65241944400/public"
+    },
+    {
+      "name": "王竣翔",
+      "description": "",
+      "position": "網管",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/6cc3b750-5d16-471e-ca6f-bfcfdb3fa300/public"
+    },
+    {
+      "name": "林楷祐",
+      "description": "",
+      "position": "技術長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/9da98378-f11f-4ed2-3aa7-387e319cb100/public",
+      "links": [
+        {
+          "icon_type": "youtube",
+          "text": "Kyle的 Youtube Channel",
+          "url": "https://www.youtube.com/@kyleLin_Channel"
+        }
+      ]
+    },
+    {
+      "name": "林瑞城",
+      "description": "",
+      "position": "技術長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/c86bf4da-0d9b-4cd4-fb63-e93981c16d00/public"
+    },
+    {
+      "name": "黃云葶",
+      "description": "",
+      "position": "設計長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/1cef4ae7-8f5f-45e6-f521-0ba7140abb00/public"
+    },
+    {
+      "name": "蔡承曄",
+      "description": "",
+      "position": "教學",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/50478612-de4f-4c8a-0187-73352291ec00/public"
+    },
+    {
+      "name": "林永富",
+      "description": "",
+      "position": "教學",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/096ab9df-8575-4aee-ed96-b7c601dd7700/public"
+    },
+    {
+      "name": "葉韋坪",
+      "description": "",
+      "position": "公關",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/7d024c8d-53d8-4988-c86e-e85037805a00/public"
+    },
+    {
+      "name": "李鎧竹",
+      "description": "",
+      "position": "美宣",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/145840ba-75ad-496b-c7c0-f126cc8f4600/public"
+    },
+    {
+      "name": "黃香粢",
+      "description": "",
+      "position": "美宣",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/86553e67-9953-4ca8-dd6c-e40c78c9bd00/public"
+    },
+    {
+      "name": "楊佳寧",
+      "description": "",
+      "position": "總務",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ba4dbb2e-526a-4a72-92b3-bdfa0a561500/public"
+    },
+    {
+      "name": "李天宇",
+      "description": "",
+      "position": "設備",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/4dc860e8-2209-4690-117f-7a5acc3b9300/public"
+    },
+    {
+      "name": "邱怡萱",
+      "description": "",
+      "position": "執秘",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/9cc3eb82-180c-4df1-bc29-66638109c500/public"
+    },
+    {
+      "name": "曾鈺傑",
+      "description": "",
+      "position": "執秘",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/9c88f34f-40e9-475f-ad63-9cc472d35b00/public"
+    },
+    {
+      "name": "社長的車",
+      "description": "",
+      "position": "特助",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/f1d64080-c593-4a2e-3636-49576c59b900/public"
+    }
+  ]
+}

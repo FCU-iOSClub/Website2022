@@ -9,7 +9,7 @@ exports.onPostBuild = ({ reporter }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   // Gallery
-  const result = await graphql(galleryQuerry);
+  const result = await graphql(galleryQuery);
   result.data.allGalleryJson.edges.forEach((edge) => {
     createPage({
       path: `/gallery/${edge.node.date} ${edge.node.name}`,
@@ -35,7 +35,7 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 };
 
-const galleryQuerry = `
+const galleryQuery = `
 query {
   allGalleryJson (
     sort: { fields: [date], order: DESC }
@@ -64,6 +64,11 @@ query {
           image
           name
           position
+          links {
+            icon_type
+            text
+            url
+          }
         }
       }
     }
