@@ -10,12 +10,14 @@ const ContestPage = () => {
       <AppHeader title="iOS Club - 社團競賽" />
       <Navbar />
       <div className="container mx-auto break-normal bg-white shadow-lg px-3 md:px-20 lg:px-48">
-        <div className="h-32" /> {/* 空白 */}
+        <div className="h-32" />
+        {/* 空白 */}
         <h1 className="text-5xl text-center font-bold">iOS Club 競賽</h1>
-        <div className="h-16" /> {/* 空白 */}
+        <div className="h-16" />
+        {/* 空白 */}
         {contestData.map((item, index) => {
           return (
-            <div className="py-6">
+            <div className="py-6" key={index}>
               {/* title */}
               <div className="w-full bg-ioscardblue py-3">
                 <h2 className="text-xl text-center text-white font-bold">
@@ -23,8 +25,11 @@ const ContestPage = () => {
                 </h2>
               </div>
               {/* WWDC end title */}
-              {item.contents.map((item) => (
-                <div className="border-b w-full pt-8 pb-1 grid grid-rows-1 md:grid-cols-4 text-iostextblue font-medium gap-2">
+              {item.contents.map((item, index) => (
+                <div
+                  className="border-b w-full pt-8 pb-1 grid grid-rows-1 md:grid-cols-4 text-iostextblue font-medium gap-2"
+                  key={index}
+                >
                   <p className="px-3 text-left md:text-center">{item[0]}</p>
                   <p className="px-3 text-left md:text-center">{item[1]}</p>
                   <p className="px-3 text-left md:text-center">{item[2]}</p>
@@ -34,7 +39,8 @@ const ContestPage = () => {
             </div>
           );
         })}
-        <div className="h-16" /> {/* 空白 */}
+        <div className="h-16" />
+        {/* 空白 */}
       </div>
       {/* footer */}
       <Footer />
