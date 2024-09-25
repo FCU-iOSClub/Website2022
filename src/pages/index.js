@@ -21,7 +21,8 @@ const IndexPage = (props) => {
       <AppHeader />
       <Navbar />
       <div className="container mx-auto break-normal bg-white shadow-lg px-3 md:px-0 font-serif">
-        <div className="h-20 md:h-32" /> {/* 空白 */}
+        <div className="h-20 md:h-32" />
+        {/* 空白 */}
         {/* 最新消息 */}
         <AnnouncementLiet data={props.data} />
         {/* We are iOS Club */}
@@ -225,6 +226,7 @@ const IndexPage = (props) => {
                     <a
                       href="https://goo.gl/maps/4PwBD6dZjiMvRTKr7"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       407 台中市西屯區文華路100號 電通館 B04
                     </a>
@@ -233,7 +235,12 @@ const IndexPage = (props) => {
                 {/* Social icon */}
                 <div className="flex space-x-4 text-lg">
                   {socialItems.map((icon, index) => (
-                    <a href={icon.href} target="_blank">
+                    <a
+                      key={index}
+                      href={icon.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <Icon
                         icon={icon.icon}
                         width="32"
@@ -384,6 +391,11 @@ const socialItems = [
     name: "Discord",
     icon: "akar-icons:discord-fill",
     href: "https://discord.com/invite/z2VPCNFupv",
+  },
+  {
+    name: "Threads",
+    icon: "akar-icons--threads-fill",
+    href: "https://www.threads.net/@fcu.iosclub",
   },
 ];
 
