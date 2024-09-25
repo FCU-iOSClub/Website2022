@@ -80,7 +80,7 @@ const SwiftPage = () => {
             </p>
             <div className="flex flex-col md:flex-row gap-8">
               {swiftBooks.map((item, index) => (
-                <div className=" flex-1 flex-col">
+                <div className=" flex-1 flex-col" key={index}>
                   <img className="object-contain " src={item.image} />
                   <p className="break-normal text-2xl font-black text-left py-4">
                     {item.title}

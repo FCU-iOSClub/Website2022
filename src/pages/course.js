@@ -66,17 +66,17 @@ const CoursePage = () => {
             <div className="py-4 text-gray-700 text-justify md:text-left text-base break-normal">
               <p>
                 iOS Club 主要的課程為&nbsp;
-                <a class="underline decoration-sky-500 underline-offset-1">
+                <a className="underline decoration-sky-500 underline-offset-1">
                   Swift UI
                 </a>
                 &nbsp;的 App 設計，除此之外也有&nbsp;
-                <a class="underline decoration-sky-500">Playground</a>
+                <a className="underline decoration-sky-500">Playground</a>
                 &nbsp;和&nbsp;
-                <a class="underline decoration-sky-500 underline-offset-1">
+                <a className="underline decoration-sky-500 underline-offset-1">
                   mBot
                 </a>
                 &nbsp;的教學課程，此部分是由
-                <a class="underline decoration-pink-500 underline-offset-1">
+                <a className="underline decoration-pink-500 underline-offset-1">
                   教學長
                 </a>
                 負責課程規劃與教學。
@@ -84,15 +84,15 @@ const CoursePage = () => {
               <div className="h-3" />
               <p>
                 而在技術課程外，我們也有由
-                <a class="underline decoration-pink-500 underline-offset-1">
+                <a className="underline decoration-pink-500 underline-offset-1">
                   美宣長
                 </a>
                 負責教學的設計課，內容有&nbsp;
-                <a class="underline decoration-sky-500 underline-offset-1">
+                <a className="underline decoration-sky-500 underline-offset-1">
                   Keynote
                 </a>
                 、
-                <a class="underline decoration-indigo-500 underline-offset-1">
+                <a className="underline decoration-indigo-500 underline-offset-1">
                   Figma
                 </a>
                 、流程圖...等。
@@ -165,19 +165,6 @@ const CoursePage = () => {
       {/* footer */}
       <Footer />
     </div>
-  );
-};
-
-const learnMoreButton = (href = "/") => {
-  return (
-    <p className="my-8">
-      <a
-        className="bg-red-300 w-fit py-3 px-6 rounded-full break-words"
-        href={href}
-      >
-        Learn More
-      </a>
-    </p>
   );
 };
 

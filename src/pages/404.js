@@ -28,7 +28,7 @@ const NotFoundPage = () => {
     >
       <AppHeader title="iOS Club - 404 Opps" />
       <div className="h-full w-full flex flex-col justify-center items-center p-20">
-        <div class="w-full flex flex-col md:flex-row items-center justify-center space-x-4 space-y-3">
+        <div className="w-full flex flex-col md:flex-row items-center justify-center space-x-4 space-y-3">
           <LogoSvg className="h-48 w-48 md:w-32 md:h-32 text-white fill-current" />
           <h2 className="text-white text-xl md:text-3xl">網頁努力建置中...</h2>
         </div>

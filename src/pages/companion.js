@@ -163,6 +163,7 @@ const CompanionPage = () => {
                 className="text-gray-600 py-2 underline underline-offset-1"
                 target="_blank"
                 href="https://www.facebook.com/straightafcu/photos/?ref=page_internal"
+                rel="noreferrer"
               >
                 Facebook 粉絲專頁
               </a>

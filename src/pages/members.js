@@ -35,10 +35,10 @@ const MembersPage = (props) => {
         <div className="h-4 " /> {/* 空白 */}
         {/* 歷屆 list */}
         <div>
-          {members.map((item, _) => {
+          {members.map((item, index) => {
             const { node } = item;
             return (
-              <div className="flex flex-col">
+              <div className="flex flex-col" key={index}>
                 <a href={"/members/" + node.url}>
                   <h2 className="text-4xl text-center font-bold">
                     {node.name}
