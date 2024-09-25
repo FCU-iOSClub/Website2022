@@ -18,6 +18,11 @@ const communityList = [
     href: "https://www.instagram.com/fcu.iosclub/",
   },
   {
+    name: "Threads",
+    icon: "akar-icons:threads-fill",
+    href: "https://www.threads.net/@fcu.iosclub",
+  },
+  {
     name: "Line 社群",
     icon: "bi:line",
     href: "https://line.me/ti/g2/Hcrx-jxTUDGItqDEo0R63w?utm_campaign=default&utm_medium=link_copy&utm_source=invitation",
