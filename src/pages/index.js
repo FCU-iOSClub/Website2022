@@ -224,7 +224,7 @@ const IndexPage = (props) => {
                       color="#ffffff"
                     />
                     <a
-                      href="https://goo.gl/maps/4PwBD6dZjiMvRTKr7"
+                      href="https://maps.app.goo.gl/G9PphU6iEHDTnkBeA"
                       target="_blank"
                       rel="noreferrer"
                     >
