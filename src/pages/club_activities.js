@@ -111,6 +111,10 @@ const ClubActivities = () => {
 
 const iOSClubActivities = [
   {
+    title: "葳格營隊",
+    date: "2025-1-11",
+  },
+  {
     title: "社團期末聚",
     date: "2024-12-23",
   },
