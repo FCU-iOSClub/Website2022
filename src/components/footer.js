@@ -5,7 +5,7 @@ const communityList = [
   {
     name: "E-mail",
     icon: "fluent:mail-48-filled",
-    href: "mailto:iosclub@mail.fcu.edu.tw",
+    href: "mailto:iosclubtw@gmail.com",
   },
   {
     name: "Facebook",
