@@ -6,14 +6,14 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const mobileChild = (
-    <nav className="fixed w-full h-fit bg-gray-100 font-bold shadow z-50 md:flex md:items-center md:justify-between">
+    <nav className="fixed w-full h-fit bg-gray-100 font-bold shadow-xs z-50 md:flex md:items-center md:justify-between">
       <div className="flex justify-between px-6 py-3 w-full">
         <a href="/" className="w-fit text-2xl">
           iOS Club
         </a>
         <div className="place-self-center">
           <button
-            className="block hamburger md:hidden focus:outline-none"
+            className="block hamburger md:hidden focus:outline-hidden"
             onClick={() => setIsOpen(!isOpen)}
           >
             <Icon
@@ -24,10 +24,10 @@ const Navbar = () => {
         </div>
       </div>
       {isOpen && (
-        <div className="bg-white flex flex-col ont-bold md:z-aut w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 shadow">
+        <div className="bg-white flex flex-col ont-bold md:z-aut w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 shadow-xs">
           <ul className="">
             {menuItems.map((item, index) => (
-              <li key={index} class="md:ml-8 text-x1 mx-4 my-6 md:my-0">
+              <li key={index} className="md:ml-8 text-x1 mx-4 my-6 md:my-0">
                 <a
                   href={item.url}
                   className="text-x1 text-gray-800 hover:text-cyan-600 duartion-500"
@@ -75,7 +75,7 @@ export default Navbar;
 
 const JoinUsButton = () => (
   <button
-    class="w-fit text-white px-10 py-2 md:ml-8 bg-blue-500 hover:bg-blue-300 rounded-full duration-700"
+    className="w-fit text-white px-10 py-2 md:ml-8 bg-blue-500 hover:bg-blue-300 rounded-full duration-700"
     onClick={() => {
       window.open("https://forms.gle/fDeQoZpK1NSNNDQr6", "_blank");
     }}

@@ -27,7 +27,7 @@ const SwiftPage = () => {
             </p>
             <div className="flex items-center gap-2">
               <button
-                className="overflow-hidden group h-12 px-6 border border-btnbg rounded"
+                className="overflow-hidden group h-12 px-6 border border-btnbg rounded-xs"
                 onClick={() => {
                   window.open(
                     "https://www.apple.com/tw/education/docs/swift-club-xcode.pdf",
