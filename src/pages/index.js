@@ -37,7 +37,7 @@ const IndexPage = (props) => {
             </p>
             <div className="h-2 md:h-2" />
             {/* 空白 */}
-            <div className="px-5 md:p-0 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3 md:gap-3 w-full relative bottom-120 left-1/2 -translate-x-1/2">
+            <div className="px-5 md:p-0 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3 md:gap-3 w-full bottom-120 left-2">
               {/* Join Us 按鈕 */}
               <button
                 className="overflow-hidden group h-12 px-6 border border-btnbg rounded-xs"
