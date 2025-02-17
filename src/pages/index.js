@@ -37,10 +37,10 @@ const IndexPage = (props) => {
             </p>
             <div className="h-2 md:h-2" />
             {/* 空白 */}
-            <div className="px-5 md:p-0 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3 md:gap-3 w-full relative bottom-120 left-1/2 -translate-x-1/2">
+            <div className="px-5 md:p-0 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3 md:gap-3 w-full bottom-120 left-2">
               {/* Join Us 按鈕 */}
               <button
-                className="overflow-hidden group h-12 px-6 border border-btnbg rounded"
+                className="overflow-hidden group h-12 px-6 border border-btnbg rounded-xs"
                 onClick={() => {
                   window.open("https://forms.gle/fDeQoZpK1NSNNDQr6", "_blank");
                 }}
@@ -56,7 +56,7 @@ const IndexPage = (props) => {
               </button>
               {/* 歷代社團幹部 按鈕 */}
               <button
-                className="overflow-hidden group h-12 px-6 border bg-btnbg border-btnbg rounded transform hover:bg-ioscardblue hover:border-ioscardblue duration-200"
+                className="overflow-hidden group h-12 px-6 border bg-btnbg border-btnbg rounded-xs transform hover:bg-ioscardblue hover:border-ioscardblue duration-200"
                 onClick={() => {
                   window.location.href = "/members";
                 }}
@@ -271,7 +271,7 @@ const AnnouncementLiet = (props) => {
     const node = props.node;
     return (
       <div className="bg-white p-3 rounded-md flex flex-col gap-3 md:flex-row">
-        <div className="flex-grow flex flex-col gap-3">
+        <div className="grow flex flex-col gap-3">
           <p
             dangerouslySetInnerHTML={{
               __html: node.content.replaceAll("\n", "<br>"),
@@ -304,7 +304,7 @@ const AnnouncementLiet = (props) => {
           color="#1f2937"
           width="30"
           height="30"
-          className="flex-shrink-0"
+          className="shrink-0"
         />
         <div className="">{v.node.title}</div>
       </div>,
@@ -320,14 +320,14 @@ const AnnouncementLiet = (props) => {
           color="#1f2937"
           width="30"
           height="30"
-          className="flex-shrink-0"
+          className="shrink-0"
         />
-        <div className="flex-grow">{anns[0].node.title}</div>
+        <div className="grow">{anns[0].node.title}</div>
         <Icon
           icon={isAnnouncementOpen ? chevronDown : chevronUp}
           color="#1f2937"
           onClick={() => setIsAnnouncementOpen(!isAnnouncementOpen)}
-          className="cursor-pointer flex-shrink-0"
+          className="cursor-pointer shrink-0"
         />
       </div>
       {isAnnouncementOpen && annsHtml}

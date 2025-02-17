@@ -1,4 +1,41 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500&display=swap");
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500&display=swap")
+layer(utilities);
+
+@theme {
+  --font-*: initial;
+  --font-serif:
+    Noto Serif TC, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-iosbgblue: #b3c4d6;
+  --color-ioscardblue: #8098b5;
+  --color-iostextblue: #4771a3;
+  --color-footerbg: #4f7096;
+  --color-btnbg: #445484;
+  --color-btnbg1: #fff5d1;
+  --color-iospink: #ecadad;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer utilities {
+  @cofnig "../../tailwind.config.js";
+}
