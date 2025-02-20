@@ -64,7 +64,24 @@ const ClubActivities = () => {
           />
         </div>
       </div>
-      <div className="h-16" /> {/* 空白區 */}
+      {/* Luma行事曆嵌入區塊 */}
+      <div className="px-0 md:px-32">
+        <div className="flex justify-center items-center my-4">
+          <iframe
+            src="https://lu.ma/embed/calendar/cal-un8SDO2wxuRgfWj/events?lt=light"
+            width="100%"
+            height="225"
+            style={{
+              border: "1px solid #bfcbda88", // 透過 CSS 控制邊框
+              borderRadius: "10px",
+            }}
+            allowFullScreen
+            aria-hidden="false"
+            tabIndex="0"
+          ></iframe>
+        </div>
+      </div>
+      <div className="h-8" /> {/* 空白區 */}
       {/* 閱讀更多區塊 */}
       <div className="bg-iosbgblue flex flex-col items-center">
         <p className="font-serif pt-10 text-center w-full bg-iosbgblue text-xl font-bold">
