@@ -128,8 +128,24 @@ const ClubActivities = () => {
 
 const iOSClubActivities = [
   {
+    title: "Workshop",
+    date: "2025-05-06、13",
+  },
+  {
+    title: "社員大會",
+    date: "2025-04-23",
+  },
+  {
+    title: "企業參訪（國泰金控）",
+    date: "2025-03-28",
+  },
+  {
+    title: "有氧聯合活動",
+    date: "2025-03-10",
+  },
+  {
     title: "葳格營隊",
-    date: "2025-1-11",
+    date: "2025-01-11",
   },
   {
     title: "社團期末聚",
