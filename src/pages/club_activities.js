@@ -132,7 +132,7 @@ const iOSClubActivities = [
     date: "2025-05-06、13",
   },
   {
-    title: "社員大會",
+    title: "社員大會暨社長選舉",
     date: "2025-04-23",
   },
   {
@@ -140,7 +140,7 @@ const iOSClubActivities = [
     date: "2025-03-28",
   },
   {
-    title: "有氧聯合活動",
+    title: "有氧體適能社聯合活動",
     date: "2025-03-10",
   },
   {
