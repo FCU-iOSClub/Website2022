@@ -29,7 +29,7 @@ const ClubActivities = () => {
               </a>
               、
               <a className="underline decoration-pink-500 underline-offset-1">
-                夜烤
+                野餐
               </a>
               、
               <a className="underline decoration-sky-500  underline-offset-1">
