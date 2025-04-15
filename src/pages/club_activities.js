@@ -140,10 +140,6 @@ const iOSClubActivities = [
     date: "2025-03-28",
   },
   {
-    title: "有氧體適能社聯合活動",
-    date: "2025-03-10",
-  },
-  {
     title: "葳格營隊",
     date: "2025-01-11",
   },
