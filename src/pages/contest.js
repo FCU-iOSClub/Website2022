@@ -50,6 +50,17 @@ const ContestPage = () => {
 
 const contestData = [
   {
+    title: "2025 社團成員競賽得獎名單",
+    contents: [
+      [
+        "第二十一屆全國電子設計創意競賽",
+        "IEEE Tainan Section 特別獎",
+        "蔡承曄、陳芷琳、黃軍博、李天宇",
+        "《基於動態追蹤與互動回饋輔助輕偏癱族群之遊戲化手部訓練應用程式》",
+      ],
+    ],
+  },
+  {
     title: "2024 社團成員競賽得獎名單",
     contents: [
       [
