@@ -324,7 +324,7 @@ const AnnouncementLiet = (props) => {
         />
         <div className="grow">{anns[0].node.title}</div>
         <Icon
-          icon={isAnnouncementOpen ? chevronDown : chevronUp}
+          icon={isAnnouncementOpen ? chevronUp : chevronDown}
           color="#1f2937"
           onClick={() => setIsAnnouncementOpen(!isAnnouncementOpen)}
           className="cursor-pointer shrink-0"
