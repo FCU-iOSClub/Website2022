@@ -2,6 +2,9 @@ node_modules/
 .cache/
 public
 
+# AI Tools
+CLAUDE.md
+
 # Created by https://www.toptal.com/developers/gitignore/api/macos,windows,visualstudiocode,intellij,node,react
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,windows,visualstudiocode,intellij,node,react
 
