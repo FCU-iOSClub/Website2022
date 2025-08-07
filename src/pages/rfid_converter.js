@@ -130,9 +130,10 @@ const RfidConverterPage = () => {
                 />
                 <button
                   onClick={clearHex}
-                  className="px-4 py-3 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-colors"
+                  className="px-4 py-3 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-colors flex items-center justify-center"
+                  title="清除輸入"
                 >
-                  清除
+                  <Icon icon="mdi:close" className="text-xl" />
                 </button>
               </div>
             </div>
@@ -191,9 +192,10 @@ const RfidConverterPage = () => {
                 />
                 <button
                   onClick={clearDec}
-                  className="px-4 py-3 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-colors"
+                  className="px-4 py-3 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-colors flex items-center justify-center"
+                  title="清除輸入"
                 >
-                  清除
+                  <Icon icon="mdi:close" className="text-xl" />
                 </button>
               </div>
             </div>
