@@ -65,6 +65,9 @@ const Footer = () => {
           <a href="/companion" className="text-gray-100">
             相關單位
           </a>
+          <a href="/rfid_converter" className="text-gray-100">
+            RFID 轉換器
+          </a>
         </div>
         <div className="flex flex-col gap-1">
           <p className="font-bold flex flex-row text-gray-900">Community</p>
