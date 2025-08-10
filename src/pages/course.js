@@ -122,11 +122,11 @@ const CoursePage = () => {
           <div className="grid w-full gap-3 md:gap-10 grid-cols-1 md:grid-cols-3 px-3 md:px-32">
             {courseCard(
               "Swift UI",
-              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/8aac93a7-b803-4e20-90dc-fb9a6077c100/public",
+              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/e764b192-2c41-4545-78f2-85985248fc00/public",
             )}
             {courseCard(
               "Playground",
-              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/2a9e9a09-2e25-4946-5b94-599e8a56f000/public",
+              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/581b9bdf-d597-41ab-87e9-2685fc46a500/public",
             )}
             {courseCard(
               "mBot",
@@ -156,7 +156,7 @@ const CoursePage = () => {
             )}
             {courseCard(
               "流程圖",
-              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/601c3805-3ce6-4c94-c1ce-8935b141f400/public",
+              "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/cf246467-b95a-4077-d51a-63021b8c0f00/public",
             )}
           </div>
           <div className="h-20 md:h-32" /> {/* 空白區 */}
