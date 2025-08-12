@@ -7,6 +7,8 @@ const AppHeader = (props) => {
     <Helmet>
       <title>{title}</title>
       <link rel="icon" href={icon} />
+      <link rel="preconnect" href="https://api.iconify.design" crossOrigin="anonymous" />
+      <link rel="dns-prefetch" href="https://api.iconify.design" />
     </Helmet>
   );
 };
