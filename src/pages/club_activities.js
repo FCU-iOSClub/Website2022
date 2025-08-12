@@ -57,6 +57,14 @@ const ClubActivities = () => {
               iOS Club
               致力於軟體開發，以及推廣程式教育，但我們同時也期望能夠給社員舒適的相處環境與豐富的交流活動，歡迎所有志在開發與充滿教育熱誠的人一起加入。
             </p>
+            <div className="my-8 w-fit">
+              <a
+                className="text-center py-3 px-6 rounded-full font-bold break-words bg-transparent border border-gray-700 hover:bg-btnbg text-gray-800 hover:text-white"
+                href="https://lu.ma/user/fcu_iosclub"
+              >
+                iOS Club 活動報名
+              </a>
+            </div>
           </div>
           <img
             className="p-6 place-self-center"
