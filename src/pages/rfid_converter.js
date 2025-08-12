@@ -111,7 +111,10 @@ const RfidConverterPage = () => {
         <div className="max-w-4xl mx-auto pb-16">
           {/* 16進制轉10進制 */}
           <div className="relative bg-white rounded-xl p-6 md:p-8 mb-8 border border-gray-300 shadow-lg">
-            <span className="absolute left-0 top-0 bottom-0 w-1 bg-btnbg rounded-l-xl" aria-hidden="true"></span>
+            <span
+              className="absolute left-0 top-0 bottom-0 w-1 bg-btnbg rounded-l-xl"
+              aria-hidden="true"
+            ></span>
             <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
               <Icon icon="mdi:numeric-1-box" className="text-btnbg" />
               16進制轉10進制（支援位元組反轉）
@@ -174,7 +177,10 @@ const RfidConverterPage = () => {
 
           {/* 10進制轉16進制 */}
           <div className="relative bg-white rounded-xl p-6 md:p-8 mb-8 border border-gray-300 shadow-lg">
-            <span className="absolute left-0 top-0 bottom-0 w-1 bg-btnbg rounded-l-xl" aria-hidden="true"></span>
+            <span
+              className="absolute left-0 top-0 bottom-0 w-1 bg-btnbg rounded-l-xl"
+              aria-hidden="true"
+            ></span>
             <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
               <Icon icon="mdi:numeric-2-box" className="text-btnbg" />
               10進制轉16進制（支援位元組反轉）
@@ -239,7 +245,10 @@ const RfidConverterPage = () => {
 
           {/* 轉換範例 */}
           <div className="relative bg-white rounded-xl p-6 md:p-8 mb-8 border border-gray-300 shadow-lg">
-            <span className="absolute left-0 top-0 bottom-0 w-1 bg-btnbg rounded-l-xl" aria-hidden="true"></span>
+            <span
+              className="absolute left-0 top-0 bottom-0 w-1 bg-btnbg rounded-l-xl"
+              aria-hidden="true"
+            ></span>
             <h4 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
               <Icon icon="mdi:lightbulb-on" className="text-btnbg" />
               轉換範例
@@ -260,7 +269,10 @@ const RfidConverterPage = () => {
 
           {/* 轉換原理 */}
           <div className="relative bg-white rounded-xl p-6 md:p-8 border border-gray-300 shadow-lg">
-            <span className="absolute left-0 top-0 bottom-0 w-1 bg-btnbg rounded-l-xl" aria-hidden="true"></span>
+            <span
+              className="absolute left-0 top-0 bottom-0 w-1 bg-btnbg rounded-l-xl"
+              aria-hidden="true"
+            ></span>
             <h4 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
               <Icon icon="mdi:cog" className="text-btnbg" />
               轉換原理
