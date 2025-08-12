@@ -90,7 +90,7 @@ const RfidConverterPage = () => {
 
   return (
     <div className="bg-iosbgblue">
-      <AppHeader />
+      <AppHeader title="iOS Club - RFID 轉換器" />
       <Navbar />
       <div className="container mx-auto break-normal bg-white shadow-lg px-3 md:px-0 font-serif">
         <div className="h-20 md:h-32" />
@@ -99,7 +99,7 @@ const RfidConverterPage = () => {
         <div className="text-center py-12">
           <div className="flex justify-center items-center gap-3 mb-4">
             <Icon icon="mdi:rfid" className="text-4xl text-btnbg" />
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800">
+            <h1 className="text-5xl font-bold text-gray-800">
               RFID 卡號轉換器
             </h1>
           </div>
@@ -110,9 +110,10 @@ const RfidConverterPage = () => {
 
         <div className="max-w-4xl mx-auto pb-16">
           {/* 16進制轉10進制 */}
-          <div className="bg-gray-50 rounded-xl p-6 md:p-8 mb-8 border-l-4 border-blue-500">
+          <div className="relative bg-white rounded-xl p-6 md:p-8 mb-8 border border-gray-300 shadow-lg">
+            <span className="absolute left-0 top-0 bottom-0 w-1 bg-btnbg rounded-l-xl" aria-hidden="true"></span>
             <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-              <Icon icon="mdi:numeric-1-box" className="text-blue-500" />
+              <Icon icon="mdi:numeric-1-box" className="text-btnbg" />
               16進制轉10進制（支援位元組反轉）
             </h3>
 
@@ -126,11 +127,11 @@ const RfidConverterPage = () => {
                   value={hexInput}
                   onChange={(e) => setHexInput(e.target.value)}
                   placeholder="請輸入16進制卡號..."
-                  className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-lg font-mono text-lg focus:border-blue-500 focus:outline-none transition-colors"
+                  className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-lg font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
                 />
                 <button
                   onClick={clearHex}
-                  className="px-4 py-3 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-colors flex items-center justify-center"
+                  className="px-4 py-3 border border-gray-400 text-gray-700 rounded-lg hover:bg-btnbg hover:text-white transition-colors flex items-center justify-center"
                   title="清除輸入"
                 >
                   <Icon icon="mdi:close" className="text-xl" />
@@ -145,8 +146,8 @@ const RfidConverterPage = () => {
               <div
                 className={`p-4 rounded-lg border-2 font-mono ${
                   hexResult
-                    ? "bg-green-50 border-green-300 text-green-800"
-                    : "bg-gray-100 border-gray-300 text-gray-600"
+                    ? "bg-white border-btnbg text-gray-800"
+                    : "bg-white border-gray-300 text-gray-600"
                 }`}
               >
                 {!hexInput && "等待輸入..."}
@@ -172,9 +173,10 @@ const RfidConverterPage = () => {
           </div>
 
           {/* 10進制轉16進制 */}
-          <div className="bg-gray-50 rounded-xl p-6 md:p-8 mb-8 border-l-4 border-green-500">
+          <div className="relative bg-white rounded-xl p-6 md:p-8 mb-8 border border-gray-300 shadow-lg">
+            <span className="absolute left-0 top-0 bottom-0 w-1 bg-btnbg rounded-l-xl" aria-hidden="true"></span>
             <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-              <Icon icon="mdi:numeric-2-box" className="text-green-500" />
+              <Icon icon="mdi:numeric-2-box" className="text-btnbg" />
               10進制轉16進制（支援位元組反轉）
             </h3>
 
@@ -188,11 +190,11 @@ const RfidConverterPage = () => {
                   value={decInput}
                   onChange={(e) => setDecInput(e.target.value)}
                   placeholder="請輸入10進制卡號..."
-                  className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-lg font-mono text-lg focus:border-green-500 focus:outline-none transition-colors"
+                  className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-lg font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
                 />
                 <button
                   onClick={clearDec}
-                  className="px-4 py-3 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-colors flex items-center justify-center"
+                  className="px-4 py-3 border border-gray-400 text-gray-700 rounded-lg hover:bg-btnbg hover:text-white transition-colors flex items-center justify-center"
                   title="清除輸入"
                 >
                   <Icon icon="mdi:close" className="text-xl" />
@@ -207,8 +209,8 @@ const RfidConverterPage = () => {
               <div
                 className={`p-4 rounded-lg border-2 font-mono ${
                   decResult
-                    ? "bg-green-50 border-green-300 text-green-800"
-                    : "bg-gray-100 border-gray-300 text-gray-600"
+                    ? "bg-white border-btnbg text-gray-800"
+                    : "bg-white border-gray-300 text-gray-600"
                 }`}
               >
                 {!decInput && "等待輸入..."}
@@ -236,12 +238,13 @@ const RfidConverterPage = () => {
           </div>
 
           {/* 轉換範例 */}
-          <div className="bg-amber-50 border-l-4 border-amber-500 rounded-xl p-6 md:p-8 mb-8">
-            <h4 className="text-lg font-bold text-amber-800 mb-4 flex items-center gap-2">
-              <Icon icon="mdi:lightbulb-on" className="text-amber-500" />
+          <div className="relative bg-white rounded-xl p-6 md:p-8 mb-8 border border-gray-300 shadow-lg">
+            <span className="absolute left-0 top-0 bottom-0 w-1 bg-btnbg rounded-l-xl" aria-hidden="true"></span>
+            <h4 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+              <Icon icon="mdi:lightbulb-on" className="text-btnbg" />
               轉換範例
             </h4>
-            <div className="space-y-2 text-amber-800">
+            <div className="space-y-2 text-gray-800">
               <div>
                 <strong>軟體顯示：</strong>B4C5D677 (0xB4C5D677) →{" "}
                 <strong>反轉後：</strong>77D6C5B4 → <strong>10進制：</strong>
@@ -256,32 +259,33 @@ const RfidConverterPage = () => {
           </div>
 
           {/* 轉換原理 */}
-          <div className="bg-blue-50 border-l-4 border-blue-500 rounded-xl p-6 md:p-8">
-            <h4 className="text-lg font-bold text-blue-800 mb-4 flex items-center gap-2">
-              <Icon icon="mdi:cog" className="text-blue-500" />
+          <div className="relative bg-white rounded-xl p-6 md:p-8 border border-gray-300 shadow-lg">
+            <span className="absolute left-0 top-0 bottom-0 w-1 bg-btnbg rounded-l-xl" aria-hidden="true"></span>
+            <h4 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+              <Icon icon="mdi:cog" className="text-btnbg" />
               轉換原理
             </h4>
-            <div className="space-y-3 text-blue-800">
+            <div className="space-y-3 text-gray-800">
               <div className="flex items-start gap-2">
-                <span className="bg-blue-200 text-blue-800 text-sm px-2 py-1 rounded font-mono">
+                <span className="bg-btnbg text-white text-sm px-2 py-1 rounded font-mono">
                   1
                 </span>
                 <span>RFID卡片以小端序（Little Endian）儲存數據</span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="bg-blue-200 text-blue-800 text-sm px-2 py-1 rounded font-mono">
+                <span className="bg-btnbg text-white text-sm px-2 py-1 rounded font-mono">
                   2
                 </span>
                 <span>軟體直接讀取顯示：B4 C5 D6 77</span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="bg-blue-200 text-blue-800 text-sm px-2 py-1 rounded font-mono">
+                <span className="bg-btnbg text-white text-sm px-2 py-1 rounded font-mono">
                   3
                 </span>
                 <span>反轉位元組順序：77 D6 C5 B4</span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="bg-blue-200 text-blue-800 text-sm px-2 py-1 rounded font-mono">
+                <span className="bg-btnbg text-white text-sm px-2 py-1 rounded font-mono">
                   4
                 </span>
                 <span>轉換為10進制：2010883508</span>
