@@ -3,7 +3,8 @@ node_modules/
 public
 
 # AI Tools
-CLAUDE.md
+# CLAUDE.md
+.CLAUDE/
 
 # Created by https://www.toptal.com/developers/gitignore/api/macos,windows,visualstudiocode,intellij,node,react
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,windows,visualstudiocode,intellij,node,react
