@@ -15,7 +15,7 @@ const communityList = [
   {
     name: "Instagram",
     icon: "akar-icons:instagram-fill",
-    href: "https://www.instagram.com/fcu.iosclub/",
+    href: "https://www.instagram.com/fcu.iosclub",
   },
   {
     name: "Threads",
