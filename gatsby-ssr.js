@@ -34,7 +34,13 @@ const preloadIcons = [
 
 const IconPreloader = () => (
   <div
-    style={{ position: "absolute", width: 0, height: 0, overflow: "hidden", pointerEvents: "none" }}
+    style={{
+      position: "absolute",
+      width: 0,
+      height: 0,
+      overflow: "hidden",
+      pointerEvents: "none",
+    }}
     aria-hidden="true"
   >
     {preloadIcons.map((name) => (
