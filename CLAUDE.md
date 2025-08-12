@@ -28,6 +28,7 @@ yarn prettier
 ## 技術架構
 
 ### 核心技術
+
 - **框架**: Gatsby 4.x + React 17
 - **樣式**: TailwindCSS 4.x + PostCSS
 - **圖示**: Iconify React Component
@@ -164,13 +165,11 @@ Gatsby 透過以下方式自動生成頁面：
 ### 自訂 TailwindCSS 顏色
 
 ```css
---color-iosbgblue: #b3c4d6    /* 背景藍色 */
---color-ioscardblue: #8098b5   /* 卡片藍色 */
---color-iostextblue: #4771a3   /* 文字藍色 */
---color-footerbg: #4f7096      /* 頁尾背景 */
---color-btnbg: #445484         /* 按鈕背景 */
---color-btnbg1: #fff5d1        /* 替代按鈕背景 */
---color-iospink: #ecadad       /* iOS 粉色強調 */
+--color-iosbgblue: #b3c4d6 /* 背景藍色 */ --color-ioscardblue: #8098b5
+  /* 卡片藍色 */ --color-iostextblue: #4771a3 /* 文字藍色 */
+  --color-footerbg: #4f7096 /* 頁尾背景 */ --color-btnbg: #445484 /* 按鈕背景 */
+  --color-btnbg1: #fff5d1 /* 替代按鈕背景 */ --color-iospink: #ecadad
+  /* iOS 粉色強調 */;
 ```
 
 ### 字型設定
@@ -185,7 +184,7 @@ Gatsby 透過以下方式自動生成頁面：
 ```jsx
 import { Icon } from "@iconify/react";
 
-<Icon icon="simple-icons:apple" className="w-6 h-6" />
+<Icon icon="simple-icons:apple" className="w-6 h-6" />;
 ```
 
 圖示瀏覽：https://icon-sets.iconify.design/
@@ -193,26 +192,31 @@ import { Icon } from "@iconify/react";
 ## 主要功能
 
 ### 導覽系統
+
 - 響應式設計，手機版提供漢堡選單
 - 固定式標頭，平滑過場效果
 - 中英文混合選單項目
 
 ### 首頁功能
+
 - 動態公告系統（基於 JSON 資料）
 - 自動滾動活動相簿輪播
 - 多處「Join Us」行動呼籲按鈕
 
 ### 相簿系統
+
 - LightGallery 整合，支援縮放與縮圖功能
 - 響應式網格佈局
 - Google Drive 延伸相簿整合
 
 ### RFID 轉換器工具
+
 - 十六進位轉十進位，支援位元組序處理
 - 即時輸入驗證與格式化
 - 一鍵複製功能
 
 ### 成員檔案系統
+
 - 依屆數組織呈現
 - 社群媒體連結整合
 - 上下屆導覽功能
@@ -222,7 +226,7 @@ import { Icon } from "@iconify/react";
 - **正式環境**: https://iosclub.tw
 - **託管平台**: Cloudflare Pages
 - **自動部署**: master 分支 commit 觸發建置
-- **GitHub Actions**: 
+- **GitHub Actions**:
   - 建置驗證
   - Prettier 程式碼格式檢查
 - **開發流程**: 使用 Pull Request 測試建置後再合併至 master
@@ -236,15 +240,17 @@ import { Icon } from "@iconify/react";
 ## 提交訊息規範
 
 使用中文或英文提交訊息，中文遵循以下格式：
+
 - `新增 [功能/內容描述]` - 新增/修改功能
-- `修正 [問題描述]` - bug 修復  
+- `修正 [問題描述]` - bug 修復
 - `更新 [更新內容]` - 內容或功能更新
 - `文件` - 說明/開發文件新增、修改，並非指網頁呈現的內容
 - `重構` - 既不是新增功能，也不是修補 bug 的程式碼變動)。
-  
+
 英文遵循以下格式：
+
 - `feat:` - 新增/修改功能 (feature)。
-- `fix:` - bug 修復  (bug fix)。
+- `fix:` - bug 修復 (bug fix)。
 - `update:` - 內容或功能更新
 - `docs:` - 文件 (documentation)。
 - `refactor:` - 重構 (既不是新增功能，也不是修補 bug 的程式碼變動)。
@@ -252,11 +258,13 @@ import { Icon } from "@iconify/react";
 ## 檔案命名規範
 
 ### Gallery 檔案
+
 - 格式：`YYYY-MM-DD 活動名稱.json`
 - 日期必須補零到兩位數（如：`2024-01-09` 不是 `2024-1-9`）
 - 範例：`2024-12-23 期末聚.json`
 
 ### Announcement 檔案
+
 - 可使用描述性名稱（如：`WWDC2025.json`）
 - 建議以事件或時間命名便於管理
 
@@ -272,25 +280,28 @@ import { Icon } from "@iconify/react";
 
 - **Node.js**: 版本 22+（GitHub Actions 和本地開發需一致）
 - **包管理器**: 必須使用 Yarn，禁止使用 npm
-- **開發伺服器**: 
+- **開發伺服器**:
   - 本地開發：`yarn develop` (localhost:8000)
   - 網路訪問：`yarn dev` (0.0.0.0:8000)
 
 ## 開發規範
 
 ### 程式碼品質
+
 - 提交前務必執行 `yarn prettier`
 - 遵循現有程式碼模式與命名規範
 - 適當時使用 TypeScript 風格的 JSDoc 註解
 - 維持響應式設計原則
 
 ### 內容更新
+
 - 圖片儲存於外部 CDN（Cloudflare Images），須使用PicGo搭配Tony的`picgo-plugin-cloudflare`上傳
 - 部署前驗證 JSON 資料格式
 - 新增照片後測試相簿功能
 - 確認成員檔案連結正常運作
 
 ### 效能考量
+
 - 靜態網站生成提供優異效能
 - 圖片經過 CDN 最佳化
 - 透過程式碼分割最小化 JavaScript 套件
