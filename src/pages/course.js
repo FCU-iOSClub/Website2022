@@ -26,7 +26,7 @@ const CoursePage = () => {
             <p className="py-3 text-gray-800 md:text-left text-justify break-normal decoration-sky-500">
               iOS Club 社課主要內容為利用{" "}
               <a className="underline decoration-sky-500">Xcode</a> 開發 iOS
-              App，讓大家能透過實作了解並熟悉{" "}
+              app，讓大家能透過實作了解並熟悉{" "}
               <a className="underline decoration-sky-500">Swift</a> 語言
               的應用、SwiftUI
               的佈局，最終達到具備獨立開發的能力，透過鼓勵社員參加個是校外競賽，以此展現社員的學習成果。
@@ -41,7 +41,7 @@ const CoursePage = () => {
                 {" "}
                 0{" "}
               </span>
-              開始，由初階慢慢學到有深度的技巧，就能輕鬆駕馭 App
+              開始，由初階慢慢學到有深度的技巧，就能輕鬆駕馭 app
               開發，每堂社課都有豐富的教學內容，絕對讓你收穫滿滿。
             </p>
           </div>
@@ -69,7 +69,7 @@ const CoursePage = () => {
                 <a className="underline decoration-sky-500 underline-offset-1">
                   Swift UI
                 </a>
-                &nbsp;的 App 設計，除此之外也有&nbsp;
+                &nbsp;的 app 設計，除此之外也有&nbsp;
                 <a className="underline decoration-sky-500">Playground</a>
                 &nbsp;和&nbsp;
                 <a className="underline decoration-sky-500 underline-offset-1">
