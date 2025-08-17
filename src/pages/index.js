@@ -33,7 +33,7 @@ const IndexPage = (props) => {
               <h1 className="py-3 text-center md:text-left">iOS Club.</h1>
             </div>
             <p className="py-3 text-gray-700 text-center md:text-left">
-              一個教你從零開始打造專屬 app 的社團
+              一個教你從零開始打造專屬 App 的社團
             </p>
             <div className="h-2 md:h-2" />
             {/* 空白 */}
