@@ -5,7 +5,7 @@ import AppHeader from "../components/header";
 
 const CoursePage = () => {
   const hideURL =
-    "https://drive.google.com/drive/folders/1DcOB_wk1p41agU82XfETK_dHgAvAJtWC?usp=sharing";
+    "https://drive.google.com/drive/folders/1tdW1rLbbGZH0Z-ipcXY_fuhn1kLtHnIn?usp=share_link";
 
   return (
     <div className=" bg-iosbgblue">
