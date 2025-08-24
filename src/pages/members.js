@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import AppHeader from "../components/header";
+import ImageWithPlaceholder from "../components/image-with-placeholder";
 import { Icon } from "@iconify/react";
 
 const MembersPage = (props) => {
@@ -70,9 +71,12 @@ const MemberImage = (props) => {
   const { src } = props;
   return (
     <div className="justify-center py-12 w-full">
-      <img
+      <ImageWithPlaceholder
         src={src}
-        className="rounded-lg shadow-lg object-cover w-full md:w-2/3 lg:w-1/2 m-auto"
+        alt="歷屆幹部封面"
+        className="w-full md:w-2/3 lg:w-1/2 m-auto rounded-lg shadow-lg"
+        imgClassName="object-cover rounded-lg"
+        aspectRatio="4/3"
       />
     </div>
   );

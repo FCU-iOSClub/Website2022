@@ -8,6 +8,7 @@ import { Icon } from "@iconify/react";
 import openInNew from "@iconify/icons-ic/baseline-open-in-new";
 import Pagination from "rc-pagination";
 import "../css/pagination.css";
+import ImageWithPlaceholder from "../components/image-with-placeholder";
 
 const GalleryList = ({ data }) => {
   useState(1);
@@ -101,17 +102,21 @@ const galleryItem = (node) => {
           </div>
         </a>
         <div className="h-1 hidden md:block" /> {/*space*/}
-        <img
-          className="w-full pb-5 object-cover md:hidden self-center"
+        <ImageWithPlaceholder
           src={node.mainPhoto}
-          loading="lazy"
+          alt={node.name}
+          className="w-full pb-5 md:hidden self-center"
+          imgClassName="object-cover"
+          aspectRatio="4/3"
         />
       </div>
       <div className="h-full w-full hidden md:flex flex-row justify-center items-center">
-        <img
-          className="h-5/6 w-10/12 p-2 object-scale-down"
+        <ImageWithPlaceholder
           src={node.mainPhoto}
-          loading="lazy"
+          alt={node.name}
+          className="w-10/12 py-2"
+          imgClassName="object-cover"
+          aspectRatio="4/3"
         />
       </div>
     </div>

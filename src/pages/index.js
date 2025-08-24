@@ -6,6 +6,7 @@ import Navbar from "../components/navbar";
 import { ReactComponent as AboutIosSvg } from "../images/svg/about_ios.svg";
 import { ReactComponent as IosClubDoingSvg } from "../images/svg/iosclub_doing.svg";
 import AppHeader from "../components/header";
+import ImageWithPlaceholder from "../components/image-with-placeholder";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
@@ -67,9 +68,12 @@ const IndexPage = (props) => {
               </button>
             </div>
           </div>
-          <img
-            className="w-full"
+          <ImageWithPlaceholder
             src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/827f1788-4157-497b-0ecb-6168f73db400/public"
+            alt="iOS Club 首圖"
+            className="w-full"
+            imgClassName="object-cover"
+            aspectRatio="1/1"
           />
         </div>
         <div className="h-8" />
@@ -145,7 +149,12 @@ const IndexPage = (props) => {
           >
             {imageList.map((image, index) => (
               <SplideSlide key={index}>
-                <img src={image} className="w-full h-full object-cover" />
+                <ImageWithPlaceholder
+                  src={image}
+                  alt={"首頁輪播圖 " + (index + 1)}
+                  className="w-full h-full"
+                  imgClassName="object-cover"
+                />
               </SplideSlide>
             ))}
           </Splide>
@@ -290,7 +299,13 @@ const AnnouncementLiet = (props) => {
           )}
         </div>
         {node.image && node.image.length > 0 && (
-          <img className="w-full md:w-48 object-scale-down" src={node.image} />
+          <ImageWithPlaceholder
+            src={node.image}
+            alt={node.title}
+            className="w-full md:w-48"
+            imgClassName="object-scale-down"
+            aspectRatio="1/1"
+          />
         )}
       </div>
     );
