@@ -2,6 +2,7 @@ import * as React from "react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import AppHeader from "../components/header";
+import ImageWithPlaceholder from "../components/image-with-placeholder";
 
 const CoursePage = () => {
   const hideURL =
@@ -45,17 +46,23 @@ const CoursePage = () => {
               開發，每堂社課都有豐富的教學內容，絕對讓你收穫滿滿。
             </p>
           </div>
-          <img
-            className="place-self-center object-cover w-full"
+          <ImageWithPlaceholder
             src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/e9ab7dbf-31a8-4c1a-7fed-d805d7a26500/public"
+            alt="iOS Club 社團課程"
+            className="place-self-center w-full"
+            imgClassName="object-cover"
+            aspectRatio="4/3"
           />
         </div>
         <div className="h-8" />
         {/* 設課團隊 */}
         <div className="py-2 md:px-32 grid grid-rows-1 md:grid-cols-2 gap-2 md:gap-16 md:p-10 justify-center items-center">
-          <img
-            className="place-self-center object-cover w-full hidden md:block"
+          <ImageWithPlaceholder
             src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/702555d9-8ee5-44c9-ee1c-068c1fbce500/public"
+            alt="社課團隊"
+            className="place-self-center w-full hidden md:block"
+            imgClassName="object-cover"
+            aspectRatio="4/3"
           />
           <div className="w-full self-center text-justify">
             <div className="text-center text-5xl font-bold">
@@ -102,9 +109,12 @@ const CoursePage = () => {
                 社課期間其餘幹部皆擔任助教身分，協助社員解決課程中遇到的任何問題，讓參加社課的社員們都能順利的學習與成長。
               </p>
             </div>
-            <img
-              className="place-self-center object-cover w-full md:hidden block"
+            <ImageWithPlaceholder
               src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/702555d9-8ee5-44c9-ee1c-068c1fbce500/public"
+              alt="社課團隊（行動版）"
+              className="place-self-center w-full md:hidden block"
+              imgClassName="object-cover"
+              aspectRatio="1/1"
             />
           </div>
         </div>
@@ -173,7 +183,13 @@ const courseCard = (title, img) => {
     <div className="py-8 px-1 mx-5 md:mx-3 md:w-full border-gray-300 border shadow-lg rounded-lg flex flex-col items-center">
       <h3 className="text-3xl pb-8 md:p-0 font-bold text-center">{title}</h3>
       <div className="h-5" />
-      <img className="w-8/12" src={img} />
+      <ImageWithPlaceholder
+        src={img}
+        alt={title}
+        className="w-8/12"
+        imgClassName="object-cover"
+        aspectRatio="1/1"
+      />
     </div>
   );
 };

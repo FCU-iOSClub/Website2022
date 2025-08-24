@@ -11,6 +11,7 @@ import lgZoom from "lightgallery/plugins/zoom";
 import "../css/gallery.css";
 import { Icon } from "@iconify/react";
 import zoomIn from "@iconify/icons-akar-icons/zoom-in";
+import ImageWithPlaceholder from "../components/image-with-placeholder";
 
 const Gallery = (props) => {
   const context = props.pageContext;
@@ -39,9 +40,12 @@ const Gallery = (props) => {
             {context.photos.map((item, index) => (
               <a data-src={item} className="w-fit">
                 <div className="relative">
-                  <img
+                  <ImageWithPlaceholder
                     src={item}
+                    alt={context.name + " 圖片 " + (index + 1)}
                     className="w-full md:w-64 lg:w-80 p-3 md:p-1"
+                    aspectRatio="4/3"
+                    imgClassName=""
                   />
                   <Icon
                     className="absolute bottom-1 right-1 bg-gray-600 bg-opacity-70 p-1"

@@ -4,6 +4,7 @@ import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import { Icon } from "@iconify/react";
 import baselineDownloadForOffline from "@iconify/icons-ic/baseline-download-for-offline";
+import ImageWithPlaceholder from "../components/image-with-placeholder";
 
 const SwiftPage = () => {
   return (
@@ -55,9 +56,13 @@ const SwiftPage = () => {
           <div className="flex p-2 border border-gray-400 rounded-3xl shadow-2xl">
             <div className="flex">
               <div className="flex flex-col">
-                <img
-                  className="object-contain"
+                <ImageWithPlaceholder
                   src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/62854a1f-b079-4db3-222e-a04d7f8f1b00/public"
+                  alt="Swift App 開發手冊"
+                  className="w-full"
+                  imgClassName="object-contain"
+                  aspectRatio="16/9"
+                  objectFit="contain"
                 />
               </div>
             </div>
@@ -81,7 +86,14 @@ const SwiftPage = () => {
             <div className="flex flex-col md:flex-row gap-8">
               {swiftBooks.map((item, index) => (
                 <div className=" flex-1 flex-col" key={index}>
-                  <img className="object-contain " src={item.image} />
+                  <ImageWithPlaceholder
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full"
+                    imgClassName="object-contain"
+                    aspectRatio="3/4"
+                    objectFit="contain"
+                  />
                   <p className="break-normal text-2xl font-black text-left py-4">
                     {item.title}
                   </p>
@@ -117,9 +129,13 @@ const SwiftPage = () => {
             </div>
           </div>
           <div className="flex flex-col">
-            <img
-              className="object-contain"
+            <ImageWithPlaceholder
               src="https://i.imgur.com/ySr8KGR.jpg"
+              alt="Apple 專業訓練課程"
+              className="w-full"
+              imgClassName="object-contain"
+              aspectRatio="16/9"
+              objectFit="contain"
             />
           </div>
         </div>

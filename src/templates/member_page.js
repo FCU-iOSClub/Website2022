@@ -5,6 +5,7 @@ import Footer from "../components/footer";
 import AppHeader from "../components/header";
 import Navbar from "../components/navbar";
 import { Icon } from "@iconify/react";
+import ImageWithPlaceholder from "../components/image-with-placeholder";
 
 const MemberPage = (props) => {
   const { node, prevUrl, nextUrl } = props.pageContext;
@@ -85,9 +86,13 @@ const MemberCard = (props) => {
     "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/827f1788-4157-497b-0ecb-6168f73db400/public";
   return (
     <div className="border-2  border-iosbgblue rounded-lg p-6">
-      <img
+      <ImageWithPlaceholder
         src={member.image.length === 0 ? tempImg : member.image}
-        className="w-full object-cover mx-auto rounded-full"
+        alt={member.name}
+        className="w-full mx-auto rounded-full overflow-hidden"
+        imgClassName="object-cover"
+        defaultAspectRatio="1/1"
+        objectFit="cover"
       />
       <h3 className="text-2xl font-bold py-4">
         {member.position + " " + member.name}

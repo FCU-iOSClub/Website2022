@@ -2,6 +2,7 @@ import * as React from "react";
 import Footer from "../components/footer";
 import AppHeader from "../components/header";
 import Navbar from "../components/navbar";
+import ImageWithPlaceholder from "../components/image-with-placeholder";
 import { Icon } from "@iconify/react";
 import {
   VerticalTimeline,
@@ -66,9 +67,12 @@ const ClubActivities = () => {
               </a>
             </div>
           </div>
-          <img
-            className="p-6 place-self-center"
+          <ImageWithPlaceholder
             src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ebc9b623-ab73-4b0f-ad46-77959aeb2900/public"
+            alt="iOS Club 社團活動封面"
+            className="p-6 place-self-center w-full"
+            imgClassName="object-cover"
+            aspectRatio="4/3"
           />
         </div>
       </div>

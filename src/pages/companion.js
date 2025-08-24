@@ -3,6 +3,8 @@ import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import AppHeader from "../components/header";
 
+import ImageWithPlaceholder from "../components/image-with-placeholder";
+
 const CompanionPage = () => {
   return (
     <div className="bg-iosbgblue">
@@ -28,13 +30,19 @@ const CompanionPage = () => {
             逢甲大學 Apple 區域教育培訓中心 (RTC, Regional Training Center)
           </p>
           <div className="py-8 grid gap-4 grid-cols-1 md:grid-cols-2">
-            <img
-              className="w-full object-cover"
+            <ImageWithPlaceholder
               src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/c9d69060-fa81-40a2-f057-9d288972d300/public"
+              alt="RTC 上課地點 1"
+              className="w-full"
+              imgClassName="object-cover"
+              aspectRatio="16/9"
             />
-            <img
-              className="w-full object-cover"
+            <ImageWithPlaceholder
               src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/45ee13ce-3d35-4f03-2955-85d5d8a2c000/public"
+              alt="RTC 上課地點 2"
+              className="w-full"
+              imgClassName="object-cover"
+              aspectRatio="16/9"
             />
           </div>
         </div>
@@ -78,9 +86,12 @@ const CompanionPage = () => {
                 信箱：<a href="mailto:coiee@fcu.edu.tw">coiee@fcu.edu.tw</a>
               </p>
             </div>
-            <img
-              className="place-self-center w-3/5 object-cover"
+            <ImageWithPlaceholder
               src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/c763fee2-7c29-419e-d516-a44257a81600/public"
+              alt="逢甲大學資訊電機學院"
+              className="place-self-center w-3/5"
+              imgClassName="object-cover"
+              aspectRatio="16/9"
             />
           </div>
           <div className="h-20" /> {/* 空白區塊 */}
@@ -105,9 +116,12 @@ const CompanionPage = () => {
                 <a href="mailto:extension@fcu.edu.tw">extension@fcu.edu.tw</a>
               </p>
             </div>
-            <img
-              className="place-self-center w-3/5 object-cover"
+            <ImageWithPlaceholder
               src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/a6569fdb-8cd4-4be4-d941-ee653a37a800/public"
+              alt="逢甲大學教育推廣處"
+              className="place-self-center w-3/5"
+              imgClassName="object-cover"
+              aspectRatio="16/9"
             />
           </div>
         </div>
@@ -134,13 +148,19 @@ const CompanionPage = () => {
               <p className="text-gray-600 py-2">聯絡電話：04-2437-1728</p>
             </div>
             <div className="py-8 grid gap-4 grid-cols-1 md:grid-cols-2">
-              <img
-                className="w-full object-cover"
+              <ImageWithPlaceholder
                 src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/184fe43c-9400-4219-fd6f-149a5c6be600/public"
+                alt="葳格國際學校 北屯校區 1"
+                className="w-full"
+                imgClassName="object-cover"
+                aspectRatio="16/9"
               />
-              <img
-                className="w-full object-cover"
+              <ImageWithPlaceholder
                 src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/4467d4ba-878b-46dc-65dc-bb8c63a05a00/public"
+                alt="葳格國際學校 北屯校區 2"
+                className="w-full"
+                imgClassName="object-cover"
+                aspectRatio="16/9"
               />
             </div>
           </div>
@@ -169,13 +189,19 @@ const CompanionPage = () => {
               </a>
             </div>
             <div className="py-8 grid gap-4 grid-cols-1 md:grid-cols-2">
-              <img
-                className="w-full object-cover"
+              <ImageWithPlaceholder
                 src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/55adb3f1-9541-4637-8fff-3abadf04b600/public"
+                alt="Straight A 1"
+                className="w-full"
+                imgClassName="object-cover"
+                aspectRatio="16/9"
               />
-              <img
-                className="w-full object-cover"
+              <ImageWithPlaceholder
                 src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/d1430294-19cf-4eeb-0218-e5dfd771ec00/public"
+                alt="Straight A 2"
+                className="w-full"
+                imgClassName="object-cover"
+                aspectRatio="16/9"
               />
             </div>
           </div>
