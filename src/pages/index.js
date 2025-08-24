@@ -101,7 +101,7 @@ const IndexPage = (props) => {
             <p className="py-3 text-gray-700 text-justify">
               在比賽方面， 社團鼓勵所有社員參加對外性比賽。 近年來也都在WWDC
               學生挑戰賽及移動應用創新賽等比賽取得佳績。
-              當然，平時社團活動也不僅僅有社課，我們還會舉辦講座、夜烤、WorkShop、社遊、期末聚等，超多活動等你們來參加！
+              當然，平時社團活動也不僅僅有社課，我們還會舉辦講座、野餐、WorkShop、社遊、期末聚等，超多活動等你們來參加！
               我們不只和葳格高中建立了長期的任教合作，
               身為志工性社團的我們，還會和相關機構及國小一同舉辦志工營隊，將在社團內所學回饋社會。
             </p>
@@ -214,7 +214,9 @@ const IndexPage = (props) => {
                       height="20"
                       color="#ffffff"
                     />
-                    <a href="mailto:iosclubtw@gmail.com">iosclubtw@gmail.com</a>
+                    <a href="mailto:iosclub@mail.iosclub.tw">
+                      iosclub@mail.iosclub.tw
+                    </a>
                   </div>
                   <div className="inline-flex space-x-2 items-center">
                     <Icon
@@ -350,6 +352,10 @@ const learnMoreButton = (href = "/") => {
 
 // 要顯示在首頁的圖片們
 const imageList = [
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/e3b0bc3d-5c13-422b-8524-0ac7b4563b00/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/1b186e6d-cf5e-4af7-5506-1addebe02400/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/a44dc494-94ec-45a2-d0c8-af772d03f000/public",
+  "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/fe39da5e-13ff-4765-2f2b-c13789763100/public",
   "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/88255dd1-0655-4384-4e5e-005b4e1fb200/public",
   "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/92687780-790a-45f7-376f-d27f64637b00/public",
   "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/8c35bcec-d4dc-4a1b-e8e1-4b5e7dd7fb00/public",
@@ -375,7 +381,7 @@ const socialItems = [
   {
     name: "Instagram",
     icon: "akar-icons:instagram-fill",
-    href: "https://www.instagram.com/fcu.iosclub/",
+    href: "https://www.instagram.com/fcu.iosclub",
   },
   {
     name: "Threads",
