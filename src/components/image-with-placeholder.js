@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 
 /**
  * 通用圖片元件（含 Skeleton 佔位 + 淡入效果 + 可指定尺寸/比例）
@@ -38,6 +38,17 @@ const ImageWithPlaceholder = ({
 }) => {
   const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
+  const imgRef = useRef(null);
+
+  // SSR/生產環境快取下，圖片在 Hydration 前可能已完成載入，React 不一定觸發 onLoad。
+  // 掛載後若圖片已完成載入（含快取），主動設定 loaded=true，移除 skeleton。
+  useEffect(() => {
+    const img = imgRef.current;
+    if (!img) return;
+    if (img.complete && img.naturalWidth > 0) {
+      setLoaded(true);
+    }
+  }, []);
 
   // 組合容器 style，提供穩定佔位避免布局抖動
   const containerStyle = useMemo(() => {
@@ -78,6 +89,7 @@ const ImageWithPlaceholder = ({
         />
       )}
       <img
+        ref={imgRef}
         src={failed ? src : src}
         alt={alt}
         className={`block w-full h-full transition-opacity duration-500 ${
