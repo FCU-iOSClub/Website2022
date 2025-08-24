@@ -119,6 +119,42 @@ const ClubActivities = () => {
 
 const iOSClubActivities = [
   {
+    title: "聖誕期末聚",
+    date: "2025-12-25",
+  },
+  {
+    title: "講座",
+    date: "2025-12-09",
+  },
+  {
+    title: "114-1 社員大會",
+    date: "2025-10-27",
+  },
+  {
+    title: "聯合迎新野餐",
+    date: "2025-10-06",
+  },
+  {
+    title: "新生村 Welcome Talk | Apple × Google 校園社群日",
+    date: "2025-09-22",
+  },
+  {
+    title: "第9屆新生茶會",
+    date: "2025-09-16",
+  },
+  {
+    title: "暑期幹部訓練",
+    date: "2025-09-04 ~ 2025-09-05",
+  },
+  {
+    title: "社團博覽會",
+    date: "2025-09-01",
+  },
+  {
+    title: "社團旅遊(臺南)",
+    date: "2025-08-13 ~ 2025-08-15",
+  },
+  {
     title: "Workshop",
     date: "2025-05-06、13",
   },
