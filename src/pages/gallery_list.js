@@ -4,6 +4,8 @@ import { graphql } from "gatsby";
 import AppHeader from "../components/header";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
+import { Icon } from "@iconify/react";
+import openInNew from "@iconify/icons-ic/baseline-open-in-new";
 import Pagination from "rc-pagination";
 import "../css/pagination.css";
 
@@ -84,10 +86,18 @@ const galleryItem = (node) => {
               ? "noopener noreferrer"
               : ""
           }
-          className="w-32"
+          className="w-fit"
         >
-          <div className="w-fit py-1 px-5 rounded-full break-words bg-transparent border border-gray-700 hover:bg-btnbg text-gray-800 hover:text-white">
-            See More
+          <div className="w-fit inline-flex items-center gap-2 whitespace-nowrap py-1 px-5 rounded-full break-words bg-transparent border border-gray-700 hover:bg-btnbg text-gray-800 hover:text-white">
+            {node.gdrive_url && node.gdrive_url.trim() !== "" ? (
+              <Icon
+                icon={openInNew}
+                width="16"
+                height="16"
+                aria-hidden="true"
+              />
+            ) : null}
+            <span>See More</span>
           </div>
         </a>
         <div className="h-1 hidden md:block" /> {/*space*/}
