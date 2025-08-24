@@ -214,7 +214,9 @@ const IndexPage = (props) => {
                       height="20"
                       color="#ffffff"
                     />
-                    <a href="mailto:iosclub@mail.iosclub.tw">iosclub@mail.iosclub.tw</a>
+                    <a href="mailto:iosclub@mail.iosclub.tw">
+                      iosclub@mail.iosclub.tw
+                    </a>
                   </div>
                   <div className="inline-flex space-x-2 items-center">
                     <Icon
