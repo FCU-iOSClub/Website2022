@@ -43,7 +43,7 @@ const IndexPage = (props) => {
               <button
                 className="overflow-hidden group h-12 px-6 border border-btnbg rounded-xs"
                 onClick={() => {
-                  window.open("https://forms.gle/fDeQoZpK1NSNNDQr6", "_blank");
+                  window.open("https://forms.gle/uJSNB8ccYRu5SZQ59", "_blank");
                 }}
               >
                 <div className="transition duration-200 group-hover:-translate-y-12">
@@ -104,7 +104,7 @@ const IndexPage = (props) => {
             </div>
             <p className="py-3 text-gray-700 text-justify">
               在比賽方面， 社團鼓勵所有社員參加對外性比賽。 近年來也都在WWDC
-              學生挑戰賽及移動應用創新賽等比賽取得佳績。
+              學生挑戰賽及行動應用創新賽等比賽取得佳績。
               當然，平時社團活動也不僅僅有社課，我們還會舉辦講座、野餐、WorkShop、社遊、期末聚等，超多活動等你們來參加！
               我們不只和葳格高中建立了長期的任教合作，
               身為志工性社團的我們，還會和相關機構及國小一同舉辦志工營隊，將在社團內所學回饋社會。
