@@ -9,8 +9,12 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import useGoogleAdsConversion from "../hooks/useGoogleAdsConversion";
 
 const ClubActivities = () => {
+  // Google Ads 轉換追蹤
+  useGoogleAdsConversion();
+
   return (
     <div>
       <AppHeader title="iOS Club - 社團活動" />

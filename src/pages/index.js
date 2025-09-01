@@ -14,8 +14,12 @@ import { Icon } from "@iconify/react";
 import loudspeakerIcon from "@iconify/icons-fluent-emoji-high-contrast/loudspeaker";
 import chevronUp from "@iconify/icons-akar-icons/chevron-up";
 import chevronDown from "@iconify/icons-akar-icons/chevron-down";
+import useGoogleAdsConversion from "../hooks/useGoogleAdsConversion";
 
 const IndexPage = (props) => {
+  // Google Ads 轉換追蹤
+  useGoogleAdsConversion();
+
   return (
     <div className="bg-iosbgblue">
       {/* Header */}
