@@ -9,10 +9,14 @@ import openInNew from "@iconify/icons-ic/baseline-open-in-new";
 import Pagination from "rc-pagination";
 import "../css/pagination.css";
 import ImageWithPlaceholder from "../components/image-with-placeholder";
+import useGoogleAdsConversion from "../hooks/useGoogleAdsConversion";
 
 const GalleryList = ({ data }) => {
   useState(1);
   const [currentPage, setCurrentPage] = useState(1);
+
+  // Google Ads 轉換追蹤
+  useGoogleAdsConversion();
   const itemCount = data.allGalleryJson.edges.length;
   const perPage = 8;
   const onPageChange = (page) => {

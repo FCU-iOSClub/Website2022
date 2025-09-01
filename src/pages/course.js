@@ -3,8 +3,12 @@ import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import AppHeader from "../components/header";
 import ImageWithPlaceholder from "../components/image-with-placeholder";
+import useGoogleAdsConversion from "../hooks/useGoogleAdsConversion";
 
 const CoursePage = () => {
+  // Google Ads 轉換追蹤
+  useGoogleAdsConversion();
+
   const hideURL =
     "https://drive.google.com/drive/folders/1tdW1rLbbGZH0Z-ipcXY_fuhn1kLtHnIn?usp=share_link";
 

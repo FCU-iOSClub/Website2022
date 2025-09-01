@@ -5,8 +5,12 @@ import Navbar from "../components/navbar";
 import { Icon } from "@iconify/react";
 import baselineDownloadForOffline from "@iconify/icons-ic/baseline-download-for-offline";
 import ImageWithPlaceholder from "../components/image-with-placeholder";
+import useGoogleAdsConversion from "../hooks/useGoogleAdsConversion";
 
 const SwiftPage = () => {
+  // Google Ads 轉換追蹤
+  useGoogleAdsConversion();
+
   return (
     <div className=" bg-iosbgblue">
       {/* Header */}

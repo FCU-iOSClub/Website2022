@@ -2,8 +2,12 @@ import * as React from "react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import AppHeader from "../components/header";
+import useGoogleAdsConversion from "../hooks/useGoogleAdsConversion";
 
 const ContestPage = () => {
+  // Google Ads 轉換追蹤
+  useGoogleAdsConversion();
+
   return (
     <div className=" bg-iosbgblue">
       {/* Header */}
