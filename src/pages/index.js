@@ -92,8 +92,8 @@ const IndexPage = (props) => {
             <p className="py-3 md:px-12 text-gray-700 text-justify">
               是全台第一個獲得 Apple
               官方認證的社團，也是一個結合學術的志工性社團。每年寒、暑假社員們會有國際交流的機會，到海外參加
-              iOS Club 官方舉辦的冬、夏令營，
-              和不同國家的學生進行合作活動與技術交流。
+              iOS Club
+              官方舉辦的冬、夏令營，和不同國家的學生進行合作活動與技術交流。
             </p>
           </div>
           <AboutIosSvg className="w-full p-10 md:p-0 bg-cover md:hidden" />
@@ -107,11 +107,10 @@ const IndexPage = (props) => {
               <h2 className="py-3">會做什麼</h2>
             </div>
             <p className="py-3 text-gray-700 text-justify">
-              在比賽方面， 社團鼓勵所有社員參加對外性比賽。 近年來也都在WWDC
+              在比賽方面，社團鼓勵所有社員參加對外性比賽。近年來也都在 WWDC
               學生挑戰賽及行動應用創新賽等比賽取得佳績。
               當然，平時社團活動也不僅僅有社課，我們還會舉辦講座、野餐、WorkShop、社遊、期末聚等，超多活動等你們來參加！
-              我們不只和葳格高中建立了長期的任教合作，
-              身為志工性社團的我們，還會和相關機構及國小一同舉辦志工營隊，將在社團內所學回饋社會。
+              我們不只和葳格高中建立了長期的任教合作，身為志工性社團的我們，還會和相關機構及國小一同舉辦志工營隊，將在社團內所學回饋社會。
             </p>
           </div>
           <IosClubDoingSvg className="w-full" />
@@ -243,7 +242,7 @@ const IndexPage = (props) => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      407 台中市西屯區文華路100號 電通館 B04
+                      407 台中市西屯區文華路100號 電子通訊館 B04
                     </a>
                   </div>
                 </div>
@@ -306,7 +305,7 @@ const AnnouncementLiet = (props) => {
           <ImageWithPlaceholder
             src={node.image}
             alt={node.title}
-            className="w-full md:w-48"
+            className="w-full md:w-48 md:flex-shrink-0"
             imgClassName="object-scale-down"
             aspectRatio="1/1"
           />
