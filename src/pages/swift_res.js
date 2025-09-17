@@ -19,7 +19,50 @@ const SwiftPage = () => {
       <div className="container font-serif mx-auto break-all bg-white shadow-lg px-3 md:px-0 text-justify">
         {/* 空白區 */}
         <div className="h-32" />
-        {/* 第一個section */}
+        {/* 教學網 */}
+        <div className="mx-2 md:mx-12 flex flex-col lg:flex-row py-8 px-4 md:px-16 border border-gray-400 rounded-3xl shadow-2xl gap-7 items-center">
+          <div className="flex flex-col gap-4">
+            <h2 className="text-3xl font-bold break-normal text-center">
+              iOS Club 教學網
+            </h2>
+            <p className="py-10 break-normal mx-0 lg:mx-24">
+              我們致力於推廣程式教育，為所有年齡層提供高品質的程式設計教學，主要以
+              Swift
+              程式語言為主軸，無論您是完全沒有程式設計經驗的新手，還是有一定經驗的開發者，我們的教學內容都能夠為您提供所需的知識和技能。
+              <br></br>為了讓學習更加生動有趣，我們使用 Apple Swift Playground
+              進行程式設計學習。Swift Playground 是一款由 Apple 公司開發的
+              App，專為初學者設計，可以在 iPad 和 Mac
+              上運行。它提供了一個友好的界面，以及豐富的編程挑戰和互動式學習內容，可以幫助學習者更輕鬆地學習
+              Swift 編程。<br></br>在我們的課程中，我們將使用 「學習程式設計 1」
+              和 「學習程式設計 2」 兩本書籍作為教材。「學習程式設計 1」 包含了
+              Swift 編程的基礎知識，以及使用 Swift Playground
+              的相關操作；「學習程式設計 2」 則進一步介紹了更高級的 Swift
+              開發技巧，以及 iOS Swift UI
+              的開發方法，內容豐富，易於理解，是您學習 Swift 編程和 iOS
+              應用程式開發的最佳選擇。
+            </p>
+            <div className="flex items-center justify-center gap-2">
+              <button
+                className="overflow-hidden group h-12 px-6 border border-btnbg rounded-full"
+                onClick={() => {
+                  window.open("https://tutorial.iosclub.tw", "_blank");
+                }}
+              >
+                <div className="transition duration-200 group-hover:-translate-y-12">
+                  <div className="h-12 flex items-center justify-center text-btnbg break-words ">
+                    <a className="text-blue-800 text-xl">開始學習</a>
+                  </div>
+                  <div className="h-12 flex items-center justify-center text-btnbg break-words ">
+                    <a className="text-blue-800 text-xl">前往</a>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* 空白區 */}
+        <div className="h-16" />
+        {/* Swift App 開發手冊 */}
         <div className="mx-2 md:mx-12 flex flex-col lg:flex-row py-8 px-4 md:px-16 border border-gray-400 rounded-3xl shadow-2xl gap-7 items-center">
           <div className="flex flex-col gap-4 xl:w-5/6">
             <h2 className="text-3xl font-bold break-normal">
@@ -83,9 +126,9 @@ const SwiftPage = () => {
             </h2>
             <p className="py-10 break-normal mx-0 lg:mx-24">
               開始新的課程或是將您的技能提升到一個新水平。
-              不論您是程式編碼新手， 或是想要提升您的技能， Swift
-              課本都能夠幫助你。 這本課本提供實際在 Mac 電腦使用 Xcode 創建
-              App的操作分享 （Xcode是一款用於為蘋果平台創建app的開發環境）。
+              不論您是程式編碼新手，或是想要提升您的技能，Swift
+              課本都能夠幫助你。這本課本提供實際在 Mac 電腦使用 Xcode 創建 App
+              的操作分享（Xcode是一款用於為蘋果平台創建app的開發環境）。
             </p>
             <div className="flex flex-col md:flex-row gap-8">
               {swiftBooks.map((item, index) => (
@@ -152,9 +195,9 @@ const SwiftPage = () => {
               獲得 Swift 認證
             </h2>
             <p className="py-10 break-normal mx-0 lg:mx-24">
-              透過你對 Swift 和 Xcode 的了解與知識， 來贏得認證以及數位徽章。
-              通過 Certiport 的考試可以獲得使用 Swift 開發 App 的認證，
-              這也表明您已經準備好成為 App 開發者的下一步了。
+              透過你對 Swift 和 Xcode 的了解與知識，來贏得認證以及數位徽章。
+              通過 Certiport 的考試可以獲得使用 Swift 開發 App
+              的認證，這也表明您已經準備好成為 App 開發者的下一步了。
             </p>
 
             <a
