@@ -2,8 +2,8 @@ import * as React from "react";
 import AppHeader from "../components/header";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
-import { Icon } from "@iconify/react";
-import baselineDownloadForOffline from "@iconify/icons-ic/baseline-download-for-offline";
+// import { Icon } from "@iconify/react";
+// import baselineDownloadForOffline from "@iconify/icons-ic/baseline-download-for-offline";
 import ImageWithPlaceholder from "../components/image-with-placeholder";
 import useGoogleAdsConversion from "../hooks/useGoogleAdsConversion";
 
@@ -58,62 +58,6 @@ const SwiftPage = () => {
                 </div>
               </button>
             </div>
-          </div>
-        </div>
-        {/* 空白區 */}
-        <div className="h-16" />
-        {/* Swift App 開發手冊 */}
-        <div className="mx-2 md:mx-12 flex flex-col lg:flex-row py-8 px-4 md:px-16 border border-gray-400 rounded-3xl shadow-2xl gap-7 items-center">
-          <div className="flex flex-col gap-4 xl:w-5/6">
-            <h2 className="text-3xl font-bold break-normal">
-              Swift App 開發手冊
-            </h2>
-            <p className="py-10 break-normal">
-              App 開發手冊使用設計思維框架來教授 iOS App
-              開發的基本能力。您將在設計 App 中的每一個階段，探索 App
-              設計以及編寫程式碼之間的關係，讓您的 App 變得更栩栩如生。
-            </p>
-            <div className="flex items-center gap-2">
-              <button
-                className="overflow-hidden group h-12 px-6 border border-btnbg rounded-xs"
-                onClick={() => {
-                  window.open(
-                    "https://www.apple.com/tw/education/docs/swift-club-xcode.pdf",
-                    "_blank",
-                  );
-                }}
-              >
-                <div className="transition duration-200 group-hover:-translate-y-12">
-                  <div className="h-12 flex items-center justify-center text-btnbg break-words ">
-                    <a className="text-blue-800 text-xl">立刻下載</a>
-                    <Icon
-                      icon={baselineDownloadForOffline}
-                      color="#1e40af"
-                      width="30"
-                      height="30"
-                    />
-                  </div>
-                  <div className="h-12 flex items-center justify-center text-btnbg break-words ">
-                    <a className="text-blue-800 text-xl">前往</a>
-                  </div>
-                </div>
-              </button>
-            </div>
-          </div>
-          <div className="flex p-2 border border-gray-400 rounded-3xl shadow-2xl">
-            <div className="flex">
-              <div className="flex flex-col">
-                <ImageWithPlaceholder
-                  src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/62854a1f-b079-4db3-222e-a04d7f8f1b00/public"
-                  alt="Swift App 開發手冊"
-                  className="w-full"
-                  imgClassName="object-contain"
-                  aspectRatio="16/9"
-                  objectFit="contain"
-                />
-              </div>
-            </div>
-            <div></div>
           </div>
         </div>
         {/* 空白區 */}
