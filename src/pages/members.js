@@ -4,10 +4,13 @@ import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import AppHeader from "../components/header";
 import ImageWithPlaceholder from "../components/image-with-placeholder";
+import useGoogleAdsConversion from "../hooks/useGoogleAdsConversion";
 import { Icon } from "@iconify/react";
 
 const MembersPage = (props) => {
   const members = props.data.allMemberJson.edges;
+  // Google Ads 轉換追蹤
+  useGoogleAdsConversion();
   return (
     <div className="bg-iosbgblue">
       {/* Header */}
