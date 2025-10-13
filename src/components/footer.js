@@ -37,7 +37,7 @@ const communityList = [
 const Footer = () => {
   return (
     <div className="bg-footerbg w-full py-24 px-12 font-serif">
-      <div className="grid grid-cols-1 flex-col md:grid-cols-4 justify-center gap-8 md:gap-24 md:px-16">
+      <div className="grid grid-cols-1 flex-col md:grid-cols-5 justify-center gap-8 md:gap-24 md:px-16">
         <div>
           <p className="font-bold text-gray-900">iOS Club</p>
           <p className="text-gray-100 my-6">Feng Chia University</p>
@@ -64,6 +64,12 @@ const Footer = () => {
           </a>
           <a href="/companion" className="text-gray-100">
             相關單位
+          </a>
+        </div>
+        <div className="flex flex-col gap-1">
+          <p className="font-bold text-gray-900">Our Utilities</p>
+          <a href="/qrcode_generator" className="text-gray-100">
+            QR Code 生成器
           </a>
           <a href="/rfid_converter" className="text-gray-100">
             RFID 轉換器
