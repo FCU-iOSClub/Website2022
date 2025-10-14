@@ -69,7 +69,8 @@ const SwiftPage = () => {
               使用 Swift 開發教學指南<br></br>(Develop in Swift Tutorials)
             </h2>
             <p className="py-10 break-normal">
-              此教學指南為學習開發 Apple 平臺應用程式的初學者，介紹使用 Swift 語言與 Xcode 進行應用程式開發的基礎知識。
+              此教學指南為學習開發 Apple 平臺應用程式的初學者，介紹使用 Swift
+              語言與 Xcode 進行應用程式開發的基礎知識。
             </p>
             <div className="flex items-center gap-2">
               <button
