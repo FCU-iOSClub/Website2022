@@ -45,13 +45,10 @@ const QRCodeGeneratorPage = () => {
 
     console.log("Sending payload:", JSON.stringify(payload, null, 2));
 
-    // 使用 CORS 代理（僅限開發環境）
-    const isDevelopment = process.env.NODE_ENV === "development";
-    const apiUrl = isDevelopment
-      ? "https://corsproxy.io/?https://api.qrcode-monkey.com/qr/custom"
-      : "https://api.qrcode-monkey.com/qr/custom";
-
     try {
+      // 透過 functions/api/qrcode
+      const apiUrl = "/api/qrcode";
+
       const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
@@ -82,12 +79,17 @@ const QRCodeGeneratorPage = () => {
           const imageUrl = "https://api.qrcode-monkey.com" + result.imageUrl;
           console.log("Fetching image from:", imageUrl);
 
-          // 使用 CORS 代理（僅限開發環境）
-          const imgUrl = isDevelopment
-            ? `https://corsproxy.io/?${imageUrl}`
-            : imageUrl;
+          // 透過 functions/api/qrcode
+          const imgResponse = await fetch("/api/qrcode", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              imageUrl: result.imageUrl,
+            }),
+          });
 
-          const imgResponse = await fetch(imgUrl);
           if (imgResponse.ok) {
             const blob = await imgResponse.blob();
             const url = URL.createObjectURL(blob);
@@ -320,44 +322,6 @@ const QRCodeGeneratorPage = () => {
               </div>
             </div>
           )}
-
-          {/* 使用說明 */}
-          <div className="relative bg-white rounded-xl p-6 md:p-8 mb-8 border border-gray-300 shadow-lg">
-            <span
-              className="absolute left-0 top-0 bottom-0 w-1 bg-btnbg rounded-l-xl"
-              aria-hidden="true"
-            ></span>
-            <h4 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
-              <Icon icon="mdi:lightbulb-on" className="text-btnbg" />
-              使用說明
-            </h4>
-            <div className="space-y-3 text-gray-800">
-              <div className="flex items-start gap-2">
-                <span className="bg-btnbg text-white text-sm px-2 py-1 rounded font-mono">
-                  1
-                </span>
-                <span>在輸入框中輸入網址內容</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="bg-btnbg text-white text-sm px-2 py-1 rounded font-mono">
-                  2
-                </span>
-                <span>點擊「生成 QR Code」按鈕或按 Enter 鍵</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="bg-btnbg text-white text-sm px-2 py-1 rounded font-mono">
-                  3
-                </span>
-                <span>等待 QR Code 生成並預覽</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="bg-btnbg text-white text-sm px-2 py-1 rounded font-mono">
-                  4
-                </span>
-                <span>點擊「下載 QR Code 圖片」按鈕保存圖片檔案</span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       <Footer />
