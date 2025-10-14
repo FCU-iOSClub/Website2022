@@ -56,7 +56,7 @@ export const wrapRootElement = ({ element }) => (
   </>
 );
 
-export const onRenderBody = ({ setHeadComponents }) => {
+export const onRenderBody = ({ setHeadComponents, setHtmlAttributes }) => {
   setHeadComponents([
     // Google tag (gtag.js)
     <script
@@ -76,4 +76,5 @@ export const onRenderBody = ({ setHeadComponents }) => {
       }}
     />,
   ]);
+  setHtmlAttributes({ lang: "zh-Hant" });
 };
