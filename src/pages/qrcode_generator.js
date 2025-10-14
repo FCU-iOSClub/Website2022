@@ -212,7 +212,7 @@ const QRCodeGeneratorPage = () => {
                 />
                 <button
                   onClick={clearInput}
-                  className="px-4 py-3 text-gray-700 rounded-lg hover:bg-btnbg hover:text-white transition-colors flex items-center justify-center"
+                  className="px-4 py-3 text-gray-700 rounded-full hover:bg-btnbg hover:text-white transition-colors flex items-center justify-center"
                   title="清除輸入"
                 >
                   <Icon icon="mdi:close" className="text-xl" />
