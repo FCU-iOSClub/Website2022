@@ -62,11 +62,59 @@ const SwiftPage = () => {
         </div>
         {/* 空白區 */}
         <div className="h-16" />
+        {/* 使用 Swift 開發教學指南 */}
+        <div className="mx-2 md:mx-12 flex flex-col lg:flex-row py-8 px-4 md:px-16 border border-gray-400 rounded-3xl shadow-2xl gap-7 items-center">
+          <div className="flex flex-col gap-4 xl:w-1/2">
+            <h2 className="text-3xl font-bold break-normal">
+              使用 Swift 開發教學指南<br></br>(Develop in Swift Tutorials)
+            </h2>
+            <p className="py-10 break-normal">
+              此教學指南為學習開發 Apple 平臺應用程式的初學者，介紹使用 Swift
+              語言與 Xcode 進行應用程式開發的基礎知識。
+            </p>
+            <div className="flex items-center gap-2">
+              <button
+                className="overflow-hidden group h-12 px-6 border border-btnbg rounded-full"
+                onClick={() => {
+                  window.open(
+                    "https://developer.apple.com/tutorials/develop-in-swift",
+                    "_blank",
+                  );
+                }}
+              >
+                <div className="transition duration-200 group-hover:-translate-y-12">
+                  <div className="h-12 flex items-center justify-center text-btnbg break-words ">
+                    <a className="text-blue-800 text-xl">立刻前往</a>
+                  </div>
+                  <div className="h-12 flex items-center justify-center text-btnbg break-words ">
+                    <a className="text-blue-800 text-xl">Go</a>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div className="w-full lg:w-1/2 flex border border-gray-400 rounded-3xl shadow-2xl">
+            <div className="flex">
+              <div className="flex flex-col">
+                <ImageWithPlaceholder
+                  src="https://docs-assets.developer.apple.com/published/b1016c987253d597d9e7790e135111f3/foundations--0hero.png"
+                  alt="Develop in Swift Tutorials"
+                  className="w-full"
+                  imgClassName="object-contain"
+                  aspectRatio="4/3"
+                  objectFit="contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* 空白區 */}
+        <div className="h-16" />
         {/* Swift 書 */}
         <div className="mx-2 md:mx-12 flex flex-col lg:flex-row py-8 px-4 md:px-16 border border-gray-400 rounded-3xl shadow-2xl gap-7 items-center">
           <div className="flex flex-col gap-4">
             <h2 className="text-3xl font-bold break-normal text-center">
-              在 Swift 課程中學開發
+              在 Swift 課程中學習開發手冊
             </h2>
             <p className="py-10 break-normal mx-0 lg:mx-24">
               開始新的課程或是將您的技能提升到一個新水平。
@@ -82,7 +130,7 @@ const SwiftPage = () => {
                     alt={item.title}
                     className="w-full"
                     imgClassName="object-contain"
-                    aspectRatio="3/4"
+                    aspectRatio="16/9"
                     objectFit="contain"
                   />
                   <p className="break-normal text-2xl font-black text-left py-4">
