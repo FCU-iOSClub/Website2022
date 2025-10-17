@@ -25,10 +25,34 @@ const CompanionPage = () => {
         {/* 上課地點 */}
         <div className="px-2 md:px-32">
           <h2 className="font-bold text-xl">上課地點</h2>
-          <div className="h-2 w-10/12 md:w-1/3 my-5 bg-gray-300" /> {/* 橫槓 */}
-          <p className="text-gray-600">
-            逢甲大學 Apple 區域教育培訓中心 (RTC, Regional Training Center)
-          </p>
+          <div className="h-2 w-10/12 md:w-1/3 my-5 bg-gray-300" />
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 py-2">
+            <div className="flex-1">
+              <p className="text-gray-600 py-2">
+                逢甲大學 Apple 區域教育培訓中心 (RTC, Regional Training Center)
+              </p>
+              <p className="text-gray-600 py-2">
+                地點：407102 臺中市西屯區文華路 100 號 行政大樓 204
+              </p>
+            </div>
+            <div className="flex items-center md:flex-shrink-0">
+              <button
+                className="overflow-hidden group h-12 px-6 border border-btnbg rounded-full"
+                onClick={() => {
+                  window.open("https://rtc.fcu.edu.tw", "_blank");
+                }}
+              >
+                <div className="transition duration-200 group-hover:-translate-y-12">
+                  <div className="h-12 flex items-center justify-center text-btnbg break-words whitespace-nowrap">
+                    <a className="text-blue-800 text-xl">RTC 官方網站</a>
+                  </div>
+                  <div className="h-12 flex items-center justify-center text-btnbg break-words whitespace-nowrap">
+                    <a className="text-blue-800 text-xl">前往</a>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
           <div className="py-8 grid gap-4 grid-cols-1 md:grid-cols-2">
             <ImageWithPlaceholder
               src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/c9d69060-fa81-40a2-f057-9d288972d300/public"
@@ -54,7 +78,9 @@ const CompanionPage = () => {
           <p className="text-gray-600 py-2">
             逢甲大學資訊學系第13屆系主任 (104 / 8 ~ 107 / 7)
           </p>
-          <p className="text-gray-600 py-2">分機：#3755 #6602</p>
+          <p className="text-gray-600 py-2">
+            聯絡電話：04-2451-7250 轉 3755、6602
+          </p>
           <p className="text-gray-600 py-2">
             信箱：<a href="mailto:frhsu@fcu.edu.tw">frhsu@fcu.edu.tw</a>
           </p>
@@ -77,7 +103,7 @@ const CompanionPage = () => {
                 逢甲大學資訊電機學院
               </h3>
               <p className="text-gray-600 py-2">
-                通訊地址：台中市西屯區文華路 100 號資電館 2F 資電202
+                通訊地址：407102 臺中市西屯區文華路 100 號 資訊電機館 202
               </p>
               <p className="text-gray-600 py-2">
                 聯絡電話：04-2451-7250 轉 3991
@@ -89,9 +115,9 @@ const CompanionPage = () => {
             <ImageWithPlaceholder
               src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/c763fee2-7c29-419e-d516-a44257a81600/public"
               alt="逢甲大學資訊電機學院"
-              className="place-self-center w-3/5"
+              className="place-self-center w-2/5"
               imgClassName="object-cover"
-              aspectRatio="16/9"
+              aspectRatio="1/1"
             />
           </div>
           <div className="h-20" /> {/* 空白區塊 */}
@@ -105,7 +131,7 @@ const CompanionPage = () => {
                 逢甲大學教育推廣處
               </h3>
               <p className="text-gray-600 py-2">
-                通訊地址：台中市 40724 西屯區文華路100號 行政二館一樓
+                通訊地址：407102 臺中市西屯區文華路100號 行政二館一樓
               </p>
               <p className="text-gray-600 py-2">
                 聯絡電話：04-2451-7250 轉 2411
@@ -119,9 +145,9 @@ const CompanionPage = () => {
             <ImageWithPlaceholder
               src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/a6569fdb-8cd4-4be4-d941-ee653a37a800/public"
               alt="逢甲大學教育推廣處"
-              className="place-self-center w-3/5"
+              className="place-self-center w-2/5"
               imgClassName="object-cover"
-              aspectRatio="16/9"
+              aspectRatio="1/1"
             />
           </div>
         </div>
@@ -143,7 +169,7 @@ const CompanionPage = () => {
                 # 開設兩堂程式教育課程
               </p>
               <p className="text-gray-600 py-2">
-                通訊地址：台中市 40644 北屯區軍福十八路 328 號
+                通訊地址：406005 臺中市北屯區軍福十八路 328 號
               </p>
               <p className="text-gray-600 py-2">聯絡電話：04-2437-1728</p>
             </div>
@@ -175,7 +201,7 @@ const CompanionPage = () => {
                 Straight A (逢甲大學)
               </h3>
               <p className="text-gray-600 py-2">
-                通訊地址：台中市 40724 西屯區文華路100號 (逢甲大學人言大樓1F)
+                通訊地址：407102 臺中市西屯區文華路 100 號 人言大樓一樓
               </p>
               <p className="text-gray-600 py-2">聯絡電話：04-2452-4971</p>
               <p className="text-gray-600 py-2">傳真電話：04-2452-0332</p>

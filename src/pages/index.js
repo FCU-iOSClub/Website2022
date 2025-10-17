@@ -240,7 +240,7 @@ const IndexPage = (props) => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      407 台中市西屯區文華路100號 電子通訊館 B04
+                      407102 臺中市西屯區文華路 100 號 電子通訊館 B04
                     </a>
                   </div>
                 </div>
