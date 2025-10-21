@@ -64,8 +64,8 @@ const ClubActivities = () => {
               致力於軟體開發，以及推廣程式教育，但我們同時也期望能夠給社員舒適的相處環境與豐富的交流活動，歡迎所有志在開發與充滿教育熱誠的人一起加入。
             </p>
             <SliderButton
-              text = "iOS Club 活動報名"
-              hoverText = "立即報名"
+              text="iOS Club 活動報名"
+              hoverText="立即報名"
               className="font-bold"
               onClick={() => {
                 window.open("https://lu.ma/user/fcu_iosclub", "_blank");

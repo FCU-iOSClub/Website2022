@@ -42,12 +42,17 @@ const SliderButton = ({
         <div className="h-12 flex items-center justify-center text-btnbg gap-2">
           {loading ? (
             <>
-              <Icon icon="mdi:loading" className={`${textSize} animate-spin flex-shrink-0`} />
+              <Icon
+                icon="mdi:loading"
+                className={`${textSize} animate-spin flex-shrink-0`}
+              />
               <span className={textSize}>{loadingText}</span>
             </>
           ) : (
             <>
-              {icon && <Icon icon={icon} className={`${textSize} flex-shrink-0`} />}
+              {icon && (
+                <Icon icon={icon} className={`${textSize} flex-shrink-0`} />
+              )}
               <span className={`${textSize} break-words`}>{text}</span>
             </>
           )}

@@ -69,7 +69,10 @@ const SwiftPage = () => {
                 text="立刻前往"
                 hoverText="Go"
                 onClick={() => {
-                  window.open("https://developer.apple.com/tutorials/develop-in-swift", "_blank");
+                  window.open(
+                    "https://developer.apple.com/tutorials/develop-in-swift",
+                    "_blank",
+                  );
                 }}
               />
             </div>
