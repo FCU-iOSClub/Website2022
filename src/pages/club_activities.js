@@ -9,6 +9,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import SliderButton from "../components/buttons/slider_button";
 import useGoogleAdsConversion from "../hooks/useGoogleAdsConversion";
 
 const ClubActivities = () => {
@@ -62,14 +63,14 @@ const ClubActivities = () => {
               iOS Club
               致力於軟體開發，以及推廣程式教育，但我們同時也期望能夠給社員舒適的相處環境與豐富的交流活動，歡迎所有志在開發與充滿教育熱誠的人一起加入。
             </p>
-            <div className="my-8 w-fit">
-              <a
-                className="text-center py-3 px-6 rounded-full font-bold break-words bg-transparent border border-gray-700 hover:bg-btnbg text-gray-800 hover:text-white"
-                href="https://lu.ma/user/fcu_iosclub"
-              >
-                iOS Club 活動報名
-              </a>
-            </div>
+            <SliderButton
+              text="iOS Club 活動報名"
+              hoverText="立即報名"
+              className="font-bold"
+              onClick={() => {
+                window.open("https://lu.ma/user/fcu_iosclub", "_blank");
+              }}
+            />
           </div>
           <ImageWithPlaceholder
             src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ebc9b623-ab73-4b0f-ad46-77959aeb2900/public"

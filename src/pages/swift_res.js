@@ -3,7 +3,7 @@ import AppHeader from "../components/header";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 // import { Icon } from "@iconify/react";
-// import baselineDownloadForOffline from "@iconify/icons-ic/baseline-download-for-offline";
+import SliderButton from "../components/buttons/slider_button";
 import ImageWithPlaceholder from "../components/image-with-placeholder";
 import useGoogleAdsConversion from "../hooks/useGoogleAdsConversion";
 
@@ -42,21 +42,13 @@ const SwiftPage = () => {
               應用程式開發的最佳選擇。
             </p>
             <div className="flex items-center justify-center gap-2">
-              <button
-                className="overflow-hidden group h-12 px-6 border border-btnbg rounded-full"
+              <SliderButton
+                text="開始學習"
+                hoverText="前往"
                 onClick={() => {
                   window.open("https://tutorial.iosclub.tw", "_blank");
                 }}
-              >
-                <div className="transition duration-200 group-hover:-translate-y-12">
-                  <div className="h-12 flex items-center justify-center text-btnbg break-words ">
-                    <a className="text-blue-800 text-xl">開始學習</a>
-                  </div>
-                  <div className="h-12 flex items-center justify-center text-btnbg break-words ">
-                    <a className="text-blue-800 text-xl">前往</a>
-                  </div>
-                </div>
-              </button>
+              />
             </div>
           </div>
         </div>
@@ -73,24 +65,16 @@ const SwiftPage = () => {
               語言與 Xcode 進行應用程式開發的基礎知識。
             </p>
             <div className="flex items-center gap-2">
-              <button
-                className="overflow-hidden group h-12 px-6 border border-btnbg rounded-full"
+              <SliderButton
+                text="立刻前往"
+                hoverText="Go"
                 onClick={() => {
                   window.open(
                     "https://developer.apple.com/tutorials/develop-in-swift",
                     "_blank",
                   );
                 }}
-              >
-                <div className="transition duration-200 group-hover:-translate-y-12">
-                  <div className="h-12 flex items-center justify-center text-btnbg break-words ">
-                    <a className="text-blue-800 text-xl">立刻前往</a>
-                  </div>
-                  <div className="h-12 flex items-center justify-center text-btnbg break-words ">
-                    <a className="text-blue-800 text-xl">Go</a>
-                  </div>
-                </div>
-              </button>
+              />
             </div>
           </div>
           <div className="w-full lg:w-1/2 flex border border-gray-400 rounded-3xl shadow-2xl">
