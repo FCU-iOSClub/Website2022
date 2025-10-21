@@ -110,6 +110,33 @@ yarn prettier
 }
 ```
 
+## Button
+
+### Slider Button
+
+目前為主要按鈕。
+
+使用方式：
+
+```js
+import SliderButton from "../components/buttons/slider_button";
+
+<SliderButton
+  text = "" // 主要顯示文字
+  hoverText = "" // 滑鼠懸停時顯示的文字
+  icon = "" // （可選）Iconify 圖示
+  onClick = {() => { // 點擊時執行
+    window.open("https://iosclub.tw", "_blank"); // 以新分頁開啟網站
+  }}
+  disabled = false // （可選）是否可以禁用按鈕
+  className = "" // （可選）額外的 CSS
+  width = "" // （可選）自訂寬度 - 預設：w-auto
+  textSize = "" // （可選）自訂文字大小 - 預設：text-xl
+  loading = false // （可選）是否可以顯示載入狀態
+  loadingText = "" // （可選）載入顯示文字 - 預設：處理中⋯⋯
+/>
+```
+
 ## Icon
 
 Icon 使用 [Iconify](https://iconify.design)。

@@ -3,6 +3,7 @@ import { useState } from "react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import AppHeader from "../components/header";
+import SliderButton from "../components/buttons/slider_button";
 import { Icon } from "@iconify/react";
 
 const QRCodeGeneratorPage = () => {
@@ -137,7 +138,7 @@ const QRCodeGeneratorPage = () => {
     <div className="bg-iosbgblue">
       <AppHeader title="iOS Club - QR Code 生成器" />
       <Navbar />
-      <div className="container mx-auto break-normal bg-white shadow-lg px-3 md:px-0 font-mono">
+      <div className="container mx-auto break-normal bg-white shadow-lg px-3 md:px-0 font-serif">
         <div className="h-20 md:h-32" />
 
         {/* 頁面標題 */}
@@ -222,40 +223,15 @@ const QRCodeGeneratorPage = () => {
 
             {/* 生成按鈕 */}
             <div className="flex items-center justify-center">
-              <button
-                className="overflow-hidden group h-12 w-56 border border-btnbg rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
+              <SliderButton
+                text={loading ? "生成中⋯" : "生成 QR Code"}
+                hoverText="生成"
+                icon={loading ? "mdi:loading" : "mdi:qrcode-plus"}
                 onClick={generateQRCode}
-                disabled={loading || !urlInput.trim()}
-              >
-                <div className="transition duration-200 group-hover:-translate-y-12">
-                  <div className="h-12 flex items-center justify-center text-btnbg gap-2">
-                    {loading ? (
-                      <>
-                        <Icon
-                          icon="mdi:loading"
-                          className="text-xl animate-spin flex-shrink-0"
-                        />
-                        <span className="text-xl">生成中...</span>
-                      </>
-                    ) : (
-                      <>
-                        <Icon
-                          icon="mdi:qrcode-plus"
-                          className="text-xl flex-shrink-0"
-                        />
-                        <span className="text-xl">生成 QR Code</span>
-                      </>
-                    )}
-                  </div>
-                  <div className="h-12 flex items-center justify-center text-btnbg gap-2">
-                    <Icon
-                      icon="mdi:qrcode-plus"
-                      className="text-xl flex-shrink-0"
-                    />
-                    <span className="text-xl">生成</span>
-                  </div>
-                </div>
-              </button>
+                disabled={!urlInput.trim()}
+                loading={loading}
+                width="w-64"
+              />
             </div>
 
             {error && (
@@ -298,27 +274,13 @@ const QRCodeGeneratorPage = () => {
                   />
                 </div>
 
-                <button
-                  className="overflow-hidden group h-12 w-64 border border-btnbg rounded-full"
+                {/* 下載按鈕 */}
+                <SliderButton
+                  text="下載 QR Code 圖片"
+                  hoverText="下載"
+                  icon="mdi:download"
                   onClick={downloadQRCode}
-                >
-                  <div className="transition duration-200 group-hover:-translate-y-12">
-                    <div className="h-12 flex items-center justify-center text-btnbg gap-2">
-                      <Icon
-                        icon="mdi:download"
-                        className="text-xl flex-shrink-0"
-                      />
-                      <span className="text-xl">下載 QR Code 圖片</span>
-                    </div>
-                    <div className="h-12 flex items-center justify-center text-btnbg gap-2">
-                      <Icon
-                        icon="mdi:download"
-                        className="text-xl flex-shrink-0"
-                      />
-                      <span className="text-xl">下載</span>
-                    </div>
-                  </div>
-                </button>
+                />
               </div>
             </div>
           )}

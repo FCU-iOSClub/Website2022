@@ -17,7 +17,7 @@ const CoursePage = () => {
       {/* Header */}
       <AppHeader title="iOS Club - 社團課程" />
       <Navbar />
-      <div className="container  font-serif mx-auto break-all bg-white shadow-lg px-3 md:px-0">
+      <div className="container font-serif mx-auto break-all bg-white shadow-lg px-3 md:px-0">
         {/* 空白區 */}
         <div className="h-32" />
         {/* 設課大標 */}
