@@ -92,7 +92,7 @@ const RfidConverterPage = () => {
     <div className="bg-iosbgblue">
       <AppHeader title="iOS Club - RFID 轉換器" />
       <Navbar />
-      <div className="container mx-auto break-normal bg-white shadow-lg px-3 md:px-0 font-mono">
+      <div className="container mx-auto break-normal bg-white shadow-lg px-3 md:px-0 font-serif">
         <div className="h-20 md:h-32" />
 
         {/* 頁面標題 */}
