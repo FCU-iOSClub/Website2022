@@ -114,7 +114,8 @@ yarn prettier
 
 ### Slider Button
 
-目前為主要按鈕。
+目前為主要按鈕。  
+樣式為邊框白底，懸停時上滑文字，顯示其他文字。
 
 使用方式：
 
@@ -134,6 +135,32 @@ import SliderButton from "../components/buttons/slider_button";
   textSize = "" // （可選）自訂文字大小 - 預設：text-xl
   loading = false // （可選）是否可以顯示載入狀態
   loadingText = "" // （可選）載入顯示文字 - 預設：處理中⋯⋯
+/>
+```
+
+### Reverse Colors Button
+
+反色按鈕，適合用於次要按鈕。  
+樣式為邊框白底，懸停時填滿背景。
+
+使用方式：
+
+```js
+import ReverseColorsButton from "../components/buttons/reverse_colors_button";
+
+<ReverseColorsButton
+  text = "" // 按鈕文字
+  icon = "" // （可選）Iconify 圖示
+  onClick = {() => { // 點擊時執行
+    window.location.href = "/course"; // 切換至分頁
+  }}
+  disabled = false // （可選）是否禁用按鈕
+  className = "" // （可選）額外的 CSS
+  textSize = "" // （可選）自訂文字大小 - 預設：text-base
+  borderColor = "" // （可選）邊框顏色 - 預設：border-gray-700
+  hoverBg = "" // （可選）懸停背景色 - 預設：hover:bg-btnbg
+  textColor = "" // （可選）文字顏色 - 預設：text-gray-800
+  hoverTextColor = "" // （可選）懸停文字顏色 - 預設：hover:text-white
 />
 ```
 

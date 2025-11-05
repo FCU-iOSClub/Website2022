@@ -52,11 +52,18 @@ yarn prettier
 ├── yarn.lock              # Yarn 鎖定檔
 ├── static/                # 靜態資源
 │   └── icon.ico          # 網站圖示
+├── functions/             # Cloudflare Pages Functions
+│   └── api/              # API 端點
+│       └── qrcode.js     # QR Code API 代理
 └── src/
     ├── components/        # 可重複使用的 React 元件
+    │   ├── buttons/      # 按鈕元件
+    │   │   ├── slider_button.js # 滑動動畫按鈕（主要按鈕）
+    │   │   └── reverse_colors_button.js # 反色按鈕（次要按鈕）
     │   ├── navbar.js     # 響應式導覽列（含手機版選單）
     │   ├── header.js     # 網站標頭（含 meta 標籤）
-    │   └── footer.js     # 網站頁尾（含社群連結）
+    │   ├── footer.js     # 網站頁尾（含社群連結）
+    │   └── image-with-placeholder.js # 圖片載入元件
     ├── pages/            # 靜態頁面
     │   ├── index.js      # 首頁
     │   ├── gallery_list.js # 活動相簿列表
@@ -79,9 +86,11 @@ yarn prettier
     │   └── svg/         # SVG 圖示
     ├── styles/           # 全域樣式
     │   └── global.css   # TailwindCSS 匯入與自訂樣式
-    └── css/             # 元件專用樣式
-        ├── gallery.css  # LightGallery 自訂樣式
-        └── pagination.css # 分頁元件樣式
+    ├── css/             # 元件專用樣式
+    │   ├── gallery.css  # LightGallery 自訂樣式
+    │   └── pagination.css # 分頁元件樣式
+    └── hooks/           # React 自訂 Hooks
+        └── useGoogleAdsConversion.js # Google Ads 轉換追蹤
 ```
 
 ## 資料管理
@@ -220,6 +229,92 @@ import { Icon } from "@iconify/react";
 - 依屆數組織呈現
 - 社群媒體連結整合
 - 上下屆導覽功能
+
+### API 功能
+
+#### QR Code API 代理
+
+位置：`functions/api/qrcode.js`
+
+**功能**：
+
+- 代理請求到 QRCode Monkey API
+- 解決前端 CORS 限制問題
+- 支援兩種操作模式：
+  1. 生成 QR Code（POST JSON payload）
+  2. 獲取已生成的圖片（POST `{ imageUrl: "/path" }`）
+
+**端點**：
+
+- 正式環境：`https://iosclub.tw/api/qrcode`
+- 本地開發：需使用 Cloudflare Pages 本地開發工具
+
+**使用範例**：
+
+```javascript
+// 生成 QR Code
+const response = await fetch("/api/qrcode", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    data: "https://iosclub.tw",
+    config: {
+      body: "square",
+      eye: "frame0",
+      eyeBall: "ball0",
+      erf1: [],
+      erf2: [],
+      erf3: [],
+      brf1: [],
+      brf2: [],
+      brf3: [],
+      bodyColor: "#000000",
+      bgColor: "#FFFFFF",
+      eye1Color: "#000000",
+      eye2Color: "#000000",
+      eye3Color: "#000000",
+      eyeBall1Color: "#000000",
+      eyeBall2Color: "#000000",
+      eyeBall3Color: "#000000",
+      gradientColor1: "",
+      gradientColor2: "",
+      gradientType: "linear",
+      gradientOnEyes: false,
+      logo: "",
+      logoMode: "default",
+    },
+    size: 300,
+    download: false,
+    file: "png",
+  }),
+});
+
+// 獲取已生成的圖片
+const imageResponse = await fetch("/api/qrcode", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    imageUrl: "/temp/xxxxxxxxxxxx.png",
+  }),
+});
+const blob = await imageResponse.blob();
+```
+
+**CORS 設定**：
+
+- `Access-Control-Allow-Origin: *`
+- `Access-Control-Allow-Methods: POST, OPTIONS`
+- `Access-Control-Allow-Headers: Content-Type`
+
+**快取策略**：
+
+- 圖片回應設定 `Cache-Control: public, max-age=3600`（1小時）
+
+**錯誤處理**：
+
+- API 錯誤會返回 JSON 格式錯誤訊息
+- 包含狀態碼和詳細錯誤資訊
+- 伺服器錯誤返回 500 狀態碼
 
 ## 部署與 CI/CD
 

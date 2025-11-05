@@ -14,6 +14,7 @@ import { Icon } from "@iconify/react";
 import loudspeakerIcon from "@iconify/icons-fluent-emoji-high-contrast/loudspeaker";
 import chevronUp from "@iconify/icons-akar-icons/chevron-up";
 import chevronDown from "@iconify/icons-akar-icons/chevron-down";
+import ReverseColorsButton from "../components/buttons/reverse_colors_button";
 import useGoogleAdsConversion from "../hooks/useGoogleAdsConversion";
 
 const IndexPage = (props) => {
@@ -188,19 +189,40 @@ const IndexPage = (props) => {
           <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50">
             <h2 className="my-8 text-xl font-bold">社團課程</h2>
             <p className="my-8">每週二、三的晚上 18:30～21:00</p>
-            {learnMoreButton("/course")}
+            <p className="my-8">
+              <ReverseColorsButton
+                text="Learn More"
+                onClick={() => {
+                  window.location.href = "/course";
+                }}
+              />
+            </p>
           </div>
           <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
             <h2 className="my-8 text-xl font-bold">社團活動</h2>
             <p className="px-2 my-8">
               想知道 iOS Club 每年都有哪些精采活動嗎？
             </p>
-            {learnMoreButton("/club_activities")}
+            <p className="my-8">
+              <ReverseColorsButton
+                text="Learn More"
+                onClick={() => {
+                  window.location.href = "/club_activities";
+                }}
+              />
+            </p>
           </div>
           <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
             <h2 className="my-8 px-2 text-xl font-bold">社團競賽</h2>
             <p className="my-8">社團每年參加的比賽</p>
-            {learnMoreButton("/contest")}
+            <p className="my-8">
+              <ReverseColorsButton
+                text="Learn More"
+                onClick={() => {
+                  window.location.href = "/contest";
+                }}
+              />
+            </p>
           </div>
         </div>
         {/* 聯絡我們 */}
@@ -350,19 +372,6 @@ const AnnouncementLiet = (props) => {
       </div>
       {isAnnouncementOpen && annsHtml}
     </div>
-  );
-};
-
-const learnMoreButton = (href = "/") => {
-  return (
-    <p className="my-8">
-      <a
-        className="w-fit py-3 px-6 rounded-full break-words bg-transparent border border-gray-700 hover:bg-btnbg text-gray-800 hover:text-white"
-        href={href}
-      >
-        <nobr>Learn More</nobr>
-      </a>
-    </p>
   );
 };
 
