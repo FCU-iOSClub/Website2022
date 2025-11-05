@@ -237,6 +237,7 @@ import { Icon } from "@iconify/react";
 位置：`functions/api/qrcode.js`
 
 **功能**：
+
 - 代理請求到 QRCode Monkey API
 - 解決前端 CORS 限制問題
 - 支援兩種操作模式：
@@ -244,6 +245,7 @@ import { Icon } from "@iconify/react";
   2. 獲取已生成的圖片（POST `{ imageUrl: "/path" }`）
 
 **端點**：
+
 - 正式環境：`https://iosclub.tw/api/qrcode`
 - 本地開發：需使用 Cloudflare Pages 本地開發工具
 
@@ -251,62 +253,65 @@ import { Icon } from "@iconify/react";
 
 ```javascript
 // 生成 QR Code
-const response = await fetch('/api/qrcode', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
+const response = await fetch("/api/qrcode", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
-    data: 'https://iosclub.tw',
+    data: "https://iosclub.tw",
     config: {
-      body: 'square',
-      eye: 'frame0',
-      eyeBall: 'ball0',
+      body: "square",
+      eye: "frame0",
+      eyeBall: "ball0",
       erf1: [],
       erf2: [],
       erf3: [],
       brf1: [],
       brf2: [],
       brf3: [],
-      bodyColor: '#000000',
-      bgColor: '#FFFFFF',
-      eye1Color: '#000000',
-      eye2Color: '#000000',
-      eye3Color: '#000000',
-      eyeBall1Color: '#000000',
-      eyeBall2Color: '#000000',
-      eyeBall3Color: '#000000',
-      gradientColor1: '',
-      gradientColor2: '',
-      gradientType: 'linear',
+      bodyColor: "#000000",
+      bgColor: "#FFFFFF",
+      eye1Color: "#000000",
+      eye2Color: "#000000",
+      eye3Color: "#000000",
+      eyeBall1Color: "#000000",
+      eyeBall2Color: "#000000",
+      eyeBall3Color: "#000000",
+      gradientColor1: "",
+      gradientColor2: "",
+      gradientType: "linear",
       gradientOnEyes: false,
-      logo: '',
-      logoMode: 'default'
+      logo: "",
+      logoMode: "default",
     },
     size: 300,
     download: false,
-    file: 'png'
-  })
+    file: "png",
+  }),
 });
 
 // 獲取已生成的圖片
-const imageResponse = await fetch('/api/qrcode', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
+const imageResponse = await fetch("/api/qrcode", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
-    imageUrl: '/temp/xxxxxxxxxxxx.png'
-  })
+    imageUrl: "/temp/xxxxxxxxxxxx.png",
+  }),
 });
 const blob = await imageResponse.blob();
 ```
 
 **CORS 設定**：
+
 - `Access-Control-Allow-Origin: *`
 - `Access-Control-Allow-Methods: POST, OPTIONS`
 - `Access-Control-Allow-Headers: Content-Type`
 
 **快取策略**：
+
 - 圖片回應設定 `Cache-Control: public, max-age=3600`（1小時）
 
 **錯誤處理**：
+
 - API 錯誤會返回 JSON 格式錯誤訊息
 - 包含狀態碼和詳細錯誤資訊
 - 伺服器錯誤返回 500 狀態碼
