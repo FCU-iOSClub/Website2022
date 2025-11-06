@@ -11,7 +11,7 @@ const CompanionPage = () => {
       {/* Header */}
       <AppHeader title="iOS Club 相關單位" />
       {Navbar()}
-      <div className="container mx-auto break-all bg-white shadow-lg px-3 md:px-0">
+      <div className="container mx-auto break-all font-serif bg-white shadow-lg px-3 md:px-0">
         <div className="h-32" /> {/* 空白區塊 */}
         {/* title */}
         <div className="inline-block text-4xl font-bold text-center w-full">
