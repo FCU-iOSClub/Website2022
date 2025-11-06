@@ -34,10 +34,18 @@ const ContestPage = () => {
                   className="border-b w-full py-6 grid grid-rows-1 md:grid-cols-4 text-iostextblue font-bold gap-2 items-center"
                   key={index}
                 >
-                  <p className="px-2 text-left md:text-center breck-words">{item[0]}</p>
-                  <p className="px-2 text-left md:text-center breck-words">{item[1]}</p>
-                  <p className="px-2 text-left md:text-center break-words">{item[2]}</p>
-                  <p className="px-2 text-left md:text-center break-words">{item[3]}</p>
+                  <p className="px-2 text-left md:text-center breck-words">
+                    {item[0]}
+                  </p>
+                  <p className="px-2 text-left md:text-center breck-words">
+                    {item[1]}
+                  </p>
+                  <p className="px-2 text-left md:text-center break-words">
+                    {item[2]}
+                  </p>
+                  <p className="px-2 text-left md:text-center break-words">
+                    {item[3]}
+                  </p>
                 </div>
               ))}
             </div>
@@ -236,12 +244,7 @@ const contestData = [
         "潘柏嘉、王世堯、廖清筆",
         "《健康寶寶》",
       ],
-      [
-        "App 移動應用創新賽",
-        "台灣區三等獎",
-        "林楷祐、張仁維",
-        "《Healtheat》",
-      ],
+      ["App 移動應用創新賽", "台灣區三等獎", "林楷祐、張仁維", "《Healtheat》"],
       [
         "人文科技跨領域創新實踐競賽",
         "最佳人氣獎",
