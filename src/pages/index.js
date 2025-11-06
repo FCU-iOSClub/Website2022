@@ -305,7 +305,7 @@ const AnnouncementLiet = (props) => {
     const node = props.node;
     return (
       <div className="bg-white p-3 rounded-md flex flex-col gap-3 md:flex-row">
-        <div className="grow flex flex-col gap-3">
+        <div className="grow flex flex-col gap-3 md:pr-2">
           <p
             dangerouslySetInnerHTML={{
               __html: node.content.replaceAll("\n", "<br>"),
@@ -325,9 +325,9 @@ const AnnouncementLiet = (props) => {
           <ImageWithPlaceholder
             src={node.image}
             alt={node.title}
-            className="w-full md:w-48 md:flex-shrink-0"
-            imgClassName="object-scale-down"
-            aspectRatio="1/1"
+            className="w-full md:w-96 md:flex-shrink-0"
+            imgClassName="object-scale-down rounded-md"
+            aspectRatio="4/3"
           />
         )}
       </div>

@@ -73,7 +73,7 @@ const ClubActivities = () => {
             />
           </div>
           <ImageWithPlaceholder
-            src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ebc9b623-ab73-4b0f-ad46-77959aeb2900/public"
+            src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/16df4e65-734e-420c-b3dd-987123aac900/public"
             alt="iOS Club 社團活動封面"
             className="p-6 place-self-center w-full"
             imgClassName="object-cover"

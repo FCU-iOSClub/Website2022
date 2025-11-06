@@ -34,10 +34,10 @@ const GalleryList = ({ data }) => {
     <div className="bg-iosbgblue ">
       <AppHeader title="iOS Club 活動相簿" />
       <Navbar />
-      <div className="container p-3 md:p-0 mx-auto break-all bg-white  font-serif">
+      <div className="container p-3 md:p-0 mx-auto break-all bg-white font-serif">
         <div className="h-8" /> {/* 空白區 */}
         <div className="flex flex-col justify-center">
-          <h1 className="text-5xl text-center mt-24 font-bold">活動相簿</h1>
+          <h1 className="text-5xl text-center mt-24 font-black">活動相簿</h1>
           <div className="h-8" /> {/* 空白區 */}
           <Pagination
             current={currentPage}
@@ -71,8 +71,8 @@ const GalleryList = ({ data }) => {
 
 const galleryItem = (node) => {
   return (
-    <div className="box-border grid md:grid-cols-2 h-fit md:h-72 w-full md:w-3/5 rounded-md shadow-lg border border-gray-400 font-serif">
-      <div className="py-2 px-8 w-full h-full flex flex-col justify-items-center gap-4 md:gap-0 md:justify-evenly">
+    <div className="box-border grid md:grid-cols-2 h-fit md:h-80 w-full md:w-2/3 rounded-md shadow-lg border border-gray-400 font-serif">
+      <div className="py-2 px-8 w-full h-full flex flex-col justify-center gap-4 md:gap-0 md:justify-evenly">
         <h2 className="mt-4 text-xl font-bold text-center">{node.name}</h2>
         <div className="font-bold text-gray-700">時間：{node.date}</div>
         <div className="font-bold text-gray-700">地點：{node.location}</div>
@@ -105,12 +105,11 @@ const galleryItem = (node) => {
             <span>See More</span>
           </div>
         </a>
-        <div className="h-1 hidden md:block" /> {/*space*/}
         <ImageWithPlaceholder
           src={node.mainPhoto}
           alt={node.name}
           className="w-full pb-5 md:hidden self-center"
-          imgClassName="object-cover"
+          imgClassName="object-cover rounded-md"
           aspectRatio="4/3"
         />
       </div>
@@ -119,7 +118,7 @@ const galleryItem = (node) => {
           src={node.mainPhoto}
           alt={node.name}
           className="w-10/12 py-2"
-          imgClassName="object-cover"
+          imgClassName="object-cover rounded-md"
           aspectRatio="4/3"
         />
       </div>

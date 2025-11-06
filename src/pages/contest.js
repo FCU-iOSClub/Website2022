@@ -13,10 +13,10 @@ const ContestPage = () => {
       {/* Header */}
       <AppHeader title="iOS Club - 社團競賽" />
       <Navbar />
-      <div className="container mx-auto break-normal bg-white shadow-lg px-3 md:px-20 lg:px-48">
+      <div className="container mx-auto break-normal font-serif bg-white shadow-lg px-3 md:px-20 lg:px-24">
         <div className="h-32" />
         {/* 空白 */}
-        <h1 className="text-5xl text-center font-bold">iOS Club 競賽</h1>
+        <h1 className="text-5xl text-center font-black">iOS Club 競賽</h1>
         <div className="h-16" />
         {/* 空白 */}
         {contestData.map((item, index) => {
@@ -24,20 +24,28 @@ const ContestPage = () => {
             <div className="py-6" key={index}>
               {/* title */}
               <div className="w-full bg-ioscardblue py-3">
-                <h2 className="text-xl text-center text-white font-bold">
+                <h2 className="text-xl text-center text-white font-black">
                   {item.title}
                 </h2>
               </div>
               {/* WWDC end title */}
               {item.contents.map((item, index) => (
                 <div
-                  className="border-b w-full pt-8 pb-1 grid grid-rows-1 md:grid-cols-4 text-iostextblue font-medium gap-2"
+                  className="border-b w-full py-6 grid grid-rows-1 md:grid-cols-4 text-iostextblue font-bold gap-2 items-center"
                   key={index}
                 >
-                  <p className="px-3 text-left md:text-center">{item[0]}</p>
-                  <p className="px-3 text-left md:text-center">{item[1]}</p>
-                  <p className="px-3 text-left md:text-center">{item[2]}</p>
-                  <p className="px-3 text-left md:text-center">{item[3]}</p>
+                  <p className="px-2 text-left md:text-center breck-words">
+                    {item[0]}
+                  </p>
+                  <p className="px-2 text-left md:text-center breck-words">
+                    {item[1]}
+                  </p>
+                  <p className="px-2 text-left md:text-center break-words">
+                    {item[2]}
+                  </p>
+                  <p className="px-2 text-left md:text-center break-words">
+                    {item[3]}
+                  </p>
                 </div>
               ))}
             </div>
@@ -121,6 +129,12 @@ const contestData = [
         "福州大學賽區優秀展覽獎",
         "鄭慕岑、王竣翔、林昱銓",
         "《CareSync 照護同步》",
+      ],
+      [
+        "App 行動應用創新賽",
+        "大中華區啟迪賽道二等獎",
+        "李柏霖、王奕婷、徐碩涵",
+        "《聽損兒童 AI 口語練習平台 - 生聲》",
       ],
       [
         "App 行動應用創新賽",
