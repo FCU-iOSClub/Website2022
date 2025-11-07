@@ -22,16 +22,23 @@ const Navbar = () => {
           <button
             className="block hamburger md:hidden focus:outline-hidden"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "關閉選單" : "開啟選單"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
             <Icon
               icon={isOpen ? "akar-icons:cross" : "bx:menu"}
               className="w-6 h-6"
+              aria-hidden="true"
             />
           </button>
         </div>
       </div>
       {isOpen && (
-        <div className="bg-white flex flex-col ont-bold md:z-aut w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 shadow-xs">
+        <div
+          id="mobile-menu"
+          className="bg-white flex flex-col ont-bold md:z-aut w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 shadow-xs"
+        >
           <ul className="">
             {menuItems.map((item, index) => (
               <li key={index} className="md:ml-8 text-x1 mx-4 my-6 md:my-0">
