@@ -11,7 +11,10 @@ const ContestPage = () => {
   return (
     <div className=" bg-iosbgblue">
       {/* Header */}
-      <AppHeader title="iOS Club - 社團競賽" />
+      <AppHeader
+        title="iOS Club - 社團競賽"
+        description="社團成員們參加的各項競賽及得獎名單。"
+      />
       <Navbar />
       <div className="container mx-auto break-normal font-serif bg-white shadow-lg px-3 md:px-20 lg:px-24">
         <div className="h-32" />

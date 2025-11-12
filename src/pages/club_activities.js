@@ -18,7 +18,10 @@ const ClubActivities = () => {
 
   return (
     <div>
-      <AppHeader title="iOS Club - 社團活動" />
+      <AppHeader 
+        title="iOS Club - 社團活動"
+        description="平時社團活動也不僅僅有社課，我們還會舉辦講座、野餐、WorkShop、社遊、期末聚…等超多活動給社員參加！"
+      />
       <Navbar />
       <div className="h-32" /> {/* 空白區 */}
       <div className="px-3 md:px-32">

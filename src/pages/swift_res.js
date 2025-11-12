@@ -14,7 +14,10 @@ const SwiftPage = () => {
   return (
     <div className=" bg-iosbgblue">
       {/* Header */}
-      <AppHeader />
+      <AppHeader
+        title="iOS Club - 教學資源"
+        description="提供豐富的 Swift 程式設計、iOS app 開發教學資源以及證照相關資訊，以幫助學員在學習程式設計的道路上更進一步。"
+      />
       <Navbar />
       <div className="container font-serif mx-auto break-all bg-white shadow-lg px-3 md:px-0 text-justify">
         {/* 空白區 */}

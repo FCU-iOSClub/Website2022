@@ -14,7 +14,10 @@ const MembersPage = (props) => {
   return (
     <div className="bg-iosbgblue">
       {/* Header */}
-      <AppHeader title="iOS Club 歷屆幹部" />
+      <AppHeader 
+        title="iOS Club 歷屆幹部"
+        description="iOS Club 的歷屆幹部介紹。"
+      />
       <Navbar />
       <div className="xl:mx-24 bg-white font-serif px-2 md:px-0">
         <div className="h-32" /> {/* 空白 */}
