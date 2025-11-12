@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import Footer from "../components/footer";
 import AppHeader from "../components/header";
 import Navbar from "../components/navbar";
@@ -10,15 +11,27 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import SliderButton from "../components/buttons/slider_button";
+import ReverseColorsButton from "../components/buttons/reverse_colors_button";
 import useGoogleAdsConversion from "../hooks/useGoogleAdsConversion";
 
 const ClubActivities = () => {
   // Google Ads 轉換追蹤
   useGoogleAdsConversion();
 
+  // 控制是否顯示全部活動
+  const [showAll, setShowAll] = useState(false);
+
+  // 設定初始顯示數量
+  const DISPLAY_LIMIT = 15;
+
+  // 根據狀態決定顯示的活動
+  const displayedActivities = showAll
+    ? iOSClubActivities
+    : iOSClubActivities.slice(0, DISPLAY_LIMIT);
+
   return (
     <div>
-      <AppHeader 
+      <AppHeader
         title="iOS Club - 社團活動"
         description="平時社團活動也不僅僅有社課，我們還會舉辦講座、野餐、WorkShop、社遊、期末聚…等超多活動給社員參加！"
       />
@@ -98,7 +111,7 @@ const ClubActivities = () => {
       {/* 時間軸區塊 */}
       <div className="">
         <VerticalTimeline lineColor="#C4D5E2">
-          {iOSClubActivities.map((item, index) => {
+          {displayedActivities.map((item, index) => {
             return (
               <VerticalTimelineElement
                 key={index}
@@ -123,6 +136,25 @@ const ClubActivities = () => {
             icon={<Icon icon="akar-icons:more-vertical-fill" color="#fff" />}
           />
         </VerticalTimeline>
+
+        {/* 顯示更多/收起按鈕 */}
+        {iOSClubActivities.length > DISPLAY_LIMIT && (
+          <div className="flex justify-center py-8">
+            <ReverseColorsButton
+              text={
+                showAll
+                  ? "收起"
+                  : `顯示更多（${iOSClubActivities.length - DISPLAY_LIMIT}）`
+              }
+              icon={
+                showAll ? "akar-icons:chevron-up" : "akar-icons:chevron-down"
+              }
+              onClick={() => setShowAll(!showAll)}
+              className="font-serif font-black shadow-md hover:shadow-lg"
+              textSize="text-lg"
+            />
+          </div>
+        )}
       </div>
       <Footer />
     </div>
