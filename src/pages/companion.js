@@ -9,7 +9,10 @@ const CompanionPage = () => {
   return (
     <div className="bg-iosbgblue">
       {/* Header */}
-      <AppHeader title="iOS Club 相關單位" />
+      <AppHeader
+        title="iOS Club 相關單位"
+        description="包含上課地點、指導老師、學校相關單位及社團合作夥伴等資訊。"
+      />
       {Navbar()}
       <div className="container mx-auto break-all font-serif bg-white shadow-lg px-3 md:px-0">
         <div className="h-32" /> {/* 空白區塊 */}

@@ -136,7 +136,10 @@ const QRCodeGeneratorPage = () => {
 
   return (
     <div className="bg-iosbgblue">
-      <AppHeader title="iOS Club - QR Code 生成器" />
+      <AppHeader
+        title="iOS Club - QR Code 生成器"
+        description="使用 iOS Club 專屬樣式生成精美的 QR Code"
+      />
       <Navbar />
       <div className="container mx-auto break-normal bg-white shadow-lg px-3 md:px-0 font-serif">
         <div className="h-20 md:h-32" />

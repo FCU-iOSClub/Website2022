@@ -32,7 +32,10 @@ const GalleryList = ({ data }) => {
 
   return (
     <div className="bg-iosbgblue ">
-      <AppHeader title="iOS Club 活動相簿" />
+      <AppHeader
+        title="iOS Club 活動相簿"
+        description="社團活動相簿，記錄大家參與的各種活動與精彩時刻。"
+      />
       <Navbar />
       <div className="container p-3 md:p-0 mx-auto break-all bg-white font-serif">
         <div className="h-8" /> {/* 空白區 */}

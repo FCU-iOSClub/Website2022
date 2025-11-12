@@ -3,6 +3,7 @@ import { useState } from "react";
 import { graphql } from "gatsby";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
+import { ReactComponent as IosClubLogoSvg } from "../images/svg/iOSClub_logo.svg";
 import { ReactComponent as AboutIosSvg } from "../images/svg/about_ios.svg";
 import { ReactComponent as IosClubDoingSvg } from "../images/svg/iosclub_doing.svg";
 import AppHeader from "../components/header";
@@ -73,13 +74,7 @@ const IndexPage = (props) => {
               </button>
             </div>
           </div>
-          <ImageWithPlaceholder
-            src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/827f1788-4157-497b-0ecb-6168f73db400/public"
-            alt="iOS Club 首圖"
-            className="w-full"
-            imgClassName="object-cover"
-            aspectRatio="1/1"
-          />
+          <IosClubLogoSvg className="w-full p-12" />
         </div>
         <div className="h-8" />
         {/* About iOS Club. */}

@@ -1,6 +1,8 @@
 import * as React from "react";
 import { useState } from "react";
 import { Icon } from "@iconify/react";
+import ImageWithPlaceholder from "../components/image-with-placeholder";
+import IosClubLogoSvg from "../../static/iOSClub_logo.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,23 +10,35 @@ const Navbar = () => {
   const mobileChild = (
     <nav className="fixed w-full h-fit bg-gray-100 font-bold shadow-xs z-50 md:flex md:items-center md:justify-between">
       <div className="flex justify-between px-6 py-3 w-full">
-        <a href="/" className="w-fit text-2xl">
-          iOS Club
+        <a href="/" className="flex items-center gap-4 w-fit text-2xl">
+          <ImageWithPlaceholder
+            src={IosClubLogoSvg}
+            alt="iOS Club Logo"
+            className="w-6 h-6"
+          />
+          <span>iOS Club</span>
         </a>
         <div className="place-self-center">
           <button
             className="block hamburger md:hidden focus:outline-hidden"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "關閉選單" : "開啟選單"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
             <Icon
               icon={isOpen ? "akar-icons:cross" : "bx:menu"}
               className="w-6 h-6"
+              aria-hidden="true"
             />
           </button>
         </div>
       </div>
       {isOpen && (
-        <div className="bg-white flex flex-col ont-bold md:z-aut w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 shadow-xs">
+        <div
+          id="mobile-menu"
+          className="bg-white flex flex-col ont-bold md:z-aut w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 shadow-xs"
+        >
           <ul className="">
             {menuItems.map((item, index) => (
               <li key={index} className="md:ml-8 text-x1 mx-4 my-6 md:my-0">
@@ -44,8 +58,13 @@ const Navbar = () => {
   );
   const desktopChild = (
     <nav className="fixed flex items-center justify-between font-bold py-4 text-lg px-3 md:px-8 text-solid w-screen top-0 bg-white shadow-md z-50">
-      <a href="/" className="font-bold">
-        iOS Club
+      <a href="/" className="flex items-center gap-4 font-bold text-xl">
+        <ImageWithPlaceholder
+          src={IosClubLogoSvg}
+          alt="iOS Club Logo"
+          className="w-6 h-6"
+        />
+        <span>iOS Club</span>
       </a>
 
       <ul className="md:flex flex-1 md:items-center px-10 lg:px-32 text-center">

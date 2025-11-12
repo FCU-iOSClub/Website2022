@@ -90,7 +90,10 @@ const RfidConverterPage = () => {
 
   return (
     <div className="bg-iosbgblue">
-      <AppHeader title="iOS Club - RFID 轉換器" />
+      <AppHeader
+        title="iOS Club - RFID 轉換器"
+        description="專為處理 RFID 卡片的小端序（Little Endian）數據格式轉換工具"
+      />
       <Navbar />
       <div className="container mx-auto break-normal bg-white shadow-lg px-3 md:px-0 font-serif">
         <div className="h-20 md:h-32" />
