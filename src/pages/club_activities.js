@@ -163,12 +163,20 @@ const ClubActivities = () => {
 
 const iOSClubActivities = [
   {
-    title: "聖誕期末聚",
+    title: "聯合聖誕期末聚",
     date: "2025-12-25",
   },
   {
-    title: "講座",
+    title: "Christmas Pre Party 早安派對",
+    date: "2025-12-25",
+  },
+  {
+    title: "重新看世界：從找到問題，到為所有人設計 講座",
     date: "2025-12-09",
+  },
+  {
+    title: "World Taichung Developer Workshop",
+    date: "2025-11-23",
   },
   {
     title: "114-1 社員大會",
