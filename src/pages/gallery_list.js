@@ -12,12 +12,21 @@ import ImageWithPlaceholder from "../components/image-with-placeholder";
 import useGoogleAdsConversion from "../hooks/useGoogleAdsConversion";
 
 const GalleryList = ({ data }) => {
-  useState(1);
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchQuery, setSearchQuery] = useState("");
 
   // Google Ads 轉換追蹤
   useGoogleAdsConversion();
-  const itemCount = data.allGalleryJson.edges.length;
+  const filteredData = data.allGalleryJson.edges.filter((item) => {
+    const { name, date, location } = item.node;
+    const query = searchQuery.toLowerCase();
+    return (
+      name.toLowerCase().includes(query) ||
+      date.toLowerCase().includes(query) ||
+      location.toLowerCase().includes(query)
+    );
+  });
+  const itemCount = filteredData.length;
   const perPage = 8;
   const onPageChange = (page) => {
     const c = document.documentElement.scrollTop || document.body.scrollTop;
@@ -29,6 +38,10 @@ const GalleryList = ({ data }) => {
       });
     setCurrentPage(page);
   };
+
+  React.useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery]);
 
   return (
     <div className="bg-iosbgblue ">
@@ -42,6 +55,16 @@ const GalleryList = ({ data }) => {
         <div className="flex flex-col justify-center">
           <h1 className="text-5xl text-center mt-24 font-black">活動相簿</h1>
           <div className="h-8" /> {/* 空白區 */}
+          <div className="flex justify-center">
+            <input
+              type="text"
+              placeholder="搜尋活動"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="p-2 border border-gray-400 rounded-md w-1/2"
+            />
+          </div>
+          <div className="h-8" /> {/* 空白區 */}
           <Pagination
             current={currentPage}
             onChange={onPageChange}
@@ -50,7 +73,7 @@ const GalleryList = ({ data }) => {
           />
           <div className="h-8" /> {/* 空白區 */}
           <div className="flex gap-y-10 flex-col items-center">
-            {data.allGalleryJson.edges.map((item, index) =>
+            {filteredData.map((item, index) =>
               index >= (currentPage - 1) * perPage &&
               index < currentPage * perPage
                 ? galleryItem(item.node)
