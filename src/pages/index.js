@@ -368,7 +368,7 @@ const AnnouncementLiet = (props) => {
           icon={isAnnouncementOpen ? chevronUp : chevronDown}
           color="#1f2937"
           onClick={() => setIsAnnouncementOpen(!isAnnouncementOpen)}
-          className="cursor-pointer shrink-0"
+          className="cursor-pointer shrink-0 animate-bounce"
         />
       </div>
       {isAnnouncementOpen && annsHtml}
