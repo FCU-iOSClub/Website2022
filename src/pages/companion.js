@@ -32,7 +32,7 @@ const CompanionPage = () => {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 py-2">
             <div className="flex-1">
               <p className="text-gray-600 py-2">
-                逢甲大學 Apple 區域教育培訓中心 (RTC, Regional Training Center)
+                逢甲大學 Apple 區域教育培訓中心 (Regional Training Center, RTC)
               </p>
               <p className="text-gray-600 py-2">
                 地點：407102 臺中市西屯區文華路 100 號 行政大樓 204
@@ -58,18 +58,18 @@ const CompanionPage = () => {
           </div>
           <div className="py-8 grid gap-4 grid-cols-1 md:grid-cols-2">
             <ImageWithPlaceholder
-              src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/c9d69060-fa81-40a2-f057-9d288972d300/public"
+              src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/107d7856-7f38-4962-423b-0e7748260c00/public"
               alt="RTC 上課地點 1"
               className="w-full"
               imgClassName="object-cover"
-              aspectRatio="16/9"
+              aspectRatio="4/3"
             />
             <ImageWithPlaceholder
-              src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/45ee13ce-3d35-4f03-2955-85d5d8a2c000/public"
+              src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/76407c49-4b18-4eb1-763c-246f65604e00/public"
               alt="RTC 上課地點 2"
               className="w-full"
               imgClassName="object-cover"
-              aspectRatio="16/9"
+              aspectRatio="4/3"
             />
           </div>
         </div>
@@ -78,18 +78,32 @@ const CompanionPage = () => {
           <div className="h-20" /> {/* 空白區塊 */}
           <h2 className="font-bold text-xl">指導老師 - 許芳榮 教授</h2>
           <div className="h-2 w-10/12 md:w-1/3 my-5 bg-gray-300" /> {/* 橫槓 */}
-          <p className="text-gray-600 py-2">
-            逢甲大學資訊學系第13屆系主任 (104 / 8 ~ 107 / 7)
-          </p>
-          <p className="text-gray-600 py-2">
-            聯絡電話：04-2451-7250 轉 3755、6602
-          </p>
-          <p className="text-gray-600 py-2">
-            信箱：<a href="mailto:frhsu@fcu.edu.tw">frhsu@fcu.edu.tw</a>
-          </p>
-          <p className="text-gray-600 py-2">
-            研究專長：大數據分析、演算法、雲端運算、生物資訊
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-5 md:gap-0">
+            <div>
+              <p className="text-gray-600 py-2">
+                逢甲大學 Apple 區域教育培訓中心主任
+              </p>
+              <p className="text-gray-600 py-2">
+                曾任逢甲大學資訊工程學系第13屆系主任 (104 / 8 ~ 107 / 7)
+              </p>
+              <p className="text-gray-600 py-2">
+                聯絡電話：04-2451-7250 轉 3755
+              </p>
+              <p className="text-gray-600 py-2">
+                信箱：<a href="mailto:frhsu@fcu.edu.tw">frhsu@fcu.edu.tw</a>
+              </p>
+              <p className="text-gray-600 py-2">
+                研究專長：大數據分析、演算法、雲端運算、生物資訊
+              </p>
+            </div>
+            <ImageWithPlaceholder
+              src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/781793c1-cd37-4ec3-14bc-3ff365495400/public"
+              alt="許芳榮教授"
+              className="place-self-center w-2/5"
+              imgClassName="object-cover"
+              aspectRatio="4/5"
+            />
+          </div>
         </div>
         {/* 學校相關單位 */}
         <div className="px-2 md:px-32">
@@ -201,7 +215,7 @@ const CompanionPage = () => {
                 className="px-4 my-3 py-2 w-fit text-white"
                 style={{ backgroundColor: "#8098B5" }}
               >
-                Straight A (逢甲大學)
+                Straight A | 逢甲大學
               </h3>
               <p className="text-gray-600 py-2">
                 通訊地址：407102 臺中市西屯區文華路 100 號 人言大樓一樓
