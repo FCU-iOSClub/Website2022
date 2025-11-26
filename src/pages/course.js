@@ -54,18 +54,19 @@ const CoursePage = () => {
             </p>
           </div>
           <ImageWithPlaceholder
-            src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/e9ab7dbf-31a8-4c1a-7fed-d805d7a26500/public"
-            alt="iOS Club 社團課程"
+            src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/df08b507-3be8-4c8f-f24a-fa6977390500/public"
+            alt="社團課程"
             className="place-self-center w-full"
             imgClassName="object-cover"
             aspectRatio="4/3"
           />
         </div>
         <div className="h-8" />
-        {/* 設課團隊 */}
+        {/* 社課團隊 */}
         <div className="py-2 md:px-32 grid grid-rows-1 md:grid-cols-2 gap-2 md:gap-16 md:p-10 justify-center items-center">
+          {/* 社課團隊（桌面版）圖片 */}
           <ImageWithPlaceholder
-            src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/702555d9-8ee5-44c9-ee1c-068c1fbce500/public"
+            src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/76407c49-4b18-4eb1-763c-246f65604e00/public"
             alt="社課團隊"
             className="place-self-center w-full hidden md:block"
             imgClassName="object-cover"
@@ -116,21 +117,22 @@ const CoursePage = () => {
                 社課期間其餘幹部皆擔任助教身分，協助社員解決課程中遇到的任何問題，讓參加社課的社員們都能順利的學習與成長。
               </p>
             </div>
+            {/* 社課團隊（行動版）圖片 */}
             <ImageWithPlaceholder
-              src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/702555d9-8ee5-44c9-ee1c-068c1fbce500/public"
-              alt="社課團隊（行動版）"
+              src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/76407c49-4b18-4eb1-763c-246f65604e00/public"
+              alt="社課團隊"
               className="place-self-center w-full md:hidden block"
               imgClassName="object-cover"
-              aspectRatio="1/1"
+              aspectRatio="4/3"
             />
           </div>
         </div>
         <div className="h-20" />
-        {/*技術課*/}
+        {/* 程式線 */}
         <div>
           {/* 標題 */}
           <div className="w-full flex flex-col items-center">
-            <h2 className="text-center text-5xl py-3 font-bold">技術課</h2>
+            <h2 className="text-center text-5xl py-3 font-bold">程式線</h2>
             <div className="h-2 w-full md:w-2/12 my-4 bg-blue-300" />{" "}
             {/* 橫槓 */}
             <div className="h-8" /> {/* 空白區 */}
@@ -152,11 +154,11 @@ const CoursePage = () => {
           </div>
         </div>
         <div className="h-20 md:h-40" /> {/* 空白區 */}
-        {/* 設計課 */}
+        {/* 創客線 */}
         <div>
           {/* 標題 */}
           <div className="w-full flex flex-col items-center">
-            <h2 className="text-center text-5xl py-3 font-bold">設計課</h2>
+            <h2 className="text-center text-5xl py-3 font-bold">創客線</h2>
             <div className="h-2 w-full md:w-2/12 my-4 bg-blue-300" />{" "}
             {/* 橫槓 */}
             <div className="h-8" /> {/* 空白區 */}

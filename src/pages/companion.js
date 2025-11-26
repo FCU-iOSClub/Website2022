@@ -32,7 +32,7 @@ const CompanionPage = () => {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 py-2">
             <div className="flex-1">
               <p className="text-gray-600 py-2">
-                逢甲大學 Apple 區域教育培訓中心 (RTC, Regional Training Center)
+                逢甲大學 Apple 區域教育培訓中心 (Regional Training Center, RTC)
               </p>
               <p className="text-gray-600 py-2">
                 地點：407102 臺中市西屯區文華路 100 號 行政大樓 204
@@ -58,18 +58,18 @@ const CompanionPage = () => {
           </div>
           <div className="py-8 grid gap-4 grid-cols-1 md:grid-cols-2">
             <ImageWithPlaceholder
-              src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/c9d69060-fa81-40a2-f057-9d288972d300/public"
+              src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/107d7856-7f38-4962-423b-0e7748260c00/public"
               alt="RTC 上課地點 1"
               className="w-full"
               imgClassName="object-cover"
-              aspectRatio="16/9"
+              aspectRatio="4/3"
             />
             <ImageWithPlaceholder
-              src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/45ee13ce-3d35-4f03-2955-85d5d8a2c000/public"
+              src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/76407c49-4b18-4eb1-763c-246f65604e00/public"
               alt="RTC 上課地點 2"
               className="w-full"
               imgClassName="object-cover"
-              aspectRatio="16/9"
+              aspectRatio="4/3"
             />
           </div>
         </div>
@@ -215,7 +215,7 @@ const CompanionPage = () => {
                 className="px-4 my-3 py-2 w-fit text-white"
                 style={{ backgroundColor: "#8098B5" }}
               >
-                Straight A (逢甲大學)
+                Straight A | 逢甲大學
               </h3>
               <p className="text-gray-600 py-2">
                 通訊地址：407102 臺中市西屯區文華路 100 號 人言大樓一樓
