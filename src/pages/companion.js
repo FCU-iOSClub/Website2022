@@ -78,18 +78,32 @@ const CompanionPage = () => {
           <div className="h-20" /> {/* 空白區塊 */}
           <h2 className="font-bold text-xl">指導老師 - 許芳榮 教授</h2>
           <div className="h-2 w-10/12 md:w-1/3 my-5 bg-gray-300" /> {/* 橫槓 */}
-          <p className="text-gray-600 py-2">
-            逢甲大學資訊學系第13屆系主任 (104 / 8 ~ 107 / 7)
-          </p>
-          <p className="text-gray-600 py-2">
-            聯絡電話：04-2451-7250 轉 3755、6602
-          </p>
-          <p className="text-gray-600 py-2">
-            信箱：<a href="mailto:frhsu@fcu.edu.tw">frhsu@fcu.edu.tw</a>
-          </p>
-          <p className="text-gray-600 py-2">
-            研究專長：大數據分析、演算法、雲端運算、生物資訊
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-5 md:gap-0">
+            <div>
+              <p className="text-gray-600 py-2">
+                逢甲大學 Apple 區域教育培訓中心主任
+              </p>
+              <p className="text-gray-600 py-2">
+                曾任逢甲大學資訊工程學系第13屆系主任 (104 / 8 ~ 107 / 7)
+              </p>
+              <p className="text-gray-600 py-2">
+                聯絡電話：04-2451-7250 轉 3755
+              </p>
+              <p className="text-gray-600 py-2">
+                信箱：<a href="mailto:frhsu@fcu.edu.tw">frhsu@fcu.edu.tw</a>
+              </p>
+              <p className="text-gray-600 py-2">
+                研究專長：大數據分析、演算法、雲端運算、生物資訊
+              </p>
+            </div>
+            <ImageWithPlaceholder
+              src="https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/781793c1-cd37-4ec3-14bc-3ff365495400/public"
+              alt="許芳榮教授"
+              className="place-self-center w-2/5"
+              imgClassName="object-cover"
+              aspectRatio="4/5"
+            />
+          </div>
         </div>
         {/* 學校相關單位 */}
         <div className="px-2 md:px-32">
