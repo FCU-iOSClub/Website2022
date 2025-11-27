@@ -55,7 +55,7 @@ const ClubActivities = () => {
               </a>
               、
               <a className="underline decoration-sky-500  underline-offset-1">
-                WorkShop
+                Workshop
               </a>
               、
               <a className="underline decoration-indigo-500 underline-offset-1">
@@ -171,7 +171,7 @@ const iOSClubActivities = [
     date: "2025-12-25",
   },
   {
-    title: "重新看世界：從找到問題，到為所有人設計 講座",
+    title: "重新看世界：從找到問題，到為所有人設計 社團講座",
     date: "2025-12-09",
   },
   {
