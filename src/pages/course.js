@@ -80,41 +80,50 @@ const CoursePage = () => {
             </div>
             <div className="py-4 text-gray-700 text-justify md:text-left text-base break-normal">
               <p>
-                iOS Club 主要的課程為&nbsp;
+                iOS Club 的課程主要分為
+                <a className="underline decoration-pink-500 underline-offset-1">
+                  程式線
+                </a>
+                與
+                <a className="underline decoration-pink-500 underline-offset-1">
+                  創客線
+                </a>
+                。程式線教授&nbsp;
                 <a className="underline decoration-sky-500 underline-offset-1">
                   Swift UI
                 </a>
-                &nbsp;的 app 設計，除此之外也有&nbsp;
-                <a className="underline decoration-sky-500">Playground</a>
-                &nbsp;和&nbsp;
+                &nbsp;的 app 設計，讓社員能成為獨立的 iOS
+                Developer；創客線則從基礎&nbsp;
+                <a className="underline decoration-sky-500 underline-offset-1">
+                  SwiftUI 到 Figma
+                </a>
+                &nbsp;設計課程，並透過 Vibe Coding 開發完整的 iOS
+                App。除此之外，我們也提供
+                <a className="underline decoration-sky-500">Playground</a>、
                 <a className="underline decoration-sky-500 underline-offset-1">
                   mBot
                 </a>
-                &nbsp;的教學課程，此部分是由
-                <a className="underline decoration-pink-500 underline-offset-1">
-                  教學長
-                </a>
-                負責課程規劃與教學。
-              </p>
-              <div className="h-3" />
-              <p>
-                而在技術課程外，我們也有由
-                <a className="underline decoration-pink-500 underline-offset-1">
-                  美宣長
-                </a>
-                負責教學的設計課，內容有&nbsp;
+                &nbsp;和&nbsp;
                 <a className="underline decoration-sky-500 underline-offset-1">
                   Keynote
                 </a>
-                、
-                <a className="underline decoration-indigo-500 underline-offset-1">
-                  Figma
-                </a>
-                、流程圖...等。
+                &nbsp;的教學課程。
               </p>
               <div className="h-3" />
               <p>
-                社課期間其餘幹部皆擔任助教身分，協助社員解決課程中遇到的任何問題，讓參加社課的社員們都能順利的學習與成長。
+                所有課程由教學部的
+                <a className="underline decoration-pink-500 underline-offset-1">
+                  技術長
+                </a>
+                和
+                <a className="underline decoration-sky-500 underline-offset-1">
+                  教學長
+                </a>
+                共同規劃，另外由行銷部的
+                <a className="underline decoration-indigo-500 underline-offset-1">
+                  設計長
+                </a>
+                協助設計課程，社課期間其餘幹部擔任助教，協助社員解決學習中遇到的問題，讓每位社員都能順利成長。
               </p>
             </div>
             {/* 社課團隊（行動版）圖片 */}
