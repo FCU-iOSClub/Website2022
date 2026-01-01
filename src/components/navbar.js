@@ -96,12 +96,10 @@ const JoinUsButton = () => (
   <button
     className="w-fit text-white px-10 py-2 md:ml-8 bg-blue-500 hover:bg-blue-300 rounded-full duration-700"
     onClick={() => {
-      window.open("https://iosclubcompetition.onrender.com", "_blank");
-      // window.open("https://forms.gle/uJSNB8ccYRu5SZQ59", "_blank");
+      window.open("https://forms.gle/uJSNB8ccYRu5SZQ59", "_blank");
     }}
   >
-    競賽報名
-    {/* Join Us */}
+    Join Us
   </button>
 );
 

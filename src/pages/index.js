@@ -49,21 +49,15 @@ const IndexPage = (props) => {
               <button
                 className="overflow-hidden group h-12 px-6 border border-btnbg rounded-xs"
                 onClick={() => {
-                  window.open(
-                    "https://iosclubcompetition.onrender.com",
-                    "_blank",
-                  );
-                  // window.open("https://forms.gle/uJSNB8ccYRu5SZQ59", "_blank");
+                  window.open("https://forms.gle/uJSNB8ccYRu5SZQ59", "_blank");
                 }}
               >
                 <div className="transition duration-200 group-hover:-translate-y-12">
                   <div className="h-12 flex items-center justify-center text-btnbg break-words ">
-                    競賽報名
-                    {/* Join Us */}
+                    Join Us
                   </div>
                   <div className="h-12 flex items-center justify-center text-btnbg break-words ">
-                    Go
-                    {/* Welcome */}
+                    Welcome
                   </div>
                 </div>
               </button>
