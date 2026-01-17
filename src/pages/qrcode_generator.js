@@ -27,8 +27,8 @@ const QRCodeGeneratorPage = () => {
     const payload = {
       data: urlInput,
       config: {
-        body: "circle-zebra",
-        eye: "frame1",
+        body: "circle",
+        eye: "frame13",
         erf1: ["fh"],
         erf3: ["fh", "fv"],
         eyeBall: "ball15",
@@ -39,7 +39,7 @@ const QRCodeGeneratorPage = () => {
         logo: logo,
         logoMode: "clean",
       },
-      size: 1000,
+      size: 1500,
       download: false,
       file: "png",
     };
@@ -176,7 +176,7 @@ const QRCodeGeneratorPage = () => {
               <div className="flex items-center gap-2">
                 <Icon icon="mdi:shape" className="text-btnbg" />
                 <span>
-                  <strong>獨特圖樣：</strong>統一樣式，具識別度
+                  <strong>獨特圖樣：</strong>類似 Apple 官方樣式，具識別度
                 </span>
               </div>
               <div className="flex items-center gap-2">
