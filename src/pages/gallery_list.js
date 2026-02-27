@@ -61,7 +61,7 @@ const GalleryList = ({ data }) => {
               placeholder="搜尋活動"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="p-2 border border-gray-400 rounded-md w-1/2"
+              className="px-6 py-3 border border-gray-400 rounded-full w-full md:w-2/3"
             />
           </div>
           <div className="h-8" /> {/* 空白區 */}
@@ -131,6 +131,7 @@ const galleryItem = (node) => {
             <span>See More</span>
           </div>
         </a>
+        {/* 手機版主要圖片顯示 */}
         <ImageWithPlaceholder
           src={node.mainPhoto}
           alt={node.name}
@@ -140,10 +141,11 @@ const galleryItem = (node) => {
         />
       </div>
       <div className="h-full w-full hidden md:flex flex-row justify-center items-center">
+        {/* 電腦版主要圖片顯示 */}
         <ImageWithPlaceholder
           src={node.mainPhoto}
           alt={node.name}
-          className="w-10/12 py-2"
+          className="w-5/6 py-6 px-4"
           imgClassName="object-cover rounded-md"
           aspectRatio="4/3"
         />
