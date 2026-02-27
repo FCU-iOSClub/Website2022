@@ -156,7 +156,7 @@ const galleryItem = (node) => {
 
 export const query = graphql`
   query {
-    allGalleryJson(sort: { fields: [date], order: DESC }) {
+    allGalleryJson(sort: { date: DESC }) {
       edges {
         node {
           id

@@ -3,9 +3,8 @@
 layer(utilities);
 
 @theme {
-  --font-*: initial;
   --font-serif:
-    Noto Serif TC, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+    "Noto Serif TC", ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
 
   --color-transparent: transparent;
   --color-current: currentColor;

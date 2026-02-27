@@ -90,7 +90,7 @@ const MemberImage = (props) => {
 
 export const qldata = graphql`
   query MyQuery {
-    allMemberJson(sort: { order: DESC, fields: endDate }) {
+    allMemberJson(sort: { endDate: DESC }) {
       edges {
         node {
           id
