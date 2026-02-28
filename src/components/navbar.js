@@ -38,10 +38,11 @@ const Navbar = () => {
   }, []);
 
   const glassClass = scrolled ? "navbar-glass-scrolled" : "navbar-glass";
+  const mobileGlassClass = isOpen ? "navbar-glass-mobile-open" : glassClass;
 
   const mobileChild = (
     <nav
-      className={`fixed top-3 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] font-bold z-50 overflow-hidden transition-[border-radius] duration-300 ${isRounded ? "rounded-full" : "rounded-3xl"} ${glassClass}`}
+      className={`fixed top-3 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] font-bold z-50 overflow-hidden transition-[border-radius] duration-300 ${isRounded ? "rounded-full" : "rounded-3xl"} ${mobileGlassClass}`}
     >
       <div className="flex justify-between px-5 py-3 w-full">
         <a href="/" className="flex items-center gap-3 w-fit text-2xl group">
