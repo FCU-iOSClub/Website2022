@@ -1,12 +1,14 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
 import ImageWithPlaceholder from "../components/image-with-placeholder";
 import IosClubLogoSvg from "../../static/iOSClub_logo.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isRounded, setIsRounded] = useState(true); // true = rounded-full, false = rounded-3xl
   const [scrolled, setScrolled] = useState(false);
+  const openTimerRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 8);
@@ -14,11 +16,32 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleMenuToggle = () => {
+    if (!isOpen) {
+      // 展開：先讓圓角變化，再展開選單
+      setIsRounded(false);
+      openTimerRef.current = setTimeout(() => {
+        setIsOpen(true);
+      }, 300); // 300ms
+    } else {
+      // 收合：立即關閉選單，圓角同步恢復
+      if (openTimerRef.current) clearTimeout(openTimerRef.current);
+      setIsOpen(false);
+      setIsRounded(true);
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (openTimerRef.current) clearTimeout(openTimerRef.current);
+    };
+  }, []);
+
   const glassClass = scrolled ? "navbar-glass-scrolled" : "navbar-glass";
 
   const mobileChild = (
     <nav
-      className={`fixed top-3 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] font-bold z-50 overflow-hidden transition-[border-radius] duration-300 ${isOpen ? "rounded-3xl" : "rounded-full"} ${glassClass}`}
+      className={`fixed top-3 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] font-bold z-50 overflow-hidden transition-[border-radius] duration-300 ${isRounded ? "rounded-full" : "rounded-3xl"} ${glassClass}`}
     >
       <div className="flex justify-between px-5 py-3 w-full">
         <a href="/" className="flex items-center gap-3 w-fit text-2xl group">
@@ -36,7 +59,7 @@ const Navbar = () => {
         <div className="place-self-center">
           <button
             className="block md:hidden focus:outline-none bg-white/25 hover:bg-white/45 border border-white/45 rounded-full p-2 transition-all duration-300 active:scale-90 shadow-sm"
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={handleMenuToggle}
             aria-label={isOpen ? "關閉選單" : "開啟選單"}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"

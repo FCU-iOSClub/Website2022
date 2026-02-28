@@ -29,13 +29,18 @@ yarn prettier
 
 ### 核心技術
 
-- **框架**: Gatsby 4.x + React 17
+- **框架**: Gatsby 5.x + React 18
 - **樣式**: TailwindCSS 4.x + PostCSS
 - **圖示**: Iconify React Component
 - **圖片展示**: LightGallery（支援縮放、縮圖）
 - **輪播元件**: Splide.js + 自動滾動擴展
 - **資料管理**: JSON 檔案 + gatsby-transformer-json
 - **SEO**: React Helmet
+- **彈窗提示**: SweetAlert2
+- **分頁元件**: rc-pagination
+- **響應式判斷**: react-responsive
+- **時間軸元件**: react-vertical-timeline-component
+- **SVG 支援**: gatsby-plugin-svgr + @svgr/webpack
 - **需求**: Node.js 22+
 - **套件管理**: Yarn
 
@@ -74,6 +79,7 @@ yarn prettier
     │   ├── companion.js  # 相關單位
     │   ├── swift_res.js  # Swift 學習資源
     │   ├── rfid_converter.js # RFID 轉換器工具
+    │   ├── qrcode_generator.js # QR Code 產生器工具
     │   └── 404.js       # 404 錯誤頁面
     ├── templates/        # 動態頁面模板
     │   ├── gallery.js    # 個別活動相簿頁面
@@ -223,6 +229,14 @@ import { Icon } from "@iconify/react";
 - 十六進位轉十進位，支援位元組序處理
 - 即時輸入驗證與格式化
 - 一鍵複製功能
+
+### QR Code 產生器工具
+
+- 透過 `/api/qrcode` 代理 QRCode Monkey API 呼叫
+- 支援自訂 URL 輸入，自動套用 iOS Club 社團 Logo
+- 漸層色彩配置
+- 生成高解析度 QR Code 圖片
+- 支援下載生成的 QR Code
 
 ### 成員檔案系統
 
