@@ -72,7 +72,7 @@ layer(utilities);
   }
 }
 
-/* 液態玻璃navber效果 */
+/* 液態玻璃navbar效果 */
 @layer components {
   /* 預設狀態 */
   .navbar-glass {
