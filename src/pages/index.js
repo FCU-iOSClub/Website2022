@@ -430,7 +430,7 @@ const socialItems = [
 
 export const qldata = graphql`
   query IndexQuery {
-    allAnnouncementJson(sort: { fields: [date], order: DESC }) {
+    allAnnouncementJson(sort: { date: DESC }) {
       edges {
         node {
           id
