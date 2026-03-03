@@ -46,10 +46,11 @@ const IndexPage = (props) => {
             {/* 空白 */}
             <div className="px-5 md:p-0 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3 md:gap-3 w-full bottom-120 left-2">
               {/* Join Us 按鈕 */}
+              {/* 修改JoinUs的入社連結，需同時修改navbar.js */}
               <button
                 className="overflow-hidden group h-12 px-6 border border-btnbg rounded-xs"
                 onClick={() => {
-                  window.open("https://forms.gle/uJSNB8ccYRu5SZQ59", "_blank");
+                  window.open("https://forms.gle/QWK8jUoNz6sNeYtn7", "_blank");
                 }}
               >
                 <div className="transition duration-200 group-hover:-translate-y-12">
