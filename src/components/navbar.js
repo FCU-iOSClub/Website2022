@@ -146,7 +146,8 @@ const JoinUsButton = ({ fullWidth = false }) => (
       hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.38),0_6px_20px_rgba(68,84,132,0.60)]
       hover:from-[#6a80b4] hover:to-[#5264a0]`}
     onClick={() => {
-      window.open("https://forms.gle/uJSNB8ccYRu5SZQ59", "_blank");
+      // 修改JoinUs的入社連結，需同時修改index.js
+      window.open("https://forms.gle/QWK8jUoNz6sNeYtn7", "_blank");
     }}
   >
     Join Us
