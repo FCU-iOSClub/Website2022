@@ -10,7 +10,7 @@ const CoursePage = () => {
   useGoogleAdsConversion();
 
   const hideURL =
-    "https://drive.google.com/drive/folders/1bn2eXfrgEQ6DJY4RiYqoMla9nmEmmeAp?usp=drive_link";
+    "https://drive.google.com/drive/folders/1yapFEpfpyPIq_vieIbwBN8oJPu_K5YBp?usp=drive_link";
 
   return (
     <div className=" bg-iosbgblue">
