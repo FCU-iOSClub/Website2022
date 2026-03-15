@@ -163,12 +163,40 @@ const ClubActivities = () => {
 
 const iOSClubActivities = [
   {
+    title: "Workshop",
+    date: "2026-05-18、20、25、27",
+  },
+  {
+    title: "幹部交接典禮",
+    date: "2026-05-11",
+  },
+  {
+    title: "第9屆社員大會暨第10屆社長選舉",
+    date: "2026-05-04",
+  },
+  {
+    title: "企業參訪（微程式資訊）",
+    date: "2026-04-30",
+  },
+  {
+    title: "iOS App 登場時刻",
+    date: "2026-04-29",
+  },
+  {
+    title: "小學營隊",
+    date: "2026-04-25",
+  },
+  {
     title: "聯合聖誕期末聚",
-    date: "2025-12-25",
+    date: "2026-12-25",
   },
   {
     title: "Christmas Pre Party 早安派對",
     date: "2025-12-25",
+  },
+  {
+    title: "iOS App 登場時刻",
+    date: "2025-12-16",
   },
   {
     title: "重新看世界：從找到問題，到為所有人設計 社團講座",
@@ -213,6 +241,10 @@ const iOSClubActivities = [
   {
     title: "社員大會暨社長選舉",
     date: "2025-04-23",
+  },
+  {
+    title: "FCU 2025 行動應用創新賽",
+    date: "2025-04-15",
   },
   {
     title: "企業參訪（國泰金控）",
