@@ -125,14 +125,14 @@ const RfidConverterPage = () => {
 
             <div className="mb-6">
               <label className="block text-sm font-semibold text-gray-700 mb-2">
-                16進制卡號 (例: B4C5D677 或 0xB4C5D677)
+                16進制卡號（例: B4C5D677 或 0xB4C5D677）
               </label>
               <div className="flex gap-2">
                 <input
                   type="text"
                   value={hexInput}
                   onChange={(e) => setHexInput(e.target.value)}
-                  placeholder="請輸入16進制卡號..."
+                  placeholder="請輸入16進制卡號⋯⋯"
                   className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-full font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
                 />
                 <button
@@ -156,7 +156,7 @@ const RfidConverterPage = () => {
                     : "bg-white border-gray-300 text-gray-600"
                 }`}
               >
-                {!hexInput && "等待輸入..."}
+                {!hexInput && "等待輸入⋯⋯"}
                 {hexInput && !hexResult && "請輸入有效的16進制數值"}
                 {hexResult && (
                   <div className="space-y-2">
@@ -191,14 +191,14 @@ const RfidConverterPage = () => {
 
             <div className="mb-6">
               <label className="block text-sm font-semibold text-gray-700 mb-2">
-                10進制卡號 (例: 1234567890)
+                10進制卡號（例: 1234567890）
               </label>
               <div className="flex gap-2">
                 <input
                   type="text"
                   value={decInput}
                   onChange={(e) => setDecInput(e.target.value)}
-                  placeholder="請輸入10進制卡號..."
+                  placeholder="請輸入10進制卡號⋯⋯"
                   className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-full font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
                 />
                 <button
@@ -222,7 +222,7 @@ const RfidConverterPage = () => {
                     : "bg-white border-gray-300 text-gray-600"
                 }`}
               >
-                {!decInput && "等待輸入..."}
+                {!decInput && "等待輸入⋯⋯"}
                 {decInput &&
                   !decResult &&
                   "請輸入有效的10進制數值 (0-4294967295)"}
@@ -258,7 +258,7 @@ const RfidConverterPage = () => {
             </h4>
             <div className="space-y-2 text-gray-800">
               <div>
-                <strong>軟體顯示：</strong>B4C5D677 (0xB4C5D677) →{" "}
+                <strong>軟體顯示：</strong>B4C5D677（0xB4C5D677）→{" "}
                 <strong>反轉後：</strong>77D6C5B4 → <strong>10進制：</strong>
                 2010883508
               </div>
