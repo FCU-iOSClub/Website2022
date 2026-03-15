@@ -25,7 +25,7 @@ const RfidConverterPage = () => {
       // 分割成位元組
       const bytes = [];
       for (let i = 0; i < hexStr.length; i += 2) {
-        bytes.push(hexStr.substr(i, 2));
+        bytes.push(hexStr.slice(i, i + 2));
       }
 
       // 創建副本來避免修改原始數組
@@ -62,7 +62,7 @@ const RfidConverterPage = () => {
       // 分割成位元組
       const bytes = [];
       for (let i = 0; i < hex.length; i += 2) {
-        bytes.push(hex.substr(i, 2));
+        bytes.push(hex.slice(i, i + 2));
       }
 
       // 創建副本來避免修改原始數組
@@ -133,11 +133,11 @@ const RfidConverterPage = () => {
                   value={hexInput}
                   onChange={(e) => setHexInput(e.target.value)}
                   placeholder="請輸入16進制卡號..."
-                  className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-lg font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
+                  className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-full font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
                 />
                 <button
                   onClick={clearHex}
-                  className="px-4 py-3 border border-gray-400 text-gray-700 rounded-lg hover:bg-btnbg hover:text-white transition-colors flex items-center justify-center"
+                  className="px-4 py-3 text-gray-700 rounded-full hover:bg-btnbg hover:text-white transition-colors flex items-center justify-center"
                   title="清除輸入"
                 >
                   <Icon icon="mdi:close" className="text-xl" />
@@ -199,11 +199,11 @@ const RfidConverterPage = () => {
                   value={decInput}
                   onChange={(e) => setDecInput(e.target.value)}
                   placeholder="請輸入10進制卡號..."
-                  className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-lg font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
+                  className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-full font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
                 />
                 <button
                   onClick={clearDec}
-                  className="px-4 py-3 border border-gray-400 text-gray-700 rounded-lg hover:bg-btnbg hover:text-white transition-colors flex items-center justify-center"
+                  className="px-4 py-3 text-gray-700 rounded-full hover:bg-btnbg hover:text-white transition-colors flex items-center justify-center"
                   title="清除輸入"
                 >
                   <Icon icon="mdi:close" className="text-xl" />

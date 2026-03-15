@@ -5,18 +5,13 @@
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "image": "mcr.microsoft.com/devcontainers/javascript-node:24-bookworm",
   "features": {
-    "ghcr.io/devcontainers/features/github-cli:1": {
-      "installDirectlyFromGitHubRelease": true,
-      "version": "latest"
-    },
+    "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers/features/node:1": {
       "nodeGypDependencies": true,
       "installYarnUsingApt": true,
-      "version": "24.14.0",
-      "pnpmVersion": "latest",
-      "nvmVersion": "latest"
+      "version": "24.14.0"
     }
-  }
+  },
 
   // Features to add to the dev container. More info: https://containers.dev/features.
   // "features": {},
@@ -25,7 +20,7 @@
   // "forwardPorts": [],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  // "postCreateCommand": "yarn install",
+  "postCreateCommand": "yarn"
 
   // Configure tool-specific properties.
   // "customizations": {},

@@ -314,7 +314,7 @@ const AnnouncementLiet = (props) => {
             <a
               className="text-blue-500 underline underline-offset-2 font-bold"
               href={node.url}
-              target="__blank"
+              target="_blank"
             >
               {node.urlText}
             </a>
@@ -421,11 +421,6 @@ const socialItems = [
     name: "Discord",
     icon: "akar-icons:discord-fill",
     href: "https://discord.com/invite/z2VPCNFupv",
-  },
-  {
-    name: "Threads",
-    icon: "akar-icons--threads-fill",
-    href: "https://www.threads.net/@fcu.iosclub",
   },
 ];
 

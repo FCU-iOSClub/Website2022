@@ -1,10 +1,12 @@
 import * as React from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import AppHeader from "../components/header";
 import SliderButton from "../components/buttons/slider_button";
 import { Icon } from "@iconify/react";
+
+const logo = "https://i.meee.com.tw/0SiZRVA.jpg";
 
 const QRCodeGeneratorPage = () => {
   const [urlInput, setUrlInput] = useState("");
@@ -12,7 +14,13 @@ const QRCodeGeneratorPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const logo = "https://i.meee.com.tw/0SiZRVA.jpg";
+  useEffect(() => {
+    return () => {
+      if (qrCodeUrl && qrCodeUrl.startsWith("blob:")) {
+        URL.revokeObjectURL(qrCodeUrl);
+      }
+    };
+  }, [qrCodeUrl]);
 
   const generateQRCode = async () => {
     if (!urlInput.trim()) {
@@ -95,6 +103,10 @@ const QRCodeGeneratorPage = () => {
             const blob = await imgResponse.blob();
             const url = URL.createObjectURL(blob);
             setQrCodeUrl(url);
+            setTimeout(
+              () => previewRef.current?.scrollIntoView({ behavior: "smooth" }),
+              100,
+            );
           } else {
             throw new Error(`圖片下載失敗 (${imgResponse.status})`);
           }
