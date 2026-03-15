@@ -38,7 +38,7 @@ const CompanionPage = () => {
                 地點：407102 臺中市西屯區文華路 100 號 行政大樓 204
               </p>
             </div>
-            <div className="flex items-center md:flex-shrink-0">
+            <div className="flex items-center md:shrink-0">
               <button
                 className="overflow-hidden group h-12 px-6 border border-btnbg rounded-full"
                 onClick={() => {
@@ -46,10 +46,10 @@ const CompanionPage = () => {
                 }}
               >
                 <div className="transition duration-200 group-hover:-translate-y-12">
-                  <div className="h-12 flex items-center justify-center text-btnbg break-words whitespace-nowrap">
+                  <div className="h-12 flex items-center justify-center text-btnbg wrap-break-word whitespace-nowrap">
                     <a className="text-blue-800 text-xl">RTC 官方網站</a>
                   </div>
-                  <div className="h-12 flex items-center justify-center text-btnbg break-words whitespace-nowrap">
+                  <div className="h-12 flex items-center justify-center text-btnbg wrap-break-word whitespace-nowrap">
                     <a className="text-blue-800 text-xl">前往</a>
                   </div>
                 </div>

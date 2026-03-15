@@ -103,10 +103,6 @@ const QRCodeGeneratorPage = () => {
             const blob = await imgResponse.blob();
             const url = URL.createObjectURL(blob);
             setQrCodeUrl(url);
-            setTimeout(
-              () => previewRef.current?.scrollIntoView({ behavior: "smooth" }),
-              100,
-            );
           } else {
             throw new Error(`圖片下載失敗 (${imgResponse.status})`);
           }

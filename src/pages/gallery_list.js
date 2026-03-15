@@ -119,7 +119,7 @@ const galleryItem = (node) => {
           }
           className="w-fit"
         >
-          <div className="w-fit inline-flex items-center gap-2 whitespace-nowrap py-1 px-5 rounded-full break-words bg-transparent border border-gray-700 hover:bg-btnbg text-gray-800 hover:text-white">
+          <div className="w-fit inline-flex items-center gap-2 whitespace-nowrap py-1 px-5 rounded-full wrap-break-word bg-transparent border border-gray-700 hover:bg-btnbg text-gray-800 hover:text-white">
             {node.gdrive_url && node.gdrive_url.trim() !== "" ? (
               <Icon
                 icon={openInNew}

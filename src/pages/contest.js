@@ -43,10 +43,10 @@ const ContestPage = () => {
                   <p className="px-2 text-left md:text-center breck-words">
                     {item[1]}
                   </p>
-                  <p className="px-2 text-left md:text-center break-words">
+                  <p className="px-2 text-left md:text-center wrap-break-word">
                     {item[2]}
                   </p>
-                  <p className="px-2 text-left md:text-center break-words">
+                  <p className="px-2 text-left md:text-center wrap-break-word">
                     {item[3]}
                   </p>
                 </div>
