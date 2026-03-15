@@ -1,6 +1,22 @@
-# CLAUDE.md
+# AGENTS.md
 
-此文件為 Claude Code (claude.ai/code) 在處理此專案時的開發指引。
+此文件為各種 AI Coding Agent 在處理此專案時的開發指引。
+
+## Agent 必讀規範
+
+- 只使用 Yarn，禁止使用 npm（安裝與執行腳本皆同）。
+- 不要修改 `public/` 內容：該目錄為建置產物，應由 `yarn build` 生成。
+- 變更應聚焦需求本身，避免順手重構不相干檔案。
+- 修改 JSON 資料時務必維持既有 schema，避免破壞 Gatsby build。
+- 提交前一定要執行 `yarn prettier` 以統一程式碼風格。
+- 涉及 API 端點（`functions/api/`）時，需保留 CORS 行為與既有回傳格式相容性。
+
+## Agent 工作流程
+
+1. 先讀需求，再找出受影響檔案與資料來源（頁面、模板、JSON、API）。
+2. 優先做最小變更，避免改動既有命名與資料路徑。
+3. 完成修改後執行格式化與必要建置檢查。
+4. 回報變更檔案、核心差異、驗證結果與未完成風險。
 
 ## 專案概述
 
@@ -47,7 +63,7 @@ yarn prettier
 ### 專案結構
 
 ```
-├── CLAUDE.md              # 開發指引文件
+├── AGENTS.md              # Agent 開發指引文件
 ├── README.md              # 專案說明文件
 ├── package.json           # 相依套件與腳本
 ├── gatsby-config.js       # Gatsby 設定檔

@@ -15,7 +15,7 @@
 
 ## Quick start
 
-先安裝依賴
+先安裝依賴（如使用 Dev Container 可省略）
 
 ```bash
 yarn
