@@ -140,17 +140,19 @@ export default Navbar;
 const JoinUsButton = ({ fullWidth = false }) => (
   <button
     className={`relative overflow-hidden text-white text-base font-semibold ${fullWidth ? "w-full" : "w-fit"} px-10 py-2.5 rounded-full transition-all duration-300 active:scale-95
-      bg-gradient-to-b from-[#5a6fa0] to-[#445484]
+      bg-linear-to-b from-[#5a6fa0] to-btnbg
       border border-white/25
       shadow-[inset_0_1px_0_rgba(255,255,255,0.28),0_4px_14px_rgba(68,84,132,0.45)]
       hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.38),0_6px_20px_rgba(68,84,132,0.60)]
       hover:from-[#6a80b4] hover:to-[#5264a0]`}
     onClick={() => {
       // 修改JoinUs的入社連結，需同時修改index.js
-      window.open("https://forms.gle/QWK8jUoNz6sNeYtn7", "_blank");
+      // window.open("https://forms.gle/QWK8jUoNz6sNeYtn7", "_blank");
+      window.open("https://iosappcompetition-2026.onrender.com", "_blank");
     }}
   >
-    Join Us
+    {/* {{ Join Us }} */}
+    競賽報名
   </button>
 );
 

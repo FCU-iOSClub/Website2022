@@ -32,7 +32,7 @@ const ReverseColorsButton = ({
   return (
     <button
       className={`
-        w-fit py-3 px-6 rounded-full break-words 
+        w-fit py-3 px-6 rounded-full wrap-break-word 
         bg-transparent border ${borderColor} 
         ${textColor} ${hoverTextColor} ${hoverBg}
         transition-colors duration-200

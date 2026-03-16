@@ -66,7 +66,7 @@ const MemberPage = (props) => {
         <div className="flex justify-items-center">
           <p className="my-8 m-auto">
             <a
-              className="w-fit py-3 px-6 rounded-full break-words bg-transparent border border-gray-700 hover:bg-btnbg text-gray-800 hover:text-white"
+              className="w-fit py-3 px-6 rounded-full wrap-break-word bg-transparent border border-gray-700 hover:bg-btnbg text-gray-800 hover:text-white"
               href="/members"
             >
               <nobr>返回歷屆幹部</nobr>
@@ -97,7 +97,7 @@ const MemberCard = (props) => {
       <h3 className="text-2xl font-bold py-4">
         {member.position + " " + member.name}
       </h3>
-      <hr className="border-1 border-iosbgblue" />
+      <hr className="border border-iosbgblue" />
 
       {/* description 介紹*/}
       <p className="my-4">{member.description}</p>
@@ -113,7 +113,7 @@ const MemberCard = (props) => {
                 rel="noopener noreferrer"
                 className="w-full"
               >
-                <div className="flex gap-3 items-center w-fit py-1 px-5 rounded-full break-words bg-transparent border border-gray-700 hover:bg-btnbg text-gray-800 hover:text-white break-normal">
+                <div className="flex gap-3 items-center w-fit py-1 px-5 rounded-full wrap-break-word bg-transparent border border-gray-700 hover:bg-btnbg text-gray-800 hover:text-white break-normal">
                   {createMemberLinkIcon(link.icon_type)}
                   {link.text}
                 </div>

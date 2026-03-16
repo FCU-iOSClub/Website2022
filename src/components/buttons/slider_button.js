@@ -44,24 +44,24 @@ const SliderButton = ({
             <>
               <Icon
                 icon="mdi:loading"
-                className={`${textSize} animate-spin flex-shrink-0`}
+                className={`${textSize} animate-spin shrink-0`}
               />
               <span className={textSize}>{loadingText}</span>
             </>
           ) : (
             <>
-              {icon && (
-                <Icon icon={icon} className={`${textSize} flex-shrink-0`} />
-              )}
-              <span className={`${textSize} break-words`}>{text}</span>
+              {icon && <Icon icon={icon} className={`${textSize} shrink-0`} />}
+              <span className={`${textSize} wrap-break-word`}>{text}</span>
             </>
           )}
         </div>
 
         {/* 懸停狀態 */}
         <div className="h-12 flex items-center justify-center text-btnbg gap-2">
-          {icon && <Icon icon={icon} className={`${textSize} flex-shrink-0`} />}
-          <span className={`${textSize} break-words`}>{displayHoverText}</span>
+          {icon && <Icon icon={icon} className={`${textSize} shrink-0`} />}
+          <span className={`${textSize} wrap-break-word`}>
+            {displayHoverText}
+          </span>
         </div>
       </div>
     </button>
