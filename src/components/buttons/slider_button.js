@@ -50,9 +50,7 @@ const SliderButton = ({
             </>
           ) : (
             <>
-              {icon && (
-                <Icon icon={icon} className={`${textSize} shrink-0`} />
-              )}
+              {icon && <Icon icon={icon} className={`${textSize} shrink-0`} />}
               <span className={`${textSize} wrap-break-word`}>{text}</span>
             </>
           )}
@@ -61,7 +59,9 @@ const SliderButton = ({
         {/* 懸停狀態 */}
         <div className="h-12 flex items-center justify-center text-btnbg gap-2">
           {icon && <Icon icon={icon} className={`${textSize} shrink-0`} />}
-          <span className={`${textSize} wrap-break-word`}>{displayHoverText}</span>
+          <span className={`${textSize} wrap-break-word`}>
+            {displayHoverText}
+          </span>
         </div>
       </div>
     </button>

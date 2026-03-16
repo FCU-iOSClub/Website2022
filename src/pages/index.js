@@ -51,7 +51,10 @@ const IndexPage = (props) => {
                 className="overflow-hidden group h-12 px-6 border border-btnbg rounded-xs"
                 onClick={() => {
                   // window.open("https://forms.gle/QWK8jUoNz6sNeYtn7", "_blank");
-                  window.open("https://iosappcompetition-2026.onrender.com", "_blank");
+                  window.open(
+                    "https://iosappcompetition-2026.onrender.com",
+                    "_blank",
+                  );
                 }}
               >
                 <div className="transition duration-200 group-hover:-translate-y-12">
