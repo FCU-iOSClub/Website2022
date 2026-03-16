@@ -50,15 +50,18 @@ const IndexPage = (props) => {
               <button
                 className="overflow-hidden group h-12 px-6 border border-btnbg rounded-xs"
                 onClick={() => {
-                  window.open("https://forms.gle/QWK8jUoNz6sNeYtn7", "_blank");
+                  // window.open("https://forms.gle/QWK8jUoNz6sNeYtn7", "_blank");
+                  window.open("https://iosappcompetition-2026.onrender.com", "_blank");
                 }}
               >
                 <div className="transition duration-200 group-hover:-translate-y-12">
                   <div className="h-12 flex items-center justify-center text-btnbg wrap-break-word">
-                    Join Us
+                    {/* {{ Join Us }} */}
+                    競賽報名
                   </div>
                   <div className="h-12 flex items-center justify-center text-btnbg wrap-break-word">
-                    Welcome
+                    {/* {{ Welcome }} */}
+                    Go
                   </div>
                 </div>
               </button>
