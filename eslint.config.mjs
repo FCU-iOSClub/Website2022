@@ -5,12 +5,7 @@ import { defineConfig } from "eslint/config";
 
 export default defineConfig([
   {
-    ignores: [
-      "node_modules/**",
-      "public/**",
-      ".cache/**",
-      "eslint.config.*",
-    ],
+    ignores: ["node_modules/**", "public/**", ".cache/**", "eslint.config.*"],
   },
   js.configs.recommended,
   {
