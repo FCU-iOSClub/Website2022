@@ -40,20 +40,20 @@
     "react-helmet": "^6.1.0",
     "react-responsive": "^10.0.1",
     "react-vertical-timeline-component": "^4.0.0",
-    "sweetalert2": "^11.26.20",
-    "sweetalert2-react-content": "^5.1.1"
+    "sweetalert2": "^11.26.24",
+    "sweetalert2-react-content": "^5.1.2"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@iconify/react": "^6.0.2",
-    "@tailwindcss/postcss": "^4.2.1",
+    "@tailwindcss/postcss": "^4.2.2",
     "eslint": "^10.1.0",
     "eslint-plugin-react": "^7.37.5",
     "gatsby-plugin-postcss": "^6.16.0",
     "globals": "^17.4.0",
-    "postcss": "^8.5.6",
-    "prettier": "3.5.0",
-    "tailwindcss": "^4.2.1"
+    "postcss": "^8.5.8",
+    "prettier": "3.8.1",
+    "tailwindcss": "^4.2.2"
   },
   "resolutions": {
     "cssnano": "^7.0.0",
