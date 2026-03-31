@@ -130,8 +130,9 @@ const createMemberLinkIcon = (iconType) => {
   switch (iconType) {
     case "youtube":
       return <Icon icon="logos:youtube-icon" />;
+    default:
+      return undefined;
   }
-  return undefined;
 };
 
 export default MemberPage;

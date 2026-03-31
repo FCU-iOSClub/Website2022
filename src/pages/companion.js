@@ -2,6 +2,7 @@ import * as React from "react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import AppHeader from "../components/header";
+import SliderButton from "../components/buttons/slider_button";
 
 import ImageWithPlaceholder from "../components/image-with-placeholder";
 
@@ -39,21 +40,13 @@ const CompanionPage = () => {
               </p>
             </div>
             <div className="flex items-center md:shrink-0">
-              <button
-                className="overflow-hidden group h-12 px-6 border border-btnbg rounded-full"
-                onClick={() => {
-                  window.open("https://rtc.fcu.edu.tw", "_blank");
-                }}
-              >
-                <div className="transition duration-200 group-hover:-translate-y-12">
-                  <div className="h-12 flex items-center justify-center text-btnbg wrap-break-word whitespace-nowrap">
-                    <a className="text-blue-800 text-xl">RTC 官方網站</a>
-                  </div>
-                  <div className="h-12 flex items-center justify-center text-btnbg wrap-break-word whitespace-nowrap">
-                    <a className="text-blue-800 text-xl">前往</a>
-                  </div>
-                </div>
-              </button>
+              <SliderButton
+              text="RTC 官方網站"
+              hoverText="前往"
+              onClick={() => {
+                window.open("https://rtc.fcu.edu.tw", "_blank");
+              }}
+              />
             </div>
           </div>
           <div className="py-8 grid gap-4 grid-cols-1 md:grid-cols-2">

@@ -46,33 +46,33 @@ const ClubActivities = () => {
             <p className="pt-3 font-bold text-black text-5xl">社團活動</p>
             <p className="py-4 text-gray-700 text-justify">
               平時社團活動也不僅僅有社課，我們還會舉辦
-              <a className="underline decoration-indigo-500 underline-offset-1">
+              <span className="underline decoration-indigo-500 underline-offset-1">
                 講座
-              </a>
+              </span>
               、
-              <a className="underline decoration-pink-500 underline-offset-1">
+              <span className="underline decoration-pink-500 underline-offset-1">
                 野餐
-              </a>
+              </span>
               、
-              <a className="underline decoration-sky-500  underline-offset-1">
+              <span className="underline decoration-sky-500  underline-offset-1">
                 Workshop
-              </a>
+              </span>
               、
-              <a className="underline decoration-indigo-500 underline-offset-1">
+              <span className="underline decoration-indigo-500 underline-offset-1">
                 社遊
-              </a>
+              </span>
               、
-              <a className="underline decoration-pink-500 underline-offset-1">
+              <span className="underline decoration-pink-500 underline-offset-1">
                 期末聚
-              </a>
+              </span>
               …等超多活動給社員參加！當然，我們不只和
-              <a className="underline decoration-red-500 underline-offset-1">
+              <span className="underline decoration-red-500 underline-offset-1">
                 葳格高中
-              </a>
+              </span>
               建立了長期的任教合作，身為志工性社團，我們還會和相關機構及國小一同舉辦各式各樣的
-              <a className="underline decoration-indigo-500 underline-offset-1">
+              <span className="underline decoration-indigo-500 underline-offset-1">
                 志工營隊
-              </a>
+              </span>
               ，落實將在社內所學回饋社會。
             </p>
             <p className="py-1 text-gray-700 text-justify">
