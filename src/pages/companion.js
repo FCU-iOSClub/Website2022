@@ -41,11 +41,11 @@ const CompanionPage = () => {
             </div>
             <div className="flex items-center md:shrink-0">
               <SliderButton
-              text="RTC 官方網站"
-              hoverText="前往"
-              onClick={() => {
-                window.open("https://rtc.fcu.edu.tw", "_blank");
-              }}
+                text="RTC 官方網站"
+                hoverText="前往"
+                onClick={() => {
+                  window.open("https://rtc.fcu.edu.tw", "_blank");
+                }}
               />
             </div>
           </div>

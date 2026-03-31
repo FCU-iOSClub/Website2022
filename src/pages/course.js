@@ -33,8 +33,8 @@ const CoursePage = () => {
             </div>
             <p className="py-3 text-gray-800 md:text-left text-justify break-normal decoration-sky-500">
               iOS Club 社課主要內容為利用{" "}
-              <span className="underline decoration-sky-500">Xcode</span> 開發 iOS
-              app，讓大家能透過實作了解並熟悉{" "}
+              <span className="underline decoration-sky-500">Xcode</span> 開發
+              iOS app，讓大家能透過實作了解並熟悉{" "}
               <span className="underline decoration-sky-500">Swift</span>{" "}
               語言的應用、SwiftUI
               的佈局，最終達到具備獨立開發的能力，透過鼓勵社員參加各式校外競賽，以此展現社員的學習成果。
@@ -99,7 +99,8 @@ const CoursePage = () => {
                 </span>
                 &nbsp;設計課程，並透過 Vibe Coding 開發完整的 iOS
                 App。除此之外，我們也提供
-                <span className="underline decoration-sky-500">Playground</span>、
+                <span className="underline decoration-sky-500">Playground</span>
+                、
                 <span className="underline decoration-sky-500 underline-offset-1">
                   mBot
                 </span>
