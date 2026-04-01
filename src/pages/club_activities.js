@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
+import { graphql } from "gatsby";
 import Footer from "../components/footer";
 import AppHeader from "../components/header";
 import Navbar from "../components/navbar";
@@ -14,7 +15,11 @@ import SliderButton from "../components/buttons/slider_button";
 import ReverseColorsButton from "../components/buttons/reverse_colors_button";
 import useGoogleAdsConversion from "../hooks/useGoogleAdsConversion";
 
-const ClubActivities = () => {
+const ClubActivities = (props) => {
+  const iOSClubActivities = props.data.allActivitiesJson.nodes.flatMap(
+    (node) => node.contents,
+  );
+
   // Google Ads 轉換追蹤
   useGoogleAdsConversion();
 
@@ -161,267 +166,18 @@ const ClubActivities = () => {
   );
 };
 
-const iOSClubActivities = [
-  {
-    title: "Workshop",
-    date: "2026-05-18、20、25、27",
-  },
-  {
-    title: "幹部交接典禮",
-    date: "2026-05-11",
-  },
-  {
-    title: "第9屆社員大會暨第10屆社長選舉",
-    date: "2026-05-04",
-  },
-  {
-    title: "企業參訪（微程式資訊）",
-    date: "2026-04-30",
-  },
-  {
-    title: "iOS App 登場時刻",
-    date: "2026-04-29",
-  },
-  {
-    title: "小學營隊",
-    date: "2026-04-25",
-  },
-  {
-    title: "聯合聖誕期末聚",
-    date: "2026-12-25",
-  },
-  {
-    title: "Christmas Pre Party 早安派對",
-    date: "2025-12-25",
-  },
-  {
-    title: "iOS App 登場時刻",
-    date: "2025-12-16",
-  },
-  {
-    title: "重新看世界：從找到問題，到為所有人設計 社團講座",
-    date: "2025-12-09",
-  },
-  {
-    title: "World Taichung Developer Workshop",
-    date: "2025-11-23",
-  },
-  {
-    title: "114-1 社員大會",
-    date: "2025-10-27",
-  },
-  {
-    title: "聯合迎新野餐",
-    date: "2025-10-06",
-  },
-  {
-    title: "新生村 Welcome Talk | Apple × Google 校園社群日",
-    date: "2025-09-22",
-  },
-  {
-    title: "第9屆新生茶會",
-    date: "2025-09-16",
-  },
-  {
-    title: "暑期幹部訓練",
-    date: "2025-09-04 ~ 2025-09-05",
-  },
-  {
-    title: "社團博覽會",
-    date: "2025-09-01",
-  },
-  {
-    title: "社團旅遊(臺南)",
-    date: "2025-08-13 ~ 2025-08-15",
-  },
-  {
-    title: "Workshop",
-    date: "2025-05-06、13",
-  },
-  {
-    title: "社員大會暨社長選舉",
-    date: "2025-04-23",
-  },
-  {
-    title: "FCU 2025 行動應用創新賽",
-    date: "2025-04-15",
-  },
-  {
-    title: "企業參訪（國泰金控）",
-    date: "2025-03-28",
-  },
-  {
-    title: "葳格營隊",
-    date: "2025-01-11",
-  },
-  {
-    title: "社團期末聚",
-    date: "2024-12-23",
-  },
-  {
-    title: "學長回娘家經驗分享講座",
-    date: "2024-12-04",
-  },
-  {
-    title: "社團野餐",
-    date: "2024-11-11",
-  },
-  {
-    title: "113-1 社員大會",
-    date: "2024-10-30",
-  },
-  {
-    title: "iOS Club 社團迎新",
-    date: "2024-10-17",
-  },
-  {
-    title: "試上課",
-    date: "2024-09-23",
-  },
-  {
-    title: "iOS Club 第8屆新生茶會",
-    date: "2024-09-19",
-  },
-  {
-    title: "暑期幹部訓練",
-    date: "2024-09-07 ~ 2023-09-08",
-  },
-  {
-    title: "社團博覽會",
-    date: "2024-09-02",
-  },
-  {
-    title: "社團旅遊(宜蘭)",
-    date: "2024-08-30 ~ 2024-09-01",
-  },
-  {
-    title: "行動應用創新賽 Workshop",
-    date: "2024-05-08 、 2024-05-15",
-  },
-  {
-    title: "幹部交接典禮",
-    date: "2024-05-03",
-  },
-  {
-    title: "企業參訪",
-    date: "2024-05-03",
-  },
-  {
-    title: "社員大會暨社長選舉",
-    date: "2024-04-24",
-  },
-  {
-    title: "寒假幹部訓練",
-    date: "2024-02-18",
-  },
-  {
-    title: "逢甲大學 iOS Club x 葳格中學 用程式玩轉校園-機器人體驗營",
-    date: "2024-01-14",
-  },
-  {
-    title: "社團期末聚",
-    date: "2023-12-26",
-  },
-  {
-    title: "112-1 社員大會",
-    date: "2023-11-14",
-  },
-  {
-    title: "iOS Club x 夢種子聯合夜烤",
-    date: "2023-10-12",
-  },
-  {
-    title: "試上課",
-    date: "2023-09-26",
-  },
-  {
-    title: "iOS Club 第7屆新生茶會",
-    date: "2023-09-21",
-  },
-  {
-    title: "社團博覽會",
-    date: "2023-09-13",
-  },
-  {
-    title: "暑期幹部訓練",
-    date: "2023-09-08 ~ 2023-09-10",
-  },
-  {
-    title: "社團旅遊(澎湖)",
-    date: "2023-08-11 ~ 2023-08-13",
-  },
-  {
-    title: "移動應用創新賽 Workshop",
-    date: "2023-05-16 、 2023-05-23",
-  },
-  {
-    title: "幹部交接典禮",
-    date: "2023-05-09",
-  },
-  {
-    title: "第7屆社長選舉大會",
-    date: "2023-04-25",
-  },
-  {
-    title: "永安國小 mbot 機器人一日進階體驗營",
-    date: "2023-04-22",
-  },
-  {
-    title: "葳格國小參訪",
-    date: "2023-04-20",
-  },
-  {
-    title: "111-2社員大會",
-    date: "2023-03-01",
-  },
-  {
-    title: "寒假幹部訓練",
-    date: "2023-02-11 ~ 2023-2-12",
-  },
-  {
-    title: "iOS Club 聖誕期末聚",
-    date: "2022-12-17",
-  },
-  {
-    title: "永安國小 mbot 機器人一日體驗營",
-    date: "2022-12-24",
-  },
-  {
-    title: "商業 App x 系統開發•經驗分享講座",
-    date: "2022-12-15",
-  },
-  {
-    title: "111-1 社員大會",
-    date: "2022-11-15",
-  },
-  {
-    title: "iOS Club X 黑客社 聯合夜烤",
-    date: "2022-10-19",
-  },
-  {
-    title: "葳格 Swift Mini-Camp (西屯)",
-    date: "2022-10-15",
-  },
-  {
-    title: "iOS Club 社團迎新",
-    date: "2022-10-12",
-  },
-  {
-    title: "iOS Club 迎新茶會暨 Apple WWDC 獎學金參賽說明會",
-    date: "2022-09-20",
-  },
-  {
-    title: "暑期幹部訓練",
-    date: "2022-09-01",
-  },
-  {
-    title: "社團旅遊(墾丁)",
-    date: "2022-08-20",
-  },
-  {
-    title: "葳格 Swift Mini-Camp (北屯)",
-    date: "2022-08-06",
-  },
-];
+export const qldata = graphql`
+  query ClubActivitiesQuery {
+    allActivitiesJson(sort: { academicYear: DESC }) {
+      nodes {
+        academicYear
+        contents {
+          title
+          date
+        }
+      }
+    }
+  }
+`;
 
 export default ClubActivities;
