@@ -89,7 +89,7 @@ const ClubActivities = (props) => {
               hoverText="立即報名"
               className="font-bold"
               onClick={() => {
-                window.open("https://lu.ma/user/fcu_iosclub", "_blank");
+                window.open("https://luma.com/user/fcu_iosclub", "_blank");
               }}
             />
           </div>
