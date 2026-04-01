@@ -101,7 +101,9 @@ yarn prettier
     │   ├── gallery.js    # 個別活動相簿頁面
     │   └── member_page.js # 個別屆期幹部頁面
     ├── data/             # JSON 資料檔案
+    │   ├── activities/   # 社團活動資料
     │   ├── announcement/ # 公告資料
+    │   ├── contest/      # 競賽得獎資料
     │   ├── gallery/      # 活動相簿資料
     │   └── member/       # 幹部資料
     ├── images/           # 圖片資源
@@ -129,6 +131,41 @@ yarn prettier
   "urlText": "連結文字（選填）",
   "url": "https://example.com（選填）",
   "image": "圖片URL（選填）"
+}
+```
+
+### 社團活動
+
+在 `src/data/activities/` 新增檔案，以學年度命名（如：111.json）：
+
+```json
+{
+  "academicYear": 111,
+  "contents": [
+    {
+      "title": "活動名稱",
+      "date": "2023-05-16、2023-05-23"
+    },
+    {
+      "title": "社團旅遊（臺南）",
+      "date": "2025-08-13 ~ 2025-08-15"
+    }
+  ]
+}
+```
+
+### 競賽得獎
+
+在 `src/data/contest/` 新增檔案，以年份命名（如：2026.json）：
+
+```json
+{
+  "year": 2026,
+  "title": "2026 社團成員競賽得獎名單",
+  "contents": [
+    ["比賽名稱", "獎項名稱", "參賽者（多人時以、分隔）", "《作品名稱》"],
+    ["WWDC 全球學生挑戰賽", "獲獎", "魯敬元", "《MusicLearning》"]
+  ]
 }
 ```
 
