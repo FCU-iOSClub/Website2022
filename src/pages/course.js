@@ -33,9 +33,9 @@ const CoursePage = () => {
             </div>
             <p className="py-3 text-gray-800 md:text-left text-justify break-normal decoration-sky-500">
               iOS Club 社課主要內容為利用{" "}
-              <a className="underline decoration-sky-500">Xcode</a> 開發 iOS
-              app，讓大家能透過實作了解並熟悉{" "}
-              <a className="underline decoration-sky-500">Swift</a>{" "}
+              <span className="underline decoration-sky-500">Xcode</span> 開發
+              iOS app，讓大家能透過實作了解並熟悉{" "}
+              <span className="underline decoration-sky-500">Swift</span>{" "}
               語言的應用、SwiftUI
               的佈局，最終達到具備獨立開發的能力，透過鼓勵社員參加各式校外競賽，以此展現社員的學習成果。
             </p>
@@ -81,48 +81,49 @@ const CoursePage = () => {
             <div className="py-4 text-gray-700 text-justify md:text-left text-base break-normal">
               <p>
                 iOS Club 的課程主要分為
-                <a className="underline decoration-pink-500 underline-offset-1">
+                <span className="underline decoration-pink-500 underline-offset-1">
                   程式線
-                </a>
+                </span>
                 與
-                <a className="underline decoration-pink-500 underline-offset-1">
+                <span className="underline decoration-pink-500 underline-offset-1">
                   創客線
-                </a>
+                </span>
                 。程式線教授&nbsp;
-                <a className="underline decoration-sky-500 underline-offset-1">
+                <span className="underline decoration-sky-500 underline-offset-1">
                   Swift UI
-                </a>
+                </span>
                 &nbsp;的 app 設計，讓社員能成為獨立的 iOS
                 Developer；創客線則從基礎&nbsp;
-                <a className="underline decoration-sky-500 underline-offset-1">
+                <span className="underline decoration-sky-500 underline-offset-1">
                   SwiftUI 到 Figma
-                </a>
+                </span>
                 &nbsp;設計課程，並透過 Vibe Coding 開發完整的 iOS
                 App。除此之外，我們也提供
-                <a className="underline decoration-sky-500">Playground</a>、
-                <a className="underline decoration-sky-500 underline-offset-1">
+                <span className="underline decoration-sky-500">Playground</span>
+                、
+                <span className="underline decoration-sky-500 underline-offset-1">
                   mBot
-                </a>
+                </span>
                 &nbsp;和&nbsp;
-                <a className="underline decoration-sky-500 underline-offset-1">
+                <span className="underline decoration-sky-500 underline-offset-1">
                   Keynote
-                </a>
+                </span>
                 &nbsp;的教學課程。
               </p>
               <div className="h-3" />
               <p>
                 所有課程由教學部的
-                <a className="underline decoration-pink-500 underline-offset-1">
+                <span className="underline decoration-pink-500 underline-offset-1">
                   技術長
-                </a>
+                </span>
                 和
-                <a className="underline decoration-sky-500 underline-offset-1">
+                <span className="underline decoration-sky-500 underline-offset-1">
                   教學長
-                </a>
+                </span>
                 共同規劃，另外由行銷部的
-                <a className="underline decoration-indigo-500 underline-offset-1">
+                <span className="underline decoration-indigo-500 underline-offset-1">
                   設計長
-                </a>
+                </span>
                 協助設計課程，社課期間其餘幹部擔任助教，協助社員解決學習中遇到的問題，讓每位社員都能順利成長。
               </p>
             </div>

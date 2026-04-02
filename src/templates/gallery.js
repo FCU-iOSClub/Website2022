@@ -38,7 +38,7 @@ const Gallery = (props) => {
             zoom={true}
           >
             {context.photos.map((item, index) => (
-              <a data-src={item} className="w-fit">
+              <a key={item} data-src={item} className="w-fit">
                 <div className="relative">
                   <ImageWithPlaceholder
                     src={item}

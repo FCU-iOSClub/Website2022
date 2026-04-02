@@ -17,6 +17,7 @@ import chevronUp from "@iconify/icons-akar-icons/chevron-up";
 import chevronDown from "@iconify/icons-akar-icons/chevron-down";
 import ReverseColorsButton from "../components/buttons/reverse_colors_button";
 import useGoogleAdsConversion from "../hooks/useGoogleAdsConversion";
+import { EXTERNAL_LINKS } from "../constants/navigation";
 
 const IndexPage = (props) => {
   // Google Ads 轉換追蹤
@@ -46,15 +47,10 @@ const IndexPage = (props) => {
             {/* 空白 */}
             <div className="px-5 md:p-0 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3 md:gap-3 w-full bottom-120 left-2">
               {/* Join Us 按鈕 */}
-              {/* 修改JoinUs的入社連結，需同時修改navbar.js */}
               <button
                 className="overflow-hidden group h-12 px-6 border border-btnbg rounded-xs"
                 onClick={() => {
-                  // window.open("https://forms.gle/QWK8jUoNz6sNeYtn7", "_blank");
-                  window.open(
-                    "https://iosappcompetition-2026.onrender.com",
-                    "_blank",
-                  );
+                  window.open(EXTERNAL_LINKS.joinUs, "_blank");
                 }}
               >
                 <div className="transition duration-200 group-hover:-translate-y-12">
@@ -321,6 +317,7 @@ const AnnouncementLiet = (props) => {
               className="text-blue-500 underline underline-offset-2 font-bold"
               href={node.url}
               target="_blank"
+              rel="noreferrer"
             >
               {node.urlText}
             </a>

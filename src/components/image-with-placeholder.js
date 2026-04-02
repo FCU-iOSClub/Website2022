@@ -98,7 +98,7 @@ const ImageWithPlaceholder = ({
         style={{ objectFit }}
         loading="lazy"
         decoding="async"
-        fetchpriority="low"
+        fetchPriority="low"
         onLoad={(e) => {
           setLoaded(true);
           onLoad?.(e);
