@@ -37,10 +37,10 @@ const ContestPage = (props) => {
                 className="border-b w-full py-6 grid grid-rows-1 md:grid-cols-4 text-iostextblue font-bold gap-2 items-center"
                 key={rowIndex}
               >
-                <p className="px-2 text-left md:text-center breck-words">
+                <p className="px-2 text-left md:text-center wrap-break-word">
                   {row[0]}
                 </p>
-                <p className="px-2 text-left md:text-center breck-words">
+                <p className="px-2 text-left md:text-center wrap-break-word">
                   {row[1]}
                 </p>
                 <p className="px-2 text-left md:text-center wrap-break-word">
