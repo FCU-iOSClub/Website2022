@@ -122,7 +122,7 @@ yarn prettier
   "title": "2026 社團成員競賽得獎名單", // 該年度的標題
   "contents": [
     ["比賽名稱", "獎項名稱", "參賽者（多人時以、分隔）", "《作品名稱》"],
-    ["WWDC 全球學生挑戰賽", "獲獎", "魯敬元", "《MusicLearning》"]
+    ["Apple Swift Student Challenge", "Winner", "魯敬元", "《MusicLearning》"]
   ]
 }
 ```
