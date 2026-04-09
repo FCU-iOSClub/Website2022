@@ -45,7 +45,9 @@ Commit 前養成好習慣，自動排版一下
 yarn prettier
 ```
 
-## 首頁公告
+## 資料新增
+
+### 首頁公告
 
 在 `/src/data/annoucement` 下的 Json 檔會自動生成公告。`url`, `urlText`, `image` 可選填，其餘必填。
 
@@ -62,7 +64,7 @@ yarn prettier
 }
 ```
 
-## 社團活動
+### 社團活動
 
 在 `/src/data/activities` 中新增檔案，檔案名稱以學年度數字命名。
 
@@ -84,7 +86,7 @@ yarn prettier
 }
 ```
 
-## 活動相簿
+### 活動相簿
 
 在 `/src/data/gallery` 下的 Json 檔案會被產生到相簿中。
 
@@ -108,7 +110,7 @@ yarn prettier
 
 目前大部分的照片都放在 GitHub 的 FCU-iOSClub/Website2022ImageBed 上。
 
-## 競賽得獎
+### 競賽得獎
 
 在 `/src/data/contest` 中新增檔案，檔案名稱以年份命名。
 
@@ -125,11 +127,11 @@ yarn prettier
 }
 ```
 
-## 歷屆幹部
+### 歷屆幹部
 
 在 `src/data/member` 中新增檔案
 
-### 個人連結
+#### 個人連結
 
 可以在 `links` 中加入個人連結，這個一個陣列可以放多個。
 
