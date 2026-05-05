@@ -337,7 +337,7 @@ const QRCodeGeneratorPage = () => {
                     if (e.key === "Enter") generateQRCode();
                   }}
                   placeholder="如未填標題則生成單一 QR Code"
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-full font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
+                  className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-full font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
                 />
                 <button
                   onClick={clearTitleInput}
