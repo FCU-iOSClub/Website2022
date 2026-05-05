@@ -10,7 +10,9 @@ const logo = "https://i.meee.com.tw/0SiZRVA.jpg";
 
 const QRCodeGeneratorPage = () => {
   const [urlInput, setUrlInput] = useState("");
+  const [titleInput, setTitleInput] = useState("");
   const [qrCodeUrl, setQrCodeUrl] = useState(null);
+  const [composedUrl, setComposedUrl] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -19,8 +21,57 @@ const QRCodeGeneratorPage = () => {
       if (qrCodeUrl && qrCodeUrl.startsWith("blob:")) {
         URL.revokeObjectURL(qrCodeUrl);
       }
+      if (composedUrl && composedUrl.startsWith("blob:")) {
+        URL.revokeObjectURL(composedUrl);
+      }
     };
-  }, [qrCodeUrl]);
+  }, [qrCodeUrl, composedUrl]);
+
+  const buildPoster = async (qrBlobUrl, titleText) => {
+    const img = new Image();
+    img.src = qrBlobUrl;
+
+    await new Promise((resolve, reject) => {
+      img.onload = resolve;
+      img.onerror = reject;
+    });
+
+    const width = 1080;
+    const height = 2340;
+    const qrSize = 1000;
+
+    const canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = height;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) throw new Error("Canvas 不支援");
+
+    ctx.fillStyle = "#FFFFFF";
+    ctx.fillRect(0, 0, width, height);
+
+    ctx.textAlign = "center";
+    ctx.textBaseline = "top";
+
+    ctx.fillStyle = "#FFAF73";
+    ctx.font = "bold 80px 'Noto Serif TC', serif";
+    ctx.fillText(titleText, width / 2, 325);
+
+    const qrX = (width - qrSize) / 2;
+    const qrY = (height - qrSize) / 2;
+    ctx.drawImage(img, qrX, qrY, qrSize, qrSize);
+
+    ctx.fillStyle = "#6D9DF8";
+    ctx.font = "40px 'Noto Serif TC', serif";
+    ctx.fillText("FCU iOS Club", width / 2, 2000);
+
+    return new Promise((resolve, reject) => {
+      canvas.toBlob((blob) => {
+        if (!blob) return reject(new Error("toBlob failed"));
+        resolve(URL.createObjectURL(blob));
+      }, "image/png");
+    });
+  };
 
   const generateQRCode = async () => {
     if (!urlInput.trim()) {
@@ -31,6 +82,7 @@ const QRCodeGeneratorPage = () => {
     setLoading(true);
     setError(null);
     setQrCodeUrl(null);
+    setComposedUrl(null);
 
     const payload = {
       data: urlInput,
@@ -43,7 +95,7 @@ const QRCodeGeneratorPage = () => {
         gradientColor1: "#FFAF73",
         gradientColor2: "#6D9DF8",
         gradientOnEyes: true,
-        bgColor: "#ffffff",
+        bgColor: "#FFFFFF",
         logo: logo,
         logoMode: "clean",
       },
@@ -80,6 +132,18 @@ const QRCodeGeneratorPage = () => {
         const blob = await response.blob();
         const url = URL.createObjectURL(blob);
         setQrCodeUrl(url);
+        if (titleInput.trim()) {
+          try {
+            const posterUrl = await buildPoster(
+              url,
+              titleInput.trim(),
+              urlInput,
+            );
+            setComposedUrl(posterUrl);
+          } catch (composeError) {
+            console.error("Poster generation error:", composeError);
+          }
+        }
       } else {
         const result = await response.json();
         console.log("API Response:", result);
@@ -103,6 +167,18 @@ const QRCodeGeneratorPage = () => {
             const blob = await imgResponse.blob();
             const url = URL.createObjectURL(blob);
             setQrCodeUrl(url);
+            if (titleInput.trim()) {
+              try {
+                const posterUrl = await buildPoster(
+                  url,
+                  titleInput.trim(),
+                  urlInput,
+                );
+                setComposedUrl(posterUrl);
+              } catch (composeError) {
+                console.error("Poster generation error:", composeError);
+              }
+            }
           } else {
             throw new Error(`圖片下載失敗 (${imgResponse.status})`);
           }
@@ -126,19 +202,28 @@ const QRCodeGeneratorPage = () => {
   };
 
   const downloadQRCode = () => {
-    if (!qrCodeUrl) return;
+    const targetUrl = composedUrl || qrCodeUrl;
+    if (!targetUrl) return;
 
     const link = document.createElement("a");
-    link.href = qrCodeUrl;
+    link.href = targetUrl;
     link.download = "iOSClub_QRCode.png";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
-  const clearInput = () => {
+  const clearUrlInput = () => {
     setUrlInput("");
     setQrCodeUrl(null);
+    setComposedUrl(null);
+    setError(null);
+  };
+
+  const clearTitleInput = () => {
+    setTitleInput("");
+    setQrCodeUrl(null);
+    setComposedUrl(null);
     setError(null);
   };
 
@@ -193,6 +278,13 @@ const QRCodeGeneratorPage = () => {
                   <strong>社團 Logo：</strong>內嵌 iOS Club 官方標誌
                 </span>
               </div>
+              <div className="flex items-center gap-2">
+                <Icon icon="mdi:cellphone-arrow-down" className="text-btnbg" />
+                <span>
+                  <strong>可自帶標題：</strong>
+                  輸入標題自動生成手機螢幕比例之圖片
+                </span>
+              </div>
             </div>
           </div>
 
@@ -219,13 +311,38 @@ const QRCodeGeneratorPage = () => {
                   onKeyDown={(e) => {
                     if (e.key === "Enter") generateQRCode();
                   }}
-                  placeholder="請輸入網址..."
+                  placeholder="請輸入網址⋯⋯"
                   className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-full font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
                 />
                 <button
-                  onClick={clearInput}
+                  onClick={clearUrlInput}
                   className="px-4 py-3 text-gray-700 rounded-full hover:bg-btnbg hover:text-white transition-colors flex items-center justify-center"
-                  title="清除輸入"
+                  title="清除網址輸入"
+                >
+                  <Icon icon="mdi:close" className="text-xl" />
+                </button>
+              </div>
+            </div>
+
+            <div className="mb-6">
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                標題（選填）
+              </label>
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  value={titleInput}
+                  onChange={(e) => setTitleInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") generateQRCode();
+                  }}
+                  placeholder="如未填標題則生成單一 QR Code"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-full font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
+                />
+                <button
+                  onClick={clearTitleInput}
+                  className="px-4 py-3 text-gray-700 rounded-full hover:bg-btnbg hover:text-white transition-colors flex items-center justify-center"
+                  title="清除標題輸入"
                 >
                   <Icon icon="mdi:close" className="text-xl" />
                 </button>
@@ -235,7 +352,7 @@ const QRCodeGeneratorPage = () => {
             {/* 生成按鈕 */}
             <div className="flex items-center justify-center">
               <SliderButton
-                text={loading ? "生成中⋯" : "生成 QR Code"}
+                text={loading ? "生成中⋯⋯" : "生成 QR Code"}
                 hoverText="生成"
                 icon={loading ? "mdi:loading" : "mdi:qrcode-plus"}
                 onClick={generateQRCode}
@@ -279,9 +396,9 @@ const QRCodeGeneratorPage = () => {
               <div className="flex flex-col items-center">
                 <div className="bg-white p-4 rounded-lg border-2 border-gray-300 mb-6">
                   <img
-                    src={qrCodeUrl}
+                    src={composedUrl || qrCodeUrl}
                     alt="Generated QR Code"
-                    className="w-64 h-64 md:w-80 md:h-80"
+                    className="w-64 md:w-80"
                   />
                 </div>
 
