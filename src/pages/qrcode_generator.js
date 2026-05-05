@@ -137,7 +137,6 @@ const QRCodeGeneratorPage = () => {
             const posterUrl = await buildPoster(
               url,
               titleInput.trim(),
-              urlInput,
             );
             setComposedUrl(posterUrl);
           } catch (composeError) {
@@ -172,7 +171,6 @@ const QRCodeGeneratorPage = () => {
                 const posterUrl = await buildPoster(
                   url,
                   titleInput.trim(),
-                  urlInput,
                 );
                 setComposedUrl(posterUrl);
               } catch (composeError) {
