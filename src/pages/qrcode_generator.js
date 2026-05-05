@@ -232,8 +232,9 @@ const QRCodeGeneratorPage = () => {
         {/* 頁面標題 */}
         <div className="text-center py-12">
           <div className="flex justify-center items-center gap-3 mb-4">
-            <Icon icon="mdi:qrcode" className="text-4xl text-btnbg" />
-            <h1 className="text-5xl font-bold text-gray-800">QR Code 生成器</h1>
+            <h1 className="text-5xl font-bold text-gray-800 text-balance">
+              QR Code 生成器
+            </h1>
           </div>
           <p className="text-gray-600 text-lg">
             使用 iOS Club 專屬樣式生成精美的 QR Code
@@ -292,53 +293,57 @@ const QRCodeGeneratorPage = () => {
             </h3>
 
             <div className="mb-6">
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
-                網址
+              <label>
+                <span className="block text-sm font-semibold text-gray-700 mb-2">
+                  網址
+                </span>
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={urlInput}
+                    onChange={(e) => setUrlInput(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") generateQRCode();
+                    }}
+                    placeholder="請輸入網址⋯⋯"
+                    className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-full font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
+                  />
+                  <button
+                    onClick={clearUrlInput}
+                    className="px-4 py-3 text-gray-700 rounded-full hover:bg-btnbg hover:text-white transition-colors flex items-center justify-center"
+                    title="清除網址輸入"
+                  >
+                    <Icon icon="mdi:close" className="text-xl" />
+                  </button>
+                </div>
               </label>
-              <div className="flex gap-2">
-                <input
-                  type="text"
-                  value={urlInput}
-                  onChange={(e) => setUrlInput(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") generateQRCode();
-                  }}
-                  placeholder="請輸入網址⋯⋯"
-                  className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-full font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
-                />
-                <button
-                  onClick={clearUrlInput}
-                  className="px-4 py-3 text-gray-700 rounded-full hover:bg-btnbg hover:text-white transition-colors flex items-center justify-center"
-                  title="清除網址輸入"
-                >
-                  <Icon icon="mdi:close" className="text-xl" />
-                </button>
-              </div>
             </div>
 
             <div className="mb-6">
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
-                標題（選填）
+              <label>
+                <span className="block text-sm font-semibold text-gray-700 mb-2">
+                  標題（選填）
+                </span>
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={titleInput}
+                    onChange={(e) => setTitleInput(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") generateQRCode();
+                    }}
+                    placeholder="如未填標題則生成單一 QR Code"
+                    className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-full font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
+                  />
+                  <button
+                    onClick={clearTitleInput}
+                    className="px-4 py-3 text-gray-700 rounded-full hover:bg-btnbg hover:text-white transition-colors flex items-center justify-center"
+                    title="清除標題輸入"
+                  >
+                    <Icon icon="mdi:close" className="text-xl" />
+                  </button>
+                </div>
               </label>
-              <div className="flex gap-2">
-                <input
-                  type="text"
-                  value={titleInput}
-                  onChange={(e) => setTitleInput(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") generateQRCode();
-                  }}
-                  placeholder="如未填標題則生成單一 QR Code"
-                  className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-full font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
-                />
-                <button
-                  onClick={clearTitleInput}
-                  className="px-4 py-3 text-gray-700 rounded-full hover:bg-btnbg hover:text-white transition-colors flex items-center justify-center"
-                  title="清除標題輸入"
-                >
-                  <Icon icon="mdi:close" className="text-xl" />
-                </button>
-              </div>
             </div>
 
             {/* 生成按鈕 */}

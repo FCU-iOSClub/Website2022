@@ -44,6 +44,7 @@ const RfidConverterPage = () => {
         decimal: decimal,
       };
     } catch (e) {
+      console.error(e);
       return null;
     }
   };
@@ -78,6 +79,7 @@ const RfidConverterPage = () => {
         reversedFormatted: reversedBytes.join(":"),
       };
     } catch (e) {
+      console.error(e);
       return null;
     }
   };
@@ -101,8 +103,7 @@ const RfidConverterPage = () => {
         {/* 頁面標題 */}
         <div className="text-center py-12">
           <div className="flex justify-center items-center gap-3 mb-4">
-            <Icon icon="mdi:rfid" className="text-4xl text-btnbg" />
-            <h1 className="text-5xl font-bold text-gray-800">
+            <h1 className="text-5xl font-bold text-gray-800 text-balance">
               RFID 卡號轉換器
             </h1>
           </div>
@@ -124,31 +125,33 @@ const RfidConverterPage = () => {
             </h3>
 
             <div className="mb-6">
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
-                16進制卡號（例: B4C5D677 或 0xB4C5D677）
+              <label>
+                <span className="block text-sm font-semibold text-gray-700 mb-2">
+                  16進制卡號（例: B4C5D677 或 0xB4C5D677）
+                </span>
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={hexInput}
+                    onChange={(e) => setHexInput(e.target.value)}
+                    placeholder="請輸入16進制卡號⋯⋯"
+                    className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-full font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
+                  />
+                  <button
+                    onClick={clearHex}
+                    className="px-4 py-3 text-gray-700 rounded-full hover:bg-btnbg hover:text-white transition-colors flex items-center justify-center"
+                    title="清除輸入"
+                  >
+                    <Icon icon="mdi:close" className="text-xl" />
+                  </button>
+                </div>
               </label>
-              <div className="flex gap-2">
-                <input
-                  type="text"
-                  value={hexInput}
-                  onChange={(e) => setHexInput(e.target.value)}
-                  placeholder="請輸入16進制卡號⋯⋯"
-                  className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-full font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
-                />
-                <button
-                  onClick={clearHex}
-                  className="px-4 py-3 text-gray-700 rounded-full hover:bg-btnbg hover:text-white transition-colors flex items-center justify-center"
-                  title="清除輸入"
-                >
-                  <Icon icon="mdi:close" className="text-xl" />
-                </button>
-              </div>
             </div>
 
             <div className="mb-4">
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <p className="block text-sm font-semibold text-gray-700 mb-2">
                 轉換結果:
-              </label>
+              </p>
               <div
                 className={`p-4 rounded-lg border-2 font-mono ${
                   hexResult
@@ -190,31 +193,33 @@ const RfidConverterPage = () => {
             </h3>
 
             <div className="mb-6">
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
-                10進制卡號（例: 1234567890）
+              <label>
+                <span className="block text-sm font-semibold text-gray-700 mb-2">
+                  10進制卡號（例: 1234567890）
+                </span>
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={decInput}
+                    onChange={(e) => setDecInput(e.target.value)}
+                    placeholder="請輸入10進制卡號⋯⋯"
+                    className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-full font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
+                  />
+                  <button
+                    onClick={clearDec}
+                    className="px-4 py-3 text-gray-700 rounded-full hover:bg-btnbg hover:text-white transition-colors flex items-center justify-center"
+                    title="清除輸入"
+                  >
+                    <Icon icon="mdi:close" className="text-xl" />
+                  </button>
+                </div>
               </label>
-              <div className="flex gap-2">
-                <input
-                  type="text"
-                  value={decInput}
-                  onChange={(e) => setDecInput(e.target.value)}
-                  placeholder="請輸入10進制卡號⋯⋯"
-                  className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-full font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
-                />
-                <button
-                  onClick={clearDec}
-                  className="px-4 py-3 text-gray-700 rounded-full hover:bg-btnbg hover:text-white transition-colors flex items-center justify-center"
-                  title="清除輸入"
-                >
-                  <Icon icon="mdi:close" className="text-xl" />
-                </button>
-              </div>
             </div>
 
             <div className="mb-4">
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <p className="block text-sm font-semibold text-gray-700 mb-2">
                 轉換結果:
-              </label>
+              </p>
               <div
                 className={`p-4 rounded-lg border-2 font-mono ${
                   decResult
