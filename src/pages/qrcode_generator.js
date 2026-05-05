@@ -134,10 +134,7 @@ const QRCodeGeneratorPage = () => {
         setQrCodeUrl(url);
         if (titleInput.trim()) {
           try {
-            const posterUrl = await buildPoster(
-              url,
-              titleInput.trim(),
-            );
+            const posterUrl = await buildPoster(url, titleInput.trim());
             setComposedUrl(posterUrl);
           } catch (composeError) {
             console.error("Poster generation error:", composeError);
@@ -168,10 +165,7 @@ const QRCodeGeneratorPage = () => {
             setQrCodeUrl(url);
             if (titleInput.trim()) {
               try {
-                const posterUrl = await buildPoster(
-                  url,
-                  titleInput.trim(),
-                );
+                const posterUrl = await buildPoster(url, titleInput.trim());
                 setComposedUrl(posterUrl);
               } catch (composeError) {
                 console.error("Poster generation error:", composeError);
