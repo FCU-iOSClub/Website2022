@@ -55,12 +55,10 @@ const IndexPage = (props) => {
               >
                 <div className="transition duration-200 group-hover:-translate-y-12">
                   <div className="h-12 flex items-center justify-center text-btnbg wrap-break-word">
-                    {/* {{ Join Us }} */}
-                    競賽報名
+                    Join Us
                   </div>
                   <div className="h-12 flex items-center justify-center text-btnbg wrap-break-word">
-                    {/* {{ Welcome }} */}
-                    Go
+                    Welcome
                   </div>
                 </div>
               </button>
