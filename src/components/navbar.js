@@ -150,8 +150,7 @@ const JoinUsButton = ({ fullWidth = false }) => (
       window.open(EXTERNAL_LINKS.joinUs, "_blank");
     }}
   >
-    {/* {{ Join Us }} */}
-    競賽報名
+    Join Us
   </button>
 );
 
