@@ -1,5 +1,6 @@
 import React from "react";
 import { Icon } from "@iconify/react";
+import { graphql, useStaticQuery } from "gatsby";
 
 const communityList = [
   {
@@ -35,6 +36,16 @@ const communityList = [
 ];
 
 const Footer = () => {
+  const {
+    siteBuildMetadata: { buildTime },
+  } = useStaticQuery(graphql`
+    query FooterBuildYear {
+      siteBuildMetadata {
+        buildTime(formatString: "YYYY")
+      }
+    }
+  `);
+
   return (
     <div className="bg-footerbg w-full py-24 px-12 font-serif">
       <div className="grid grid-cols-1 flex-col md:grid-cols-5 justify-center gap-8 md:gap-24 md:px-16">
@@ -86,7 +97,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="pt-12 text-gray-100 text-center flex flex-col md:flex-row justify-center items-center">
-        <p>iOS Club 2016 - 2026</p>
+        <p>iOS Club 2016 - {buildTime}</p>
         <p className="px-2 py-3">©</p>
         <p>All right reserved</p>
       </div>
