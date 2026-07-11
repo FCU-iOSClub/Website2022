@@ -65,7 +65,6 @@ const IndexPage = (props) => {
             </div>
           </div>
           <div className="relative mx-auto w-full max-w-md">
-            <div className="absolute inset-5 rounded-[40%_60%_55%_45%] bg-[#edf2f7]" />
             <IosClubLogoSvg className="relative w-full p-12 drop-shadow-[0_24px_30px_rgba(68,84,132,0.16)] md:p-10" />
           </div>
         </section>
