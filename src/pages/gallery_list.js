@@ -6,6 +6,8 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { Icon } from "@iconify/react";
 import openInNew from "@iconify/icons-ic/baseline-open-in-new";
+import chevronLeft from "@iconify/icons-akar-icons/chevron-left";
+import chevronRight from "@iconify/icons-akar-icons/chevron-right";
 import Pagination from "rc-pagination";
 import "../css/pagination.css";
 import ImageWithPlaceholder from "../components/image-with-placeholder";
@@ -104,6 +106,12 @@ const GalleryList = ({ data }) => {
                 total={itemCount}
                 pageSize={perPage}
                 showTitle={false}
+                prevIcon={
+                  <Icon icon={chevronLeft} width="24" aria-hidden="true" />
+                }
+                nextIcon={
+                  <Icon icon={chevronRight} width="24" aria-hidden="true" />
+                }
               />
             </nav>
           )}
@@ -133,6 +141,12 @@ const GalleryList = ({ data }) => {
                 total={itemCount}
                 pageSize={perPage}
                 showTitle={false}
+                prevIcon={
+                  <Icon icon={chevronLeft} width="24" aria-hidden="true" />
+                }
+                nextIcon={
+                  <Icon icon={chevronRight} width="24" aria-hidden="true" />
+                }
               />
             </nav>
           )}
