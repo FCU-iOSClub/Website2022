@@ -35,23 +35,22 @@
 }
 
 .rc-pagination {
-  @apply py-4 flex flex-row justify-center items-center gap-4 text-xl lg:text-2xl;
+  @apply flex flex-row flex-wrap justify-center items-center gap-2 text-lg;
 }
 
 .rc-pagination > li {
-  @apply cursor-pointer;
+  @apply flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-full transition-colors hover:bg-gray-100 focus-within:ring-3 focus-within:ring-btnbg/30;
 }
 
 .rc-pagination > .rc-pagination-item-active {
-  @apply text-2xl lg:text-3xl;
+  @apply bg-btnbg font-bold text-white hover:bg-btnbg;
 }
 
-.rc-pagination > .rc-pagination-prev {
-  @apply text-gray-500 hover:text-gray-700;
-  content: url("https://api.iconify.design/akar-icons/chevron-left.svg");
+.rc-pagination > .rc-pagination-disabled {
+  @apply cursor-not-allowed opacity-35;
 }
 
-.rc-pagination > .rc-pagination-next {
-  @apply text-gray-500 hover:text-gray-700;
-  content: url("https://api.iconify.design/akar-icons/chevron-right.svg");
+.rc-pagination a,
+.rc-pagination button {
+  @apply flex min-h-11 min-w-11 items-center justify-center rounded-full focus:outline-none;
 }
