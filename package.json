@@ -56,8 +56,18 @@
     "tailwindcss": "^4.2.2"
   },
   "resolutions": {
+    "@babel/plugin-transform-modules-systemjs": "7.29.4",
+    "axios": "1.16.0",
     "cssnano": "^7.0.0",
     "cssnano-preset-default": "^7.0.0",
-    "postcss-discard-duplicates": "^7.0.0"
+    "fast-uri": "3.1.2",
+    "form-data": "4.0.6",
+    "immutable": "3.8.3",
+    "lodash": "4.18.1",
+    "multer": "2.2.0",
+    "path-to-regexp": "0.1.13",
+    "postcss-discard-duplicates": "^7.0.0",
+    "shell-quote": "1.8.4",
+    "ws": "8.21.0"
   }
 }
