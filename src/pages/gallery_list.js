@@ -8,6 +8,7 @@ import { Icon } from "@iconify/react";
 import openInNew from "@iconify/icons-ic/baseline-open-in-new";
 import chevronLeft from "@iconify/icons-akar-icons/chevron-left";
 import chevronRight from "@iconify/icons-akar-icons/chevron-right";
+import moreHorizontal from "@iconify/icons-akar-icons/more-horizontal";
 import Pagination from "rc-pagination";
 import "../css/pagination.css";
 import ImageWithPlaceholder from "../components/image-with-placeholder";
@@ -112,6 +113,12 @@ const GalleryList = ({ data }) => {
                 nextIcon={
                   <Icon icon={chevronRight} width="24" aria-hidden="true" />
                 }
+                jumpPrevIcon={
+                  <Icon icon={moreHorizontal} width="24" aria-hidden="true" />
+                }
+                jumpNextIcon={
+                  <Icon icon={moreHorizontal} width="24" aria-hidden="true" />
+                }
               />
             </nav>
           )}
@@ -146,6 +153,12 @@ const GalleryList = ({ data }) => {
                 }
                 nextIcon={
                   <Icon icon={chevronRight} width="24" aria-hidden="true" />
+                }
+                jumpPrevIcon={
+                  <Icon icon={moreHorizontal} width="24" aria-hidden="true" />
+                }
+                jumpNextIcon={
+                  <Icon icon={moreHorizontal} width="24" aria-hidden="true" />
                 }
               />
             </nav>
