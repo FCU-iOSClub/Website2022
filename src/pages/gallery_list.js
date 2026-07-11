@@ -28,6 +28,10 @@ const GalleryList = ({ data }) => {
   });
   const itemCount = filteredData.length;
   const perPage = 8;
+  const paginatedData = filteredData.slice(
+    (currentPage - 1) * perPage,
+    currentPage * perPage,
+  );
   const onPageChange = (page) => {
     const c = document.documentElement.scrollTop || document.body.scrollTop;
     if (c > 300)
@@ -44,112 +48,141 @@ const GalleryList = ({ data }) => {
   }, [searchQuery]);
 
   return (
-    <div className="bg-iosbgblue ">
+    <div className="bg-iosbgblue">
       <AppHeader
         title="iOS Club 活動相簿"
         description="社團活動相簿，記錄大家參與的各種活動與精彩時刻。"
       />
       <Navbar />
-      <div className="container p-3 md:p-0 mx-auto break-all bg-white font-serif">
-        <div className="h-8" /> {/* 空白區 */}
-        <div className="flex flex-col justify-center">
-          <h1 className="text-5xl text-center mt-24 font-black">活動相簿</h1>
-          <div className="h-8" /> {/* 空白區 */}
-          <div className="flex justify-center">
-            <input
-              type="text"
-              placeholder="搜尋活動"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="px-6 py-3 border border-gray-400 rounded-full w-full md:w-2/3"
-            />
-          </div>
-          <div className="h-8" /> {/* 空白區 */}
-          <Pagination
-            current={currentPage}
-            onChange={onPageChange}
-            total={itemCount}
-            pageSize={perPage}
-          />
-          <div className="h-8" /> {/* 空白區 */}
-          <div className="flex gap-y-10 flex-col items-center">
-            {filteredData.map((item, index) =>
-              index >= (currentPage - 1) * perPage &&
-              index < currentPage * perPage
-                ? galleryItem(item.node)
-                : null,
-            )}
-          </div>
-          <div className="h-8" /> {/* 空白區 */}
-          <Pagination
-            current={currentPage}
-            onChange={onPageChange}
-            total={itemCount}
-            pageSize={perPage}
-          />
+      <main
+        id="main-content"
+        className="container min-h-screen mx-auto bg-white px-4 pb-16 pt-32 font-serif md:px-8"
+      >
+        <div className="mx-auto max-w-6xl">
+          <header className="mb-10 text-center">
+            <h1 className="text-4xl font-black text-gray-900 md:text-5xl">
+              活動相簿
+            </h1>
+            <p className="mt-3 text-base text-gray-600 md:text-lg">
+              收藏 iOS Club 每一次相聚的精彩時刻
+            </p>
+          </header>
+
+          <section aria-labelledby="gallery-search-label">
+            <div className="mx-auto mb-4 max-w-2xl">
+              <label
+                id="gallery-search-label"
+                htmlFor="gallery-search"
+                className="mb-2 block font-bold text-gray-800"
+              >
+                搜尋活動
+              </label>
+              <input
+                id="gallery-search"
+                type="search"
+                placeholder="輸入活動名稱、日期或地點"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full rounded-full border border-gray-400 px-5 py-3 text-base text-gray-900 transition-colors placeholder:text-gray-500 focus:border-btnbg focus:outline-none focus:ring-3 focus:ring-btnbg/25 motion-reduce:transition-none"
+              />
+            </div>
+            <p
+              className="mb-8 text-center text-sm text-gray-600"
+              aria-live="polite"
+            >
+              {searchQuery
+                ? `找到 ${itemCount} 個相簿`
+                : `共 ${itemCount} 個相簿`}
+            </p>
+          </section>
+
+          {itemCount > perPage && (
+            <nav aria-label="上方相簿分頁" className="mb-8">
+              <Pagination
+                current={currentPage}
+                onChange={onPageChange}
+                total={itemCount}
+                pageSize={perPage}
+                showTitle={false}
+              />
+            </nav>
+          )}
+
+          {itemCount ? (
+            <div className="grid gap-6 md:grid-cols-2">
+              {paginatedData.map(({ node }) => (
+                <GalleryItem key={node.id} node={node} />
+              ))}
+            </div>
+          ) : (
+            <div className="rounded-2xl border border-gray-300 bg-gray-50 px-6 py-16 text-center">
+              <h2 className="text-xl font-bold text-gray-900">
+                找不到相符的活動
+              </h2>
+              <p className="mt-2 text-gray-600">
+                請嘗試其他活動名稱、日期或地點。
+              </p>
+            </div>
+          )}
+
+          {itemCount > perPage && (
+            <nav aria-label="下方相簿分頁" className="mt-8">
+              <Pagination
+                current={currentPage}
+                onChange={onPageChange}
+                total={itemCount}
+                pageSize={perPage}
+                showTitle={false}
+              />
+            </nav>
+          )}
         </div>
-        <div className="h-12"></div>
-      </div>
+      </main>
       <Footer />
     </div>
   );
 };
 
-const galleryItem = (node) => {
+const GalleryItem = ({ node }) => {
+  const isExternal = Boolean(node.gdrive_url?.trim());
+  const url = isExternal
+    ? node.gdrive_url
+    : "/gallery/" + node.date + " " + node.name;
+
   return (
-    <div className="box-border grid md:grid-cols-2 h-fit md:h-80 w-full md:w-2/3 rounded-md shadow-lg border border-gray-400 font-serif">
-      <div className="py-2 px-8 w-full h-full flex flex-col justify-center gap-4 md:gap-0 md:justify-evenly">
-        <h2 className="mt-4 text-xl font-bold text-center">{node.name}</h2>
-        <div className="font-bold text-gray-700">時間：{node.date}</div>
-        <div className="font-bold text-gray-700">地點：{node.location}</div>
-        <a
-          href={
-            node.gdrive_url && node.gdrive_url.trim() !== ""
-              ? node.gdrive_url
-              : "/gallery/" + node.date + " " + node.name
-          }
-          target={
-            node.gdrive_url && node.gdrive_url.trim() !== "" ? "_blank" : ""
-          }
-          rel={
-            node.gdrive_url && node.gdrive_url.trim() !== ""
-              ? "noopener noreferrer"
-              : ""
-          }
-          className="w-fit"
-        >
-          <div className="w-fit inline-flex items-center gap-2 whitespace-nowrap py-1 px-5 rounded-full wrap-break-word bg-transparent border border-gray-700 hover:bg-btnbg text-gray-800 hover:text-white">
-            {node.gdrive_url && node.gdrive_url.trim() !== "" ? (
-              <Icon
-                icon={openInNew}
-                width="16"
-                height="16"
-                aria-hidden="true"
-              />
-            ) : null}
-            <span>See More</span>
+    <article className="group overflow-hidden rounded-2xl border border-gray-300 bg-white shadow-sm transition duration-200 hover:border-ioscardblue hover:shadow-lg motion-reduce:transition-none">
+      <ImageWithPlaceholder
+        src={node.mainPhoto}
+        alt={`${node.name}活動照片`}
+        className="w-full"
+        imgClassName="transition-transform duration-300 group-hover:scale-[1.02] motion-reduce:transform-none motion-reduce:transition-none"
+        aspectRatio="4/3"
+      />
+      <div className="flex flex-col gap-3 p-6">
+        <h2 className="text-xl font-bold text-gray-900">{node.name}</h2>
+        <dl className="space-y-2 text-gray-700">
+          <div className="flex gap-2">
+            <dt className="shrink-0 font-bold">日期</dt>
+            <dd>{node.date}</dd>
           </div>
+          <div className="flex gap-2">
+            <dt className="shrink-0 font-bold">地點</dt>
+            <dd>{node.location}</dd>
+          </div>
+        </dl>
+        <a
+          href={url}
+          target={isExternal ? "_blank" : undefined}
+          rel={isExternal ? "noopener noreferrer" : undefined}
+          className="mt-2 inline-flex min-h-11 w-fit cursor-pointer items-center gap-2 rounded-full border border-btnbg bg-white px-5 py-2 font-bold text-btnbg transition-colors duration-200 hover:bg-btnbg hover:text-white focus:outline-none focus:ring-3 focus:ring-btnbg/30 motion-reduce:transition-none"
+        >
+          {isExternal && (
+            <Icon icon={openInNew} width="18" height="18" aria-hidden="true" />
+          )}
+          <span>{isExternal ? "前往 Google Drive" : "查看相簿"}</span>
         </a>
-        {/* 手機版主要圖片顯示 */}
-        <ImageWithPlaceholder
-          src={node.mainPhoto}
-          alt={node.name}
-          className="w-full pb-5 md:hidden self-center"
-          imgClassName="object-cover rounded-md"
-          aspectRatio="4/3"
-        />
       </div>
-      <div className="h-full w-full hidden md:flex flex-row justify-center items-center">
-        {/* 電腦版主要圖片顯示 */}
-        <ImageWithPlaceholder
-          src={node.mainPhoto}
-          alt={node.name}
-          className="w-5/6 py-6 px-4"
-          imgClassName="object-cover rounded-md"
-          aspectRatio="4/3"
-        />
-      </div>
-    </div>
+    </article>
   );
 };
 

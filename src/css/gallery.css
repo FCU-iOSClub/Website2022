@@ -1,5 +1,7 @@
 .lightgallery-grid > div {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: left;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 1rem;
+  max-width: 80rem;
+  margin-inline: auto;
 }
