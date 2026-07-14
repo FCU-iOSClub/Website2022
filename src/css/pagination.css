@@ -35,7 +35,7 @@
 }
 
 .rc-pagination {
-  @apply flex flex-row flex-wrap justify-center items-center gap-2 text-lg;
+  @apply flex flex-row flex-nowrap justify-center items-center gap-2 text-lg;
 }
 
 .rc-pagination > li {
@@ -48,6 +48,10 @@
 
 .rc-pagination > .rc-pagination-disabled {
   @apply cursor-not-allowed opacity-35;
+}
+
+.rc-pagination-simple > .rc-pagination-options {
+  @apply hidden;
 }
 
 .rc-pagination a,
