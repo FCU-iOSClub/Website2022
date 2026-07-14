@@ -43,7 +43,7 @@ const Navbar = () => {
 
   const mobileChild = (
     <nav
-      className={`fixed top-3 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] font-bold z-50 overflow-hidden transition-[border-radius] duration-300 ${isRounded ? "rounded-full" : "rounded-3xl"} ${mobileGlassClass}`}
+      className={`fixed top-3 left-1/2 -translate-x-1/2 w-[calc(100%_-_3rem)] font-bold z-50 overflow-hidden transition-[border-radius] duration-300 ${isRounded ? "rounded-full" : "rounded-3xl"} ${mobileGlassClass}`}
     >
       <div className="flex justify-between px-5 py-3 w-full">
         <a href="/" className="flex items-center gap-3 w-fit text-2xl group">
@@ -100,7 +100,7 @@ const Navbar = () => {
   );
   const desktopChild = (
     <nav
-      className={`fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] flex items-center justify-between font-bold py-3 px-5 z-50 rounded-full ${glassClass}`}
+      className={`fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%_-_3rem)] flex items-center justify-between font-bold py-3 px-5 z-50 rounded-full ${glassClass}`}
     >
       <a href="/" className="flex items-center gap-3 font-bold text-2xl group">
         <div className="w-9 h-9 rounded-full bg-white/30 border border-white/55 flex items-center justify-center shadow-[inset_0_1px_2px_rgba(255,255,255,0.7)] transition-all duration-300 group-hover:bg-white/50 group-hover:scale-105">
