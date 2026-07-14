@@ -10,6 +10,7 @@ import chevronLeft from "@iconify/icons-akar-icons/chevron-left";
 import chevronRight from "@iconify/icons-akar-icons/chevron-right";
 import moreHorizontal from "@iconify/icons-akar-icons/more-horizontal";
 import Pagination from "rc-pagination";
+import { useMediaQuery } from "react-responsive";
 import "../css/pagination.css";
 import ImageWithPlaceholder from "../components/image-with-placeholder";
 import useGoogleAdsConversion from "../hooks/useGoogleAdsConversion";
@@ -17,6 +18,7 @@ import useGoogleAdsConversion from "../hooks/useGoogleAdsConversion";
 const GalleryList = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
+  const isSmallDevice = useMediaQuery({ maxWidth: 639 });
 
   // Google Ads 轉換追蹤
   useGoogleAdsConversion();
@@ -107,6 +109,7 @@ const GalleryList = ({ data }) => {
                 total={itemCount}
                 pageSize={perPage}
                 showTitle={false}
+                simple={isSmallDevice ? { readOnly: true } : false}
                 prevIcon={
                   <Icon icon={chevronLeft} width="24" aria-hidden="true" />
                 }
@@ -148,6 +151,7 @@ const GalleryList = ({ data }) => {
                 total={itemCount}
                 pageSize={perPage}
                 showTitle={false}
+                simple={isSmallDevice ? { readOnly: true } : false}
                 prevIcon={
                   <Icon icon={chevronLeft} width="24" aria-hidden="true" />
                 }
