@@ -1,0 +1,118 @@
+{
+  "name": "第十屆",
+  "url": "10",
+  "startDate": "2026-08-01",
+  "endDate": "now",
+  "description": "",
+  "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ea667500-69cc-4e17-a115-7ee204b9b700/large",
+  "members": [
+    {
+      "name": "黃彥閔",
+      "description": "",
+      "position": "社長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/8dad9d17-e7dd-4693-5ca4-6af9b8a41000/public"
+    },
+    {
+      "name": "廖為",
+      "description": "",
+      "position": "副社長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/91638db6-45e3-4fde-c2f4-3e3670e7b400/public"
+    },
+    {
+      "name": "李天宇",
+      "description": "",
+      "position": "網管",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/132b2245-b54e-4de5-1950-e4b20d078a00/public"
+    },
+    {
+      "name": "葉韋坪",
+      "description": "",
+      "position": "網管",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/ae2690a7-4c86-4e66-c9c6-6f1dd8b34300/public"
+    },
+    {
+      "name": "林永富",
+      "description": "",
+      "position": "技術長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/a88bed96-e5f3-4e5b-9724-a00348b30400/public"
+    },
+    {
+      "name": "廖上凱",
+      "description": "",
+      "position": "技術長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/cd39db31-2268-455c-a29a-b3036ac05b00/public"
+    },
+    {
+      "name": "陳冠羽",
+      "description": "",
+      "position": "活動執行長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/de6db38e-8935-46ba-5e75-53a4b6be4500/public"
+    },
+    {
+      "name": "陳芷琳",
+      "description": "",
+      "position": "行銷長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/2a90694e-defe-4734-d320-7305d1a41400/public"
+    },
+    {
+      "name": "陳瑞昌",
+      "description": "",
+      "position": "教學長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/a1a066f5-d309-4c37-f459-12519895fc00/public"
+    },
+    {
+      "name": "陳莉茜",
+      "description": "",
+      "position": "教學長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/2e7b77ed-7667-439a-9c3e-c3d33e62e000/public"
+    },
+    {
+      "name": "趙子蓉",
+      "description": "",
+      "position": "教學長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/6965336e-4b15-4b8e-1803-c33f10e96200/public"
+    },
+    {
+      "name": "曾妤涵",
+      "description": "",
+      "position": "美宣長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/f737d1ae-fae8-4cc2-6467-297574804000/public"
+    },
+    {
+      "name": "陳宥蓁",
+      "description": "",
+      "position": "公關長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/114fa4b8-8c7e-4e2f-8fec-7199fc366000/public"
+    },
+    {
+      "name": "宋書超",
+      "description": "",
+      "position": "自媒體營運長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/04ea94de-ac94-4a60-2ca6-fc779fdfef00/public"
+    },
+    {
+      "name": "葉士閎",
+      "description": "",
+      "position": "設備長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/df17a8e0-9dee-405f-7768-9e3d339ec500/public"
+    },
+    {
+      "name": "江致螢",
+      "description": "",
+      "position": "財務長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/b03367fe-00dc-4900-6b5f-07a5bc377700/public"
+    },
+    {
+      "name": "洪湐程",
+      "description": "",
+      "position": "執行秘書長",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/33ef57a1-f642-4b58-287e-5a7d0f0cb000/public"
+    },
+    {
+      "name": "蔡承曄",
+      "description": "",
+      "position": "顧問",
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/f19696d6-03ff-49c3-8d75-d10a57462000/public"
+    }
+  ]
+}
