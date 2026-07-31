@@ -15,7 +15,6 @@ import { Icon } from "@iconify/react";
 import loudspeakerIcon from "@iconify/icons-fluent-emoji-high-contrast/loudspeaker";
 import chevronUp from "@iconify/icons-akar-icons/chevron-up";
 import chevronDown from "@iconify/icons-akar-icons/chevron-down";
-import ReverseColorsButton from "../components/buttons/reverse_colors_button";
 import useGoogleAdsConversion from "../hooks/useGoogleAdsConversion";
 import { EXTERNAL_LINKS } from "../constants/navigation";
 
@@ -28,96 +27,112 @@ const IndexPage = (props) => {
       {/* Header */}
       <AppHeader />
       <Navbar />
-      <div className="container mx-auto break-normal bg-white shadow-lg px-3 md:px-0 font-serif">
-        <div className="h-20 md:h-32" />
-        {/* 空白 */}
-        {/* 最新消息 */}
-        <AnnouncementLiet data={props.data} />
-        {/* We are iOS Club */}
-        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
-          <div className="w-full self-center">
-            <div className="text-center text-5xl font-bold">
-              <h1 className="py-3 text-center md:text-left">We are</h1>
-              <h1 className="py-3 text-center md:text-left">iOS Club.</h1>
-            </div>
-            <p className="py-3 text-gray-700 text-center md:text-left">
-              一個教你從零開始打造專屬 App 的社團
+      <main className="container mx-auto max-w-[1440px] overflow-hidden bg-white font-serif text-slate-900 shadow-xl">
+        <div className="h-24 md:h-32" />
+
+        <div className="mx-auto max-w-6xl px-5 md:px-8">
+          <AnnouncementList data={props.data} />
+        </div>
+
+        <section className="relative mx-auto grid min-h-[620px] max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-[1.15fr_0.85fr] md:px-8 md:py-24">
+          <div className="relative z-10 text-center md:text-left">
+            <p className="mb-5 text-sm font-bold tracking-[0.22em] text-iostextblue uppercase">
+              Feng Chia University · Since 2016
             </p>
-            <div className="h-2 md:h-2" />
-            {/* 空白 */}
-            <div className="px-5 md:p-0 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3 md:gap-3 w-full bottom-120 left-2">
-              {/* Join Us 按鈕 */}
-              <button
-                className="overflow-hidden group h-12 px-6 border border-btnbg rounded-xs"
-                onClick={() => {
-                  window.open(EXTERNAL_LINKS.joinUs, "_blank");
-                }}
+            <h1 className="text-[clamp(3.5rem,9vw,7.5rem)] leading-[0.88] font-bold tracking-[-0.055em] text-slate-950">
+              We are
+              <span className="mt-2 block text-btnbg">iOS Club.</span>
+            </h1>
+            <p className="mx-auto mt-8 max-w-xl text-lg leading-8 text-slate-600 md:mx-0 md:text-xl">
+              一個教你從零開始打造專屬 App
+              的社團。把好奇心帶來，和我們一起學習、創作、參賽。
+            </p>
+            <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row md:justify-start">
+              <a
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-btnbg px-8 py-3 font-bold text-white shadow-[0_12px_28px_rgba(68,84,132,0.28)] transition-colors duration-200 hover:bg-[#53679d] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-btnbg"
+                href={EXTERNAL_LINKS.joinUs}
+                target="_blank"
+                rel="noreferrer"
               >
-                <div className="transition duration-200 group-hover:-translate-y-12">
-                  <div className="h-12 flex items-center justify-center text-btnbg wrap-break-word">
-                    Join Us
-                  </div>
-                  <div className="h-12 flex items-center justify-center text-btnbg wrap-break-word">
-                    Welcome
-                  </div>
-                </div>
-              </button>
-              {/* 歷代社團幹部 按鈕 */}
-              <button
-                className="overflow-hidden group h-12 px-6 border bg-btnbg border-btnbg rounded-xs transform hover:bg-ioscardblue hover:border-ioscardblue duration-200"
-                onClick={() => {
-                  window.location.href = "/members";
-                }}
+                加入我們
+              </a>
+              <a
+                className="inline-flex min-h-12 items-center justify-center rounded-full border border-slate-300 px-8 py-3 font-bold text-slate-700 transition-colors duration-200 hover:border-btnbg hover:bg-slate-50 hover:text-btnbg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-btnbg"
+                href="/members"
               >
-                <div className="h-12 flex items-center justify-center text-white">
-                  歷屆幹部
-                </div>
-              </button>
+                認識歷屆幹部
+              </a>
             </div>
           </div>
-          <IosClubLogoSvg className="w-full p-12" />
-        </div>
-        <div className="h-8" />
-        {/* About iOS Club. */}
-        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
-          <AboutIosSvg className="w-full p-10 md:p-0 bg-cover hidden md:block" />
-          <div className="w-full self-center">
-            <div className="text-center text-5xl font-bold">
-              <h1 className="py-3">About</h1>
-              <h1 className="py-3">iOS Club.</h1>
-            </div>
-            <p className="py-3 md:px-12 text-gray-700 text-justify">
-              是全臺首個獲得 Apple
-              官方認證的社團，也是一個結合學術的志工性社團。<br></br>
-              每年暑假社員們會有國際交流的機會，到海外參加比賽，和不同國家的學生進行合作活動與技術交流。
-            </p>
+          <div className="relative mx-auto w-full max-w-md">
+            <IosClubLogoSvg className="relative w-full p-12 drop-shadow-[0_24px_30px_rgba(68,84,132,0.16)] md:p-10" />
           </div>
-          <AboutIosSvg className="w-full p-10 md:p-0 bg-cover md:hidden" />
-        </div>
-        <div className="h-32" />
-        {/* iOS Club 會做什麼 */}
-        <div className="py-5 md:px-32 grid grid-rows-1 md:grid-cols-2 md:p-10 md:space-x-10 justify-center items-center">
-          <div className="w-full self-center">
-            <div className="text-center text-5xl font-bold">
-              <h2 className="py-3">iOS Club</h2>
-              <h2 className="py-3">會做什麼</h2>
+        </section>
+
+        <section className="bg-[#f4f7fa] px-5 py-20 md:px-8 md:py-28">
+          <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-20">
+            <AboutIosSvg className="order-2 w-full md:order-1" />
+            <div className="order-1 md:order-2">
+              <p className="mb-4 text-sm font-bold tracking-[0.2em] text-iostextblue uppercase">
+                About us
+              </p>
+              <h2 className="text-4xl leading-tight font-bold tracking-tight text-slate-950 md:text-6xl">
+                不只學寫程式，
+                <span className="block text-btnbg">也一起看見世界。</span>
+              </h2>
+              <p className="mt-7 text-lg leading-9 text-slate-600">
+                我們是全臺首個獲得 Apple
+                官方認證的社團，也是一個結合學術的志工性社團。每年暑假，社員有機會到海外參加比賽，和不同國家的學生合作與技術交流。
+              </p>
             </div>
-            <p className="py-3 text-gray-700 text-justify">
-              社團鼓勵所有社員參加比賽，近年來除了在 WWDC
-              學生挑戰賽及行動應用創新賽等比賽取得佳績，更在各個領域嶄露頭角。
-              <br></br>社團不僅提供 RTC
-              認證的社課資源，還有定期舉辦講座、Workshop、社內競賽，增強團隊實力。除此之外，更有野餐、社遊和期末聚等，超多活動等你們來參加！
-              <br></br>
-              身為志工性社團的我們，還會和相關機構及國小一同舉辦志工營隊，將在社團內所學回饋社會。
-            </p>
           </div>
-          <IosClubDoingSvg className="w-full" />
-        </div>
-        <div className="h-16" />
-        {/* 空白 */}
-        {/* Gallery */}
-        <h2 className="text-center text-3xl pt-24 pb-12 font-bold">社團相簿</h2>
-        <div className="">
+        </section>
+
+        <section className="px-5 py-20 md:px-8 md:py-28">
+          <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-20">
+            <div>
+              <p className="mb-4 text-sm font-bold tracking-[0.2em] text-iostextblue uppercase">
+                Learn · Build · Share
+              </p>
+              <h2 className="text-4xl leading-tight font-bold tracking-tight text-slate-950 md:text-6xl">
+                從一行程式，
+                <span className="block text-btnbg">做到真正的作品。</span>
+              </h2>
+              <div className="mt-7 space-y-5 text-lg leading-9 text-slate-600">
+                <p>
+                  社團鼓勵社員參與 WWDC
+                  學生挑戰賽、行動應用創新賽等競賽，近年屢獲佳績，也在不同領域展現實力。
+                </p>
+                <p>
+                  除了 RTC 認證社課，我們也定期舉辦講座、Workshop
+                  與社內競賽，並透過野餐、社遊和期末聚，讓社員在學習之外建立連結。
+                </p>
+                <p>
+                  身為志工性社團，我們也與相關機構及國小合作舉辦營隊，將在社團所學回饋社會。
+                </p>
+              </div>
+            </div>
+            <IosClubDoingSvg className="w-full" />
+          </div>
+        </section>
+
+        <section className="bg-[#edf3f8] py-20 text-slate-900 md:py-28">
+          <div className="mx-auto mb-10 flex max-w-6xl flex-col gap-5 px-5 md:mb-14 md:flex-row md:items-end md:justify-between md:px-8">
+            <div>
+              <p className="mb-3 text-sm font-bold tracking-[0.2em] text-iostextblue uppercase">
+                Club moments
+              </p>
+              <h2 className="text-4xl font-bold tracking-tight md:text-6xl">
+                社團相簿
+              </h2>
+            </div>
+            <a
+              className="w-fit border-b border-slate-400 pb-1 text-lg text-slate-700 transition-colors duration-200 hover:border-btnbg hover:text-btnbg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-btnbg"
+              href="/gallery_list"
+            >
+              看更多精彩時刻 →
+            </a>
+          </div>
           <Splide
             options={{
               type: "loop",
@@ -128,11 +143,11 @@ const IndexPage = (props) => {
               perPage: 1,
               padding: "20%",
               arrows: false,
-              drag: false,
+              drag: true,
               pagination: false,
               autoScroll: {
                 speed: 1,
-                pauseOnHover: false,
+                pauseOnHover: true,
               },
               breakpoints: {
                 768: {
@@ -141,7 +156,7 @@ const IndexPage = (props) => {
                   autoWidth: true,
                   autoScroll: {
                     speed: 1,
-                    pauseOnHover: false,
+                    pauseOnHover: true,
                   },
                 },
               },
@@ -153,227 +168,214 @@ const IndexPage = (props) => {
                 <ImageWithPlaceholder
                   src={image}
                   alt={"首頁輪播圖 " + (index + 1)}
-                  className="w-full h-full"
+                  className="h-full w-full overflow-hidden rounded-2xl shadow-[0_18px_45px_rgba(68,84,132,0.16)]"
                   imgClassName="object-cover"
                 />
               </SplideSlide>
             ))}
           </Splide>
-          {/* desktopBTN */}
-          <div className="hidden md:block w-fit relative bottom-16 left-1/2 -translate-x-1/2">
-            <a
-              className="bg-btnbg1 text-center py-3 px-6 rounded-full wrap-break-word transform hover:bg-red-400 duration-200"
-              href="/gallery_list"
-            >
-              <nobr>點我看更多</nobr>
-            </a>
-          </div>
-        </div>
-        {/* mobileBTN */}
-        <div className="md:hidden flex w-full py-8 justify-center">
-          <a
-            className="bg-btnbg1 text-center py-3 px-6 rounded-full wrap-break-word transform hover:bg-red-400 duration-200"
-            href="/gallery_list"
-          >
-            <nobr>點我看更多</nobr>
-          </a>
-        </div>
-        {/* iOS Club 做過什麼 */}
-        <div className="h-20 md:h-32" />
-        {/* 空白 */}
-        <h2 className="text-center text-3xl py-3 font-bold">
-          iOS Club 做過什麼
-        </h2>
-        <div className="py-5 px-5 md:grid md:grid-cols-3 md:gap-3 justify-center text-center">
-          <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50">
-            <h2 className="my-8 text-xl font-bold">社團課程</h2>
-            <p className="my-8">每週二、三的晚上 18:30～21:00</p>
-            <p className="my-8">
-              <ReverseColorsButton
-                text="Learn More"
-                onClick={() => {
-                  window.location.href = "/course";
-                }}
-              />
+        </section>
+
+        <section className="px-5 py-20 md:px-8 md:py-28">
+          <div className="mx-auto max-w-6xl">
+            <p className="mb-3 text-center text-sm font-bold tracking-[0.2em] text-iostextblue uppercase">
+              Explore the club
             </p>
-          </div>
-          <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
-            <h2 className="my-8 text-xl font-bold">社團活動</h2>
-            <p className="px-2 my-8">
-              想知道 iOS Club 每年都有哪些精采活動嗎？
-            </p>
-            <p className="my-8">
-              <ReverseColorsButton
-                text="Learn More"
-                onClick={() => {
-                  window.location.href = "/club_activities";
-                }}
-              />
-            </p>
-          </div>
-          <div className="w-full grid grid-col-1 rounded-md shadow-lg border border-neutral-50 justify-around">
-            <h2 className="my-8 px-2 text-xl font-bold">社團競賽</h2>
-            <p className="my-8">社團每年參加的比賽</p>
-            <p className="my-8">
-              <ReverseColorsButton
-                text="Learn More"
-                onClick={() => {
-                  window.location.href = "/contest";
-                }}
-              />
-            </p>
-          </div>
-        </div>
-        {/* 聯絡我們 */}
-        <div className="antialiased">
-          <div className="flex w-full py-12 md:py-32 justify-center items-center">
-            <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 bg-btnbg w-full max-w-4xl p-8 rounded-xl shadow-lg text-white">
-              <div className="flex flex-col space-y-8 justify-between">
-                <div>
-                  <h1 className="font-bold text-4xl tracking-wide">
-                    Contact US
-                  </h1>
-                  <p className="pt-2 text-cyan-100">
-                    如想更加暸解我們或是想要與我們合作，歡迎洽詢！
+            <h2 className="text-center text-4xl font-bold tracking-tight md:text-6xl">
+              在 iOS Club，找到你的下一步
+            </h2>
+            <div className="mt-12 grid gap-5 md:grid-cols-3">
+              {clubLinks.map((item, index) => (
+                <a
+                  key={item.href}
+                  className="group flex min-h-72 flex-col rounded-3xl border border-slate-200 bg-white p-8 shadow-[0_12px_40px_rgba(15,23,42,0.06)] transition-colors duration-200 hover:border-ioscardblue hover:bg-[#f8fafc] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-btnbg"
+                  href={item.href}
+                >
+                  <span className="text-sm font-bold tracking-[0.18em] text-iostextblue">
+                    0{index + 1}
+                  </span>
+                  <h3 className="mt-10 text-3xl font-bold">{item.title}</h3>
+                  <p className="mt-4 grow text-base leading-7 text-slate-600">
+                    {item.description}
                   </p>
-                </div>
-                <div className="flex flex-col space-y-4">
-                  <div className="inline-flex space-x-2 items-center">
-                    <Icon
-                      icon="carbon:email"
-                      width="20"
-                      height="20"
-                      color="#ffffff"
-                    />
-                    <a href="mailto:iosclub@mail.iosclub.tw">
-                      iosclub@mail.iosclub.tw
-                    </a>
-                  </div>
-                  <div className="inline-flex space-x-2 items-center">
+                  <span className="mt-8 font-bold text-btnbg transition-colors group-hover:text-iostextblue">
+                    了解更多 →
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-5 pb-20 md:px-8 md:pb-28">
+          <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] bg-btnbg px-7 py-12 text-white shadow-[0_24px_60px_rgba(68,84,132,0.3)] md:px-14 md:py-16">
+            <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full border-[48px] border-white/5" />
+            <div className="relative grid gap-12 md:grid-cols-[0.8fr_1.2fr] md:items-end">
+              <div>
+                <p className="text-sm font-bold tracking-[0.2em] text-iospink uppercase">
+                  Contact us
+                </p>
+                <h2 className="mt-4 text-4xl leading-tight font-bold md:text-6xl">
+                  一起做點
+                  <br />
+                  有趣的事。
+                </h2>
+              </div>
+              <div>
+                <p className="max-w-xl text-lg leading-8 text-slate-100">
+                  想更加了解我們，或是有合作提案？歡迎寄信或直接來社辦找我們聊聊。
+                </p>
+                <div className="mt-7 space-y-4">
+                  <a
+                    className="flex w-fit items-center gap-3 break-all underline decoration-white/40 underline-offset-4 transition-colors hover:text-iospink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                    href="mailto:iosclub@mail.iosclub.tw"
+                  >
+                    <Icon icon="carbon:email" className="h-5 w-5 shrink-0" />
+                    iosclub@mail.iosclub.tw
+                  </a>
+                  <a
+                    className="flex w-fit items-start gap-3 underline decoration-white/40 underline-offset-4 transition-colors hover:text-iospink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                    href="https://maps.app.goo.gl/G9PphU6iEHDTnkBeA"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <Icon
                       icon="akar-icons:location"
-                      width="20"
-                      height="20"
-                      color="#ffffff"
+                      className="mt-1 h-5 w-5 shrink-0"
                     />
-                    <a
-                      href="https://maps.app.goo.gl/G9PphU6iEHDTnkBeA"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      407102 臺中市西屯區文華路 100 號 電子通訊館 B04
-                    </a>
-                  </div>
+                    407102 臺中市西屯區文華路 100 號 電子通訊館 B04
+                  </a>
                 </div>
-                {/* Social icon */}
-                <div className="flex space-x-4 text-lg">
-                  {socialItems.map((icon, index) => (
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {socialItems.map((item) => (
                     <a
-                      key={index}
-                      href={icon.href}
+                      key={item.name}
+                      className="grid h-11 w-11 place-items-center rounded-full border border-white/25 transition-colors duration-200 hover:border-white hover:bg-white hover:text-btnbg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                      href={item.href}
                       target="_blank"
                       rel="noreferrer"
+                      aria-label={item.name}
                     >
-                      <Icon
-                        icon={icon.icon}
-                        width="32"
-                        height="32"
-                        color="#ffffff"
-                      />
+                      <Icon icon={item.icon} className="h-5 w-5" />
                     </a>
                   ))}
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
       {/* footer */}
       <Footer />
     </div>
   );
 };
 
-// 最新消息 react hook
-const AnnouncementLiet = (props) => {
+// 最新消息
+const AnnouncementList = (props) => {
   const [isAnnouncementOpen, setIsAnnouncementOpen] = useState(false);
   const anns = props.data.allAnnouncementJson.edges;
-
-  // 白底內容的 react hook
-  const AnnContent = (props) => {
-    const node = props.node;
-    return (
-      <div className="bg-white p-3 rounded-md flex flex-col gap-3 md:flex-row">
-        <div className="grow flex flex-col gap-3 md:pr-2">
-          <p
-            dangerouslySetInnerHTML={{
-              __html: node.content.replaceAll("\n", "<br>"),
-            }}
-          />
-          {node.url && node.url.length > 0 && (
-            <a
-              className="text-blue-500 underline underline-offset-2 font-bold"
-              href={node.url}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {node.urlText}
-            </a>
-          )}
-        </div>
-        {node.image && node.image.length > 0 && (
-          <ImageWithPlaceholder
-            src={node.image}
-            alt={node.title}
-            className="w-full md:w-96 md:shrink-0"
-            imgClassName="object-scale-down rounded-md"
-            aspectRatio="4/3"
-          />
-        )}
-      </div>
-    );
-  };
-
-  const annsHtml = [];
-  annsHtml.push(<AnnContent node={anns[0].node} />);
-  anns.slice(1, 4).forEach((v) => {
-    annsHtml.push(
-      <div className="flex items-center gap-2">
-        <Icon
-          icon={loudspeakerIcon}
-          color="#1f2937"
-          width="30"
-          height="30"
-          className="shrink-0"
-        />
-        <div className="">{v.node.title}</div>
-      </div>,
-    );
-    annsHtml.push(<AnnContent node={v.node} />);
-  });
+  const latestAnnouncement = anns[0].node;
 
   return (
-    <div className="bg-gray-300 shadow-lg md:mx-5 py-4 px-3 rounded-md flex flex-col gap-4 text-justify break-normal">
-      <div className="flex items-center gap-2">
-        <Icon
-          icon={loudspeakerIcon}
-          color="#1f2937"
-          width="30"
-          height="30"
-          className="shrink-0"
-        />
-        <div className="grow">{anns[0].node.title}</div>
+    <aside className="overflow-hidden rounded-2xl border border-slate-200 bg-[#f8fafc] shadow-[0_8px_30px_rgba(15,23,42,0.06)]">
+      <button
+        className="flex w-full cursor-pointer items-center gap-4 px-5 py-4 text-left transition-colors duration-200 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-btnbg md:px-6"
+        type="button"
+        aria-expanded={isAnnouncementOpen}
+        aria-controls="announcements"
+        onClick={() => setIsAnnouncementOpen(!isAnnouncementOpen)}
+      >
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-btnbg text-white">
+          <Icon icon={loudspeakerIcon} className="h-5 w-5" aria-hidden="true" />
+        </span>
+        <span className="min-w-0 grow">
+          <span className="block text-xs font-bold tracking-[0.16em] text-iostextblue uppercase">
+            Latest news
+          </span>
+          <span className="mt-1 block truncate font-bold text-slate-800">
+            {latestAnnouncement.title}
+          </span>
+        </span>
+        <span className="hidden shrink-0 text-sm text-slate-500 sm:block">
+          {latestAnnouncement.date}
+        </span>
         <Icon
           icon={isAnnouncementOpen ? chevronUp : chevronDown}
-          color="#1f2937"
-          onClick={() => setIsAnnouncementOpen(!isAnnouncementOpen)}
-          className="cursor-pointer shrink-0 animate-bounce"
+          className="h-5 w-5 shrink-0 text-slate-600"
+          aria-hidden="true"
         />
-      </div>
-      {isAnnouncementOpen && annsHtml}
-    </div>
+      </button>
+      {isAnnouncementOpen && (
+        <div
+          id="announcements"
+          className="space-y-4 border-t border-slate-200 p-4 md:p-6"
+        >
+          {anns.slice(0, 4).map(({ node }) => (
+            <article
+              key={node.id}
+              className="flex flex-col gap-5 rounded-xl bg-white p-5 md:flex-row md:p-6"
+            >
+              <div className="grow">
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                  <h3 className="text-lg font-bold text-slate-900">
+                    {node.title}
+                  </h3>
+                  <time className="shrink-0 text-sm text-slate-500">
+                    {node.date}
+                  </time>
+                </div>
+                <p
+                  className="mt-4 leading-7 text-slate-600"
+                  dangerouslySetInnerHTML={{
+                    __html: node.content.replaceAll("\n", "<br>"),
+                  }}
+                />
+                {node.url && node.url.length > 0 && (
+                  <a
+                    className="mt-4 inline-block font-bold text-btnbg underline decoration-btnbg/30 underline-offset-4 hover:text-iostextblue focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-btnbg"
+                    href={node.url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {node.urlText}
+                  </a>
+                )}
+              </div>
+              {node.image && node.image.length > 0 && (
+                <ImageWithPlaceholder
+                  src={node.image}
+                  alt={node.title}
+                  className="w-full rounded-lg md:w-72 md:shrink-0"
+                  objectFit="scale-down"
+                  aspectRatio="4/3"
+                />
+              )}
+            </article>
+          ))}
+        </div>
+      )}
+    </aside>
   );
 };
+
+const clubLinks = [
+  {
+    title: "社團課程",
+    description: "每週二、三晚上，從 Swift 基礎一路做到自己的 App。",
+    href: "/course",
+  },
+  {
+    title: "社團活動",
+    description: "講座、Workshop、社遊與聚會，看看我們每年如何一起成長。",
+    href: "/club_activities",
+  },
+  {
+    title: "社團競賽",
+    description: "走上 WWDC 與各大競賽舞台，讓創意成為真正被看見的作品。",
+    href: "/contest",
+  },
+];
 
 // 要顯示在首頁的圖片們
 const imageList = [
