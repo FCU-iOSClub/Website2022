@@ -28,12 +28,6 @@ export function extractGoogleDriveFolderId(value) {
 
 export function classifyGoogleDriveResponse(response, html = "") {
   const finalUrl = response?.url || "";
-  if (response && response.ok === false) {
-    return {
-      status: "unknown",
-      reason: `Google Drive returned HTTP ${response.status}`,
-    };
-  }
   const lowerUrl = finalUrl.toLowerCase();
   const lowerHtml = String(html).toLowerCase();
   const permissionMarkers = [
@@ -76,6 +70,13 @@ export function classifyGoogleDriveResponse(response, html = "") {
     return {
       status: "permission",
       reason: "Google Drive reports that access is restricted",
+    };
+  }
+
+  if (response && response.ok === false) {
+    return {
+      status: "unknown",
+      reason: `Google Drive returned HTTP ${response.status}`,
     };
   }
 
@@ -204,7 +205,11 @@ export async function loadGalleryLinks(directory = DEFAULT_DIRECTORY) {
       const record = JSON.parse(
         await readFile(join(directory, filename), "utf8"),
       );
-      if (record.gdrive_url === null || typeof record.gdrive_url === "string") {
+      if (
+        record.gdrive_url === undefined ||
+        record.gdrive_url === null ||
+        typeof record.gdrive_url === "string"
+      ) {
         if (typeof record.gdrive_url === "string" && record.gdrive_url.trim()) {
           records.push({
             url: record.gdrive_url.trim(),
