@@ -110,6 +110,17 @@ yarn prettier
 
 目前大部分的照片都放在 GitHub 的 FCU-iOSClub/Website2022ImageBed 上。
 
+### Gallery Link Check
+
+掃描 `src/data/gallery` 中所有非空的 `gdrive_url`，以未登入、未使用任何 Google credential 的訪客身分檢查 Google Drive 資料夾是否可存取：
+
+```bash
+yarn test:gallery-links
+yarn test:gallery-links --url "https://drive.google.com/drive/folders/<folder-id>"
+```
+
+若結果確認需要權限、網址無效、發生網路錯誤或無法判定，指令會以 non-zero exit code 結束。
+
 ### 競賽得獎
 
 在 `/src/data/contest` 中新增檔案，檔案名稱以年份命名。
