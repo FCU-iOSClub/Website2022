@@ -18,6 +18,7 @@ import chevronDown from "@iconify/icons-akar-icons/chevron-down";
 import ReverseColorsButton from "../components/buttons/reverse_colors_button";
 import useGoogleAdsConversion from "../hooks/useGoogleAdsConversion";
 import { EXTERNAL_LINKS } from "../constants/navigation";
+import { showForm } from "../components/navbar";
 
 const IndexPage = (props) => {
   // Google Ads 轉換追蹤
@@ -50,6 +51,12 @@ const IndexPage = (props) => {
               <button
                 className="overflow-hidden group h-12 px-6 border border-btnbg rounded-xs"
                 onClick={() => {
+                  if (!showForm) {
+                    window.alert(
+                      "目前社團尚未開放加入，開放報名時將於社團IG公告，敬請期待！",
+                    );
+                    return;
+                  }
                   window.open(EXTERNAL_LINKS.joinUs, "_blank");
                 }}
               >
