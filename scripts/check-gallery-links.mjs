@@ -70,6 +70,14 @@ function invalidResult(url, reason) {
   return { status: "invalid", url, finalUrl: url, reason: `Invalid Google Drive URL: ${reason}` };
 }
 
+function isRetryableNetworkError(error) {
+  if (!error) return false;
+  if (error.name === "TimeoutError" || error.name === "AbortError") return true;
+  if (error.name !== "TypeError") return ["ECONNRESET", "ECONNREFUSED", "ENOTFOUND", "EAI_AGAIN", "ETIMEDOUT"].includes(error.code);
+  const message = `${error.message || ""} ${error.cause?.message || ""}`.toLowerCase();
+  return /fetch failed|network|socket|econnreset|econnrefused|enotfound|eai_again|etimedout|timed out|dns/.test(message);
+}
+
 export async function checkGoogleDriveFolder(url, options = {}) {
   const originalUrl = String(url);
   let parsed;
@@ -110,7 +118,7 @@ export async function checkGoogleDriveFolder(url, options = {}) {
       return { ...classification, url: originalUrl, finalUrl: response.url || originalUrl };
     } catch (error) {
       lastError = error;
-      const retryable = error?.name === "TimeoutError" || error?.name === "AbortError" || error?.name === "TypeError";
+      const retryable = isRetryableNetworkError(error);
       if (!retryable || attempt === 1) break;
     }
   }
