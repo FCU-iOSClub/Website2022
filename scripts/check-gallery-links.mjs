@@ -4,14 +4,21 @@ import { readdir, readFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const DEFAULT_DIRECTORY = join(dirname(fileURLToPath(import.meta.url)), "..", "src", "data", "gallery");
+const DEFAULT_DIRECTORY = join(
+  dirname(fileURLToPath(import.meta.url)),
+  "..",
+  "src",
+  "data",
+  "gallery",
+);
 const TIMEOUT_MS = 10_000;
 
 export function extractGoogleDriveFolderId(value) {
   try {
     const url = new URL(value);
     if (url.protocol !== "https:") return null;
-    if (!["drive.google.com", "www.drive.google.com"].includes(url.hostname)) return null;
+    if (!["drive.google.com", "www.drive.google.com"].includes(url.hostname))
+      return null;
     const match = url.pathname.match(/^\/drive\/folders\/([^/]+)\/?$/);
     return match?.[1] || null;
   } catch {
@@ -42,14 +49,28 @@ export function classifyGoogleDriveResponse(response, html = "") {
   })();
   const isDriveLoginEndpoint =
     finalUrlObject &&
-    ["drive.google.com", "www.drive.google.com"].includes(finalUrlObject.hostname) &&
-    /\/(?:servicelogin|signin|login)(?:[/?#]|$)/i.test(finalUrlObject.pathname + finalUrlObject.search);
+    ["drive.google.com", "www.drive.google.com"].includes(
+      finalUrlObject.hostname,
+    ) &&
+    /\/(?:servicelogin|signin|login)(?:[/?#]|$)/i.test(
+      finalUrlObject.pathname + finalUrlObject.search,
+    );
 
   if (lowerUrl.includes("accounts.google.com") || isDriveLoginEndpoint) {
-    return { status: "permission", reason: "Google redirected to a sign-in page" };
+    return {
+      status: "permission",
+      reason: "Google redirected to a sign-in page",
+    };
   }
-  if (permissionMarkers.some((marker) => lowerUrl.includes(marker) || lowerHtml.includes(marker))) {
-    return { status: "permission", reason: "Google Drive reports that access is restricted" };
+  if (
+    permissionMarkers.some(
+      (marker) => lowerUrl.includes(marker) || lowerHtml.includes(marker),
+    )
+  ) {
+    return {
+      status: "permission",
+      reason: "Google Drive reports that access is restricted",
+    };
   }
 
   const drivePage = lowerUrl.includes("drive.google.com/drive/folders/");
@@ -58,24 +79,45 @@ export function classifyGoogleDriveResponse(response, html = "") {
     "drive-viewer-list",
     "drive.google.com/drive/folders/",
     "application/vnd.google-apps.folder",
-    "data-id=\"folder",
+    'data-id="folder',
     "folderview",
   ];
-  const hasFolderContent = contentMarkers.some((marker) => lowerHtml.includes(marker));
+  const hasFolderContent = contentMarkers.some((marker) =>
+    lowerHtml.includes(marker),
+  );
   if (drivePage && hasFolderContent) return { status: "accessible" };
-  return { status: "unknown", reason: "The response did not contain recognizable Google Drive folder content" };
+  return {
+    status: "unknown",
+    reason:
+      "The response did not contain recognizable Google Drive folder content",
+  };
 }
 
 function invalidResult(url, reason) {
-  return { status: "invalid", url, finalUrl: url, reason: `Invalid Google Drive URL: ${reason}` };
+  return {
+    status: "invalid",
+    url,
+    finalUrl: url,
+    reason: `Invalid Google Drive URL: ${reason}`,
+  };
 }
 
 function isRetryableNetworkError(error) {
   if (!error) return false;
   if (error.name === "TimeoutError" || error.name === "AbortError") return true;
-  if (error.name !== "TypeError") return ["ECONNRESET", "ECONNREFUSED", "ENOTFOUND", "EAI_AGAIN", "ETIMEDOUT"].includes(error.code);
-  const message = `${error.message || ""} ${error.cause?.message || ""}`.toLowerCase();
-  return /fetch failed|network|socket|econnreset|econnrefused|enotfound|eai_again|etimedout|timed out|dns/.test(message);
+  if (error.name !== "TypeError")
+    return [
+      "ECONNRESET",
+      "ECONNREFUSED",
+      "ENOTFOUND",
+      "EAI_AGAIN",
+      "ETIMEDOUT",
+    ].includes(error.code);
+  const message =
+    `${error.message || ""} ${error.cause?.message || ""}`.toLowerCase();
+  return /fetch failed|network|socket|econnreset|econnrefused|enotfound|eai_again|etimedout|timed out|dns/.test(
+    message,
+  );
 }
 
 export async function checkGoogleDriveFolder(url, options = {}) {
@@ -86,12 +128,16 @@ export async function checkGoogleDriveFolder(url, options = {}) {
   } catch {
     return invalidResult(originalUrl, "URL could not be parsed");
   }
-  if (parsed.protocol !== "https:") return invalidResult(originalUrl, "protocol must be HTTPS");
+  if (parsed.protocol !== "https:")
+    return invalidResult(originalUrl, "protocol must be HTTPS");
   if (!["drive.google.com", "www.drive.google.com"].includes(parsed.hostname)) {
     return invalidResult(originalUrl, "host must be drive.google.com");
   }
   if (!extractGoogleDriveFolderId(originalUrl)) {
-    return invalidResult(originalUrl, "path must match /drive/folders/<folder-id>");
+    return invalidResult(
+      originalUrl,
+      "path must match /drive/folders/<folder-id>",
+    );
   }
 
   const fetcher = options.fetch ?? fetch;
@@ -115,19 +161,26 @@ export async function checkGoogleDriveFolder(url, options = {}) {
         };
       }
       const classification = classifyGoogleDriveResponse(response, html);
-      return { ...classification, url: originalUrl, finalUrl: response.url || originalUrl };
+      return {
+        ...classification,
+        url: originalUrl,
+        finalUrl: response.url || originalUrl,
+      };
     } catch (error) {
       lastError = error;
       const retryable = isRetryableNetworkError(error);
       if (!retryable || attempt === 1) break;
     }
   }
-  const timedOut = lastError?.name === "TimeoutError" || lastError?.name === "AbortError";
+  const timedOut =
+    lastError?.name === "TimeoutError" || lastError?.name === "AbortError";
   return {
     status: "network",
     url: originalUrl,
     finalUrl: originalUrl,
-    reason: timedOut ? "Request timed out after two attempts" : "Network request failed after two attempts",
+    reason: timedOut
+      ? "Request timed out after two attempts"
+      : "Network request failed after two attempts",
     error: lastError?.message,
   };
 }
@@ -140,12 +193,23 @@ export async function loadGalleryLinks(directory = DEFAULT_DIRECTORY) {
   for (const entry of entries) {
     const filename = entry.name;
     try {
-      const record = JSON.parse(await readFile(join(directory, filename), "utf8"));
+      const record = JSON.parse(
+        await readFile(join(directory, filename), "utf8"),
+      );
       if (typeof record.gdrive_url === "string" && record.gdrive_url.trim()) {
-        records.push({ url: record.gdrive_url.trim(), name: record.name || filename, date: record.date || "", filename });
+        records.push({
+          url: record.gdrive_url.trim(),
+          name: record.name || filename,
+          date: record.date || "",
+          filename,
+        });
       }
     } catch (error) {
-      records.push({ invalidRecord: true, filename, error: `Invalid gallery JSON: ${error.message}` });
+      records.push({
+        invalidRecord: true,
+        filename,
+        error: `Invalid gallery JSON: ${error.message}`,
+      });
     }
   }
   return records;
@@ -159,13 +223,18 @@ function label(result) {
   if (result.status === "accessible") return "✅ Accessible";
   if (result.status === "permission") return "❌ Permission denied";
   if (result.status === "invalid") return "❌ Invalid Google Drive URL";
-  if (result.status === "network") return result.reason?.toLowerCase().includes("timed out") ? "❌ Timeout" : "❌ Network error";
+  if (result.status === "network")
+    return result.reason?.toLowerCase().includes("timed out")
+      ? "❌ Timeout"
+      : "❌ Network error";
   return "⚠️ Unable to determine accessibility";
 }
 
 export async function main(argv = process.argv.slice(2)) {
   if (argv.includes("--help") || argv.includes("-h")) {
-    console.log(`${usage()}\n\nChecks Google Drive gallery folders anonymously.`);
+    console.log(
+      `${usage()}\n\nChecks Google Drive gallery folders anonymously.`,
+    );
     return 0;
   }
   const urlIndex = argv.indexOf("--url");
@@ -184,17 +253,24 @@ export async function main(argv = process.argv.slice(2)) {
   const results = [];
   for (const item of items) {
     if (item.invalidRecord) {
-      console.log(`${item.filename}: ❌ Invalid gallery record (${item.error})`);
+      console.log(
+        `${item.filename}: ❌ Invalid gallery record (${item.error})`,
+      );
       results.push({ status: "invalid" });
       continue;
     }
     const result = await checkGoogleDriveFolder(item.url);
     results.push(result);
     const suffix = result.reason ? ` — ${result.reason}` : "";
-    console.log(`${item.name}${item.date ? ` (${item.date})` : ""}: ${label(result)}${suffix}`);
-    if (result.finalUrl && result.finalUrl !== result.url) console.log(`  Final URL: ${result.finalUrl}`);
+    console.log(
+      `${item.name}${item.date ? ` (${item.date})` : ""}: ${label(result)}${suffix}`,
+    );
+    if (result.finalUrl && result.finalUrl !== result.url)
+      console.log(`  Final URL: ${result.finalUrl}`);
   }
-  const passed = results.filter((result) => result.status === "accessible").length;
+  const passed = results.filter(
+    (result) => result.status === "accessible",
+  ).length;
   const failed = results.length - passed;
   console.log(`Checked: ${results.length}`);
   console.log(`Passed: ${passed}`);
@@ -203,8 +279,12 @@ export async function main(argv = process.argv.slice(2)) {
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  main().then((code) => { process.exitCode = code; }).catch((error) => {
-    console.error(`Gallery link checker failed: ${error.message}`);
-    process.exitCode = 1;
-  });
+  main()
+    .then((code) => {
+      process.exitCode = code;
+    })
+    .catch((error) => {
+      console.error(`Gallery link checker failed: ${error.message}`);
+      process.exitCode = 1;
+    });
 }
