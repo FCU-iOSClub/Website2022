@@ -1,0 +1,178 @@
+#!/usr/bin/env node
+
+import { readdir, readFile } from "node:fs/promises";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const DEFAULT_DIRECTORY = join(dirname(fileURLToPath(import.meta.url)), "..", "src", "data", "gallery");
+const TIMEOUT_MS = 10_000;
+
+export function extractGoogleDriveFolderId(value) {
+  try {
+    const url = new URL(value);
+    if (url.protocol !== "https:") return null;
+    if (!["drive.google.com", "www.drive.google.com"].includes(url.hostname)) return null;
+    const match = url.pathname.match(/^\/drive\/folders\/([^/]+)\/?$/);
+    return match?.[1] || null;
+  } catch {
+    return null;
+  }
+}
+
+export function classifyGoogleDriveResponse(response, html = "") {
+  const finalUrl = response?.url || "";
+  const lowerUrl = finalUrl.toLowerCase();
+  const lowerHtml = String(html).toLowerCase();
+  const permissionMarkers = [
+    "request access",
+    "you need access",
+    "ask for access",
+    "sign in to continue",
+    "permission denied",
+    "access denied",
+    "drive.google.com/drive/u/0/my-drive",
+  ];
+
+  if (lowerUrl.includes("accounts.google.com")) {
+    return { status: "permission", reason: "Google redirected to a sign-in page" };
+  }
+  if (permissionMarkers.some((marker) => lowerUrl.includes(marker) || lowerHtml.includes(marker))) {
+    return { status: "permission", reason: "Google Drive reports that access is restricted" };
+  }
+
+  const drivePage = lowerUrl.includes("drive.google.com/drive/folders/");
+  const contentMarkers = [
+    "drive-viewer-content",
+    "drive-viewer-list",
+    "drive.google.com/drive/folders/",
+    "application/vnd.google-apps.folder",
+    "data-id=\"folder",
+    "folderview",
+  ];
+  const hasFolderContent = contentMarkers.some((marker) => lowerHtml.includes(marker));
+  if (drivePage && hasFolderContent) return { status: "accessible" };
+  return { status: "unknown", reason: "The response did not contain recognizable Google Drive folder content" };
+}
+
+function invalidResult(url, reason) {
+  return { status: "invalid", url, finalUrl: url, reason: `Invalid Google Drive URL: ${reason}` };
+}
+
+export async function checkGoogleDriveFolder(url, options = {}) {
+  const originalUrl = String(url);
+  let parsed;
+  try {
+    parsed = new URL(originalUrl);
+  } catch {
+    return invalidResult(originalUrl, "URL could not be parsed");
+  }
+  if (parsed.protocol !== "https:") return invalidResult(originalUrl, "protocol must be HTTPS");
+  if (!["drive.google.com", "www.drive.google.com"].includes(parsed.hostname)) {
+    return invalidResult(originalUrl, "host must be drive.google.com");
+  }
+  if (!extractGoogleDriveFolderId(originalUrl)) {
+    return invalidResult(originalUrl, "path must match /drive/folders/<folder-id>");
+  }
+
+  const fetcher = options.fetch ?? fetch;
+  let lastError;
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    try {
+      const response = await fetcher(originalUrl, {
+        redirect: "follow",
+        signal: AbortSignal.timeout(options.timeout ?? TIMEOUT_MS),
+      });
+      const html = await response.text();
+      const classification = classifyGoogleDriveResponse(response, html);
+      return { ...classification, url: originalUrl, finalUrl: response.url || originalUrl };
+    } catch (error) {
+      lastError = error;
+      if (attempt === 0) continue;
+    }
+  }
+  const timedOut = lastError?.name === "TimeoutError" || lastError?.name === "AbortError";
+  return {
+    status: "network",
+    url: originalUrl,
+    finalUrl: originalUrl,
+    reason: timedOut ? "Request timed out after two attempts" : "Network request failed after two attempts",
+    error: lastError?.message,
+  };
+}
+
+export async function loadGalleryLinks(directory = DEFAULT_DIRECTORY) {
+  const entries = (await readdir(directory, { withFileTypes: true }))
+    .filter((entry) => entry.isFile() && entry.name.endsWith(".json"))
+    .sort((a, b) => a.name.localeCompare(b.name));
+  const records = [];
+  for (const entry of entries) {
+    const filename = entry.name;
+    try {
+      const record = JSON.parse(await readFile(join(directory, filename), "utf8"));
+      if (typeof record.gdrive_url === "string" && record.gdrive_url.trim()) {
+        records.push({ url: record.gdrive_url.trim(), name: record.name || filename, date: record.date || "", filename });
+      }
+    } catch (error) {
+      records.push({ invalidRecord: true, filename, error: `Invalid gallery JSON: ${error.message}` });
+    }
+  }
+  return records;
+}
+
+function usage() {
+  return "Usage: yarn node scripts/check-gallery-links.mjs [--url <Google Drive folder URL>]";
+}
+
+function label(result) {
+  if (result.status === "accessible") return "✅ Accessible";
+  if (result.status === "permission") return "❌ Permission denied";
+  if (result.status === "invalid") return "❌ Invalid Google Drive URL";
+  if (result.status === "network") return result.reason?.toLowerCase().includes("timed out") ? "❌ Timeout" : "❌ Network error";
+  return "⚠️ Unable to determine accessibility";
+}
+
+export async function main(argv = process.argv.slice(2)) {
+  if (argv.includes("--help") || argv.includes("-h")) {
+    console.log(`${usage()}\n\nChecks Google Drive gallery folders anonymously.`);
+    return 0;
+  }
+  const urlIndex = argv.indexOf("--url");
+  let items;
+  if (urlIndex !== -1) {
+    if (!argv[urlIndex + 1]) {
+      console.error("--url requires a URL");
+      return 1;
+    }
+    items = [{ url: argv[urlIndex + 1], name: "Provided URL", date: "" }];
+  } else {
+    items = await loadGalleryLinks();
+  }
+
+  console.log("Google Drive Gallery Accessibility Check");
+  const results = [];
+  for (const item of items) {
+    if (item.invalidRecord) {
+      console.log(`${item.filename}: ❌ Invalid gallery record (${item.error})`);
+      results.push({ status: "invalid" });
+      continue;
+    }
+    const result = await checkGoogleDriveFolder(item.url);
+    results.push(result);
+    const suffix = result.reason ? ` — ${result.reason}` : "";
+    console.log(`${item.name}${item.date ? ` (${item.date})` : ""}: ${label(result)}${suffix}`);
+    if (result.finalUrl && result.finalUrl !== result.url) console.log(`  Final URL: ${result.finalUrl}`);
+  }
+  const passed = results.filter((result) => result.status === "accessible").length;
+  const failed = results.length - passed;
+  console.log(`Checked: ${results.length}`);
+  console.log(`Passed: ${passed}`);
+  console.log(`Failed: ${failed}`);
+  return failed ? 1 : 0;
+}
+
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  main().then((code) => { process.exitCode = code; }).catch((error) => {
+    console.error(`Gallery link checker failed: ${error.message}`);
+    process.exitCode = 1;
+  });
+}
