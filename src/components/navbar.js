@@ -137,6 +137,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+export const showForm = false;
 
 const JoinUsButton = ({ fullWidth = false }) => (
   <button
@@ -147,6 +148,12 @@ const JoinUsButton = ({ fullWidth = false }) => (
       hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.38),0_6px_20px_rgba(68,84,132,0.60)]
       hover:from-[#6a80b4] hover:to-[#5264a0]`}
     onClick={() => {
+      if (!showForm) {
+        window.alert(
+          "目前社團尚未開放加入，開放報名時將於社團IG公告，敬請期待！",
+        );
+        return;
+      }
       window.open(EXTERNAL_LINKS.joinUs, "_blank");
     }}
   >
