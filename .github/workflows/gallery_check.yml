@@ -1,0 +1,25 @@
+name: Gallery link check
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "src/data/gallery/**"
+      - "scripts/check-gallery-links.mjs"
+  push:
+    branches:
+      - master
+    paths:
+      - "src/data/gallery/**"
+      - "scripts/check-gallery-links.mjs"
+
+jobs:
+  gallery-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+      - run: yarn
+      - run: yarn test:gallery-links
