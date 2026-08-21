@@ -28,6 +28,12 @@ export function extractGoogleDriveFolderId(value) {
 
 export function classifyGoogleDriveResponse(response, html = "") {
   const finalUrl = response?.url || "";
+  if (response && response.ok === false) {
+    return {
+      status: "unknown",
+      reason: `Google Drive returned HTTP ${response.status}`,
+    };
+  }
   const lowerUrl = finalUrl.toLowerCase();
   const lowerHtml = String(html).toLowerCase();
   const permissionMarkers = [
@@ -152,6 +158,8 @@ export async function checkGoogleDriveFolder(url, options = {}) {
       try {
         html = await response.text();
       } catch (error) {
+        lastError = error;
+        if (isRetryableNetworkError(error) && attempt === 0) continue;
         return {
           status: "network",
           url: originalUrl,
@@ -196,12 +204,20 @@ export async function loadGalleryLinks(directory = DEFAULT_DIRECTORY) {
       const record = JSON.parse(
         await readFile(join(directory, filename), "utf8"),
       );
-      if (typeof record.gdrive_url === "string" && record.gdrive_url.trim()) {
+      if (record.gdrive_url === null || typeof record.gdrive_url === "string") {
+        if (typeof record.gdrive_url === "string" && record.gdrive_url.trim()) {
+          records.push({
+            url: record.gdrive_url.trim(),
+            name: record.name || filename,
+            date: record.date || "",
+            filename,
+          });
+        }
+      } else {
         records.push({
-          url: record.gdrive_url.trim(),
-          name: record.name || filename,
-          date: record.date || "",
+          invalidRecord: true,
           filename,
+          error: "Invalid gallery JSON: gdrive_url must be a string or null",
         });
       }
     } catch (error) {
