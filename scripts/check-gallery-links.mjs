@@ -33,7 +33,19 @@ export function classifyGoogleDriveResponse(response, html = "") {
     "drive.google.com/drive/u/0/my-drive",
   ];
 
-  if (lowerUrl.includes("accounts.google.com")) {
+  const finalUrlObject = (() => {
+    try {
+      return new URL(finalUrl);
+    } catch {
+      return null;
+    }
+  })();
+  const isDriveLoginEndpoint =
+    finalUrlObject &&
+    ["drive.google.com", "www.drive.google.com"].includes(finalUrlObject.hostname) &&
+    /\/(?:servicelogin|signin|login)(?:[/?#]|$)/i.test(finalUrlObject.pathname + finalUrlObject.search);
+
+  if (lowerUrl.includes("accounts.google.com") || isDriveLoginEndpoint) {
     return { status: "permission", reason: "Google redirected to a sign-in page" };
   }
   if (permissionMarkers.some((marker) => lowerUrl.includes(marker) || lowerHtml.includes(marker))) {
@@ -82,12 +94,24 @@ export async function checkGoogleDriveFolder(url, options = {}) {
         redirect: "follow",
         signal: AbortSignal.timeout(options.timeout ?? TIMEOUT_MS),
       });
-      const html = await response.text();
+      let html;
+      try {
+        html = await response.text();
+      } catch (error) {
+        return {
+          status: "network",
+          url: originalUrl,
+          finalUrl: response.url || originalUrl,
+          reason: "Failed to read Google Drive response body",
+          error: error?.message,
+        };
+      }
       const classification = classifyGoogleDriveResponse(response, html);
       return { ...classification, url: originalUrl, finalUrl: response.url || originalUrl };
     } catch (error) {
       lastError = error;
-      if (attempt === 0) continue;
+      const retryable = error?.name === "TimeoutError" || error?.name === "AbortError" || error?.name === "TypeError";
+      if (!retryable || attempt === 1) break;
     }
   }
   const timedOut = lastError?.name === "TimeoutError" || lastError?.name === "AbortError";
