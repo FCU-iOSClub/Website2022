@@ -242,16 +242,35 @@ function usage() {
 }
 
 function reportKey(item) {
-  return createHash("sha256").update(`${item.filename || "--url"}\0${item.url}`).digest("hex");
+  return createHash("sha256")
+    .update(`${item.filename || "--url"}\0${item.url}`)
+    .digest("hex");
 }
 
 function reportFailure(item, result) {
-  return { key: reportKey(item), name: item.name || item.filename || "Provided URL", date: item.date || "", filename: item.filename || "--url", url: item.url || "", status: result.status, ...(result.reason ? { reason: result.reason } : {}) };
+  return {
+    key: reportKey(item),
+    name: item.name || item.filename || "Provided URL",
+    date: item.date || "",
+    filename: item.filename || "--url",
+    url: item.url || "",
+    status: result.status,
+    ...(result.reason ? { reason: result.reason } : {}),
+  };
 }
 
 async function writeReport(reportPath, items, results) {
-  const failures = results.map((result, index) => ({ result, item: items[index] })).filter(({ result }) => result.status !== "accessible").map(({ item, result }) => reportFailure(item, result)).sort((a, b) => a.key.localeCompare(b.key));
-  const report = { checked: results.length, passed: results.length - failures.length, failed: failures.length, failures };
+  const failures = results
+    .map((result, index) => ({ result, item: items[index] }))
+    .filter(({ result }) => result.status !== "accessible")
+    .map(({ item, result }) => reportFailure(item, result))
+    .sort((a, b) => a.key.localeCompare(b.key));
+  const report = {
+    checked: results.length,
+    passed: results.length - failures.length,
+    failed: failures.length,
+    failures,
+  };
   const destination = resolve(reportPath);
   const temporary = `${destination}.tmp-${process.pid}-${Date.now()}`;
   await writeFile(temporary, `${JSON.stringify(report, null, 2)}\n`, "utf8");
@@ -278,7 +297,10 @@ export async function main(argv = process.argv.slice(2)) {
   }
   const urlIndex = argv.indexOf("--url");
   const reportIndex = argv.indexOf("--report");
-  if (reportIndex !== -1 && !argv[reportIndex + 1]) { console.error("--report requires a path"); return 1; }
+  if (reportIndex !== -1 && !argv[reportIndex + 1]) {
+    console.error("--report requires a path");
+    return 1;
+  }
   const reportPath = reportIndex === -1 ? null : argv[reportIndex + 1];
   let items;
   if (urlIndex !== -1) {

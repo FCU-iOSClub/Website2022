@@ -172,7 +172,7 @@ yarn test:gallery-links --url "https://drive.google.com/drive/folders/<folder-id
 
 維護工作流程會在 `master` 的相關 push、每日 **UTC** 排程，以及手動 dispatch 時執行。Discord 僅通知兩種結果：`Permission denied` 與 `Invalid URL`。通知採 transition-only：第一次出現失敗或失敗集合改變時通知一次；相同失敗重複出現時保持靜默；恢復後通知一次。
 
-檢查器使用快取保存上一輪的失敗狀態，因此快取是精簡、可重現且不含憑證的狀態；它不是完整歷史紀錄，也不保證跨工作流程執行永遠保留。PR gate 與 `master` 維護執行可能各自使用不同的快取內容，不能把快取當作連結目前一定可用的證明。
+檢查器使用快取保存上一輪的失敗狀態，因此快取是精簡、可重現且不含憑證的狀態；它不是完整歷史紀錄，也不保證跨工作流程執行永遠保留。GitHub Actions Cache 項目以 key 建立後不可覆寫，而目前 workflow 使用固定的 repository/ref key；後續執行可能恢復較舊的狀態，因此 transition-only 判斷不一定會以緊鄰上一輪執行為基準。PR gate 與 `master` 維護執行可能各自使用不同的快取內容，不能把快取當作連結目前一定可用的證明。
 
 如果 webhook value 曾經暴露（包括提交到 Git、日誌或公開訊息），請立即在 Discord 撤銷該 webhook 並建立新的 webhook，再更新 GitHub Actions secret；不要繼續使用已暴露的 URL。
 
