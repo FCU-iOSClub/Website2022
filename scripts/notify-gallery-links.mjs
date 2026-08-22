@@ -5,6 +5,7 @@ import { randomUUID } from "node:crypto";
 
 const TIMEOUT_MS = 10_000;
 const MAX_NAMES = 10;
+const MAX_CONTENT = 2000;
 const ALLOWED_REASONS = new Set(["permission", "invalid"]);
 
 function usage() {
@@ -24,20 +25,28 @@ function parseArgs(argv) {
 }
 
 function validReport(report) {
-  return report && typeof report === "object" && Number.isInteger(report.checked) &&
-    Number.isInteger(report.passed) && Number.isInteger(report.failed) && Array.isArray(report.failures);
+  if (!report || typeof report !== "object" || !Number.isInteger(report.checked) ||
+    !Number.isInteger(report.passed) || !Number.isInteger(report.failed) || !Array.isArray(report.failures) ||
+    report.checked < 0 || report.passed < 0 || report.failed < 0 || report.checked !== report.passed + report.failed ||
+    report.failures.length !== report.failed) throw new Error("Malformed report");
+  return true;
 }
 
 function filteredFailures(report) {
-  if (!validReport(report)) throw new Error("Malformed report");
-  return report.failures.filter((failure) => {
-    if (!failure || typeof failure !== "object" || typeof failure.reason !== "string") return false;
-    return ALLOWED_REASONS.has(failure.reason);
-  }).map((failure) => {
-    const key = typeof failure.key === "string" && failure.key ? failure.key :
-      `${failure.name ?? ""}|${failure.date ?? ""}|${failure.filename ?? ""}`;
-    return { key, name: typeof failure.name === "string" && failure.name ? failure.name : key, reason: failure.reason };
-  });
+  validReport(report);
+  const candidates = report.failures.map((failure) => {
+    if (!failure || typeof failure !== "object" ||
+      ["key", "name", "date", "filename", "url", "status", "reason"].some((field) => typeof failure[field] !== "string")) {
+      throw new Error("Malformed report");
+    }
+    return failure;
+  }).filter((failure) => ALLOWED_REASONS.has(failure.reason));
+  const byKey = new Map();
+  for (const failure of candidates) {
+    if (!failure.key) throw new Error("Malformed report");
+    if (!byKey.has(failure.key)) byKey.set(failure.key, { key: failure.key, name: failure.name || failure.key, reason: failure.reason });
+  }
+  return [...byKey.values()];
 }
 
 function validState(state) {
@@ -67,8 +76,8 @@ function makePayload({ transition, failures, previous, workflowUrl }) {
     content = `${transition === "initial" ? "Gallery link checks failing" : "Gallery link failures changed"}: ${failures.length} affected.`;
     if (names.length) content += ` Affected galleries: ${names.join(", ")}${omitted ? ` (and ${omitted} more)` : ""}.`;
   }
-  content += ` Workflow: ${workflowUrl}`;
-  return { content };
+  content += ` Workflow: ${String(workflowUrl).slice(0, 500)}`;
+  return { content: content.length <= MAX_CONTENT ? content : `${content.slice(0, MAX_CONTENT - 1)}…` };
 }
 
 async function send(payload, webhook, fetchImpl = globalThis.fetch) {
