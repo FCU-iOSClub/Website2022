@@ -113,13 +113,16 @@ function makePayload({ transition, failures, previous, workflowUrl }) {
   const omitted = failures.length - names.length;
   let content;
   if (transition === "recovery") {
-    content = `Gallery link checks recovered. Previous failures: ${previous.permissionCount} permission, ${previous.invalidCount} invalid.`;
+    content = `Gallery link checks recovered.\n\nPrevious failures: ${previous.permissionCount} permission, ${previous.invalidCount} invalid.`;
   } else {
     content = `${transition === "initial" ? "Gallery link checks failing" : "Gallery link failures changed"}: ${failures.length} affected.`;
-    if (names.length)
-      content += ` Affected galleries: ${names.join(", ")}${omitted ? ` (and ${omitted} more)` : ""}.`;
+    if (names.length) {
+      const affected = names.map((name) => `- ${name}`).join("\n");
+      content += `\n\nAffected galleries:\n${affected}`;
+      if (omitted) content += `\n- ...and ${omitted} more`;
+    }
   }
-  content += ` Workflow: ${String(workflowUrl).slice(0, 500)}`;
+  content += `\n\nWorkflow: ${String(workflowUrl).slice(0, 500)}`;
   return {
     content:
       content.length <= MAX_CONTENT
