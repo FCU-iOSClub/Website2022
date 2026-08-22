@@ -38,7 +38,7 @@ jobs:
           path: ${{ env.STATE_PATH }}
           key: gallery-link-state-${{ github.repository }}-${{ github.ref_name }}
           restore-keys: |
-            gallery-link-state-${{ github.repository }}-
+            gallery-link-state-${{ github.repository }}-${{ github.ref_name }}-
       - name: Check gallery links
         id: checker
         continue-on-error: true
