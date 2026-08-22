@@ -1,0 +1,70 @@
+name: Gallery link maintenance
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - "src/data/gallery/**"
+      - "scripts/check-gallery-links.mjs"
+      - "scripts/notify-gallery-links.mjs"
+      - ".github/workflows/gallery_check.yml"
+      - ".github/workflows/gallery_notify.yml"
+      - "package.json"
+      - "yarn.lock"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: gallery-link-maintenance-${{ github.ref_name }}
+  cancel-in-progress: false
+
+env:
+  REPORT_PATH: /tmp/gallery-link-report.json
+  STATE_PATH: .cache/gallery-link-state.json
+
+jobs:
+  gallery-maintenance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+      - run: yarn
+      - name: Prepare state directory
+        run: mkdir -p "$(dirname "$STATE_PATH")"
+      - name: Restore notification state
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STATE_PATH }}
+          key: gallery-link-state-${{ github.repository }}-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            gallery-link-state-${{ github.repository }}-${{ github.ref_name }}-
+      - name: Check gallery links
+        id: checker
+        continue-on-error: true
+        run: yarn test:gallery-links --report "$REPORT_PATH"
+      - name: Notify gallery link failures
+        id: notifier
+        if: ${{ always() }}
+        env:
+          DISCORD_GALLERY_WEBHOOK_URL: ${{ secrets.DISCORD_GALLERY_WEBHOOK_URL }}
+          WORKFLOW_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: yarn notify-gallery-links --report "$REPORT_PATH" --state "$STATE_PATH" --workflow-url "$WORKFLOW_URL"
+      - name: Save notification state
+        if: ${{ always() && steps.notifier.outcome == 'success' }}
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ env.STATE_PATH }}
+          key: gallery-link-state-${{ github.repository }}-${{ github.ref_name }}-${{ github.run_id }}
+      - name: Preserve maintenance result
+        if: ${{ always() }}
+        run: |
+          if [ "${{ steps.checker.outcome }}" != "success" ] || [ "${{ steps.notifier.outcome }}" != "success" ]; then
+            exit 1
+          fi
