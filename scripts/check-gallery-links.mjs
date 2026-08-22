@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-import { readdir, readFile } from "node:fs/promises";
-import { dirname, join } from "node:path";
+import { readdir, readFile, rename, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
+import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const DEFAULT_DIRECTORY = join(
@@ -237,7 +238,24 @@ export async function loadGalleryLinks(directory = DEFAULT_DIRECTORY) {
 }
 
 function usage() {
-  return "Usage: yarn node scripts/check-gallery-links.mjs [--url <Google Drive folder URL>]";
+  return "Usage: yarn node scripts/check-gallery-links.mjs [--url <Google Drive folder URL>] [--report <path>]";
+}
+
+function reportKey(item) {
+  return createHash("sha256").update(`${item.filename || "--url"}\0${item.url}`).digest("hex");
+}
+
+function reportFailure(item, result) {
+  return { key: reportKey(item), name: item.name || item.filename || "Provided URL", date: item.date || "", filename: item.filename || "--url", url: item.url || "", status: result.status, ...(result.reason ? { reason: result.reason } : {}) };
+}
+
+async function writeReport(reportPath, items, results) {
+  const failures = results.map((result, index) => ({ result, item: items[index] })).filter(({ result }) => result.status !== "accessible").map(({ item, result }) => reportFailure(item, result)).sort((a, b) => a.key.localeCompare(b.key));
+  const report = { checked: results.length, passed: results.length - failures.length, failed: failures.length, failures };
+  const destination = resolve(reportPath);
+  const temporary = `${destination}.tmp-${process.pid}-${Date.now()}`;
+  await writeFile(temporary, `${JSON.stringify(report, null, 2)}\n`, "utf8");
+  await rename(temporary, destination);
 }
 
 function label(result) {
@@ -259,6 +277,9 @@ export async function main(argv = process.argv.slice(2)) {
     return 0;
   }
   const urlIndex = argv.indexOf("--url");
+  const reportIndex = argv.indexOf("--report");
+  if (reportIndex !== -1 && !argv[reportIndex + 1]) { console.error("--report requires a path"); return 1; }
+  const reportPath = reportIndex === -1 ? null : argv[reportIndex + 1];
   let items;
   if (urlIndex !== -1) {
     if (!argv[urlIndex + 1]) {
@@ -277,7 +298,7 @@ export async function main(argv = process.argv.slice(2)) {
       console.log(
         `${item.filename}: ❌ Invalid gallery record (${item.error})`,
       );
-      results.push({ status: "invalid" });
+      results.push({ status: "invalid", reason: "Invalid gallery record" });
       continue;
     }
     const result = await checkGoogleDriveFolder(item.url);
@@ -296,6 +317,7 @@ export async function main(argv = process.argv.slice(2)) {
   console.log(`Checked: ${results.length}`);
   console.log(`Passed: ${passed}`);
   console.log(`Failed: ${failed}`);
+  if (reportPath) await writeReport(reportPath, items, results);
   return failed ? 1 : 0;
 }
 
