@@ -206,6 +206,14 @@ export async function loadGalleryLinks(directory = DEFAULT_DIRECTORY) {
       const record = JSON.parse(
         await readFile(join(directory, filename), "utf8"),
       );
+      if (!record || typeof record !== "object" || Array.isArray(record)) {
+        records.push({
+          invalidRecord: true,
+          filename,
+          error: "Invalid gallery JSON: record must be an object",
+        });
+        continue;
+      }
       if (
         record.gdrive_url === undefined ||
         record.gdrive_url === null ||

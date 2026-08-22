@@ -169,11 +169,15 @@ export async function processNotification({
     /* corrupt/missing means no previous state */
   }
   const status = keys.length ? "failing" : "healthy";
+  const failureSignature = failures
+    .map(({ key, status }) => `${key}:${status}`)
+    .sort();
   const changed =
     !previous ||
     previous.status !== status ||
     (status === "failing" &&
-      JSON.stringify(previous.failureKeys) !== JSON.stringify(keys));
+      JSON.stringify(previous.failureKeys) !==
+        JSON.stringify(failureSignature));
   const transition =
     status === "healthy"
       ? previous?.status === "failing"
@@ -199,7 +203,7 @@ export async function processNotification({
   }
   const next = {
     status,
-    failureKeys: keys,
+    failureKeys: failureSignature,
     permissionCount: failures.filter((f) => f.status === "permission").length,
     invalidCount: failures.filter((f) => f.status === "invalid").length,
   };
