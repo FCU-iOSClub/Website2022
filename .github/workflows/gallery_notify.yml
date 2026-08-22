@@ -13,6 +13,8 @@ on:
       - "scripts/notify-gallery-links.mjs"
       - ".github/workflows/gallery_check.yml"
       - ".github/workflows/gallery_notify.yml"
+      - "package.json"
+      - "yarn.lock"
 
 permissions:
   contents: read
@@ -36,7 +38,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ env.STATE_PATH }}
-          key: gallery-link-state-${{ github.repository }}-${{ github.ref_name }}
+          key: gallery-link-state-${{ github.repository }}-${{ github.ref_name }}-${{ github.run_id }}
           restore-keys: |
             gallery-link-state-${{ github.repository }}-${{ github.ref_name }}-
       - name: Check gallery links
@@ -55,7 +57,7 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: ${{ env.STATE_PATH }}
-          key: gallery-link-state-${{ github.repository }}-${{ github.ref_name }}
+          key: gallery-link-state-${{ github.repository }}-${{ github.ref_name }}-${{ github.run_id }}
       - name: Preserve maintenance result
         if: ${{ always() }}
         run: |

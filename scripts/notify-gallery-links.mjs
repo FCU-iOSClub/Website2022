@@ -65,7 +65,7 @@ function filteredFailures(report) {
       }
       return failure;
     })
-    .filter((failure) => ALLOWED_REASONS.has(failure.reason));
+    .filter((failure) => ALLOWED_REASONS.has(failure.status));
   const byKey = new Map();
   for (const failure of candidates) {
     if (!failure.key) throw new Error("Malformed report");
@@ -74,6 +74,7 @@ function filteredFailures(report) {
         key: failure.key,
         name: failure.name || failure.key,
         reason: failure.reason,
+        status: failure.status,
       });
   }
   return [...byKey.values()];
@@ -124,6 +125,7 @@ function makePayload({ transition, failures, previous, workflowUrl }) {
       content.length <= MAX_CONTENT
         ? content
         : `${content.slice(0, MAX_CONTENT - 1)}…`,
+    allowed_mentions: { parse: [] },
   };
 }
 
@@ -198,8 +200,8 @@ export async function processNotification({
   const next = {
     status,
     failureKeys: keys,
-    permissionCount: failures.filter((f) => f.reason === "permission").length,
-    invalidCount: failures.filter((f) => f.reason === "invalid").length,
+    permissionCount: failures.filter((f) => f.status === "permission").length,
+    invalidCount: failures.filter((f) => f.status === "invalid").length,
   };
   await saveState(statePath, next);
 }
