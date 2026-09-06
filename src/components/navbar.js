@@ -137,7 +137,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
-export const showForm = false;
+export const showForm = true;
 
 const JoinUsButton = ({ fullWidth = false }) => (
   <button
