@@ -10,7 +10,7 @@ const CoursePage = () => {
   useGoogleAdsConversion();
 
   const hideURL =
-    "https://drive.google.com/drive/folders/1yapFEpfpyPIq_vieIbwBN8oJPu_K5YBp?usp=drive_link";
+    "https://drive.google.com/drive/folders/1SZIG6qQlnJvdlDzf8JhxC8W_9gjR30sx?usp=sharing"; /* 社課簡報連結*/
 
   return (
     <div className=" bg-iosbgblue">
