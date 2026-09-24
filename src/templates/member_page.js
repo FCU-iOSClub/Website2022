@@ -1,10 +1,12 @@
 /* eslint-disable react/jsx-key */
 import * as React from "react";
+import { useState, useCallback } from "react";
 import Footer from "../components/footer";
 import AppHeader from "../components/header";
 import Navbar from "../components/navbar";
 import { Icon } from "@iconify/react";
 import ImageWithPlaceholder from "../components/image-with-placeholder";
+import EasterEggModal from "../components/easter-egg-modal";
 
 const MemberPage = (props) => {
   const { node, prevUrl, nextUrl } = props.pageContext;
@@ -81,18 +83,44 @@ const MemberPage = (props) => {
 
 const MemberCard = (props) => {
   const { member } = props;
+  const [showEasterEgg, setShowEasterEgg] = useState(false);
+  const closeEasterEgg = useCallback(() => setShowEasterEgg(false), []);
   const tempImg =
     "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/827f1788-4157-497b-0ecb-6168f73db400/public";
+  const photo = (
+    <ImageWithPlaceholder
+      src={member.image.length === 0 ? tempImg : member.image}
+      alt={member.name}
+      className="w-full mx-auto rounded-full overflow-hidden transition-transform duration-300 group-hover:scale-105"
+      imgClassName="object-cover"
+      defaultAspectRatio="1/1"
+      objectFit="cover"
+    />
+  );
   return (
     <div className="border-2  border-iosbgblue rounded-lg p-6">
-      <ImageWithPlaceholder
-        src={member.image.length === 0 ? tempImg : member.image}
-        alt={member.name}
-        className="w-full mx-auto rounded-full overflow-hidden"
-        imgClassName="object-cover"
-        defaultAspectRatio="1/1"
-        objectFit="cover"
-      />
+      {member.easterEgg ? (
+        <button
+          type="button"
+          className="group relative block w-full cursor-pointer"
+          onClick={() => setShowEasterEgg(true)}
+        >
+          {photo}
+          {member.easterEgg.hint && (
+            <span className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 rounded-full bg-white/90 px-4 py-1 font-bold text-iostextblue opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              {member.easterEgg.hint}
+            </span>
+          )}
+        </button>
+      ) : (
+        photo
+      )}
+      {showEasterEgg && (
+        <EasterEggModal
+          video={member.easterEgg.video}
+          onClose={closeEasterEgg}
+        />
+      )}
       <h3 className="text-2xl font-bold py-4">
         {member.position + " " + member.name}
       </h3>

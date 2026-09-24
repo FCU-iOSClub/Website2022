@@ -5,6 +5,18 @@ exports.onPostBuild = ({ reporter }) => {
   reporter.info(`Your Gatsby site has been built!`);
 };
 
+exports.createSchemaCustomization = ({ actions }) => {
+  actions.createTypes(`
+    type MemberJsonMembers {
+      easterEgg: MemberJsonMembersEasterEgg
+    }
+    type MemberJsonMembersEasterEgg {
+      video: String
+      hint: String
+    }
+  `);
+};
+
 // Create blog pages dynamically
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -66,6 +78,10 @@ query {
             icon_type
             text
             url
+          }
+          easterEgg {
+            video
+            hint
           }
         }
       }
