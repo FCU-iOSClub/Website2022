@@ -185,6 +185,8 @@ yarn test:gallery-links --url "https://drive.google.com/drive/folders/<folder-id
 
 影片會進 Git 歷史，合併含影片的 PR 時請用 Squash and merge，避免中間版本的檔案留在 `master`。
 
+> 目前影片放在 `static/` 只適合少量、小檔案。未來影片數量增加或檔案變大時，應將影片移至外部儲存（例如 Cloudflare R2 或其他 CDN），`src` 改填完整網址，避免 repo 持續膨脹並觸及 Cloudflare Pages 的檔案限制。
+
 ## Gallery link checker
 
 相簿連結檢查器會在 Pull Request 上執行檢查，並在 `master` 的相關更新時維護檢查狀態。PR gate 不需要 Discord secret，也**不會傳送 Discord 通知**；完整掃描可能因為目前儲存庫中既有連結受到限制而失敗。
