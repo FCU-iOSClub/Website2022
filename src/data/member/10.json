@@ -52,7 +52,11 @@
       "name": "陳瑞昌",
       "description": "",
       "position": "教學長",
-      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/a1a066f5-d309-4c37-f459-12519895fc00/public"
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/a1a066f5-d309-4c37-f459-12519895fc00/public",
+      "easterEgg": {
+        "video": "/easter-egg/niulai.mp4",
+        "hint": "牛來長"
+      }
     },
     {
       "name": "陳莉茜",
