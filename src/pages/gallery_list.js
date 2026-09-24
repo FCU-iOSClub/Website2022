@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import AppHeader from "../components/header";
 import Navbar from "../components/navbar";
@@ -18,7 +18,11 @@ import useGoogleAdsConversion from "../hooks/useGoogleAdsConversion";
 const GalleryList = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
-  const isSmallDevice = useMediaQuery({ maxWidth: 639 });
+  const matchesSmallDevice = useMediaQuery({ maxWidth: 639 });
+  const [isMounted, setIsMounted] = useState(false);
+  const isSmallDevice = isMounted && matchesSmallDevice;
+
+  useEffect(() => setIsMounted(true), []);
 
   // Google Ads 轉換追蹤
   useGoogleAdsConversion();
