@@ -12,8 +12,8 @@
     "dev": "gatsby develop -H 0.0.0.0",
     "build": "gatsby build",
     "prettier": "prettier --write .",
-    "test:gallery-links": "node scripts/check-gallery-links.mjs",
-    "notify-gallery-links": "node scripts/notify-gallery-links.mjs"
+    "test:gdrive-links": "node scripts/check-gdrive-links.mjs",
+    "notify-gdrive-links": "node scripts/notify-gdrive-links.mjs"
   },
   "engines": {
     "node": ">=22",

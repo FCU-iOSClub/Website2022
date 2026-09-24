@@ -1,18 +1,21 @@
-name: Gallery link maintenance
+name: Google Drive link maintenance
 
 on:
   schedule:
-    - cron: "17 3 * * *"
+    # 每週二、三台灣時間 09:17（UTC+8），於當天社課前檢查
+    # 兩次間隔皆小於 7 天，避免通知狀態的 cache 因 7 天未存取而被清除
+    - cron: "17 1 * * 2,3"
   workflow_dispatch:
   push:
     branches:
       - master
     paths:
       - "src/data/gallery/**"
-      - "scripts/check-gallery-links.mjs"
-      - "scripts/notify-gallery-links.mjs"
-      - ".github/workflows/gallery_check.yml"
-      - ".github/workflows/gallery_notify.yml"
+      - "src/data/course/**"
+      - "scripts/check-gdrive-links.mjs"
+      - "scripts/notify-gdrive-links.mjs"
+      - ".github/workflows/gdrive_check.yml"
+      - ".github/workflows/gdrive_notify.yml"
       - "package.json"
       - "yarn.lock"
 
@@ -20,15 +23,15 @@ permissions:
   contents: read
 
 concurrency:
-  group: gallery-link-maintenance-${{ github.ref_name }}
+  group: gdrive-link-maintenance-${{ github.ref_name }}
   cancel-in-progress: false
 
 env:
-  REPORT_PATH: /tmp/gallery-link-report.json
-  STATE_PATH: .cache/gallery-link-state.json
+  REPORT_PATH: /tmp/gdrive-link-report.json
+  STATE_PATH: .cache/gdrive-link-state.json
 
 jobs:
-  gallery-maintenance:
+  gdrive-maintenance:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -42,26 +45,26 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ env.STATE_PATH }}
-          key: gallery-link-state-${{ github.repository }}-${{ github.ref_name }}-${{ github.run_id }}
+          key: gdrive-link-state-${{ github.repository }}-${{ github.ref_name }}-${{ github.run_id }}
           restore-keys: |
-            gallery-link-state-${{ github.repository }}-${{ github.ref_name }}-
-      - name: Check gallery links
+            gdrive-link-state-${{ github.repository }}-${{ github.ref_name }}-
+      - name: Check Google Drive links
         id: checker
         continue-on-error: true
-        run: yarn test:gallery-links --report "$REPORT_PATH"
-      - name: Notify gallery link failures
+        run: yarn test:gdrive-links --report "$REPORT_PATH"
+      - name: Notify Google Drive link failures
         id: notifier
         if: ${{ always() }}
         env:
           DISCORD_GALLERY_WEBHOOK_URL: ${{ secrets.DISCORD_GALLERY_WEBHOOK_URL }}
           WORKFLOW_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-        run: yarn notify-gallery-links --report "$REPORT_PATH" --state "$STATE_PATH" --workflow-url "$WORKFLOW_URL"
+        run: yarn notify-gdrive-links --report "$REPORT_PATH" --state "$STATE_PATH" --workflow-url "$WORKFLOW_URL"
       - name: Save notification state
         if: ${{ always() && steps.notifier.outcome == 'success' }}
         uses: actions/cache/save@v4
         with:
           path: ${{ env.STATE_PATH }}
-          key: gallery-link-state-${{ github.repository }}-${{ github.ref_name }}-${{ github.run_id }}
+          key: gdrive-link-state-${{ github.repository }}-${{ github.ref_name }}-${{ github.run_id }}
       - name: Preserve maintenance result
         if: ${{ always() }}
         run: |

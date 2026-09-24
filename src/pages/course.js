@@ -1,16 +1,18 @@
 import * as React from "react";
+import { graphql } from "gatsby";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import AppHeader from "../components/header";
 import ImageWithPlaceholder from "../components/image-with-placeholder";
 import useGoogleAdsConversion from "../hooks/useGoogleAdsConversion";
 
-const CoursePage = () => {
+const CoursePage = ({ data }) => {
   // Google Ads 轉換追蹤
   useGoogleAdsConversion();
 
   const hideURL =
-    "https://drive.google.com/drive/folders/1SZIG6qQlnJvdlDzf8JhxC8W_9gjR30sx?usp=sharing"; /* 社課簡報連結*/
+    data.courseJson
+      .gdrive_url; /* 社課簡報連結，於 src/data/course/course.json 維護 */
 
   return (
     <div className=" bg-iosbgblue">
@@ -212,5 +214,13 @@ const courseCard = (title, img) => {
     </div>
   );
 };
+
+export const qldata = graphql`
+  query {
+    courseJson {
+      gdrive_url
+    }
+  }
+`;
 
 export default CoursePage;

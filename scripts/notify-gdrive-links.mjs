@@ -10,7 +10,7 @@ const ALLOWED_REASONS = new Set(["permission", "invalid"]);
 
 function usage() {
   throw new Error(
-    "Usage: node scripts/notify-gallery-links.mjs --report <path> --state <path> --workflow-url <url>",
+    "Usage: node scripts/notify-gdrive-links.mjs --report <path> --state <path> --workflow-url <url>",
   );
 }
 
@@ -72,7 +72,7 @@ function filteredFailures(report) {
     if (!byKey.has(failure.key))
       byKey.set(failure.key, {
         key: failure.key,
-        name: failure.name || failure.key,
+        name: `${failure.source ? `[${failure.source}] ` : ""}${failure.name || failure.key}`,
         reason: failure.reason,
         status: failure.status,
       });
@@ -113,12 +113,12 @@ function makePayload({ transition, failures, previous, workflowUrl }) {
   const omitted = failures.length - names.length;
   let content;
   if (transition === "recovery") {
-    content = `Gallery link checks recovered.\n\nPrevious failures: ${previous.permissionCount} permission, ${previous.invalidCount} invalid.`;
+    content = `Google Drive link checks recovered.\n\nPrevious failures: ${previous.permissionCount} permission, ${previous.invalidCount} invalid.`;
   } else {
-    content = `${transition === "initial" ? "Gallery link checks failing" : "Gallery link failures changed"}: ${failures.length} affected.`;
+    content = `${transition === "initial" ? "Google Drive link checks failing" : "Google Drive link failures changed"}: ${failures.length} affected.`;
     if (names.length) {
       const affected = names.map((name) => `- ${name}`).join("\n");
-      content += `\n\nAffected galleries:\n${affected}`;
+      content += `\n\nAffected links:\n${affected}`;
       if (omitted) content += `\n- ...and ${omitted} more`;
     }
   }
