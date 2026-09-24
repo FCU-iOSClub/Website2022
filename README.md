@@ -121,17 +121,6 @@ yarn prettier
 }
 ```
 
-### Google Drive Link Check
-
-掃描 `src/data/gallery`（相簿）與 `src/data/course`（教材）中所有非空的 `gdrive_url`，以未登入、未使用任何 Google credential 的訪客身分檢查 Google Drive 資料夾是否可存取。目前只支援資料夾網址（`drive.google.com/drive/folders/...`）：
-
-```bash
-yarn test:gdrive-links
-yarn test:gdrive-links --url "https://drive.google.com/drive/folders/<folder-id>"
-```
-
-若結果確認需要權限、網址無效、發生網路錯誤或無法判定，指令會以 non-zero exit code 結束。
-
 ### 競賽得獎
 
 在 `/src/data/contest` 中新增檔案，檔案名稱以年份命名。
@@ -198,19 +187,15 @@ yarn test:gdrive-links --url "https://drive.google.com/drive/folders/<folder-id>
 
 > 目前影片放在 `static/` 只適合少量、小檔案。未來影片數量增加或檔案變大時，應將影片移至外部儲存（例如 Cloudflare R2 或其他 CDN），`src` 改填完整網址，避免 repo 持續膨脹並觸及 Cloudflare Pages 的檔案限制。
 
-## Google Drive link checker
+## Google Drive 連結檢查
 
-Google Drive 連結檢查器（相簿與教材）會在 Pull Request 上執行檢查，並在 `master` 的相關更新時維護檢查狀態。PR gate 不需要 Discord secret，也**不會傳送 Discord 通知**；完整掃描可能因為目前儲存庫中既有連結受到限制而失敗。
+相簿與社課教材的 Google Drive 資料夾連結，會在 PR 與每天台灣時間 11:17 自動檢查是否能以未登入身分開啟，失效時通知 Discord。
 
-### Discord 通知設定
+```bash
+yarn test:gdrive-links
+```
 
-維護工作流程若要傳送狀態變更通知，請在 GitHub 儲存庫中前往 **Settings → Secrets and variables → Actions → New repository secret**，建立名稱完全相同的 `DISCORD_GALLERY_WEBHOOK_URL` secret，並將 Discord webhook URL 填入 secret value（secret 名稱沿用相簿檢查器時期的命名，未隨檢查範圍擴大而更改）。README、程式碼與 workflow 中都不要直接寫入 webhook value。
-
-維護工作流程會在 `master` 的相關 push、每日 **UTC** 排程，以及手動 dispatch 時執行。Discord 僅通知兩種結果：`Permission denied` 與 `Invalid URL`。通知採 transition-only：第一次出現失敗或失敗集合改變時通知一次；相同失敗重複出現時保持靜默；恢復後通知一次。
-
-檢查器使用快取保存上一輪的失敗狀態，因此快取是精簡、可重現且不含憑證的狀態；它不是完整歷史紀錄，也不保證跨工作流程執行永遠保留。GitHub Actions Cache 項目以 key 建立後不可覆寫，而目前 workflow 使用固定的 repository/ref key；後續執行可能恢復較舊的狀態，因此 transition-only 判斷不一定會以緊鄰上一輪執行為基準。PR gate 與 `master` 維護執行可能各自使用不同的快取內容，不能把快取當作連結目前一定可用的證明。
-
-如果 webhook value 曾經暴露（包括提交到 Git、日誌或公開訊息），請立即在 Discord 撤銷該 webhook 並建立新的 webhook，再更新 GitHub Actions secret；不要繼續使用已暴露的 URL。
+檢查範圍、失效處理方式與 Discord 通知設定請見 [docs/gdrive-link-checker.md](docs/gdrive-link-checker.md)。
 
 ## Button
 
