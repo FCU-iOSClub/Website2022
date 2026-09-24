@@ -70,7 +70,11 @@
       "name": "柯艾妤",
       "description": "",
       "position": "公關",
-      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/c846ee80-751f-42fb-c9da-1eff6cb61b00/public"
+      "image": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/c846ee80-751f-42fb-c9da-1eff6cb61b00/public",
+      "easterEgg": {
+        "type": "image",
+        "src": "https://imagedelivery.net/cdkaXPuFls5qlrh3GM4hfA/2eeef798-7df8-4085-2caa-ef8c0a779900/public"
+      }
     },
     {
       "name": "陳怡晶",
