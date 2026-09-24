@@ -18,7 +18,6 @@ const preloadIcons = [
   "akar-icons:cross",
 
   // mdi
-  "mdi:rfid",
   "mdi:numeric-1-box",
   "mdi:close",
   "mdi:numeric-2-box",
