@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useEffect, useRef } from "react";
 
-const EasterEggModal = ({ video, onClose }) => {
+const VideoModal = ({ src, onClose }) => {
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const EasterEggModal = ({ video, onClose }) => {
     >
       <video
         ref={videoRef}
-        src={video}
+        src={src}
         playsInline
         preload="auto"
         className="max-h-full max-w-full rounded-lg"
@@ -36,4 +36,4 @@ const EasterEggModal = ({ video, onClose }) => {
   );
 };
 
-export default EasterEggModal;
+export default VideoModal;

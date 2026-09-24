@@ -84,6 +84,7 @@ yarn prettier
     │   ├── navbar.js     # 響應式導覽列（含手機版選單）
     │   ├── header.js     # 網站標頭（含 meta 標籤）
     │   ├── footer.js     # 網站頁尾（含社群連結）
+    │   ├── easter-egg/   # 幹部照片彩蛋（影片點擊播放、圖片按住顯示）
     │   └── image-with-placeholder.js # 圖片載入元件
     ├── pages/            # 靜態頁面
     │   ├── index.js      # 首頁
@@ -210,13 +211,20 @@ yarn prettier
           "text": "連結描述",
           "url": "連結URL"
         }
-      ]
+      ],
+      "easterEgg": {
+        "type": "video",
+        "src": "/easter-egg/xxx.mp4",
+        "hint": "提示文字（選填）"
+      }
     }
   ]
 }
 ```
 
 支援的 `icon_type`: 目前僅支援 `youtube`，後需開發需要在createMemberLinkIcon中定義。
+
+`easterEgg` 為選填，`type` 支援 `video`（點擊播放，`src` 為 `static/` 內的 mp4 路徑）與 `image`（按住顯示，`src` 為 Cloudflare Images 網址）。型別宣告在 `gatsby-node.js` 的 `createSchemaCustomization`，新增欄位時需同步更新。
 
 ## 頁面生成機制
 

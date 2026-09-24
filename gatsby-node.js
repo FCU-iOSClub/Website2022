@@ -11,7 +11,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       easterEgg: MemberJsonMembersEasterEgg
     }
     type MemberJsonMembersEasterEgg {
-      video: String
+      type: String
+      src: String
       hint: String
     }
   `);
@@ -80,7 +81,8 @@ query {
             url
           }
           easterEgg {
-            video
+            type
+            src
             hint
           }
         }

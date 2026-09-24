@@ -162,6 +162,31 @@ yarn test:gallery-links --url "https://drive.google.com/drive/folders/<folder-id
 }
 ```
 
+#### 彩蛋
+
+可以在成員加上選填的 `easterEgg`，讓照片變成彩蛋，元件在 `src/components/easter-egg/`。
+
+| type    | 觸發方式                                 | src                                                                    |
+| ------- | ---------------------------------------- | ---------------------------------------------------------------------- |
+| `video` | 點擊照片播放影片（含聲音），播完自動關閉 | 放在 `static/` 的影片路徑，建議 H.264 + AAC 的 mp4，盡量壓在 1 MB 以內 |
+| `image` | 按住照片顯示全螢幕圖片，放開隱藏         | Cloudflare Images 圖片網址                                             |
+
+`hint` 為選填，滑鼠移到照片上時顯示的提示文字。
+
+```json
+{
+  "easterEgg": {
+    "type": "video",
+    "src": "/easter-egg/niulai.mp4",
+    "hint": "牛來長"
+  }
+}
+```
+
+影片會進 Git 歷史，合併含影片的 PR 時請用 Squash and merge，避免中間版本的檔案留在 `master`。
+
+> 目前影片放在 `static/` 只適合少量、小檔案。未來影片數量增加或檔案變大時，應將影片移至外部儲存（例如 Cloudflare R2 或其他 CDN），`src` 改填完整網址，避免 repo 持續膨脹並觸及 Cloudflare Pages 的檔案限制。
+
 ## Gallery link checker
 
 相簿連結檢查器會在 Pull Request 上執行檢查，並在 `master` 的相關更新時維護檢查狀態。PR gate 不需要 Discord secret，也**不會傳送 Discord 通知**；完整掃描可能因為目前儲存庫中既有連結受到限制而失敗。
