@@ -32,6 +32,8 @@ env:
 
 jobs:
   gdrive-maintenance:
+    # 只在組織 repo 執行，避免 fork 重複檢查或重複發送 Discord 通知
+    if: github.repository == 'FCU-iOSClub/Website2022'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6

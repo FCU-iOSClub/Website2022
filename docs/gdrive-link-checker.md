@@ -64,6 +64,7 @@ yarn test:gdrive-links --url "https://drive.google.com/drive/folders/<folder-id>
 - secret 名稱沿用相簿檢查器時期的命名，未隨檢查範圍擴大而更改。
 - 不要把 webhook URL 寫進 README、程式碼或 workflow。
 - PR 檢查不需要這個 secret，也不會發送通知。
+- 每週檢查只在 `FCU-iOSClub/Website2022` 執行，fork 中會自動略過，fork 不需要（也不應）設定這個 secret。
 
 ### 通知規則
 
