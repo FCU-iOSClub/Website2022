@@ -189,7 +189,7 @@ yarn prettier
 
 ## Google Drive 連結檢查
 
-相簿與社課教材的 Google Drive 資料夾連結，會在 PR 與每天台灣時間 11:17 自動檢查是否能以未登入身分開啟，失效時通知 Discord。
+相簿與社課教材的 Google Drive 資料夾連結，會在 PR 與每週二、三台灣時間 09:17（社課前）自動檢查是否能以未登入身分開啟，失效時通知 Discord。
 
 ```bash
 yarn test:gdrive-links

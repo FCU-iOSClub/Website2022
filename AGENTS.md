@@ -194,7 +194,7 @@ yarn prettier
 
 ### Google Drive 連結檢查
 
-`yarn test:gdrive-links`（`scripts/check-gdrive-links.mjs`）會檢查 `src/data/gallery` 與 `src/data/course` 中所有 `gdrive_url` 是否能以未登入身分開啟，僅支援資料夾網址。GitHub Actions：`gdrive_check.yml`（PR 檢查）與 `gdrive_notify.yml`（每日排程與 Discord 通知）。新增含 `gdrive_url` 的資料目錄時，需同步更新 `SOURCES` 與兩個 workflow 的 `paths`。詳細說明見 `docs/gdrive-link-checker.md`。
+`yarn test:gdrive-links`（`scripts/check-gdrive-links.mjs`）會檢查 `src/data/gallery` 與 `src/data/course` 中所有 `gdrive_url` 是否能以未登入身分開啟，僅支援資料夾網址。GitHub Actions：`gdrive_check.yml`（PR 檢查）與 `gdrive_notify.yml`（每週二、三排程與 Discord 通知）。新增含 `gdrive_url` 的資料目錄時，需同步更新 `SOURCES` 與兩個 workflow 的 `paths`。詳細說明見 `docs/gdrive-link-checker.md`。
 
 ### 歷屆幹部
 

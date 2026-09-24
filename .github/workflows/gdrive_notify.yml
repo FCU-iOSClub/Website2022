@@ -2,7 +2,9 @@ name: Google Drive link maintenance
 
 on:
   schedule:
-    - cron: "17 3 * * *"
+    # 每週二、三台灣時間 09:17（UTC+8），於當天社課前檢查
+    # 兩次間隔皆小於 7 天，避免通知狀態的 cache 因 7 天未存取而被清除
+    - cron: "17 1 * * 2,3"
   workflow_dispatch:
   push:
     branches:

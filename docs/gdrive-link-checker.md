@@ -15,11 +15,15 @@
 
 ## 什麼時候會檢查
 
-|          | PR 檢查                                       | 每日檢查                                                 |
-| -------- | --------------------------------------------- | -------------------------------------------------------- |
-| Workflow | `gdrive_check.yml`（Google Drive link check） | `gdrive_notify.yml`（Google Drive link maintenance）     |
-| 觸發時機 | PR 改到相簿／教材資料、檢查器或相關 workflow  | 每天台灣時間 11:17（UTC 03:17）、`master` 相關更新、手動 |
-| 結果     | 只顯示在 PR 的 checks                         | 顯示在 Actions，狀態改變時通知 Discord                   |
+|          | PR 檢查                                       | 每週檢查                                                       |
+| -------- | --------------------------------------------- | -------------------------------------------------------------- |
+| Workflow | `gdrive_check.yml`（Google Drive link check） | `gdrive_notify.yml`（Google Drive link maintenance）           |
+| 觸發時機 | PR 改到相簿／教材資料、檢查器或相關 workflow  | 每週二、三台灣時間 09:17（UTC 01:17）、`master` 相關更新、手動 |
+| 結果     | 只顯示在 PR 的 checks                         | 顯示在 Actions，狀態改變時通知 Discord                         |
+
+社課在週二、週三晚上，排程設在這兩天早上，讓教材連結在每堂社課前都確認過（也能抓到前一晚被改壞的連結）；寒暑假照常執行。
+
+> GitHub 會在公開 repo 連續 60 天沒有 commit 時自動停用排程 workflow。長假後開學前，請到 Actions 確認「Google Drive link maintenance」仍為啟用狀態，並手動按一次 **Run workflow**。
 
 ## 連結失效時怎麼處理
 
@@ -80,8 +84,9 @@ yarn test:gdrive-links --url "https://drive.google.com/drive/folders/<folder-id>
 
 ## 附註：通知狀態的保存方式
 
-每日檢查會把上一輪的失敗狀態存在 GitHub Actions cache（`.cache/gdrive-link-state.json`），用來判斷狀態是否改變。
+每週檢查會把上一輪的失敗狀態存在 GitHub Actions cache（`.cache/gdrive-link-state.json`），用來判斷狀態是否改變。
 
 - 每次執行都會以新的 key（含 `run_id`）存一份狀態，下次執行再依前綴取回最近的一份。
-- cache 不是完整的歷史紀錄，可能因過期或被清除而消失；消失後的下一次執行會視為第一次檢查，若當下有失敗就會重新通知一次。
+- GitHub Actions cache 超過 7 天未被存取就會被刪除，因此排程的任兩次執行間隔都必須小於 7 天（目前為週二→週三 1 天、週三→週二 6 天）。調整排程時請維持這個條件，否則每次執行都會讀不到上一輪狀態，同一個失敗會被重複通知。
+- cache 不是完整的歷史紀錄，也可能被手動清除；消失後的下一次執行會視為第一次檢查，若當下有失敗就會重新通知一次。
 - PR 檢查不使用這份狀態；cache 也不能當作連結目前一定可用的證明，要確認請重新執行檢查。
