@@ -105,6 +105,7 @@ yarn prettier
     │   ├── activities/   # 社團活動資料
     │   ├── announcement/ # 公告資料
     │   ├── contest/      # 競賽得獎資料
+    │   ├── course/       # 社課教材 Google Drive 資料夾連結
     │   ├── gallery/      # 活動相簿資料
     │   └── member/       # 幹部資料
     ├── images/           # 圖片資源
@@ -186,6 +187,14 @@ yarn prettier
 ```
 
 **注意**: 當 `gdrive_url` 存在時，相簿頁面的「See More」按鈕會連結到 Google Drive 資料夾，因此使用Google Drive外連時請保持photos為空陣列。
+
+### 社課教材
+
+`src/data/course/course.json` 的 `gdrive_url` 為社課簡報的 Google Drive 資料夾連結（每學年更新一次），由 `src/pages/course.js` 透過 GraphQL 讀取。
+
+### Google Drive 連結檢查
+
+`yarn test:gdrive-links`（`scripts/check-gdrive-links.mjs`）會檢查 `src/data/gallery` 與 `src/data/course` 中所有 `gdrive_url` 是否能以未登入身分開啟，僅支援資料夾網址。GitHub Actions：`gdrive_check.yml`（PR 檢查）與 `gdrive_notify.yml`（每日排程與 Discord 通知）。新增含 `gdrive_url` 的資料目錄時，需同步更新 `SOURCES` 與兩個 workflow 的 `paths`。
 
 ### 歷屆幹部
 

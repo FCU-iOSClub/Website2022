@@ -5,13 +5,16 @@ import { createHash } from "node:crypto";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const DEFAULT_DIRECTORY = join(
+const DATA_DIRECTORY = join(
   dirname(fileURLToPath(import.meta.url)),
   "..",
   "src",
   "data",
-  "gallery",
 );
+export const SOURCES = [
+  { directory: "gallery", label: "相簿" },
+  { directory: "course", label: "教材" },
+];
 const TIMEOUT_MS = 10_000;
 
 export function extractGoogleDriveFolderId(value) {
@@ -195,22 +198,35 @@ export async function checkGoogleDriveFolder(url, options = {}) {
   };
 }
 
-export async function loadGalleryLinks(directory = DEFAULT_DIRECTORY) {
+export async function loadDriveLinks(
+  sources = SOURCES,
+  dataDirectory = DATA_DIRECTORY,
+) {
+  const records = [];
+  for (const source of sources) {
+    records.push(
+      ...(await loadSourceLinks(join(dataDirectory, source.directory), source)),
+    );
+  }
+  return records;
+}
+
+async function loadSourceLinks(directory, source) {
   const entries = (await readdir(directory, { withFileTypes: true }))
     .filter((entry) => entry.isFile() && entry.name.endsWith(".json"))
     .sort((a, b) => a.name.localeCompare(b.name));
   const records = [];
   for (const entry of entries) {
-    const filename = entry.name;
+    const filename = `${source.directory}/${entry.name}`;
     try {
       const record = JSON.parse(
-        await readFile(join(directory, filename), "utf8"),
+        await readFile(join(directory, entry.name), "utf8"),
       );
       if (!record || typeof record !== "object" || Array.isArray(record)) {
         records.push({
           invalidRecord: true,
           filename,
-          error: "Invalid gallery JSON: record must be an object",
+          error: "Invalid JSON: record must be an object",
         });
         continue;
       }
@@ -222,6 +238,7 @@ export async function loadGalleryLinks(directory = DEFAULT_DIRECTORY) {
         if (typeof record.gdrive_url === "string" && record.gdrive_url.trim()) {
           records.push({
             url: record.gdrive_url.trim(),
+            source: source.label,
             name: record.name || filename,
             date: record.date || "",
             filename,
@@ -231,14 +248,14 @@ export async function loadGalleryLinks(directory = DEFAULT_DIRECTORY) {
         records.push({
           invalidRecord: true,
           filename,
-          error: "Invalid gallery JSON: gdrive_url must be a string or null",
+          error: "Invalid JSON: gdrive_url must be a string or null",
         });
       }
     } catch (error) {
       records.push({
         invalidRecord: true,
         filename,
-        error: `Invalid gallery JSON: ${error.message}`,
+        error: `Invalid JSON: ${error.message}`,
       });
     }
   }
@@ -246,7 +263,7 @@ export async function loadGalleryLinks(directory = DEFAULT_DIRECTORY) {
 }
 
 function usage() {
-  return "Usage: yarn node scripts/check-gallery-links.mjs [--url <Google Drive folder URL>] [--report <path>]";
+  return "Usage: yarn node scripts/check-gdrive-links.mjs [--url <Google Drive folder URL>] [--report <path>]";
 }
 
 function reportKey(item) {
@@ -258,6 +275,7 @@ function reportKey(item) {
 function reportFailure(item, result) {
   return {
     key: reportKey(item),
+    source: item.source || "",
     name: item.name || item.filename || "Provided URL",
     date: item.date || "",
     filename: item.filename || "--url",
@@ -299,7 +317,7 @@ function label(result) {
 export async function main(argv = process.argv.slice(2)) {
   if (argv.includes("--help") || argv.includes("-h")) {
     console.log(
-      `${usage()}\n\nChecks Google Drive gallery folders anonymously.`,
+      `${usage()}\n\nChecks Google Drive folders (galleries and course materials) anonymously.`,
     );
     return 0;
   }
@@ -318,24 +336,22 @@ export async function main(argv = process.argv.slice(2)) {
     }
     items = [{ url: argv[urlIndex + 1], name: "Provided URL", date: "" }];
   } else {
-    items = await loadGalleryLinks();
+    items = await loadDriveLinks();
   }
 
-  console.log("Google Drive Gallery Accessibility Check");
+  console.log("Google Drive Folder Accessibility Check");
   const results = [];
   for (const item of items) {
     if (item.invalidRecord) {
-      console.log(
-        `${item.filename}: ❌ Invalid gallery record (${item.error})`,
-      );
-      results.push({ status: "invalid", reason: "Invalid gallery record" });
+      console.log(`${item.filename}: ❌ Invalid record (${item.error})`);
+      results.push({ status: "invalid", reason: "Invalid record" });
       continue;
     }
     const result = await checkGoogleDriveFolder(item.url);
     results.push(result);
     const suffix = result.reason ? ` — ${result.reason}` : "";
     console.log(
-      `${item.name}${item.date ? ` (${item.date})` : ""}: ${label(result)}${suffix}`,
+      `${item.source ? `[${item.source}] ` : ""}${item.name}${item.date ? ` (${item.date})` : ""}: ${label(result)}${suffix}`,
     );
     if (result.finalUrl && result.finalUrl !== result.url)
       console.log(`  Final URL: ${result.finalUrl}`);
@@ -357,7 +373,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
       process.exitCode = code;
     })
     .catch((error) => {
-      console.error(`Gallery link checker failed: ${error.message}`);
+      console.error(`Google Drive link checker failed: ${error.message}`);
       process.exitCode = 1;
     });
 }

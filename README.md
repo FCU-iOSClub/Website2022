@@ -110,13 +110,24 @@ yarn prettier
 
 目前大部分的照片都放在 GitHub 的 FCU-iOSClub/Website2022ImageBed 上。
 
-### Gallery Link Check
+### 社課教材
 
-掃描 `src/data/gallery` 中所有非空的 `gdrive_url`，以未登入、未使用任何 Google credential 的訪客身分檢查 Google Drive 資料夾是否可存取：
+社課簡報的 Google Drive 資料夾連結放在 `src/data/course/course.json` 的 `gdrive_url`，每學年更新一次，上下學期的教材都放在同一個資料夾中。
+
+```json
+{
+  "name": "社課簡報",
+  "gdrive_url": "https://drive.google.com/drive/folders/<folder-id>"
+}
+```
+
+### Google Drive Link Check
+
+掃描 `src/data/gallery`（相簿）與 `src/data/course`（教材）中所有非空的 `gdrive_url`，以未登入、未使用任何 Google credential 的訪客身分檢查 Google Drive 資料夾是否可存取。目前只支援資料夾網址（`drive.google.com/drive/folders/...`）：
 
 ```bash
-yarn test:gallery-links
-yarn test:gallery-links --url "https://drive.google.com/drive/folders/<folder-id>"
+yarn test:gdrive-links
+yarn test:gdrive-links --url "https://drive.google.com/drive/folders/<folder-id>"
 ```
 
 若結果確認需要權限、網址無效、發生網路錯誤或無法判定，指令會以 non-zero exit code 結束。
@@ -187,13 +198,13 @@ yarn test:gallery-links --url "https://drive.google.com/drive/folders/<folder-id
 
 > 目前影片放在 `static/` 只適合少量、小檔案。未來影片數量增加或檔案變大時，應將影片移至外部儲存（例如 Cloudflare R2 或其他 CDN），`src` 改填完整網址，避免 repo 持續膨脹並觸及 Cloudflare Pages 的檔案限制。
 
-## Gallery link checker
+## Google Drive link checker
 
-相簿連結檢查器會在 Pull Request 上執行檢查，並在 `master` 的相關更新時維護檢查狀態。PR gate 不需要 Discord secret，也**不會傳送 Discord 通知**；完整掃描可能因為目前儲存庫中既有連結受到限制而失敗。
+Google Drive 連結檢查器（相簿與教材）會在 Pull Request 上執行檢查，並在 `master` 的相關更新時維護檢查狀態。PR gate 不需要 Discord secret，也**不會傳送 Discord 通知**；完整掃描可能因為目前儲存庫中既有連結受到限制而失敗。
 
 ### Discord 通知設定
 
-維護工作流程若要傳送狀態變更通知，請在 GitHub 儲存庫中前往 **Settings → Secrets and variables → Actions → New repository secret**，建立名稱完全相同的 `DISCORD_GALLERY_WEBHOOK_URL` secret，並將 Discord webhook URL 填入 secret value。README、程式碼與 workflow 中都不要直接寫入 webhook value。
+維護工作流程若要傳送狀態變更通知，請在 GitHub 儲存庫中前往 **Settings → Secrets and variables → Actions → New repository secret**，建立名稱完全相同的 `DISCORD_GALLERY_WEBHOOK_URL` secret，並將 Discord webhook URL 填入 secret value（secret 名稱沿用相簿檢查器時期的命名，未隨檢查範圍擴大而更改）。README、程式碼與 workflow 中都不要直接寫入 webhook value。
 
 維護工作流程會在 `master` 的相關 push、每日 **UTC** 排程，以及手動 dispatch 時執行。Discord 僅通知兩種結果：`Permission denied` 與 `Invalid URL`。通知採 transition-only：第一次出現失敗或失敗集合改變時通知一次；相同失敗重複出現時保持靜默；恢復後通知一次。
 
