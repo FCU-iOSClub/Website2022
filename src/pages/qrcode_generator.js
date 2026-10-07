@@ -7,10 +7,19 @@ import SliderButton from "../components/buttons/slider_button";
 import { Icon } from "@iconify/react";
 
 const logo = "https://i.meee.com.tw/0SiZRVA.jpg";
+const TYPE_OPTIONS = ["回饋表單", "課程報名", "活動報名", "其他"];
+const TYPE_COLORS = {
+  回饋表單: "#6D9DF8",
+  課程報名: "#445484",
+  活動報名: "#E58E8E",
+};
 
 const QRCodeGeneratorPage = () => {
   const [urlInput, setUrlInput] = useState("");
-  const [titleInput, setTitleInput] = useState("");
+  const [dateInput, setDateInput] = useState("");
+  const [nameInput, setNameInput] = useState("");
+  const [typeChoice, setTypeChoice] = useState("");
+  const [customType, setCustomType] = useState("");
   const [qrCodeUrl, setQrCodeUrl] = useState(null);
   const [composedUrl, setComposedUrl] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -27,7 +36,17 @@ const QRCodeGeneratorPage = () => {
     };
   }, [qrCodeUrl, composedUrl]);
 
-  const buildPoster = async (qrBlobUrl, titleText) => {
+  // 組出海報要畫的每一行，沒填的行直接略過
+  const getPosterLines = () => {
+    const typeText = typeChoice === "其他" ? customType.trim() : typeChoice;
+    return [
+      { text: dateInput.trim(), size: 56, color: "#FFAF73" },
+      { text: nameInput.trim(), size: 88, color: "#FFAF73" },
+      { text: typeText, size: 64, color: TYPE_COLORS[typeChoice] || "#8098B5" },
+    ].filter((line) => line.text);
+  };
+
+  const buildPoster = async (qrBlobUrl, lines) => {
     const img = new Image();
     img.src = qrBlobUrl;
 
@@ -53,9 +72,31 @@ const QRCodeGeneratorPage = () => {
     ctx.textAlign = "center";
     ctx.textBaseline = "top";
 
-    ctx.fillStyle = "#FFAF73";
-    ctx.font = "bold 80px 'Noto Serif TC', serif";
-    ctx.fillText(titleText, width / 2, 325);
+    // 每行太寬就縮小字級，左右各留 60px
+    const maxTextWidth = width - 120;
+    const lineGap = 32;
+    const fitted = lines.map(({ text, size, color }) => {
+      let fontSize = size;
+      ctx.font = `bold ${fontSize}px 'Noto Serif TC', serif`;
+      while (ctx.measureText(text).width > maxTextWidth && fontSize > 32) {
+        fontSize -= 2;
+        ctx.font = `bold ${fontSize}px 'Noto Serif TC', serif`;
+      }
+      return { text, fontSize, color };
+    });
+
+    // 整塊標題以原本單行標題的中心（y≈365）置中，最多三行也碰不到 QR（y=670）
+    const blockHeight =
+      fitted.reduce((sum, line) => sum + line.fontSize, 0) +
+      lineGap * (fitted.length - 1);
+    let y = 365 - blockHeight / 2;
+
+    fitted.forEach(({ text, fontSize, color }) => {
+      ctx.fillStyle = color;
+      ctx.font = `bold ${fontSize}px 'Noto Serif TC', serif`;
+      ctx.fillText(text, width / 2, y);
+      y += fontSize + lineGap;
+    });
 
     const qrX = (width - qrSize) / 2;
     const qrY = (height - qrSize) / 2;
@@ -78,6 +119,8 @@ const QRCodeGeneratorPage = () => {
       setError("請輸入網址！");
       return;
     }
+
+    const posterLines = getPosterLines();
 
     setLoading(true);
     setError(null);
@@ -132,9 +175,9 @@ const QRCodeGeneratorPage = () => {
         const blob = await response.blob();
         const url = URL.createObjectURL(blob);
         setQrCodeUrl(url);
-        if (titleInput.trim()) {
+        if (posterLines.length > 0) {
           try {
-            const posterUrl = await buildPoster(url, titleInput.trim());
+            const posterUrl = await buildPoster(url, posterLines);
             setComposedUrl(posterUrl);
           } catch (composeError) {
             console.error("Poster generation error:", composeError);
@@ -163,9 +206,9 @@ const QRCodeGeneratorPage = () => {
             const blob = await imgResponse.blob();
             const url = URL.createObjectURL(blob);
             setQrCodeUrl(url);
-            if (titleInput.trim()) {
+            if (posterLines.length > 0) {
               try {
-                const posterUrl = await buildPoster(url, titleInput.trim());
+                const posterUrl = await buildPoster(url, posterLines);
                 setComposedUrl(posterUrl);
               } catch (composeError) {
                 console.error("Poster generation error:", composeError);
@@ -213,7 +256,10 @@ const QRCodeGeneratorPage = () => {
   };
 
   const clearTitleInput = () => {
-    setTitleInput("");
+    setDateInput("");
+    setNameInput("");
+    setTypeChoice("");
+    setCustomType("");
     setQrCodeUrl(null);
     setComposedUrl(null);
     setError(null);
@@ -320,30 +366,72 @@ const QRCodeGeneratorPage = () => {
             </div>
 
             <div className="mb-6">
-              <label>
-                <span className="block text-sm font-semibold text-gray-700 mb-2">
+              <div className="flex items-center justify-between mb-2">
+                <span className="block text-sm font-semibold text-gray-700">
                   標題（選填）
                 </span>
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    value={titleInput}
-                    onChange={(e) => setTitleInput(e.target.value)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter") generateQRCode();
-                    }}
-                    placeholder="如未填標題則生成單一 QR Code"
-                    className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-full font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
-                  />
+                <button
+                  type="button"
+                  onClick={clearTitleInput}
+                  className="px-3 py-1 text-sm text-gray-700 rounded-full hover:bg-btnbg hover:text-white transition-colors flex items-center gap-1"
+                  title="清除標題輸入"
+                >
+                  <Icon icon="mdi:close" />
+                  清除
+                </button>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-[10rem_1fr] gap-2 mb-4">
+                <input
+                  type="text"
+                  value={dateInput}
+                  onChange={(e) => setDateInput(e.target.value)}
+                  placeholder="日期"
+                  className="px-4 py-3 border-2 border-gray-300 rounded-full font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
+                />
+                <input
+                  type="text"
+                  value={nameInput}
+                  onChange={(e) => setNameInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") generateQRCode();
+                  }}
+                  placeholder="名稱"
+                  className="px-4 py-3 border-2 border-gray-300 rounded-full font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
+                />
+              </div>
+
+              <span className="block text-sm font-semibold text-gray-700 mb-2">
+                類型（選填）
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {TYPE_OPTIONS.map((option) => (
                   <button
-                    onClick={clearTitleInput}
-                    className="px-4 py-3 text-gray-700 rounded-full hover:bg-btnbg hover:text-white transition-colors flex items-center justify-center"
-                    title="清除標題輸入"
+                    key={option}
+                    type="button"
+                    aria-pressed={typeChoice === option}
+                    onClick={() =>
+                      setTypeChoice(typeChoice === option ? "" : option)
+                    }
+                    className={`px-4 py-2 rounded-full border-2 transition-colors ${
+                      typeChoice === option
+                        ? "bg-btnbg border-btnbg text-white"
+                        : "border-gray-300 text-gray-700 hover:border-btnbg"
+                    }`}
                   >
-                    <Icon icon="mdi:close" className="text-xl" />
+                    {option}
                   </button>
-                </div>
-              </label>
+                ))}
+              </div>
+              {typeChoice === "其他" && (
+                <input
+                  type="text"
+                  value={customType}
+                  onChange={(e) => setCustomType(e.target.value)}
+                  placeholder="請輸入類型⋯⋯"
+                  className="mt-3 w-full px-4 py-3 border-2 border-gray-300 rounded-full font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
+                />
+              )}
             </div>
 
             {/* 生成按鈕 */}
