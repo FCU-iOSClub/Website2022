@@ -13,6 +13,13 @@ const TYPE_COLORS = {
   課程報名: "#445484",
   活動報名: "#E58E8E",
 };
+// 回饋表單、課程報名要再選路線，畫在日期後方
+const TRACK_TYPES = ["回饋表單", "課程報名"];
+const TRACK_OPTIONS = ["程式線", "創客線"];
+const TRACK_COLORS = {
+  程式線: "#4771A3",
+  創客線: "#D9666F",
+};
 
 const QRCodeGeneratorPage = () => {
   const [urlInput, setUrlInput] = useState("");
@@ -20,6 +27,7 @@ const QRCodeGeneratorPage = () => {
   const [nameInput, setNameInput] = useState("");
   const [typeChoice, setTypeChoice] = useState("");
   const [customType, setCustomType] = useState("");
+  const [trackChoice, setTrackChoice] = useState("");
   const [qrCodeUrl, setQrCodeUrl] = useState(null);
   const [composedUrl, setComposedUrl] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -38,12 +46,30 @@ const QRCodeGeneratorPage = () => {
 
   // 組出海報要畫的每一行，沒填的行直接略過
   const getPosterLines = () => {
+    // 每一行由數段組成，段與段之間空一格，各段可有不同顏色
     const typeText = typeChoice === "其他" ? customType.trim() : typeChoice;
+    const track = TRACK_TYPES.includes(typeChoice) ? trackChoice : "";
     return [
-      { text: dateInput.trim(), size: 56, color: "#FFAF73" },
-      { text: nameInput.trim(), size: 88, color: "#FFAF73" },
-      { text: typeText, size: 64, color: TYPE_COLORS[typeChoice] || "#8098B5" },
-    ].filter((line) => line.text);
+      {
+        size: 56,
+        segments: [
+          { text: dateInput.trim(), color: "#FFAF73" },
+          { text: track, color: TRACK_COLORS[track] },
+        ],
+      },
+      { size: 88, segments: [{ text: nameInput.trim(), color: "#FFAF73" }] },
+      {
+        size: 64,
+        segments: [
+          { text: typeText, color: TYPE_COLORS[typeChoice] || "#8098B5" },
+        ],
+      },
+    ]
+      .map((line) => ({
+        ...line,
+        segments: line.segments.filter((segment) => segment.text),
+      }))
+      .filter((line) => line.segments.length > 0);
   };
 
   const buildPoster = async (qrBlobUrl, lines) => {
@@ -75,14 +101,15 @@ const QRCodeGeneratorPage = () => {
     // 每行太寬就縮小字級，左右各留 60px
     const maxTextWidth = width - 120;
     const lineGap = 32;
-    const fitted = lines.map(({ text, size, color }) => {
+    const fitted = lines.map(({ segments, size }) => {
+      const text = segments.map((segment) => segment.text).join(" ");
       let fontSize = size;
       ctx.font = `bold ${fontSize}px 'Noto Serif TC', serif`;
       while (ctx.measureText(text).width > maxTextWidth && fontSize > 32) {
         fontSize -= 2;
         ctx.font = `bold ${fontSize}px 'Noto Serif TC', serif`;
       }
-      return { text, fontSize, color };
+      return { text, segments, fontSize };
     });
 
     // 整塊標題以原本單行標題的中心（y≈365）置中，最多三行也碰不到 QR（y=670）
@@ -91,12 +118,19 @@ const QRCodeGeneratorPage = () => {
       lineGap * (fitted.length - 1);
     let y = 365 - blockHeight / 2;
 
-    fitted.forEach(({ text, fontSize, color }) => {
-      ctx.fillStyle = color;
+    // 整行置中：先算出整行起點，再由左往右逐段畫
+    ctx.textAlign = "left";
+    fitted.forEach(({ text, segments, fontSize }) => {
       ctx.font = `bold ${fontSize}px 'Noto Serif TC', serif`;
-      ctx.fillText(text, width / 2, y);
+      let x = (width - ctx.measureText(text).width) / 2;
+      segments.forEach((segment) => {
+        ctx.fillStyle = segment.color;
+        ctx.fillText(segment.text, x, y);
+        x += ctx.measureText(`${segment.text} `).width;
+      });
       y += fontSize + lineGap;
     });
+    ctx.textAlign = "center";
 
     const qrX = (width - qrSize) / 2;
     const qrY = (height - qrSize) / 2;
@@ -260,6 +294,7 @@ const QRCodeGeneratorPage = () => {
     setNameInput("");
     setTypeChoice("");
     setCustomType("");
+    setTrackChoice("");
     setQrCodeUrl(null);
     setComposedUrl(null);
     setError(null);
@@ -410,9 +445,10 @@ const QRCodeGeneratorPage = () => {
                     key={option}
                     type="button"
                     aria-pressed={typeChoice === option}
-                    onClick={() =>
-                      setTypeChoice(typeChoice === option ? "" : option)
-                    }
+                    onClick={() => {
+                      setTypeChoice(typeChoice === option ? "" : option);
+                      setTrackChoice("");
+                    }}
                     className={`px-4 py-2 rounded-full border-2 transition-colors ${
                       typeChoice === option
                         ? "bg-btnbg border-btnbg text-white"
@@ -431,6 +467,35 @@ const QRCodeGeneratorPage = () => {
                   placeholder="請輸入類型⋯⋯"
                   className="mt-3 w-full px-4 py-3 border-2 border-gray-300 rounded-full font-mono text-lg focus:border-btnbg focus:outline-none transition-colors"
                 />
+              )}
+              {TRACK_TYPES.includes(typeChoice) && (
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {TRACK_OPTIONS.map((track) => (
+                    <button
+                      key={track}
+                      type="button"
+                      aria-pressed={trackChoice === track}
+                      onClick={() =>
+                        setTrackChoice(trackChoice === track ? "" : track)
+                      }
+                      style={
+                        trackChoice === track
+                          ? {
+                              backgroundColor: TRACK_COLORS[track],
+                              borderColor: TRACK_COLORS[track],
+                            }
+                          : undefined
+                      }
+                      className={`px-4 py-2 rounded-full border-2 transition-colors ${
+                        trackChoice === track
+                          ? "text-white"
+                          : "border-gray-300 text-gray-700 hover:border-btnbg"
+                      }`}
+                    >
+                      {track}
+                    </button>
+                  ))}
+                </div>
               )}
             </div>
 
