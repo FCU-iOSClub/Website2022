@@ -154,10 +154,11 @@ const JoinUsButton = ({ fullWidth = false }) => (
         );
         return;
       }
-      window.open(EXTERNAL_LINKS.joinUs, "_blank");
+      window.open(EXTERNAL_LINKS.iOSAppConpetition, "_blank");
     }}
   >
-    Join Us
+    {/*Join Us*/}
+    登場時刻
   </button>
 );
 

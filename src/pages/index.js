@@ -57,12 +57,13 @@ const IndexPage = (props) => {
                     );
                     return;
                   }
-                  window.open(EXTERNAL_LINKS.joinUs, "_blank");
+                  window.open(EXTERNAL_LINKS.iOSAppConpetition, "_blank");
                 }}
               >
                 <div className="transition duration-200 group-hover:-translate-y-12">
                   <div className="h-12 flex items-center justify-center text-btnbg wrap-break-word">
-                    Join Us
+                    {/*Join Us*/}
+                    登場時刻
                   </div>
                   <div className="h-12 flex items-center justify-center text-btnbg wrap-break-word">
                     Welcome
