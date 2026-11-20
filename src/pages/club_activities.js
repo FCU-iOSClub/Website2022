@@ -64,7 +64,7 @@ const ClubActivities = (props) => {
               </span>
               、
               <span className="underline decoration-indigo-500 underline-offset-1">
-                社遊
+                企業參訪
               </span>
               、
               <span className="underline decoration-pink-500 underline-offset-1">
@@ -74,15 +74,18 @@ const ClubActivities = (props) => {
               <span className="underline decoration-red-500 underline-offset-1">
                 葳格高中
               </span>
-              建立了長期的任教合作，身為志工性社團，我們還會和相關機構及國小一同舉辦各式各樣的
+              建立了長期的任教合作，身為學術性社團，我們也會和相關機構及國小一同舉辦各式各樣的
               <span className="underline decoration-indigo-500 underline-offset-1">
                 志工營隊
               </span>
               ，落實將在社內所學回饋社會。
             </p>
             <p className="py-1 text-gray-700 text-justify">
-              iOS Club
-              致力於軟體開發，以及推廣程式教育，但我們同時也期望能夠給社員舒適的相處環境與豐富的交流活動，歡迎所有志在開發與充滿教育熱誠的人一起加入。
+              iOS Club 致力於軟體開發，以及推廣程式教育，在每學期末也會舉辦
+              <span className="underline decoration-sky-500  underline-offset-1">
+                iOS App 登場時刻
+              </span>
+              ，讓社員將所學實際運用於作品中。同時，我們也期望能夠給社員舒適的相處環境與豐富的交流活動，歡迎所有志在開發與充滿教育熱誠的人一起加入。
             </p>
             <SliderButton
               text="iOS Club 活動報名"

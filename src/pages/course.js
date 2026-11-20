@@ -124,7 +124,7 @@ const CoursePage = ({ data }) => {
                 </span>
                 共同規劃，另外由行銷部的
                 <span className="underline decoration-indigo-500 underline-offset-1">
-                  設計長
+                  行銷長
                 </span>
                 協助設計課程，社課期間其餘幹部擔任助教，協助社員解決學習中遇到的問題，讓每位社員都能順利成長。
               </p>

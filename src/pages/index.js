@@ -95,7 +95,7 @@ const IndexPage = (props) => {
             </div>
             <p className="py-3 md:px-12 text-gray-700 text-justify">
               是全臺首個獲得 Apple
-              官方認證的社團，也是一個結合學術的志工性社團。<br></br>
+              官方認證的社團，也是一個積極舉辦志工活動的學術性社團。<br></br>
               每年暑假社員們會有國際交流的機會，到海外參加比賽，和不同國家的學生進行合作活動與技術交流。
             </p>
           </div>
@@ -115,7 +115,7 @@ const IndexPage = (props) => {
               <br></br>社團不僅提供 RTC
               認證的社課資源，還有定期舉辦講座、Workshop、社內競賽，增強團隊實力。除此之外，更有野餐、社遊和期末聚等，超多活動等你們來參加！
               <br></br>
-              身為志工性社團的我們，還會和相關機構及國小一同舉辦志工營隊，將在社團內所學回饋社會。
+              身為學術性社團的我們，也會和相關機構及國小一同舉辦志工營隊，將在社團內所學回饋社會。
             </p>
           </div>
           <IosClubDoingSvg className="w-full" />
@@ -268,7 +268,7 @@ const IndexPage = (props) => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      407102 臺中市西屯區文華路 100 號 電子通訊館 B04
+                      407102 臺中市西屯區文華路 100 號 資訊電機館 B28
                     </a>
                   </div>
                 </div>
